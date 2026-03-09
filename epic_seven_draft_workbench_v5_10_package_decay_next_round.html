@@ -59,6 +59,13 @@
     .chip{padding:5px 8px;border-radius:999px;border:1px solid #334155;background:#0f172a;font-size:12px}
     .heroSummary{display:grid;gap:10px}
     .recCard{border:1px solid #314056;background:linear-gradient(180deg,#131d2d,#182235);border-radius:14px;padding:10px;display:grid;gap:8px}
+    .recTop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+    .recMain{display:grid;gap:4px;min-width:0}
+    .recActions{display:flex;align-items:center;gap:8px}
+    .recToggle{padding:5px 9px;border:1px solid #334155;border-radius:999px;background:#0f172a;color:#cbd5e1;font-size:11px;cursor:pointer;white-space:nowrap}
+    .recToggle:hover{border-color:#60a5fa;color:#e5f0ff}
+    .recDetails{display:none;gap:8px}
+    .recDetails.open{display:grid}
     .recHead{display:flex;justify-content:space-between;gap:8px;align-items:center}
     .score{font-size:22px;font-weight:800;color:#bfdbfe}
     .bars{display:grid;gap:4px}
@@ -230,6 +237,7 @@
       <div class="panel">
         <div class="panelHeader"><h3>현재 메타/모델 메모</h3><span class="pill">설명용</span></div>
         <div class="panelBody foot">
+        <div class="avgNote" id="debugPanel" style="margin-top:10px; white-space:pre-wrap; font-family:Consolas, monospace;"></div>
           <div>• 모델은 <b>최신 레전드 픽률/승률/밴률</b>, <b>최신 메타 상성/시너지</b>, <b>랭킹 1·2·3·4·5·6·10등 실전 로그 + 레전드 평균 유저 검증 로그 + 레전드 평균 유저 검증 로그</b>만을 합쳐 점수화합니다.</div>
           <div>• 상성/시너지 관계는 <b>네가 텍스트로 직접 준 데이터</b>를 우선 사용합니다.</div>
           <div>• 장비/과금 격차는 결과에 영향을 주는 <b>잠재 교란변수</b>로만 메모하고, 직접 점수에는 넣지 않았습니다.</div>
@@ -395,6 +403,13 @@ const PACKAGES = [
 
 const COMMON_PREBAN = ['LIBRA_MASTER','HARSETI','YULHA','BELIAN','GIO','MORT','SECRET'];
 const EARLY_PICK_CORE = ['YULHA','LIBRA_MASTER','ORIGIN_RAS','DARK_DIEANE','ARUNKA','RUEL','FRIEREN','RINAK','ISEPUNISH_ARIA'];
+const OPEN_COUNTER_RISKS = [
+  {target:'RAN', counters:['GIO'], weight:9.5, note:'지오 오픈 시 란 선턴 안정성 급감'},
+  {target:'FRIEREN', counters:['GIO'], weight:4.6, note:'지오 오픈 시 프리렌 템포 리스크'},
+  {target:'AMID', counters:['GIO'], weight:5.2, note:'지오 오픈 시 아미드 전개 리스크'},
+  {target:'FLAN', counters:['GIO'], weight:4.4, note:'지오 오픈 시 플랑 전개 리스크'},
+  {target:'COMMANDER_PAVEL', counters:['GIO'], weight:4.0, note:'지오 오픈 시 파벨 선턴 리스크'}
+];
 const HIGHROLLER_TURN_ONE = {
   core:['SIDER','VILDRED','ASHEN_ISERIA','FRIEREN','ISEPUNISH_ARIA','ARUNKA','FLAN','COMMANDER_PAVEL','HWAYOUNG'],
   openers:['SIDER','FLAN','COMMANDER_PAVEL','WANDERER_SILK','WESTWIND_SHURI','SHURI'],
@@ -602,10 +617,32 @@ function canSelect(heroId, stage){
 }
 
 function nextMyPickStage(){
-  for(const s of state.stages){
-    if(s.type==='pick' && s.side==='me' && !stageFilled(s)) return s;
+  const myCount = allPickArrays().me.length;
+  if(state.side==='first'){
+    if(myCount < 1) return state.stages.find(s => s.key==='my1') || null;
+    if(myCount < 3) return state.stages.find(s => s.key==='my45') || null;
+    if(myCount < 5) return state.stages.find(s => s.key==='my89') || null;
+    return null;
   }
+  if(myCount < 2) return state.stages.find(s => s.key==='my23') || null;
+  if(myCount < 4) return state.stages.find(s => s.key==='my67') || null;
+  if(myCount < 5) return state.stages.find(s => s.key==='my10') || null;
   return null;
+}
+
+function nextMyPickNumber(){
+  const count = allPickArrays().me.length;
+  return count < 5 ? count + 1 : null;
+}
+
+function nextMyPickLabel(){
+  const number = nextMyPickNumber();
+  return number ? `내 ${number}픽 추천` : '추천 종료';
+}
+
+function remainingSlotsForStage(stage){
+  if(!stage) return 0;
+  return Math.max(0, stage.count - ((state.stageData[stage.key]||[]).length));
 }
 
 function myBoardAfterCurrent(){ return allPickArrays().me; }
@@ -676,16 +713,52 @@ function finalBanExposurePenalty(candidate, myPicks){
   return candidate.ban * 0.08;
 }
 
-function decoyRelief(candidate, myPicks){
-  if(candidate.ban > 20) return 1.0;
-  return 0;
+function decoyRelief(candidate){
+  return candidate.ban > 20 ? 1.0 : 0;
 }
 
 function commonThreatWeight(candidate){
   return COMMON_PREBAN.includes(candidate.id) ? 0.9 : 0;
 }
 
+function futureOpponentPickCount(nextStage){
+  if(!nextStage) return 0;
+  const idx = state.stages.findIndex(s => s.key === nextStage.key);
+  if(idx < 0) return 0;
+  let count = 0;
+  for(let i = idx + 1; i < state.stages.length; i++){
+    const s = state.stages[i];
+    if(s.type !== 'pick' || s.side !== 'opp') continue;
+    count += Math.max(0, s.count - ((state.stageData[s.key]||[]).length));
+  }
+  return count;
+}
 
+function projectedOpenCounterPenalty(candidate, myPicks, oppPicks, stage){
+  if(!candidate || !stage || stage.type!=='pick' || stage.side!=='me') return 0;
+  const futureOpp = futureOpponentPickCount(stage);
+  if(futureOpp <= 0) return 0;
+  const locked = new Set([...actualPrebans(), ...myPicks, ...oppPicks]);
+  const openThreats = HEROES.filter(h => h && !locked.has(h.id) && h.id !== candidate.id).map(h => {
+    let threat = 0;
+    if((h.hard||[]).includes(candidate.id)) threat += 5.5;
+    for(const rel of NUANCED_COUNTERS){
+      if(rel.counter === h.id && rel.target === candidate.id) threat += rel.weight * 1.1;
+    }
+    for(const risk of OPEN_COUNTER_RISKS){
+      if(risk.target === candidate.id && (risk.counters||[]).includes(h.id)) threat += risk.weight;
+    }
+    const oppLinks = oppPicks.filter(id => (h.syn||[]).includes(id) || (HERO_BY_ID[id]?.syn||[]).includes(h.id)).length;
+    threat += oppLinks * 1.35;
+    threat += h.pick * 0.035;
+    if(HIGHROLLER_TURN_ONE.blockers.includes(h.id) && HIGHROLLER_TURN_ONE.core.includes(candidate.id)) threat += 2.0;
+    return {id:h.id, threat};
+  }).filter(x => x.threat > 0).sort((a,b)=>b.threat-a.threat);
+  if(!openThreats.length) return 0;
+  const top = openThreats.slice(0, Math.min(2, futureOpp));
+  const pressure = futureOpp >= 3 ? 1.0 : (futureOpp === 2 ? 0.78 : 0.55);
+  return Math.min(12.0, top.reduce((sum, x) => sum + x.threat, 0) * pressure);
+}
 
 function completionPressureBonus(candidate, myPicks){
   let score = 0;
@@ -745,28 +818,37 @@ function scoreHero(candidateId, myPicks, oppPicks, stage){
   if(isLockedHeroName(c.name)) return null;
   if(actualPrebans().includes(candidateId)) return null;
   if(myPicks.includes(candidateId) || oppPicks.includes(candidateId)) return null;
-  const meta = c.win*0.18 + c.pick*0.16 + c.ban*0.03;
-  const synergy = synergyBonus(c, myPicks);
-  const counters = counterBonus(c, oppPicks);
-  const pack = packageBonus(c.id, myPicks, oppPicks);
-  const early = earlyPickValue(c, myPicks, oppPicks);
-  const completion = completionPressureBonus(c, myPicks);
+
+  const metaRaw = c.win*0.18 + c.pick*0.16 + c.ban*0.03;
+  const synergyRaw = synergyBonus(c, myPicks);
+  const packRaw = packageBonus(c.id, myPicks, oppPicks);
+  const completionRaw = completionPressureBonus(c, myPicks);
+
+  const meta = metaRaw * 0.55;
+  const synergy = synergyRaw * 0.28;
+  const pack = packRaw * 0.32;
+  const completion = completionRaw * 0.90;
+
+  const counters = counterBonus(c, oppPicks) * 0.85;
+  const early = earlyPickValue(c, myPicks, oppPicks) * 0.65;
   const urgency = c.ban * 0.05 + commonThreatWeight(c);
   const exposure = -finalBanExposurePenalty(c, myPicks);
-  const relief = decoyRelief(c, myPicks);
+  const relief = decoyRelief(c);
   const vanguard = (myPicks.length===2 ? vanguardProtectedValue(c, myPicks) : 0);
   const archetype = turnOneArchetypeBonus(c, myPicks, oppPicks, stage);
   const reproducibility = -turnOneReplicabilityPenalty(c, myPicks, oppPicks, stage);
-  const total = meta + synergy + counters + pack + early + completion + urgency + exposure + relief + vanguard + archetype + reproducibility;
+  const openCounter = -projectedOpenCounterPenalty(c, myPicks, oppPicks, stage);
+
+  const total = meta + synergy + pack + completion + counters + early + urgency + exposure + relief + vanguard + archetype + reproducibility + openCounter;
   return {
     hero:c,
     total,
-    breakdown:{meta, synergy, counters, pack, early, completion, urgency, exposure, relief, vanguard, archetype, reproducibility},
-    reasons:buildReasons(c, myPicks, oppPicks, early, vanguard, archetype, reproducibility)
+    breakdown:{meta, synergy, counters, pack, completion, early, urgency, exposure, relief, vanguard, archetype, reproducibility, openCounter},
+    reasons:buildReasons(c, myPicks, oppPicks, early, vanguard, archetype, reproducibility, openCounter)
   };
 }
 
-function buildReasons(c, myPicks, oppPicks, earlyValue=0, vanguardValue=0, archetypeValue=0, reproducibilityValue=0){
+function buildReasons(c, myPicks, oppPicks, earlyValue=0, vanguardValue=0, archetypeValue=0, reproducibilityValue=0, openCounterValue=0){
   const out = [];
   if(c.note) out.push(c.note);
   const synHits = (c.syn||[]).filter(id=>myPicks.includes(id)).slice(0,2).map(id=>HERO_BY_ID[id]?.name).filter(Boolean);
@@ -789,9 +871,10 @@ function buildReasons(c, myPicks, oppPicks, earlyValue=0, vanguardValue=0, arche
     }
   }
   if(earlyValue >= 5) out.push('초반 선점 우선순위 높음');
-  if(vanguardValue >= 4) out.push('3픽 밴가드 핵심 후보');
+  if(vanguardValue >= 4) out.push('다음 밴가드 후보 가치 높음');
   if(archetypeValue >= 2.5) out.push('선턴 템포 로그 archetype과 결이 맞음');
   if(reproducibilityValue <= -2.4) out.push('초고스펙 전용 로그라 재현성은 보수적으로 봄');
+  if(openCounterValue <= -4.0) out.push('오픈 카운터 리스크 큼');
   return out.slice(0,4);
 }
 
@@ -800,7 +883,6 @@ function getAvailableHeroesForStage(stage){
   const picks = allPickArrays();
   const pickedIds = new Set([...picks.me, ...picks.opp]);
   const pickedNames = new Set([...picks.me, ...picks.opp].map(id => canonicalHeroNameById(id)).filter(Boolean));
-
   return HEROES.filter(h => {
     if(!h) return false;
     if(prebanIds.has(h.id)) return false;
@@ -812,62 +894,45 @@ function getAvailableHeroesForStage(stage){
 
 function computeRecommendations(){
   const stage = nextMyPickStage();
-  if(!stage) return {stage:null, singles:[], pairs:[]};
+  if(!stage) return {stage:null, pickLabel:'추천 종료', remainingSlots:0, singles:[], pairs:[]};
 
   const myPicks = myBoardAfterCurrent();
   const oppPicks = oppBoardAfterCurrent();
-  const prebanIds = new Set(actualPrebans());
-  const pickedIds = new Set([...myPicks, ...oppPicks]);
-  const pickedNames = new Set([...myPicks, ...oppPicks].map(id => canonicalHeroNameById(id)).filter(Boolean));
-
-  const available = HEROES.filter(h => {
-    if(!h) return false;
-    if(prebanIds.has(h.id)) return false;
-    if(pickedIds.has(h.id)) return false;
-    if(pickedNames.has((h.name || '').trim())) return false;
-    return canSelect(h.id, stage);
-  });
+  const available = getAvailableHeroesForStage(stage);
+  const remainingSlots = remainingSlotsForStage(stage);
 
   const singles = available
     .map(h => scoreHero(h.id, myPicks, oppPicks, stage))
     .filter(Boolean)
-    .filter(r => !prebanIds.has(r.hero.id))
-    .filter(r => !pickedIds.has(r.hero.id))
-    .filter(r => !pickedNames.has((r.hero.name || '').trim()))
     .sort((a,b)=>b.total-a.total)
     .slice(0,6);
 
   let pairs = [];
-  if(stage.count===2){
+  if(remainingSlots >= 2){
     for(let i=0;i<available.length;i++){
       for(let j=i+1;j<available.length;j++){
-        const a=available[i], b=available[j];
-        if(prebanIds.has(a.id) || prebanIds.has(b.id)) continue;
-        if(pickedIds.has(a.id) || pickedIds.has(b.id)) continue;
-        if(pickedNames.has((a.name || '').trim()) || pickedNames.has((b.name || '').trim())) continue;
-
-        const sa = scoreHero(a.id,myPicks,oppPicks,stage);
-        const sb = scoreHero(b.id,myPicks,oppPicks,stage);
+        const a = available[i], b = available[j];
+        const sa = scoreHero(a.id, myPicks, oppPicks, stage);
+        const sb = scoreHero(b.id, myPicks, oppPicks, stage);
         if(!sa || !sb) continue;
-
         let pairBonus = 0;
         if((a.syn||[]).includes(b.id)) pairBonus += 6;
         if((b.syn||[]).includes(a.id)) pairBonus += 6;
-        for(const p of PACKAGES){ if(p.members.includes(a.id) && p.members.includes(b.id)) pairBonus += p.weight*0.4; }
+        for(const p of PACKAGES){
+          if(p.members.includes(a.id) && p.members.includes(b.id)) pairBonus += p.weight * 0.4;
+        }
         pairBonus += completionPressureBonus(a, [...myPicks, b.id]) * 0.22;
         pairBonus += completionPressureBonus(b, [...myPicks, a.id]) * 0.22;
         if(HIGHROLLER_TURN_ONE.observedPairs.some(pair => pair.includes(a.id) && pair.includes(b.id))) pairBonus += state.side==='first' ? 3.2 : 1.2;
-        if(myPicks.length===1) pairBonus += Math.max(vanguardProtectedValue(a), vanguardProtectedValue(b)) * 0.45;
-        const total = sa.total + sb.total + pairBonus;
-        pairs.push({a,b,total,pairBonus});
+        if(myPicks.length===1) pairBonus += Math.max(vanguardProtectedValue(a, myPicks), vanguardProtectedValue(b, myPicks)) * 0.45;
+        pairs.push({a, b, total: sa.total + sb.total + pairBonus, pairBonus});
       }
     }
     pairs = pairs.sort((x,y)=>y.total-x.total).slice(0,5);
   }
 
-  return {stage, singles, pairs};
+  return {stage, pickLabel:nextMyPickLabel(), remainingSlots, singles, pairs};
 }
-
 function computeFinalBanSuggestion(){
   const stage = currentStage();
   if(!stage || stage.type!=='finalBan' || stage.side!=='me') return [];
@@ -963,8 +1028,8 @@ function renderBoard(){
   document.getElementById('finalBanSlots').innerHTML = `
     <div><div class="miniLabel">내가 상대에게 밴</div>${slotHTML(myFinal,'myFinalBan','opp')}</div>
     <div><div class="miniLabel">상대가 내게 밴</div>${slotHTML(oppFinal,'oppFinalBan','mine')}</div>`;
-  document.getElementById('mySummary').textContent = `내 ${my.length}/5`; 
-  document.getElementById('oppSummary').textContent = `상대 ${opp.length}/5`; 
+  document.getElementById('mySummary').textContent = `내 ${my.length}/5`;
+  document.getElementById('oppSummary').textContent = `상대 ${opp.length}/5`;
   document.getElementById('draftStatus').textContent = `내 ${my.length}/5픽 · 상대 ${opp.length}/5픽`;
   const myVg = getVanguard('me');
   const oppVg = getVanguard('opp');
@@ -1016,6 +1081,31 @@ function renderHeroGrid(){
   document.getElementById('heroGrid').innerHTML = html;
 }
 
+function renderDebug(){
+  const panel = document.getElementById('debugPanel');
+  if(!panel) return;
+  const stage = currentStage();
+  const rec = computeRecommendations();
+  const picks = allPickArrays();
+  panel.textContent = [
+    '[debug]',
+    'currentStage=' + (stage?.key || 'none'),
+    'nextStage=' + (rec.stage?.key || 'none'),
+    'pickLabel=' + (rec.pickLabel || 'none'),
+    'remainingSlots=' + (rec.remainingSlots ?? 0),
+    'myPicks=' + picks.me.join(', '),
+    'oppPicks=' + picks.opp.join(', '),
+    'prebans=' + actualPrebans().join(', '),
+    'topSingles=' + rec.singles.slice(0, 3).map(x => x.hero.name + ':' + x.total.toFixed(1)).join(' | ')
+  ].join('\n');
+}
+function toggleRecDetails(id, btn){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const open = el.classList.toggle('open');
+  if(btn) btn.textContent = open ? '상세 닫기' : '상세 보기';
+}
+
 function renderRecs(){
   const stage = currentStage();
   const recBox = document.getElementById('recommendations');
@@ -1028,30 +1118,42 @@ function renderRecs(){
     pairBox.innerHTML = '<div class="tiny">최종 밴 단계에서는 페어 추천이 비활성화됩니다.</div>';
     return;
   }
-  const {stage: nextStage, singles, pairs} = computeRecommendations();
-  const visibleSingles = singles.filter(r => !isLockedHero(r.hero.id) && !isLockedHeroName(r.hero.name));
-  const visiblePairs = pairs.filter(p => !isLockedHero(p.a.id) && !isLockedHero(p.b.id) && !isLockedHeroName(p.a.name) && !isLockedHeroName(p.b.name));
+  const {stage: nextStage, pickLabel, remainingSlots, singles, pairs} = computeRecommendations();
+  const picked = allPickArrays();
+  const pre = new Set(actualPrebans());
+  const pickedIds = new Set([...picked.me, ...picked.opp]);
+  const pickedNames = new Set([...picked.me, ...picked.opp].map(id => canonicalHeroNameById(id)).filter(Boolean));
+  const visibleSingles = singles.filter(r => !pre.has(r.hero.id) && !pickedIds.has(r.hero.id) && !pickedNames.has((r.hero.name||'').trim()) && !isLockedHero(r.hero.id) && !isLockedHeroName(r.hero.name));
+  const visiblePairs = pairs.filter(p => {
+    const aName = (p.a.name||'').trim(), bName = (p.b.name||'').trim();
+    return !pre.has(p.a.id) && !pre.has(p.b.id)
+      && !pickedIds.has(p.a.id) && !pickedIds.has(p.b.id)
+      && !pickedNames.has(aName) && !pickedNames.has(bName)
+      && !isLockedHero(p.a.id) && !isLockedHero(p.b.id)
+      && !isLockedHeroName(aName) && !isLockedHeroName(bName);
+  });
   if(!nextStage){
     modePill.textContent = '추천 종료';
     recBox.innerHTML = '<div class="tiny">모든 픽 단계가 끝났습니다. 최종 밴을 입력하세요.</div>';
     pairBox.innerHTML = '<div class="tiny">없음</div>';
     return;
   }
-  modePill.textContent = nextStage.count===2 ? '다음 내 2픽 추천' : '다음 내 1픽 추천';
+  modePill.textContent = pickLabel;
   recBox.innerHTML = visibleSingles.map((r, idx) => {
     const b = r.breakdown;
     const items = [
-      ['평균 지표', b.meta], ['연계', b.synergy], ['상대 대응', b.counters], ['조합 궁합', b.pack], ['조합 완성', b.completion||0], ['초반 선점', b.early||0], ['선점 가치', b.urgency], ['밴 위험', b.exposure+b.relief], ['밴가드 가치', b.vanguard||0], ['선턴 archetype', b.archetype||0], ['재현성 보정', b.reproducibility||0]
+      ['평균 지표', b.meta], ['연계', b.synergy], ['상대 대응', b.counters], ['조합 궁합', b.pack], ['조합 완성', b.completion||0], ['초반 선점', b.early||0], ['선점 가치', b.urgency], ['밴 위험', b.exposure+b.relief], ['밴가드 가치', b.vanguard||0], ['선턴 archetype', b.archetype||0], ['재현성 보정', b.reproducibility||0], ['오픈 카운터', b.openCounter||0]
     ];
+    const detailId = `rec-detail-${idx}`;
     return `<div class="recCard">
-      <div class="recHead"><div><strong>#${idx+1} ${r.hero.name}</strong><div class="tiny">${r.reasons.join(' · ') || '평균 지표 + 조합 정보 기반 추천'}</div></div><div class="score">${r.total.toFixed(1)}</div></div>
-      <div class="bars">${items.map(([label,val]) => {
+      <div class="recTop"><div class="recMain"><div><strong>#${idx+1} ${r.hero.name}</strong></div><div class="tiny">${r.reasons.join(' · ') || '평균 지표 + 조합 정보 기반 추천'}</div></div><div class="recActions"><div class="score">${r.total.toFixed(1)}</div><button class="recToggle" onclick="toggleRecDetails('${detailId}', this)">상세 보기</button></div></div>
+      <div class="recDetails" id="${detailId}"><div class="bars">${items.map(([label,val]) => {
         const width = Math.max(0, Math.min(100, Math.abs(val)*4));
         return `<div class="bar"><div>${label}</div><div class="barTrack"><div class="barFill" style="width:${width}%;opacity:${val<0?0.45:1}"></div></div><div>${val.toFixed(1)}</div></div>`;
-      }).join('')}</div>
+      }).join('')}</div></div>
     </div>`;
   }).join('') || '<div class="tiny">추천할 후보가 없습니다.</div>';
-  if(nextStage.count===2){
+  if(remainingSlots >= 2){
     pairBox.innerHTML = visiblePairs.map((p, idx) => `<div class="pairItem"><strong>#${idx+1} ${p.a.name} + ${p.b.name}</strong><div class="tiny">페어 점수 ${p.total.toFixed(1)} · 페어 보너스 ${p.pairBonus.toFixed(1)}</div></div>`).join('');
   } else {
     pairBox.innerHTML = '<div class="tiny">다음 내 단계가 1픽이라 페어 추천은 비활성화됩니다.</div>';
@@ -1066,7 +1168,6 @@ function render(){
   renderHeroGrid();
   renderRecs();
 }
-
 // wire up
 window.chooseHero = chooseHero;
 window.removeFromStage = removeFromStage;
@@ -1087,6 +1188,20 @@ render();
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
