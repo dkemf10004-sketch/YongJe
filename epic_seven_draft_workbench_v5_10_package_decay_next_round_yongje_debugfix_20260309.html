@@ -115,7 +115,7 @@
 <div class="wrap">
   <div class="topbar">
     <div>
-            <div class="title">epic_seven_draft_workbench_v5_10_package_decay_next_round_yongje_fixed.html</div>
+            <div class="title">epic_seven_draft_workbench_v5_10_package_decay_next_round_yongje_debugfix_20260309.html</div>
       <div class="subtitle">2026.03.09 기준 데이터 · 참고용으로만 사용</div>
       <button id="updateNotesBtn" class="btn" style="margin-top:8px; width:max-content;">업데이트 사항</button>
       <div class="subtitle">제작: 용제</div>
@@ -230,6 +230,7 @@
       <div class="panel">
         <div class="panelHeader"><h3>현재 메타/모델 메모</h3><span class="pill">설명용</span></div>
         <div class="panelBody foot">
+          <div class="avgNote" id="debugPanel" style="margin-top:10px; white-space:pre-wrap; font-family:Consolas, monospace;"></div>
           <div>• 모델은 <b>최신 레전드 픽률/승률/밴률</b>, <b>최신 메타 상성/시너지</b>, <b>랭킹 1·2·3·4·5·6·10등 실전 로그 + 레전드 평균 유저 검증 로그 + 레전드 평균 유저 검증 로그</b>만을 합쳐 점수화합니다.</div>
           <div>• 상성/시너지 관계는 <b>네가 텍스트로 직접 준 데이터</b>를 우선 사용합니다.</div>
           <div>• 장비/과금 격차는 결과에 영향을 주는 <b>잠재 교란변수</b>로만 메모하고, 직접 점수에는 넣지 않았습니다.</div>
@@ -1024,6 +1025,32 @@ function renderHeroGrid(){
   document.getElementById('heroGrid').innerHTML = html;
 }
 
+function renderDebug(){
+  const panel = document.getElementById('debugPanel');
+  if(!panel) return;
+  const stage = currentStage();
+  const nextStage = nextMyPickStage();
+  const picks = allPickArrays();
+  const lockedIds = [...allSelected()];
+  const prebanIds = actualPrebans();
+  const available = nextStage ? HEROES.filter(h => {
+    if(!h) return false;
+    if(prebanIds.includes(h.id)) return false;
+    if(picks.me.includes(h.id) || picks.opp.includes(h.id)) return false;
+    return canSelect(h.id, nextStage);
+  }).map(h => h.name) : [];
+  panel.textContent = [
+    '[debug]',
+    'currentStage=' + (stage?.key || 'none'),
+    'nextMyPickStage=' + (nextStage?.key || 'none'),
+    'myPicks=' + picks.me.join(', '),
+    'oppPicks=' + picks.opp.join(', '),
+    'prebans=' + prebanIds.join(', '),
+    'locked=' + lockedIds.join(', '),
+    'available=' + available.slice(0, 12).join(', ')
+  ].join('\n');
+}
+
 function renderRecs(){
   const stage = currentStage();
   const recBox = document.getElementById('recommendations');
@@ -1073,6 +1100,7 @@ function render(){
   renderSteps();
   renderHeroGrid();
   renderRecs();
+  renderDebug();
 }
 
 // wire up
@@ -1095,6 +1123,7 @@ render();
 </script>
 </body>
 </html>
+
 
 
 

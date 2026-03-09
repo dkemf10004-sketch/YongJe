@@ -288,7 +288,7 @@ const HEROES = [
   {id:'VERONICA', name:'베로니카', pick:0.00, win:0.00, ban:0.00, hard:[], syn:['AMID','FRIEREN','RUEL']},
   {id:'KISE', name:'키세', pick:0.00, win:0.00, ban:0.00, hard:[], syn:['AMID','FRIEREN','RUEL']},
   {id:'ARAM', name:'아람', pick:2.40, win:61.12, ban:15.98, hard:[], syn:['FRIEREN','YULHA']},
-  {id:'SILVER_ARAMINTA', name:'백은칼날의 아라민타', pick:1.85, win:62.72, ban:40.61, hard:[], syn:['FRIEREN','ARAM']},
+  {id:'SILVER_ARAMINTA', name:'백은칼날의 아라민타', pick:3.95, win:58.35, ban:40.61, hard:['SLOW_CORE'], syn:['FRIEREN','ARAM','TENEBRIA']},
   {id:'ABYSSAL_YUFINE', name:'심연의 유피네', pick:1.74, win:61.20, ban:24.84, hard:[], syn:['FRIEREN','YULHA','SKY_ILLYNAV']},
   {id:'AMBITIOUS_TYWIN', name:'야심가 타이윈', pick:0.00, win:0.00, ban:0.00, hard:[], syn:['BELIAN','ISEPUNISH_ARIA']},
   {id:'DEVIL_RUA', name:'소악마 루아', pick:2.24, win:63.91, ban:20.83, hard:[], syn:['RUEL','DARK_DIEANE']},
@@ -301,9 +301,7 @@ const HEROES = [
   {id:'SILVER_CHRISTY', name:'은결의 크리스티', pick:2.07, win:55.48, ban:31.00, hard:[], syn:['ARAM','SELINE'], note:'로그 등장 영웅 · 참조용'},
   {id:'MOON_RABBIT_DOMINIEL', name:'달토끼 도미니엘', pick:1.58, win:60.28, ban:29.20, hard:[], syn:['YULHA','BELIAN'], note:'로그 등장 영웅 · 참조용'},
   {id:'DESIGNER_LILIBET', name:'디자이너 릴리벳', pick:0.92, win:56.16, ban:38.37, hard:['DEBUFF_CORE'], syn:['YULHA'], note:'로그 등장 영웅 · 참조용'},
-  {id:'DESIGNER_DIRIBET', name:'디자이너 디리벳', pick:2.30, win:55.00, ban:1.20, hard:['DEBUFF_CORE'], syn:['YULHA'], note:'로그 등장 영웅 · 참조용'},
   {id:'COMMANDER_PAVEL', name:'사령관 파벨', pick:2.25, win:64.61, ban:32.95, hard:['SLOW_CORE'], syn:['STRAZE','ASHEN_ISERIA'], note:'로그 등장 영웅 · 참조용'},
-  {id:'MOONLIGHT_ARAMINTA', name:'월광 아라민타', pick:2.10, win:54.50, ban:1.00, hard:['SLOW_CORE'], syn:['TENEBRIA','FRIEREN'], note:'로그 등장 영웅 · 참조용'},
   {id:'REQUIEM_ROANA', name:'진혼의 로앤나', pick:0.84, win:54.07, ban:40.35, hard:[], syn:['YULHA','GIO'], note:'로그 등장 영웅 · 참조용'},
   {id:'ELENA', name:'엘레나', pick:2.04, win:57.49, ban:24.22, hard:['AOE_CORE'], syn:['DARK_DIEANE','RUEL'], note:'로그 등장 영웅 · 참조용'},
   {id:'SNOW_SOLITARIA', name:'설국의 솔리타리아', pick:1.78, win:61.56, ban:53.34, hard:['TURN_ONE_CORE'], syn:['SEOLHWA','ASHEN_ISERIA'], note:'로그 등장 영웅 · 참조용'},
@@ -317,14 +315,14 @@ const HEROES = [
   {id:'AKI', name:'아키', pick:1.01, win:60.00, ban:39.63, hard:['ARUNKA','YULHA'], syn:['ORIGIN_RAS','DARK_DIEANE']},
   {id:'MYTH_ACHATES', name:'미지의 가능성 아카테스', pick:2.38, win:57.94, ban:25.25, hard:['MOON_LUNA','GIO','FRIEREN'], syn:['RINAK','FRIEREN','SELINE']},
   {id:'BASE_POLITIS', name:'폴리티스', pick:1.06, win:61.82, ban:32.65, hard:['ARUNKA','ORIGIN_RAS'], syn:['YULHA','RUEL','FLOWER_LIDICA']},
-  {id:'SENUA', name:'세뉴아', pick:1.13, win:61.91, ban:25.48, hard:['FRIEREN'], syn:['ARUNKA','YULHA']},
+  {id:'SENUA', name:'제뉴아', pick:1.13, win:61.91, ban:25.48, hard:['FRIEREN'], syn:['ARUNKA','YULHA']},
   {id:'DRIFTER_LUDWIG', name:'영겁의 표류자 루트비히', pick:1.07, win:56.82, ban:28.71, hard:['ARUNKA'], syn:['RUEL','YULHA']},
   {id:'HWARAN_RAVI', name:'화란의 라비', pick:1.07, win:54.61, ban:21.77, hard:['ORIGIN_RAS','SECRET'], syn:['MOON_RABBIT_DOMINIEL','ARIA']},
   {id:'TWISTED_KAYRON', name:'뒤틀린 망령 카일론', pick:0.87, win:60.44, ban:32.39, hard:['FRIEREN'], syn:['ARUNKA','SECRET']},
   {id:'WESTWIND_SHURI', name:'서풍의 처형자 슈리', pick:0.84, win:56.95, ban:31.70, hard:['YULHA'], syn:['ARAM','VILDRED']},
   {id:'SHURI', name:'슈리', pick:0.83, win:62.48, ban:42.68, hard:['BELIAN'], syn:['VILDRED','SECRET']},
   {id:'MEDIATOR_KAWERIK', name:'조율자 카웨릭', pick:0.73, win:54.01, ban:24.18, hard:['CONTROL_CORE'], syn:['LRK','SECRET']},
-  {id:'DARKWALL_CHARLOTTE', name:'어둠 방벽 샬롯', pick:0.71, win:60.72, ban:20.65, hard:['ARUNKA'], syn:['RUEL','YULHA']},
+  {id:'DARKWALL_CHARLOTTE', name:'어린 여왕 샬롯', pick:0.71, win:60.72, ban:20.65, hard:['ARUNKA'], syn:['RUEL','YULHA']},
   {id:'MILIM', name:'밀림', pick:0.95, win:57.00, ban:22.00, hard:['FRIEREN'], syn:['ARUNKA','SECRET'], note:'로그 등장 영웅 · 참조용'},
   {id:'NAKWOL', name:'낙월', pick:0.95, win:57.00, ban:22.00, hard:['YULHA'], syn:['ARUNKA','RINAK'], note:'로그 등장 영웅 · 참조용'},
   {id:'BENIMARU', name:'베니마루', pick:0.95, win:57.00, ban:22.00, hard:['SECRET'], syn:['ARUNKA','ISEPUNISH_ARIA'], note:'로그 등장 영웅 · 참조용'},
@@ -511,6 +509,22 @@ function allSelected(){
   const {me, opp} = allPickArrays();
   return new Set([...actualPrebans(), ...me, ...opp, ...(state.stageData.myFinalBan||[]), ...(state.stageData.oppFinalBan||[])]);
 }
+
+function canonicalHeroNameById(heroId){
+  return (HERO_BY_ID[heroId]?.name || '').trim();
+}
+
+function lockedHeroNames(){
+  return new Set([...allSelected()].map(id => canonicalHeroNameById(id)).filter(Boolean));
+}
+
+function isLockedHero(heroId){
+  return allSelected().has(heroId);
+}
+
+function isLockedHeroName(name){
+  return lockedHeroNames().has((name || '').trim());
+}
 function stageFilled(stage){ return (state.stageData[stage.key]||[]).length >= stage.count; }
 function advanceStage(){ while(state.stageIndex < state.stages.length && stageFilled(state.stages[state.stageIndex])) state.stageIndex++; render(); }
 function setSide(side){
@@ -576,7 +590,7 @@ function canSelect(heroId, stage){
     return !mine.includes(heroId) && !opp.includes(heroId);
   }
   if(stage.type==='pick'){
-    return !pre.includes(heroId) && !picks.me.includes(heroId) && !picks.opp.includes(heroId);
+    return !isLockedHero(heroId) && !isLockedHeroName(hero.name) && !pre.includes(heroId) && !picks.me.includes(heroId) && !picks.opp.includes(heroId);
   }
   if(stage.type==='finalBan'){
     const oppVanguard = getVanguard('opp');
@@ -588,8 +602,7 @@ function canSelect(heroId, stage){
 }
 
 function nextMyPickStage(){
-  for(let i=state.stageIndex;i<state.stages.length;i++){
-    const s = state.stages[i];
+  for(const s of state.stages){
     if(s.type==='pick' && s.side==='me' && !stageFilled(s)) return s;
   }
   return null;
@@ -618,7 +631,8 @@ function packageBonus(candidateId, myPicks, oppPicks = []){
   let counterHits = 0;
   if(candidate){
     for(const oid of oppPicks){
-      if((candidate.hard||[]).includes(oid)) counterHits++;
+      const opp = HERO_BY_ID[oid];
+      if((opp?.hard||[]).includes(candidateId)) counterHits++;
       for(const rel of NUANCED_COUNTERS){
         if(rel.counter === oid && rel.target === candidateId) counterHits++;
       }
@@ -634,8 +648,8 @@ function counterBonus(candidate, oppPicks){
   for(const oid of oppPicks){
     const opp = HERO_BY_ID[oid];
     if(!opp) continue;
-    if((opp.hard||[]).includes(candidate.id)) score += 9.2;
-    if((candidate.hard||[]).includes(oid)) score -= 8.8;
+    if((opp.hard||[]).includes(candidate.id)) score -= 9.2;
+    if((candidate.hard||[]).includes(oid)) score += 8.8;
     for(const rel of NUANCED_COUNTERS){
       if(rel.counter === candidate.id && rel.target === oid) score += rel.weight * 1.12;
       if(rel.counter === oid && rel.target === candidate.id) score -= rel.weight;
@@ -669,6 +683,21 @@ function decoyRelief(candidate, myPicks){
 
 function commonThreatWeight(candidate){
   return COMMON_PREBAN.includes(candidate.id) ? 0.9 : 0;
+}
+
+
+
+function completionPressureBonus(candidate, myPicks){
+  let score = 0;
+  const directSyn = (candidate.syn||[]).filter(id => myPicks.includes(id)).length;
+  score += directSyn * 1.2;
+  for(const p of PACKAGES){
+    if(!p.members.includes(candidate.id)) continue;
+    const linked = p.members.filter(id => id !== candidate.id && myPicks.includes(id)).length;
+    if(linked === 1) score += p.weight * 0.08;
+    if(linked >= 2) score += p.weight * 0.20;
+  }
+  return Math.min(6.0, score);
 }
 
 function hasObservedTempoPair(candidateId, myPicks){
@@ -712,22 +741,27 @@ function turnOneReplicabilityPenalty(candidate, myPicks, oppPicks, stage){
 function scoreHero(candidateId, myPicks, oppPicks, stage){
   const c = HERO_BY_ID[candidateId];
   if(!c) return null;
+  if(isLockedHero(candidateId)) return null;
+  if(isLockedHeroName(c.name)) return null;
+  if(actualPrebans().includes(candidateId)) return null;
+  if(myPicks.includes(candidateId) || oppPicks.includes(candidateId)) return null;
   const meta = c.win*0.18 + c.pick*0.16 + c.ban*0.03;
   const synergy = synergyBonus(c, myPicks);
   const counters = counterBonus(c, oppPicks);
   const pack = packageBonus(c.id, myPicks, oppPicks);
   const early = earlyPickValue(c, myPicks, oppPicks);
+  const completion = completionPressureBonus(c, myPicks);
   const urgency = c.ban * 0.05 + commonThreatWeight(c);
   const exposure = -finalBanExposurePenalty(c, myPicks);
   const relief = decoyRelief(c, myPicks);
   const vanguard = (myPicks.length===2 ? vanguardProtectedValue(c, myPicks) : 0);
   const archetype = turnOneArchetypeBonus(c, myPicks, oppPicks, stage);
   const reproducibility = -turnOneReplicabilityPenalty(c, myPicks, oppPicks, stage);
-  const total = meta + synergy + counters + pack + early + urgency + exposure + relief + vanguard + archetype + reproducibility;
+  const total = meta + synergy + counters + pack + early + completion + urgency + exposure + relief + vanguard + archetype + reproducibility;
   return {
     hero:c,
     total,
-    breakdown:{meta, synergy, counters, pack, early, urgency, exposure, relief, vanguard, archetype, reproducibility},
+    breakdown:{meta, synergy, counters, pack, early, completion, urgency, exposure, relief, vanguard, archetype, reproducibility},
     reasons:buildReasons(c, myPicks, oppPicks, early, vanguard, archetype, reproducibility)
   };
 }
@@ -738,9 +772,9 @@ function buildReasons(c, myPicks, oppPicks, earlyValue=0, vanguardValue=0, arche
   const synHits = (c.syn||[]).filter(id=>myPicks.includes(id)).slice(0,2).map(id=>HERO_BY_ID[id]?.name).filter(Boolean);
   if(synHits.length) out.push('내 조합 시너지: ' + synHits.join(', '));
   const counterHits = oppPicks.filter(id => (c.hard||[]).includes(id)).slice(0,2).map(id=>HERO_BY_ID[id]?.name).filter(Boolean);
-  if(counterHits.length) out.push('상대 리스크: ' + counterHits.join(', '));
+  if(counterHits.length) out.push('상대 카운터 가능: ' + counterHits.join(', '));
   const reverseHits = oppPicks.filter(id => (HERO_BY_ID[id]?.hard||[]).includes(c.id)).slice(0,2).map(id=>HERO_BY_ID[id]?.name).filter(Boolean);
-  if(reverseHits.length) out.push('상대 대응 가능: ' + reverseHits.join(', '));
+  if(reverseHits.length) out.push('상대에게 취약: ' + reverseHits.join(', '));
   for(const rel of NUANCED_COUNTERS){
     if(rel.counter === c.id && oppPicks.includes(rel.target)){
       const targetName = HERO_BY_ID[rel.target]?.name || rel.target;
@@ -762,26 +796,66 @@ function buildReasons(c, myPicks, oppPicks, earlyValue=0, vanguardValue=0, arche
 }
 
 function getAvailableHeroesForStage(stage){
-  return HEROES.filter(h => canSelect(h.id, stage));
+  const prebanIds = new Set(actualPrebans());
+  const picks = allPickArrays();
+  const pickedIds = new Set([...picks.me, ...picks.opp]);
+  const pickedNames = new Set([...picks.me, ...picks.opp].map(id => canonicalHeroNameById(id)).filter(Boolean));
+
+  return HEROES.filter(h => {
+    if(!h) return false;
+    if(prebanIds.has(h.id)) return false;
+    if(pickedIds.has(h.id)) return false;
+    if(pickedNames.has((h.name || '').trim())) return false;
+    return canSelect(h.id, stage);
+  });
 }
 
 function computeRecommendations(){
   const stage = nextMyPickStage();
   if(!stage) return {stage:null, singles:[], pairs:[]};
+
   const myPicks = myBoardAfterCurrent();
   const oppPicks = oppBoardAfterCurrent();
-  const available = getAvailableHeroesForStage(stage).filter(h => !actualPrebans().includes(h.id));
-  const singles = available.map(h => scoreHero(h.id, myPicks, oppPicks, stage)).filter(Boolean).sort((a,b)=>b.total-a.total).slice(0,6);
+  const prebanIds = new Set(actualPrebans());
+  const pickedIds = new Set([...myPicks, ...oppPicks]);
+  const pickedNames = new Set([...myPicks, ...oppPicks].map(id => canonicalHeroNameById(id)).filter(Boolean));
+
+  const available = HEROES.filter(h => {
+    if(!h) return false;
+    if(prebanIds.has(h.id)) return false;
+    if(pickedIds.has(h.id)) return false;
+    if(pickedNames.has((h.name || '').trim())) return false;
+    return canSelect(h.id, stage);
+  });
+
+  const singles = available
+    .map(h => scoreHero(h.id, myPicks, oppPicks, stage))
+    .filter(Boolean)
+    .filter(r => !prebanIds.has(r.hero.id))
+    .filter(r => !pickedIds.has(r.hero.id))
+    .filter(r => !pickedNames.has((r.hero.name || '').trim()))
+    .sort((a,b)=>b.total-a.total)
+    .slice(0,6);
+
   let pairs = [];
   if(stage.count===2){
     for(let i=0;i<available.length;i++){
       for(let j=i+1;j<available.length;j++){
         const a=available[i], b=available[j];
-        const sa = scoreHero(a.id,myPicks,oppPicks,stage); const sb = scoreHero(b.id,myPicks,oppPicks,stage);
+        if(prebanIds.has(a.id) || prebanIds.has(b.id)) continue;
+        if(pickedIds.has(a.id) || pickedIds.has(b.id)) continue;
+        if(pickedNames.has((a.name || '').trim()) || pickedNames.has((b.name || '').trim())) continue;
+
+        const sa = scoreHero(a.id,myPicks,oppPicks,stage);
+        const sb = scoreHero(b.id,myPicks,oppPicks,stage);
+        if(!sa || !sb) continue;
+
         let pairBonus = 0;
         if((a.syn||[]).includes(b.id)) pairBonus += 6;
         if((b.syn||[]).includes(a.id)) pairBonus += 6;
         for(const p of PACKAGES){ if(p.members.includes(a.id) && p.members.includes(b.id)) pairBonus += p.weight*0.4; }
+        pairBonus += completionPressureBonus(a, [...myPicks, b.id]) * 0.22;
+        pairBonus += completionPressureBonus(b, [...myPicks, a.id]) * 0.22;
         if(HIGHROLLER_TURN_ONE.observedPairs.some(pair => pair.includes(a.id) && pair.includes(b.id))) pairBonus += state.side==='first' ? 3.2 : 1.2;
         if(myPicks.length===1) pairBonus += Math.max(vanguardProtectedValue(a), vanguardProtectedValue(b)) * 0.45;
         const total = sa.total + sb.total + pairBonus;
@@ -790,6 +864,7 @@ function computeRecommendations(){
     }
     pairs = pairs.sort((x,y)=>y.total-x.total).slice(0,5);
   }
+
   return {stage, singles, pairs};
 }
 
@@ -954,6 +1029,8 @@ function renderRecs(){
     return;
   }
   const {stage: nextStage, singles, pairs} = computeRecommendations();
+  const visibleSingles = singles.filter(r => !isLockedHero(r.hero.id) && !isLockedHeroName(r.hero.name));
+  const visiblePairs = pairs.filter(p => !isLockedHero(p.a.id) && !isLockedHero(p.b.id) && !isLockedHeroName(p.a.name) && !isLockedHeroName(p.b.name));
   if(!nextStage){
     modePill.textContent = '추천 종료';
     recBox.innerHTML = '<div class="tiny">모든 픽 단계가 끝났습니다. 최종 밴을 입력하세요.</div>';
@@ -961,10 +1038,10 @@ function renderRecs(){
     return;
   }
   modePill.textContent = nextStage.count===2 ? '다음 내 2픽 추천' : '다음 내 1픽 추천';
-  recBox.innerHTML = singles.map((r, idx) => {
+  recBox.innerHTML = visibleSingles.map((r, idx) => {
     const b = r.breakdown;
     const items = [
-      ['평균 지표', b.meta], ['연계', b.synergy], ['상대 대응', b.counters], ['조합 궁합', b.pack], ['초반 선점', b.early||0], ['선점 가치', b.urgency], ['밴 위험', b.exposure+b.relief], ['밴가드 가치', b.vanguard||0], ['선턴 archetype', b.archetype||0], ['재현성 보정', b.reproducibility||0]
+      ['평균 지표', b.meta], ['연계', b.synergy], ['상대 대응', b.counters], ['조합 궁합', b.pack], ['조합 완성', b.completion||0], ['초반 선점', b.early||0], ['선점 가치', b.urgency], ['밴 위험', b.exposure+b.relief], ['밴가드 가치', b.vanguard||0], ['선턴 archetype', b.archetype||0], ['재현성 보정', b.reproducibility||0]
     ];
     return `<div class="recCard">
       <div class="recHead"><div><strong>#${idx+1} ${r.hero.name}</strong><div class="tiny">${r.reasons.join(' · ') || '평균 지표 + 조합 정보 기반 추천'}</div></div><div class="score">${r.total.toFixed(1)}</div></div>
@@ -975,7 +1052,7 @@ function renderRecs(){
     </div>`;
   }).join('') || '<div class="tiny">추천할 후보가 없습니다.</div>';
   if(nextStage.count===2){
-    pairBox.innerHTML = pairs.map((p, idx) => `<div class="pairItem"><strong>#${idx+1} ${p.a.name} + ${p.b.name}</strong><div class="tiny">페어 점수 ${p.total.toFixed(1)} · 페어 보너스 ${p.pairBonus.toFixed(1)}</div></div>`).join('');
+    pairBox.innerHTML = visiblePairs.map((p, idx) => `<div class="pairItem"><strong>#${idx+1} ${p.a.name} + ${p.b.name}</strong><div class="tiny">페어 점수 ${p.total.toFixed(1)} · 페어 보너스 ${p.pairBonus.toFixed(1)}</div></div>`).join('');
   } else {
     pairBox.innerHTML = '<div class="tiny">다음 내 단계가 1픽이라 페어 추천은 비활성화됩니다.</div>';
   }
@@ -1010,6 +1087,23 @@ render();
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
