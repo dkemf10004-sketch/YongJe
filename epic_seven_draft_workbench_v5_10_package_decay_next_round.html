@@ -125,7 +125,7 @@
             <div class="title">epic_seven_draft_workbench_v5_10_package_decay_next_round_yongje_fixed.html</div>
       <div class="subtitle">2026.03.09 기준 데이터 · 참고용으로만 사용</div>
       <button id="updateNotesBtn" class="btn" style="margin-top:8px; width:max-content;">업데이트 사항</button>
-      <div class="subtitle">제작: 용제</div>
+      <div class="subtitle">제작 : 용제 / 제작자는 여러분의 실레나 점수에 아무런 책임이 없습니다.</div>
     </div>
     <div class="controls">
       <button id="firstBtn" class="activeBtn">내가 선픽</button>
@@ -342,6 +342,7 @@ const HEROES = [
 ];
 
 const HERO_BY_ID = Object.fromEntries(HEROES.map(h => [h.id, h]));
+const FIRST_TURN_OPENERS = ['RINAK','RAN','GIO','ASHEN_ISERIA'];
 
 
 const NUANCED_COUNTERS = [
@@ -497,6 +498,16 @@ function getVanguard(side){
   const picks = allPickArrays();
   const arr = side==='me' ? picks.me : picks.opp;
   return arr.length >= 3 ? arr[2] : null;
+}
+function vanguardFirstTurnPenalty(candidate, myPicks, oppPicks){
+  if(!candidate || !FIRST_TURN_OPENERS.includes(candidate.id)) return 0;
+  if(candidate.id === 'ASHEN_ISERIA' && myPicks.length !== 2) return 0;
+  let penalty = 0;
+  const myVanguard = myPicks.length >= 3 ? myPicks[2] : null;
+  const oppVanguard = oppPicks.length >= 3 ? oppPicks[2] : null;
+  if(myVanguard && FIRST_TURN_OPENERS.includes(myVanguard)) penalty -= 12.0;
+  if(oppVanguard && FIRST_TURN_OPENERS.includes(oppVanguard)) penalty -= 4.0;
+  return penalty;
 }
 function vanguardProtectedValue(hero, myPicks){
   if(!hero) return 0;
@@ -838,12 +849,13 @@ function scoreHero(candidateId, myPicks, oppPicks, stage){
   const archetype = turnOneArchetypeBonus(c, myPicks, oppPicks, stage);
   const reproducibility = -turnOneReplicabilityPenalty(c, myPicks, oppPicks, stage);
   const openCounter = -projectedOpenCounterPenalty(c, myPicks, oppPicks, stage);
+  const firstTurnPenalty = vanguardFirstTurnPenalty(c, myPicks, oppPicks);
 
-  const total = meta + synergy + pack + completion + counters + early + urgency + exposure + relief + vanguard + archetype + reproducibility + openCounter;
+  const total = meta + synergy + pack + completion + counters + early + urgency + exposure + relief + vanguard + archetype + reproducibility + openCounter + firstTurnPenalty;
   return {
     hero:c,
     total,
-    breakdown:{meta, synergy, counters, pack, completion, early, urgency, exposure, relief, vanguard, archetype, reproducibility, openCounter},
+    breakdown:{meta, synergy, counters, pack, completion, early, urgency, exposure, relief, vanguard, archetype, reproducibility, openCounter, firstTurnPenalty},
     reasons:buildReasons(c, myPicks, oppPicks, early, vanguard, archetype, reproducibility, openCounter)
   };
 }
@@ -1188,6 +1200,8 @@ render();
 </script>
 </body>
 </html>
+
+
 
 
 
