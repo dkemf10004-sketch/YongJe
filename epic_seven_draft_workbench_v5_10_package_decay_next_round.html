@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>epic_seven_draft_workbench_v5_9_composition_ban_tuned_fixed.html</title>
+  <title>에픽세븐 밴픽 시뮬레이터(레전드 10위권 기준)</title>
   <style>
     :root{
       --bg:#0f172a;--panel:#111827;--panel2:#1f2937;--line:#334155;--text:#e5e7eb;--muted:#94a3b8;
@@ -122,8 +122,8 @@
 <div class="wrap">
   <div class="topbar">
     <div>
-            <div class="title">epic_seven_draft_workbench_v5_10_package_decay_next_round_yongje_fixed.html</div>
-      <div class="subtitle">2026.03.09 기준 데이터 · 참고용으로만 사용</div>
+            <div class="title">에픽세븐 밴픽 시뮬레이터(레전드 10위권 기준)</div>
+      <div class="subtitle">2026.03.10 기준 데이터 · 참고용으로만 사용</div>
       <button id="updateNotesBtn" class="btn" style="margin-top:8px; width:max-content;">업데이트 사항</button>
       <div class="subtitle">제작 : 용제 / 제작자는 여러분의 실레나 점수에 아무런 책임이 없습니다.</div>
     </div>
@@ -138,13 +138,11 @@
   <div class="panelHeader"><h3>업데이트 사항</h3></div>
   <div class="panelBody" style="display:grid; gap:6px;">
     <div class="tiny">• 세로형 드래프트 보드 · 프리밴 실제 제외 2~4명 소형 표시 · 선/후턴 자동 진행 · 최신 메타 조합/상성/랭커 패턴 기반</div>
-    <div class="tiny">• 2026.03.09 기준 데이터 · 참고용으로만 사용</div>
+    <div class="tiny">• 2026.03.10 기준 데이터 · 참고용으로만 사용</div>
     <div class="tiny">• 내 선픽 프리밴과 내 후픽 프리밴은 서로 따로 저장됩니다. 내가 직접 바꾸기 전까지 유지됩니다.</div>
     <div class="tiny">• 공통 프리밴 보너스는 약하게 반영하고, 초반 1~2픽에서 자주 나오는 영웅의 선점 가치를 더 크게 반영했습니다.</div>
-    <div class="tiny">• 잿빛 숲의 이세리아·벨리안의 카운터 관계는 무조건 승리 가정이 아니라 조합보다 약한 중간 강도의 카운터 보정으로 반영했습니다.</div>
-    <div class="tiny">• 지금까지 전적 프롬프트에서 처음 등장한 영웅 이름도 선택 패널에서 고를 수 있게 추가했습니다.</div>
+    <div class="tiny">• 지금까지 전적에서 처음 등장한 영웅 이름도 선택 패널에서 고를 수 있게 추가했습니다.</div>
     <div class="tiny">• 평균 지표 비중은 낮추고, 카운터·연계·조합·내 조합 기준 최종 밴 위협도 비중을 높였습니다.</div>
-    <div class="tiny">• 공식 사이트 얼굴 아이콘 기반 상성은 내가 확실히 아는 경우만 반영했고, 불확실한 얼굴 조합은 임의로 넣지 않았습니다.</div>
     <div class="tiny">• 랭킹 1위 초고스펙 선턴 로그는 범용 승률 데이터처럼 직접 점수화하지 않고, 선턴 템포 archetype 보조 신호로만 약하게 반영합니다.</div>
   </div>
 </div>
@@ -239,10 +237,10 @@
         <div class="panelBody foot">
         <div class="avgNote" id="debugPanel" style="margin-top:10px; white-space:pre-wrap; font-family:Consolas, monospace;"></div>
           <div>• 모델은 <b>최신 레전드 픽률/승률/밴률</b>, <b>최신 메타 상성/시너지</b>, <b>랭킹 1·2·3·4·5·6·10등 실전 로그 + 레전드 평균 유저 검증 로그 + 레전드 평균 유저 검증 로그</b>만을 합쳐 점수화합니다.</div>
-          <div>• 상성/시너지 관계는 <b>네가 텍스트로 직접 준 데이터</b>를 우선 사용합니다.</div>
+          <div>• 상성/시너지 관계는 <b>에픽세븐 전적 사이트의 데이터</b>를 기준으로 사용합니다.</div>
           <div>• 장비/과금 격차는 결과에 영향을 주는 <b>잠재 교란변수</b>로만 메모하고, 직접 점수에는 넣지 않았습니다.</div>
-          <div>• 개인 로그 데이터는 직접 점수에서 제외했고, 네가 직접 제공한 랭커 전적과 최신 메타 정보만 반영했습니다.</div>
-          <div>• 랭킹 1위 초고스펙 선턴 로그는 범용 승률 데이터처럼 직접 점수화하지 않고, 선턴 템포 archetype 보조 신호로만 약하게 반영합니다.</div>
+          <div>• 랭킹 1위~15위의 전적과 최신 메타 정보만 반영했습니다.</div>
+          <div>• 랭킹 1위와 같은 초고스펙 선턴 로그는 범용 승률 데이터처럼 직접 점수화하지 않고, 선턴 템포 archetype 보조 신호로만 약하게 반영합니다.</div>
         </div>
       </div>
     </div>
@@ -342,6 +340,13 @@ const HEROES = [
 ];
 
 const HERO_BY_ID = Object.fromEntries(HEROES.map(h => [h.id, h]));
+const HERO_ID_ALIASES = {SCENT_POLITIS:'GHOST_POLITIS'};
+const ALIAS_HERO_IDS = new Set(Object.keys(HERO_ID_ALIASES));
+function normalizeHeroId(heroId){ return HERO_ID_ALIASES[heroId] || heroId; }
+function normalizeHeroIds(ids){ return [...new Set((ids||[]).map(normalizeHeroId))]; }
+Object.entries(HERO_ID_ALIASES).forEach(([aliasId, canonicalId]) => {
+  if(HERO_BY_ID[canonicalId]) HERO_BY_ID[aliasId] = HERO_BY_ID[canonicalId];
+});
 const FIRST_TURN_OPENERS = ['RINAK','RAN','GIO','ASHEN_ISERIA'];
 
 
@@ -404,6 +409,9 @@ const PACKAGES = [
 
 const COMMON_PREBAN = ['LIBRA_MASTER','HARSETI','YULHA','BELIAN','GIO','MORT','SECRET'];
 const EARLY_PICK_CORE = ['YULHA','LIBRA_MASTER','ORIGIN_RAS','DARK_DIEANE','ARUNKA','RUEL','FRIEREN','RINAK','ISEPUNISH_ARIA'];
+const LOG_FIRST_PICK_WIN_COUNTS = {DARK_DIEANE:3, ARUNKA:2, LIBRA_MASTER:2};
+const LOG_EARLY_PICK_WIN_COUNTS = {DARK_DIEANE:22, FRIEREN:20, ORIGIN_RAS:19, ISEPUNISH_ARIA:16, RUEL:13, ARUNKA:9, RINAK:8, LIBRA_MASTER:7, YULHA:7, BELIAN:4, SECRET:4, MORT:2, DEATH_RAY:1, ASHEN_ISERIA:1, SKY_ILLYNAV:1};
+const LOG_VANGUARD_WIN_COUNTS = {ASHEN_ISERIA:23, GHOST_POLITIS:6, HECKATE:5, RAN:4, RINAK:4, ELENA:2, GIO:2, YULHA:2, ISEPUNISH_ARIA:2, SKY_ILLYNAV:2, AMID:2, SELINE:2, MYTH_ACHATES:1, HARSETI:1, SEOLHWA:1, RUEL:1, ARUNKA:1, WOLF_PEIRA:1, DEVIL_RUA:1, SECRET:1, MOON_LUNA:1, MORT:1, FRIEREN:1};
 const OPEN_COUNTER_RISKS = [
   {target:'RAN', counters:['GIO'], weight:9.5, note:'지오 오픈 시 란 선턴 안정성 급감'},
   {target:'FRIEREN', counters:['GIO'], weight:4.6, note:'지오 오픈 시 프리렌 템포 리스크'},
@@ -484,14 +492,14 @@ function syncMyPrebansForCurrentSide(){
 }
 
 function currentStage(){ return state.stages[state.stageIndex] || null; }
-function actualPrebans(){ return [...new Set([...(state.stageData.myPrebans||[]), ...(state.stageData.oppPrebans||[])])]; }
+function actualPrebans(){ return normalizeHeroIds([...(state.stageData.myPrebans||[]), ...(state.stageData.oppPrebans||[])]); }
 function allPickArrays(){
   const me = [], opp = [];
   state.stages.filter(s=>s.type==='pick').forEach(s => {
-    if(s.side==='me') me.push(...(state.stageData[s.key]||[]));
-    else opp.push(...(state.stageData[s.key]||[]));
+    if(s.side==='me') me.push(...(state.stageData[s.key]||[]).map(normalizeHeroId));
+    else opp.push(...(state.stageData[s.key]||[]).map(normalizeHeroId));
   });
-  return {me, opp};
+  return {me: normalizeHeroIds(me), opp: normalizeHeroIds(opp)};
 }
 
 function getVanguard(side){
@@ -531,13 +539,37 @@ function earlyPickValue(candidate, myPicks, oppPicks){
   if(candidate.pick >= 28) score += 1.4;
   return score;
 }
+function turnScopedLogWinBonus(candidate, myPicks, stage){
+  if(!candidate || !stage || stage.type!=='pick' || stage.side!=='me') return 0;
+  const nextPickNumber = myPicks.length + 1;
+  if(nextPickNumber === 1 || nextPickNumber === 2){
+    const earlyWins = LOG_EARLY_PICK_WIN_COUNTS[candidate.id] || 0;
+    const firstWins = nextPickNumber === 1 ? (LOG_FIRST_PICK_WIN_COUNTS[candidate.id] || 0) : 0;
+    let bonus = 0;
+    if(earlyWins >= 18) bonus += 1.20;
+    else if(earlyWins >= 12) bonus += 0.95;
+    else if(earlyWins >= 7) bonus += 0.65;
+    else if(earlyWins >= 4) bonus += 0.35;
+    if(firstWins >= 3) bonus += 0.45;
+    else if(firstWins >= 2) bonus += 0.30;
+    return Math.min(1.45, bonus);
+  }
+  if(nextPickNumber === 3){
+    const vanguardWins = LOG_VANGUARD_WIN_COUNTS[candidate.id] || 0;
+    if(vanguardWins >= 15) return 1.00;
+    if(vanguardWins >= 6) return 0.70;
+    if(vanguardWins >= 4) return 0.55;
+    if(vanguardWins >= 2) return 0.35;
+  }
+  return 0;
+}
 function allSelected(){
   const {me, opp} = allPickArrays();
   return new Set([...actualPrebans(), ...me, ...opp, ...(state.stageData.myFinalBan||[]), ...(state.stageData.oppFinalBan||[])]);
 }
 
 function canonicalHeroNameById(heroId){
-  return (HERO_BY_ID[heroId]?.name || '').trim();
+  return (HERO_BY_ID[normalizeHeroId(heroId)]?.name || '').trim();
 }
 
 function lockedHeroNames(){
@@ -545,7 +577,7 @@ function lockedHeroNames(){
 }
 
 function isLockedHero(heroId){
-  return allSelected().has(heroId);
+  return allSelected().has(normalizeHeroId(heroId));
 }
 
 function isLockedHeroName(name){
@@ -582,12 +614,13 @@ function resetAll(){
 }
 
 function chooseHero(heroId){
+  heroId = normalizeHeroId(heroId);
   const stage = currentStage();
   if(!stage) return;
   const bucket = state.stageData[stage.key];
   if(!bucket) return;
   if(bucket.length >= stage.count) return;
-  if(bucket.includes(heroId)) return;
+  if(bucket.map(normalizeHeroId).includes(heroId)) return;
   if(!canSelect(heroId, stage)) return;
   bucket.push(heroId);
   if(stage.key==='myPrebans') syncMyPrebansForCurrentSide();
@@ -595,8 +628,9 @@ function chooseHero(heroId){
 }
 
 function removeFromStage(key, heroId){
+  heroId = normalizeHeroId(heroId);
   const arr = state.stageData[key] || [];
-  state.stageData[key] = arr.filter(x => x !== heroId);
+  state.stageData[key] = arr.filter(x => normalizeHeroId(x) !== heroId);
   if(key==='myPrebans') syncMyPrebansForCurrentSide();
   const idx = state.stages.findIndex(s => s.key === key);
   if(idx >= 0 && idx < state.stageIndex) state.stageIndex = idx;
@@ -604,14 +638,15 @@ function removeFromStage(key, heroId){
 }
 
 function canSelect(heroId, stage){
+  heroId = normalizeHeroId(heroId);
   const picks = allPickArrays();
   const pre = actualPrebans();
   const hero = HERO_BY_ID[heroId];
   if(!hero) return false;
   if(stage.type==='preban'){
-    const mine = state.stageData.myPrebans||[];
-    const opp = state.stageData.oppPrebans||[];
-    const bucket = state.stageData[stage.key] || [];
+    const mine = (state.stageData.myPrebans||[]).map(normalizeHeroId);
+    const opp = (state.stageData.oppPrebans||[]).map(normalizeHeroId);
+    const bucket = (state.stageData[stage.key] || []).map(normalizeHeroId);
     if(bucket.length >= stage.count) return false;
     return !mine.includes(heroId) && !opp.includes(heroId);
   }
@@ -823,6 +858,7 @@ function turnOneReplicabilityPenalty(candidate, myPicks, oppPicks, stage){
 }
 
 function scoreHero(candidateId, myPicks, oppPicks, stage){
+  candidateId = normalizeHeroId(candidateId);
   const c = HERO_BY_ID[candidateId];
   if(!c) return null;
   if(isLockedHero(candidateId)) return null;
@@ -845,17 +881,18 @@ function scoreHero(candidateId, myPicks, oppPicks, stage){
   const urgency = c.ban * 0.05 + commonThreatWeight(c);
   const exposure = -finalBanExposurePenalty(c, myPicks);
   const relief = decoyRelief(c);
-  const vanguard = (myPicks.length===2 ? vanguardProtectedValue(c, myPicks) : 0);
+  const vanguard = (myPicks.length===2 ? vanguardProtectedValue(c, myPicks) * 0.8 : 0);
   const archetype = turnOneArchetypeBonus(c, myPicks, oppPicks, stage);
   const reproducibility = -turnOneReplicabilityPenalty(c, myPicks, oppPicks, stage);
   const openCounter = -projectedOpenCounterPenalty(c, myPicks, oppPicks, stage);
   const firstTurnPenalty = vanguardFirstTurnPenalty(c, myPicks, oppPicks);
+  const logTurnBonus = turnScopedLogWinBonus(c, myPicks, stage);
 
-  const total = meta + synergy + pack + completion + counters + early + urgency + exposure + relief + vanguard + archetype + reproducibility + openCounter + firstTurnPenalty;
+  const total = meta + synergy + pack + completion + counters + early + urgency + exposure + relief + vanguard + archetype + reproducibility + openCounter + firstTurnPenalty + logTurnBonus;
   return {
     hero:c,
     total,
-    breakdown:{meta, synergy, counters, pack, completion, early, urgency, exposure, relief, vanguard, archetype, reproducibility, openCounter, firstTurnPenalty},
+    breakdown:{meta, synergy, counters, pack, completion, early, urgency, exposure, relief, vanguard, archetype, reproducibility, openCounter, firstTurnPenalty, logTurnBonus},
     reasons:buildReasons(c, myPicks, oppPicks, early, vanguard, archetype, reproducibility, openCounter)
   };
 }
@@ -1076,7 +1113,7 @@ function renderSteps(){
 function renderHeroGrid(){
   const stage = currentStage();
   const keyword = (state.search||'').trim();
-  const list = HEROES.filter(h => h.name.includes(keyword));
+  const list = HEROES.filter(h => !ALIAS_HERO_IDS.has(h.id) && h.name.includes(keyword));
   const html = list.map(h => {
     const disabled = !stage || !canSelect(h.id, stage);
     const preflag = actualPrebans().includes(h.id) ? '· 프리밴 적용' : '';
@@ -1200,6 +1237,7 @@ render();
 </script>
 </body>
 </html>
+
 
 
 
