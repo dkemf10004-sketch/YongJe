@@ -31,6 +31,11 @@
     .warn{color:#fde68a;border-color:#78350f;background:#2f1b0a}
     .stageBox{display:grid;gap:8px}
     .stageMain{font-size:18px;font-weight:800}
+    .stagePanel.compact .panelBody{padding-top:10px}
+    .stagePanel.compact .stageBox{gap:6px}
+    .stagePanel.compact .stageMain{font-size:16px}
+    .stagePanel.compact .stageDetailSection{display:none}
+    .stagePanel.compact #stageHelp{font-size:12px;line-height:1.35}
     .muted{color:var(--muted)}
     .small{font-size:12px}
     .heroGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;max-height:62vh;overflow:auto;padding-right:2px}
@@ -85,8 +90,9 @@
     .foot{font-size:11px;color:#94a3b8;line-height:1.55}
 
     /* v5.2 vertical board overrides */
-    .grid{grid-template-columns:320px 1fr 360px;align-items:start}
+    .grid{grid-template-columns:392px 1fr 340px;align-items:start}
     .boardVertical{display:grid;grid-template-columns:220px 1fr 220px;gap:14px;align-items:start}
+    .draftBoardPanel,.centerMatchPanel{width:95%;justify-self:center}
     .teamLane{display:grid;gap:8px}
     .teamHeader{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
     .teamSlots{display:grid;grid-template-columns:1fr;gap:8px}
@@ -121,6 +127,7 @@
     .synergyChipMeta{font-size:10px;color:#94a3b8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:3px}
     @media (max-width: 1180px){
       .grid{grid-template-columns:1fr}
+      .draftBoardPanel,.centerMatchPanel{width:100%}
       .heroGrid{max-height:none}
     }
   </style>
@@ -156,15 +163,15 @@
 
   <div class="grid">
     <div class="leftcol">
-      <div class="panel">
-        <div class="panelHeader"><h3>현재 자동 단계</h3><span id="turnSidePill" class="pill"></span></div>
+      <div class="panel stagePanel" id="stagePanel">
+        <div class="panelHeader"><h3>현재 자동 단계</h3><div style="display:flex;align-items:center;gap:8px;"><button id="stagePanelToggleBtn" class="btn" style="padding:4px 8px;font-size:11px;">간략화</button><span id="turnSidePill" class="pill"></span></div></div>
         <div class="panelBody stageBox">
           <div class="stageMain" id="stageLabel">내 프리밴 2</div>
           <div class="muted" id="stageHelp"></div>
-          <div class="legend">
+          <div class="legend stageDetailSection">
             <span class="pill">현재 단계 클릭만 하면 자동으로 다음 단계로 이동</span>
           </div>
-          <div class="compactPreban">
+          <div class="compactPreban stageDetailSection">
             <div class="compactPreRow">
               <div class="tiny">내 프리밴 2</div>
               <div id="myPrebanSlots"></div>
@@ -183,13 +190,17 @@
       </div>
 
       <div class="panel">
-        <div class="panelHeader"><h3>진행 단계</h3><span class="pill">자동 순서</span></div>
-        <div class="panelBody steps" id="stepsPanel"></div>
+        <div class="panelHeader"><h3>내 다음 선택 [종합 추천]</h3><span id="recModePill" class="pill"></span></div>
+        <div class="panelBody">
+          <div class="list" id="recommendations"></div>
+        </div>
       </div>
+
+
     </div>
 
     <div class="centercol centerStack">
-      <div class="panel">
+      <div class="panel draftBoardPanel">
         <div class="panelHeader"><h3>드래프트 보드</h3><span id="draftStatus" class="pill"></span></div>
         <div class="panelBody boardVertical">
           <div class="teamLane">
@@ -215,20 +226,13 @@
         </div>
       </div>
 
-      <div class="panel">
+      <div class="panel centerMatchPanel">
         <div class="panelHeader"><h3>현재 픽 기준 [연계 추천]</h3><span class="pill">가로 압축 표시</span></div>
         <div class="panelBody synergyRows" id="synergyPanels"></div>
       </div>
 
-      <div class="panel">
-        <div class="panelHeader"><h3>내 다음 선택 [종합 추천]</h3><span id="recModePill" class="pill"></span></div>
-        <div class="panelBody">
-          <div class="list" id="recommendations"></div>
-        </div>
-      </div>
 
-
-      <div class="panel">
+      <div class="panel centerMatchPanel">
         <div class="panelHeader"><h3>2픽 구간 [페어 추천]</h3><span class="pill">내 다음 단계가 2픽이면 활성화</span></div>
         <div class="panelBody pairList" id="pairRecommendations"></div>
       </div>
@@ -243,6 +247,11 @@
           <div style="height:10px"></div>
           <div class="heroGrid" id="heroGrid"></div>
         </div>
+      </div>
+
+      <div class="panel">
+        <div class="panelHeader"><h3>진행 단계</h3><span class="pill">자동 순서</span></div>
+        <div class="panelBody steps" id="stepsPanel"></div>
       </div>
 
 
@@ -584,6 +593,8 @@ const myPrebanStore = {
   second: []
 };
 let oppPrebanSkipEnabled = false;
+let stagePanelDisplayMode = 'auto';
+let lastStagePanelStageType = null;
 
 function initialState(side='first'){
   const stages = buildStages(side);
@@ -601,6 +612,12 @@ function syncMyPrebansForCurrentSide(){
 }
 
 function currentStage(){ return state.stages[state.stageIndex] || null; }
+function stagePanelCompactMode(stage){
+  const autoCompact = !stage || stage.type !== 'preban';
+  if(stagePanelDisplayMode === 'compact') return true;
+  if(stagePanelDisplayMode === 'expanded') return false;
+  return autoCompact;
+}
 function filledEntries(arr){ return (arr||[]).filter(x => x !== null && x !== undefined); }
 function actualPrebans(){ return normalizeHeroIds([...(state.stageData.myPrebans||[]), ...(state.stageData.oppPrebans||[])]); }
 function allPickArrays(){
@@ -1051,6 +1068,14 @@ function heroReliabilityMultiplier(hero){
   return 1;
 }
 
+// 픽률이 낮은 영웅은 범용 밸류 캐릭터로 과대평가되지 않도록 meta를 감쇠
+function pickValueGate(pick){
+  const normalizedPick = Math.max(0, Number(pick || 0));
+  if(normalizedPick >= 22) return 1;
+  const ramp = Math.min(1, Math.max(0, (normalizedPick - 2) / 20));
+  return 0.58 + 0.42 * Math.pow(ramp, 0.82);
+}
+
 function scoreHero(candidateId, myPicks, oppPicks, stage){
   candidateId = normalizeHeroId(candidateId);
   const c = HERO_BY_ID[candidateId];
@@ -1067,13 +1092,14 @@ function scoreHero(candidateId, myPicks, oppPicks, stage){
   const repeatAxisPenalty = Math.min(4.2, Math.max(0, synergyLinks - 1) * 1.1 + Math.max(0, packageLinks - 1) * 0.9 + Math.max(0, openedPackageCount - 1) * 0.7);
 
   const metaRaw = c.win*0.18 + c.pick*0.16 + c.ban*0.03;
+  const metaGate = pickValueGate(c.pick);
   const synergyRaw = synergyBonus(c, myPicks);
   const packRaw = packageBonus(c.id, myPicks, oppPicks);
   const completionRaw = completionPressureBonus(c, myPicks);
 
   const synergyDiminish = 1 / (1 + Math.max(0, synergyLinks - 1) * 0.4);
   const packDiminish = 1 / (1 + Math.max(0, packageLinks - 1) * 0.35 + Math.max(0, openedPackageCount - 1) * 0.25);
-  const meta = metaRaw * 0.605 * reliability;
+  const meta = metaRaw * 0.605 * reliability * metaGate;
   const synergy = synergyRaw * 0.20 * synergyDiminish;
   const pack = packRaw * 0.24 * packDiminish;
   const completion = Math.min(5.2, completionRaw * 0.58) * (1 / (1 + Math.max(0, packageLinks - 1) * 0.3));
@@ -1301,18 +1327,36 @@ function slotHTML(heroId, ownerKey, cls='', isVanguard=false){
 
 function renderStageInfo(){
   const stage = currentStage();
-  document.getElementById('turnSidePill').textContent = stage ? (stage.side==='me' ? '내 입력 단계' : '상대 입력 단계') : '완료';
-  document.getElementById('turnSidePill').className = 'pill ' + (stage && stage.side==='me' ? 'good' : 'danger');
+  const stagePanel = document.getElementById('stagePanel');
+  const turnSidePill = document.getElementById('turnSidePill');
+  const stagePanelToggleBtn = document.getElementById('stagePanelToggleBtn');
+  const stageType = stage ? stage.type : null;
+  if(stageType !== lastStagePanelStageType){
+    if(stageType === 'preban' || lastStagePanelStageType === 'preban') stagePanelDisplayMode = 'auto';
+    lastStagePanelStageType = stageType;
+  }
+  const compact = stagePanelCompactMode(stage);
+  if(stagePanel) stagePanel.classList.toggle('compact', compact);
+  if(stagePanelToggleBtn) stagePanelToggleBtn.textContent = compact ? '상세 보기' : '간략화';
+  turnSidePill.textContent = stage ? (stage.side==='me' ? '내 입력 단계' : '상대 입력 단계') : '완료';
+  turnSidePill.className = 'pill ' + (stage && stage.side==='me' ? 'good' : 'danger');
   document.getElementById('stageLabel').textContent = stage ? stage.label : '드래프트 완료';
   let help = '영웅을 클릭하면 현재 단계 슬롯에 자동 입력됩니다.';
   if(stage){
     if(stage.type==='preban') help = '프리밴은 내 2명, 상대 2명. 중복되면 실제 제외 수가 줄어듭니다.';
-    if(stage.type==='pick') help = stage.side==='me' ? '현재는 내 턴입니다. 클릭 즉시 자동 입력되고 단계가 넘어갑니다. 각 팀의 3번째 영웅은 밴가드로 최종 밴이 불가능합니다.' : '현재는 상대 입력 단계입니다. 상대가 고른 영웅을 대신 입력하세요. 각 팀의 3번째 영웅은 밴가드로 최종 밴이 불가능합니다.';
-    if(stage.type==='finalBan') help = stage.side==='me' ? '상대 5인 중 최종 밴 1명을 고르세요. 단, 상대 밴가드는 선택할 수 없습니다.' : '내 5인 중 상대가 밴할 1명을 입력하세요. 단, 내 밴가드는 선택할 수 없습니다.';
+    if(stage.type==='pick') help = stage.side==='me' ? '현재는 내 턴입니다. 영웅을 클릭해 다음 픽을 진행하세요.' : '현재는 상대 입력 단계입니다. 상대가 고른 영웅을 입력하세요.';
+    if(stage.type==='finalBan') help = stage.side==='me' ? '상대 최종 밴 대상을 1명 고르세요.' : '상대가 밴할 내 최종 밴 대상을 입력하세요.';
+  } else {
+    help = '드래프트가 완료되었습니다.';
   }
   document.getElementById('stageHelp').textContent = help;
   const boardPill = document.getElementById('boardTurnPill');
   if(boardPill){ boardPill.textContent = stage ? stage.label : '드래프트 완료'; boardPill.className = 'pill ' + (stage && stage.side==='me' ? 'good' : 'danger'); }
+}
+
+function toggleStagePanelMode(){
+  stagePanelDisplayMode = stagePanelCompactMode(currentStage()) ? 'expanded' : 'compact';
+  render();
 }
 
 function renderPrebans(){
@@ -1555,12 +1599,23 @@ if(metaModelToggleBtn && metaModelPanelBody){
 document.getElementById('nextRoundBtn').onclick = nextRound;
 document.getElementById('oppPrebanSkipBtn').onclick = toggleOppPrebanSkip;
 document.getElementById('resetBtn').onclick = resetAll;
+document.getElementById('stagePanelToggleBtn').onclick = toggleStagePanelMode;
 document.getElementById('searchBox').addEventListener('input', e => { state.search = e.target.value; renderHeroGrid(); });
 
 render();
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 
