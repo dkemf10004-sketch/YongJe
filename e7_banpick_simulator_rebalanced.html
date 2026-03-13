@@ -277,21 +277,21 @@ const HEROES = [
   {id:'ARUNKA', name:'조장 아룬카', pick:30.05, win:58.19, ban:14.27, hard:['FRIEREN','MAID_CHLOE','LIBRA_MASTER'], syn:['RINAK','BELIAN','SELINE','ORIGIN_RAS','NAVY_LANDY']},
   {id:'RUEL', name:'빛의 루엘', pick:24.04, win:62.67, ban:18.66, hard:['ORIGIN_RAS','ARUNKA','YULHA'], syn:['YULHA','ARUNKA','ORIGIN_RAS']},
   {id:'FRIEREN', name:'프리렌', pick:22.69, win:62.80, ban:16.21, hard:['RINAK','MAID_CHLOE','ARUNKA'], syn:['AMID','MAID_CHLOE','BELIAN','ASHEN_ISERIA','RAN','MOON_LUNA']},
-  {id:'DARK_DIEANE', name:'어둠의 목자 디에네', pick:22.16, win:63.12, ban:16.85, hard:['ORIGIN_RAS','ARUNKA','RINAK'], syn:['ORIGIN_RAS','RUEL','GHOST_POLITIS']},
-  {id:'RINAK', name:'리나크', pick:21.13, win:59.07, ban:15.24, hard:['ORIGIN_RAS','ARUNKA','YULHA'], syn:['ORIGIN_RAS','ARUNKA','YULHA']},
+  {id:'DARK_DIEANE', name:'어둠의 목자 디에네', pick:22.16, win:63.12, ban:16.85, hard:['ORIGIN_RAS','ARUNKA','RINAK'], syn:['ORIGIN_RAS','RUEL','SCENT_POLITIS']},
+  {id:'RINAK', name:'리나크', pick:21.13, win:59.07, ban:15.24, hard:['ORIGIN_RAS','ARUNKA','YULHA'], syn:['ORIGIN_RAS','ARUNKA','YULHA'], tags:['first_turn']},
   {id:'BELIAN', name:'벨리안', pick:18.52, win:60.59, ban:11.69, hard:['ORIGIN_RAS','ARUNKA','RINAK'], syn:['YULHA','ARUNKA','ORIGIN_RAS']},
   {id:'SKY_ILLYNAV', name:'창공의 일리나브', pick:19.44, win:59.03, ban:11.81, hard:['ORIGIN_RAS','ARUNKA','RINAK'], syn:['YULHA','ARUNKA','ORIGIN_RAS']},
   {id:'SECRET', name:'쾌속의 기수 세크레트', pick:17.65, win:60.91, ban:14.82, hard:['ARUNKA','ORIGIN_RAS','YULHA'], syn:['ORIGIN_RAS','YULHA','GIO']},
   {id:'ISEPUNISH_ARIA', name:'보검의 군주 이세리아', pick:15.51, win:59.09, ban:17.35, hard:['MORT','YULHA','ARUNKA'], syn:['RUEL','ORIGIN_RAS','YULHA']},
   {id:'LIBRA_MASTER', name:'천칭의 주인', pick:15.62, win:67.26, ban:21.03, hard:['ARUNKA','DARK_DIEANE','YULHA'], syn:['FRIEREN','ASHEN_ISERIA','ORIGIN_RAS']},
   {id:'GHOST_POLITIS', name:'바다의 유령 폴리티스', pick:11.54, win:61.95, ban:9.59, hard:['ARUNKA','ORIGIN_RAS','RINAK'], syn:['ORIGIN_RAS','FRIEREN','ARUNKA']},
-  {id:'GIO', name:'지오', pick:11.49, win:54.18, ban:13.90, hard:['RINAK','FRIEREN','AMID','ARUNKA'], syn:['FLAN','FRIEREN','SUCCESSOR_TAEYU','SECRET']},
+  {id:'GIO', name:'지오', pick:11.49, win:54.18, ban:13.90, hard:['RINAK','FRIEREN','AMID','ARUNKA'], syn:['FLAN','FRIEREN','SUCCESSOR_TAEYU','SECRET'], tags:['first_turn']},
   {id:'MAID_CHLOE', name:'메이드 클로에', pick:10.51, win:63.79, ban:17.08, hard:['FRIEREN','ARUNKA','RINAK'], syn:['FRIEREN','RINAK','SKY_ILLYNAV']},
   {id:'SELINE', name:'영안의 셀린', pick:9.65, win:59.36, ban:16.28, hard:['FRIEREN','MAID_CHLOE','SEOLHWA'], syn:['ARUNKA','AMID','RINAK','DARK_DIEANE']},
   {id:'SEOLHWA', name:'설화', pick:9.12, win:62.67, ban:32.80, hard:['LIONHEART_CERMIA','FRIEREN','RINAK'], syn:['MAID_CHLOE','SKY_ILLYNAV','ARUNKA','ISEPUNISH_ARIA']},
-  {id:'ASHEN_ISERIA', name:'잿빛 숲의 이세리아', pick:9.92, win:62.69, ban:9.04, hard:['MAID_CHLOE','ARUNKA','RINAK'], syn:['FRIEREN','RINAK','FLAN','LIBRA_MASTER']},
+  {id:'ASHEN_ISERIA', name:'잿빛 숲의 이세리아', pick:9.92, win:62.69, ban:9.04, hard:['MAID_CHLOE','ARUNKA','RINAK'], syn:['FRIEREN','RINAK','FLAN','LIBRA_MASTER'], tags:['first_turn_vanguard_only']},
   {id:'MOON_LUNA', name:'신월의 루나', pick:8.85, win:60.88, ban:37.92, hard:['ARUNKA','FRIEREN','SEOLHWA'], syn:['FRIEREN','BELIAN','ARUNKA'], note:'프리렌 카운터는 주도권이 전제'},
-  {id:'TENEBRIA', name:'호반의 마녀 테네브리아', pick:7.94, win:60.39, ban:30.02, hard:['ARUNKA','MAID_CHLOE','FRIEREN'], syn:['RINAK','AMID','FRIEREN','NAVY_LANDY']},
+  {id:'TENEBRIA', name:'호반의 마녀 테네브리아', pick:7.94, win:60.39, ban:30.02, hard:['ARUNKA','MAID_CHLOE','FRIEREN'], syn:['RINAK','AMID','FRIEREN','NAVY_LANDY'], tags:['first_turn']},
   {id:'FLAN', name:'한낮의 유영 플랑', pick:6.92, win:60.75, ban:29.72, hard:['RINAK','MAID_CHLOE','SEOLHWA'], syn:['HARSETI','WOLF_PEIRA','ORIGIN_RAS','GIO']},
   {id:'HWAYOUNG', name:'방관자 화영', pick:7.36, win:53.88, ban:36.07, hard:['ORIGIN_RAS','MAID_CHLOE','SEOLHWA'], syn:['FRIEREN','ARUNKA','RINAK']},
   {id:'BIRGITTA', name:'비르기타', pick:7.23, win:58.96, ban:28.15, hard:['RINAK','ARUNKA'], syn:['RUEL','ISEPUNISH_ARIA','YULHA'], note:'기존 HTML/로그 메모'},
@@ -303,17 +303,17 @@ const HEROES = [
   {id:'LRK', name:'라스트 라이더 크라우', pick:4.32, win:62.19, ban:18.05, hard:['ARUNKA','RINAK'], syn:['DARK_DIEANE','YULHA','SKY_ILLYNAV']},
   {id:'LIONHEART_CERMIA', name:'사자왕 체르미아', pick:2.88, win:57.73, ban:40.38, hard:['ORIGIN_RAS','YULHA'], syn:['ARUNKA']},
   {id:'SUCCESSOR_TAEYU', name:'후계자 태유', pick:3.35, win:59.11, ban:46.31, hard:['RINAK','YULHA'], syn:['GIO','SECRET']},
-  {id:'SHADOW_SHU', name:'도시의 그림자 슈', pick:3.34, win:58.71, ban:22.90, hard:['ARUNKA','RINAK'], syn:['FRIEREN','MOON_LUNA']},
+  {id:'SHADOW_SHU', name:'도시의 그림자 슈', pick:3.34, win:58.71, ban:22.90, hard:['ARUNKA','RINAK'], syn:['FRIEREN','MOON_LUNA'], tags:['first_turn']},
   {id:'NCECILIA', name:'나락의 세실리아', pick:3.02, win:61.26, ban:15.84, hard:['ARUNKA'], syn:['LIBRA_MASTER','RUEL']},
   {id:'RANDI', name:'랑디', pick:2.95, win:58.46, ban:27.58, hard:['ORIGIN_RAS','SECRET','TENEBRIA'], syn:['ARUNKA','SKY_ILLYNAV','YULHA']},
   {id:'DEATH_RAY', name:'죽음의 탐구자 레이', pick:3.12, win:57.92, ban:28.54, hard:['ARUNKA','RINAK'], syn:['DARK_DIEANE','WOLF_PEIRA']},
   {id:'STRAZE', name:'스트라제스', pick:2.75, win:64.45, ban:44.98, hard:['ARUNKA','ORIGIN_RAS'], syn:['RAN','DARK_DIEANE']},
-  {id:'WOLF_PEIRA', name:'고독한 늑대 페이라', pick:3.28, win:56.86, ban:5.45, hard:['FRIEREN','RINAK','YULHA'], syn:['FLAN','ARUNKA','DARK_DIEANE']},
-  {id:'LIDICA', name:'리디카', pick:2.71, win:62.79, ban:18.03, hard:['ORIGIN_RAS','RINAK'], syn:['ARUNKA','RUEL']},
+  {id:'WOLF_PEIRA', name:'고독한 늑대 페이라', pick:3.28, win:56.86, ban:5.45, hard:['FRIEREN','RINAK','YULHA'], syn:['FLAN','ARUNKA','DARK_DIEANE'], tags:['first_turn']},
+  {id:'LIDICA', name:'리디카', pick:2.71, win:62.79, ban:18.03, hard:['ORIGIN_RAS','RINAK'], syn:['ARUNKA','RUEL'], tags:['first_turn']},
   {id:'YONG_SHARUN', name:'용왕 샤룬', pick:2.52, win:58.07, ban:31.42, hard:['DARK_DIEANE','RUEL'], syn:['RINAK','SECRET']},
-  {id:'AMID', name:'아미드', pick:2.82, win:59.67, ban:14.67, hard:['RINAK','ARUNKA','MAID_CHLOE'], syn:['FRIEREN','TENEBRIA','ARUNKA','SELINE']},
+  {id:'AMID', name:'아미드', pick:2.82, win:59.67, ban:14.67, hard:['RINAK','ARUNKA','MAID_CHLOE'], syn:['FRIEREN','TENEBRIA','ARUNKA','SELINE'], tags:['first_turn']},
   {id:'ELENA_STAR', name:'별의 신탁 엘레나', pick:0.95, win:57.00, ban:22.00, hard:['ARUNKA','RINAK'], syn:['MOON_LUNA','SEOLHWA'], note:'로그 등장 영웅 · 참조용'},
-  {id:'VERONICA', name:'베로니카', pick:6.97, win:59.34, ban:28.32, hard:[], syn:['AMID','FRIEREN','RUEL']},
+  {id:'VERONICA', name:'베로니카', pick:6.97, win:59.34, ban:28.32, hard:[], syn:['AMID','FRIEREN','RUEL'], tags:['speed_contest']},
   {id:'KISE', name:'키세', pick:0.00, win:0.00, ban:0.00, hard:[], syn:['AMID','FRIEREN','RUEL'], note:'기존 HTML/로그 메모'},
   {id:'ARAM', name:'아람', pick:2.40, win:61.12, ban:15.98, hard:[], syn:['FRIEREN','YULHA']},
   {id:'SILVER_ARAMINTA', name:'백은칼날의 아라민타', pick:1.85, win:62.72, ban:40.61, hard:['SLOW_CORE'], syn:['FRIEREN','ARAM','TENEBRIA']},
@@ -324,22 +324,22 @@ const HEROES = [
   {id:'AMING', name:'홍염의 아밍', pick:2.39, win:60.76, ban:5.24, hard:[], syn:['RUEL','YULHA']},
   {id:'AMIKI', name:'전승의 아미키', pick:0.64, win:59.24, ban:45.67, hard:[], syn:['ORIGIN_RAS','YULHA']},
   {id:'SIDER', name:'시더', pick:2.00, win:54.00, ban:1.00, hard:[], syn:['FRIEREN','ISEPUNISH_ARIA'], tags:['speed_contest'], note:'로그 등장 영웅 · 참조용'},
-  {id:'VILDRED', name:'빌트레드', pick:2.35, win:61.47, ban:37.15, hard:[], syn:['ARUNKA'], tags:['speed_contest'], note:'로그 등장 영웅 · 참조용'},
+  {id:'VILDRED', name:'빌트레드', pick:2.35, win:61.47, ban:37.15, hard:[], syn:['ARUNKA'], tags:['first_turn','speed_contest'], note:'로그 등장 영웅 · 참조용'},
   {id:'FLOWER_LIDICA', name:'화원의 리디카', pick:0.70, win:52.79, ban:35.56, hard:['SECRET'], syn:['YULHA','HARSETI'], note:'로그 등장 영웅 · 참조용'},
   {id:'SILVER_CHRISTY', name:'은결의 크리스티', pick:2.07, win:55.48, ban:31.10, hard:[], syn:['ARAM','SELINE'], note:'로그 등장 영웅 · 참조용'},
-  {id:'MOON_RABBIT_DOMINIEL', name:'달토끼 도미니엘', pick:1.58, win:60.28, ban:29.20, hard:[], syn:['YULHA','BELIAN'], note:'로그 등장 영웅 · 참조용'},
+  {id:'MOON_RABBIT_DOMINIEL', name:'달토끼 도미니엘', pick:1.58, win:60.28, ban:29.20, hard:[], syn:['YULHA','BELIAN'], tags:['first_turn'], note:'로그 등장 영웅 · 참조용'},
   {id:'DESIGNER_LILIBET', name:'디자이너 릴리벳', pick:0.92, win:56.16, ban:38.37, hard:['DEBUFF_CORE'], syn:['YULHA'], note:'로그 등장 영웅 · 참조용'},
-  {id:'COMMANDER_PAVEL', name:'사령관 파벨', pick:2.25, win:64.61, ban:32.95, hard:['SLOW_CORE'], syn:['STRAZE','ASHEN_ISERIA'], note:'로그 등장 영웅 · 참조용'},
+  {id:'COMMANDER_PAVEL', name:'사령관 파벨', pick:2.25, win:64.61, ban:32.95, hard:['SLOW_CORE'], syn:['STRAZE','ASHEN_ISERIA'], tags:['first_turn_followup'], note:'로그 등장 영웅 · 참조용'},
   {id:'REQUIEM_ROANA', name:'진혼의 로앤나', pick:0.84, win:54.07, ban:40.35, hard:[], syn:['YULHA','GIO'], note:'로그 등장 영웅 · 참조용'},
   {id:'ELENA', name:'엘레나', pick:2.04, win:57.49, ban:24.22, hard:['AOE_CORE'], syn:['DARK_DIEANE','RUEL'], note:'로그 등장 영웅 · 참조용'},
   {id:'SNOW_SOLITARIA', name:'설국의 솔리타리아', pick:1.78, win:61.56, ban:53.34, hard:['TURN_ONE_CORE'], syn:['SEOLHWA','ASHEN_ISERIA'], note:'로그 등장 영웅 · 참조용'},
-  {id:'BLOOD_KARIN', name:'혈검 카린', pick:0.58, win:59.53, ban:28.54, hard:['FRONTLINE_CORE'], syn:['AMID'], note:'로그 등장 영웅 · 참조용'},
+  {id:'BLOOD_KARIN', name:'혈검 카린', pick:1.90, win:54.20, ban:0.90, hard:['FRONTLINE_CORE'], syn:['AMID'], note:'로그 등장 영웅 · 참조용'},
   {id:'SUMMER_CHARLOTTE', name:'여름의 방학 샬롯', pick:2.20, win:54.80, ban:1.20, hard:['GREEN_CORE'], syn:['SUCCESSOR_TAEYU','GIO'], note:'로그 등장 영웅 · 참조용'},
-  {id:'SAGE_BAAL', name:'현자 바알&세잔', pick:0.62, win:60.43, ban:38.34, hard:['TURN_ONE_CORE'], syn:['ELENA'], note:'로그 등장 영웅 · 참조용'},
+  {id:'SAGE_BAAL', name:'현자 바알&세잔', pick:2.00, win:54.60, ban:1.10, hard:['TURN_ONE_CORE'], syn:['ELENA'], note:'로그 등장 영웅 · 참조용'},
   {id:'SARMIA', name:'사르미아', pick:1.10, win:59.12, ban:48.42, hard:['BRUISER_CORE'], syn:['DARK_DIEANE','RUEL'], note:'로그 등장 영웅 · 참조용'},
   {id:'SCENT_POLITIS', name:'바다의 유령 폴리티스', pick:11.54, win:61.95, ban:9.59, hard:['ARUNKA','ORIGIN_RAS','RINAK'], syn:['ORIGIN_RAS','FRIEREN','ARUNKA'], note:'폴리티스 계열 로그 표기'},
   {id:'CELINE', name:'셀린', pick:1.26, win:55.47, ban:41.37, hard:['FRIEREN'], syn:['ARUNKA'], note:'로그 등장 영웅 · 참조용'},
-  {id:'RAN', name:'란', pick:2.85, win:60.02, ban:3.59, hard:['LIBRA_MASTER','ORIGIN_RAS','RINAK'], syn:['DARK_DIEANE','RUEL','FRIEREN']},
+  {id:'RAN', name:'란', pick:2.85, win:60.02, ban:3.59, hard:['LIBRA_MASTER','ORIGIN_RAS','RINAK'], syn:['DARK_DIEANE','RUEL','FRIEREN'], tags:['first_turn']},
   {id:'AKI', name:'아키', pick:1.01, win:60.00, ban:39.63, hard:['ARUNKA','YULHA'], syn:['ORIGIN_RAS','DARK_DIEANE'], note:'기존 HTML/로그 메모'},
   {id:'MYTH_ACHATES', name:'미지의 가능성 아카테스', pick:2.38, win:57.94, ban:25.25, hard:['MOON_LUNA','GIO','FRIEREN'], syn:['RINAK','FRIEREN','SELINE']},
   {id:'BASE_POLITIS', name:'폴리티스', pick:1.06, win:61.82, ban:32.65, hard:['ARUNKA','ORIGIN_RAS'], syn:['YULHA','RUEL','FLOWER_LIDICA']},
@@ -347,21 +347,22 @@ const HEROES = [
   {id:'DRIFTER_LUDWIG', name:'영겁의 표류자 루트비히', pick:1.07, win:56.82, ban:28.71, hard:['ARUNKA'], syn:['RUEL','YULHA']},
   {id:'HWARAN_RAVI', name:'화란의 라비', pick:1.07, win:54.61, ban:21.77, hard:['ORIGIN_RAS','SECRET'], syn:['MOON_RABBIT_DOMINIEL','PUNISH_PUNISH_ARIA']},
   {id:'TWISTED_KAYRON', name:'뒤틀린 망령 카일론', pick:0.87, win:60.44, ban:32.39, hard:['FRIEREN'], syn:['ARUNKA','SECRET'], note:'로그 등장 영웅 · 참조용'},
-  {id:'WESTWIND_SHURI', name:'서풍의 처형자 슈리', pick:0.84, win:56.95, ban:31.70, hard:['YULHA'], syn:['ARAM','VILDRED']},
+  {id:'WESTWIND_SHURI', name:'서풍의 처형자 슈리', pick:0.84, win:56.95, ban:31.70, hard:['YULHA'], syn:['ARAM','VILDRED'], tags:['speed_contest']},
   {id:'SHURI', name:'슈리', pick:0.83, win:62.48, ban:42.68, hard:['BELIAN'], syn:['VILDRED','SECRET'], tags:['speed_contest'], note:'기존 HTML/로그 메모'},
+  {id:'WATCHER_SHURI', name:'주시자 슈리', pick:0.00, win:0.00, ban:0.00, hard:[], syn:[], tags:['speed_contest'], note:'로그 기반 참조용 · 추후 데이터 보강 필요'},
   {id:'MEDIATOR_KAWERIK', name:'조율자 카웨릭', pick:0.73, win:54.01, ban:24.18, hard:['CONTROL_CORE'], syn:['LRK','SECRET'], note:'기존 HTML/로그 메모'},
   {id:'DARKWALL_CHARLOTTE', name:'어린 여왕 샬롯', pick:0.71, win:60.72, ban:20.65, hard:['ARUNKA'], syn:['RUEL','YULHA'], note:'기존 HTML/로그 메모'},
   {id:'MILIM', name:'밀림', pick:0.95, win:57.00, ban:22.00, hard:['FRIEREN'], syn:['ARUNKA','SECRET'], note:'로그 등장 영웅 · 참조용'},
-  {id:'NAKWOL', name:'낙월', pick:0.95, win:57.00, ban:22.00, hard:['YULHA'], syn:['ARUNKA','RINAK'], note:'로그 등장 영웅 · 참조용'},
+  {id:'NAKWOL', name:'낙월', pick:0.95, win:57.00, ban:22.00, hard:['YULHA'], syn:['ARUNKA','RINAK'], tags:['first_turn'], note:'로그 등장 영웅 · 참조용'},
   {id:'BENIMARU', name:'베니마루', pick:0.95, win:57.00, ban:22.00, hard:['SECRET'], syn:['ARUNKA','ISEPUNISH_ARIA'], note:'로그 등장 영웅 · 참조용'},
   {id:'STAR_ELENA', name:'별의 신탁 엘레나', pick:0.95, win:57.00, ban:22.00, hard:['AOE_CORE'], syn:['PUNISH_PUNISH_ARIA','YULHA'], note:'로그 등장 영웅 · 참조용'},
   {id:'HUMIR', name:'후미르', pick:0.95, win:57.00, ban:22.00, hard:['ARUNKA'], syn:['MOON_LUNA','RUEL'], note:'로그 등장 영웅 · 참조용'},
   {id:'PERN', name:'페른', pick:0.95, win:57.00, ban:22.00, hard:['ARUNKA'], syn:['FRIEREN','YULHA'], note:'로그 등장 영웅 · 참조용'},
   {id:'KRAU', name:'크라우', pick:0.95, win:57.00, ban:22.00, hard:['ARUNKA'], syn:['RUEL','DARK_DIEANE'], note:'로그 등장 영웅 · 참조용'},
-  {id:'WANDERER_SILK', name:'방랑자 실크', pick:0.63, win:59.26, ban:46.32, hard:['FRIEREN'], syn:['VILDRED','LIDICA'], tags:['speed_contest'], note:'로그 등장 영웅 · 참조용'},
+  {id:'WANDERER_SILK', name:'방랑자 실크', pick:0.95, win:57.00, ban:22.00, hard:['FRIEREN'], syn:['VILDRED','LIDICA'], tags:['speed_contest'], note:'로그 등장 영웅 · 참조용'},
   {id:'SURIN', name:'수린', pick:0.00, win:0.00, ban:0.00, hard:[], syn:[], tags:['speed_contest'], note:'속기각 태그 반영 · 추후 데이터 보강 필요'},
   {id:'NAVY_LANDY', name:'해군대령 랑디', pick:2.95, win:58.46, ban:27.58, hard:['ORIGIN_RAS','SECRET','TENEBRIA'], syn:['ARUNKA','SKY_ILLYNAV','YULHA'], note:'이름만 반영 · 수치 미입력'},
-  {id:'DESERT_JEWEL_BASAR', name:'사막의 보석 바사르', pick:0.00, win:0.00, ban:0.00, hard:[], syn:[], note:'이름만 반영 · 수치 미입력'},
+  {id:'DESERT_JEWEL_BASAR', name:'사막의 보석 바사르', pick:0.00, win:0.00, ban:0.00, hard:[], syn:[], tags:['first_turn'], note:'이름만 반영 · 수치 미입력'},
   {id:'AUXILIARY_LOTS', name:'보조형 랏츠', pick:0.00, win:0.00, ban:0.00, hard:[], syn:[], note:'이름만 반영 · 수치 미입력'},
   {id:'PIRATE_CAPTAIN_FLAN', name:'해적 선장 플랑', pick:0.00, win:0.00, ban:0.00, hard:[], syn:[], note:'이름만 반영 · 수치 미입력'},
   {id:'JACK_O', name:'잭 오', pick:0.00, win:0.00, ban:0.00, hard:[], syn:[], note:'이름만 반영 · 수치 미입력'},
@@ -785,7 +786,9 @@ function nextRound(){
 }
 
 function resetAll(){
-  syncMyPrebansForCurrentSide();
+  myPrebanStore.first = [];
+  myPrebanStore.second = [];
+  oppPrebanSkipEnabled = false;
   state = initialState(state.side);
   while(state.stageIndex < state.stages.length && stageFilled(state.stages[state.stageIndex])) state.stageIndex++;
   render();
@@ -978,11 +981,25 @@ function openCounterResilience(hero){
   const normalized = Math.min(1, metaPower / 18.5);
   return 1 - Math.pow(normalized, 0.92) * 0.32;
 }
+function harsetiPickedOpenCounterPenalty(candidate, myPicks, oppPicks, stage){
+  if(!candidate || !stage || stage.type!=='pick' || stage.side!=='me') return 0;
+  if(!hasOpponentHarsetiPick(oppPicks)) return 0;
+  if(!isHarsetiRiskHero(candidate, myPicks, oppPicks, stage)) return 0;
+  const metaRaw = Math.max(0, candidate.win * 0.18 + candidate.pick * 0.16 + candidate.ban * 0.03);
+  const normalized = Math.min(1, metaRaw / 15.5);
+  const isFirstTurn = hasHarsetiRiskTag(candidate, 'first_turn', myPicks, oppPicks, stage);
+  const isSpeedContest = hasHarsetiRiskTag(candidate, 'speed_contest', myPicks, oppPicks, stage);
+  let penalty = 5 - normalized * 3;
+  if(isFirstTurn && isSpeedContest) penalty += 0.2;
+  if(HIGHROLLER_TURN_ONE.openers.includes(candidate.id)) penalty += 0.2;
+  return Math.max(2.0, Math.min(5.0, penalty));
+}
 
 function projectedOpenCounterPenalty(candidate, myPicks, oppPicks, stage){
   if(!candidate || !stage || stage.type!=='pick' || stage.side!=='me') return 0;
+  const harsetiPenalty = harsetiPickedOpenCounterPenalty(candidate, myPicks, oppPicks, stage);
   const futureOpp = futureOpponentPickCount(stage);
-  if(futureOpp <= 0) return 0;
+  if(futureOpp <= 0) return harsetiPenalty;
   const locked = new Set([...actualPrebans(), ...myPicks, ...oppPicks]);
   const openThreats = HEROES.filter(h => h && !locked.has(h.id) && h.id !== candidate.id).map(h => {
     let threat = 0;
@@ -999,12 +1016,14 @@ function projectedOpenCounterPenalty(candidate, myPicks, oppPicks, stage){
     if(HIGHROLLER_TURN_ONE.blockers.includes(h.id) && HIGHROLLER_TURN_ONE.core.includes(candidate.id)) threat += 2.0;
     return {id:h.id, threat};
   }).filter(x => x.threat > 0).sort((a,b)=>b.threat-a.threat);
-  if(!openThreats.length) return 0;
+  if(!openThreats.length) return harsetiPenalty;
   const top = openThreats.slice(0, Math.min(2, futureOpp));
   const pressure = futureOpp >= 3 ? 1.0 : (futureOpp === 2 ? 0.78 : 0.55);
   const rawPenalty = Math.min(12.0, top.reduce((sum, x) => sum + x.threat, 0) * pressure);
   const resilience = openCounterResilience(candidate);
-  return rawPenalty * (0.92 * resilience + 0.08);
+  const projectedPenalty = rawPenalty * (0.92 * resilience + 0.08);
+  if(!harsetiPenalty) return projectedPenalty;
+  return Math.min(6.5, projectedPenalty + harsetiPenalty * (projectedPenalty > 0 ? 0.45 : 1));
 }
 
 function completionPressureBonus(candidate, myPicks){
@@ -1040,14 +1059,45 @@ function hasObservedTempoPair(candidateId, myPicks){
   return HIGHROLLER_TURN_ONE.observedPairs.some(pair => pair.includes(candidateId) && pair.some(id => id !== candidateId && myPicks.includes(id)));
 }
 
-// 하르세티 오픈 시 선턴잡이 가치 보수 보정
-function harsetiOpenFirstTurnPenalty(candidate){
-  if(!candidate || !HIGHROLLER_TURN_ONE.core.includes(candidate.id)) return 0;
+function hasHarsetiRiskTag(candidate, tag, myPicks=[], oppPicks=[], stage=null){
+  if(!candidate) return false;
+  const tags = candidate.tags || [];
+  if(tags.includes(tag)) return true;
+  if(tag !== 'first_turn') return false;
+  const totalPicked = (myPicks||[]).length + (oppPicks||[]).length;
+  if(tags.includes('first_turn_followup')) return totalPicked <= 2 || HIGHROLLER_TURN_ONE.follow.includes(candidate.id) || HIGHROLLER_TURN_ONE.openers.includes(candidate.id);
+  if(tags.includes('first_turn_vanguard_only')) return !!stage && stage.type==='pick' && stage.side==='me' && (myPicks||[]).length===2;
+  return false;
+}
+function isHarsetiRiskHero(candidate, myPicks=[], oppPicks=[], stage=null){
+  return hasHarsetiRiskTag(candidate, 'first_turn', myPicks, oppPicks, stage) || hasHarsetiRiskTag(candidate, 'speed_contest', myPicks, oppPicks, stage);
+}
+function hasOpponentHarsetiPick(oppPicks){
+  return (oppPicks || []).map(normalizeHeroId).includes('HARSETI');
+}
+// 상대 HARSETI 실제 픽 시 선턴잡이/속기각 영웅은 추천 단계에서 반드시 감점
+function harsetiPickedFirstTurnPenalty(candidate, oppPicks, myPicks=[], stage=null){
+  if(!isHarsetiRiskHero(candidate, myPicks, oppPicks, stage)) return 0;
+  if(!hasOpponentHarsetiPick(oppPicks)) return 0;
+  const isFirstTurn = hasHarsetiRiskTag(candidate, 'first_turn', myPicks, oppPicks, stage);
+  const isSpeedContest = hasHarsetiRiskTag(candidate, 'speed_contest', myPicks, oppPicks, stage);
+  let penalty = isFirstTurn ? 2.35 : 2.05;
+  if(isFirstTurn && isSpeedContest) penalty += 0.45;
+  if(HIGHROLLER_TURN_ONE.openers.includes(candidate.id)) penalty += 0.55;
+  else if(HIGHROLLER_TURN_ONE.follow.includes(candidate.id)) penalty += 0.35;
+  return Math.min(3.85, penalty);
+}
+// 하르세티 오픈 패널티는 선턴잡이/속기각에만 약하게 적용
+function harsetiOpenFirstTurnPenalty(candidate, myPicks=[], oppPicks=[], stage=null){
+  if(!isHarsetiRiskHero(candidate, myPicks, oppPicks, stage)) return 0;
   if(actualPrebans().includes('HARSETI')) return 0;
-  let penalty = 8.5;
-  if(HIGHROLLER_TURN_ONE.openers.includes(candidate.id)) penalty += 2.2;
-  if(HIGHROLLER_TURN_ONE.follow.includes(candidate.id)) penalty += 1.4;
-  return penalty;
+  const isFirstTurn = hasHarsetiRiskTag(candidate, 'first_turn', myPicks, oppPicks, stage);
+  const isSpeedContest = hasHarsetiRiskTag(candidate, 'speed_contest', myPicks, oppPicks, stage);
+  let penalty = isFirstTurn ? 1.35 : 1.05;
+  if(isFirstTurn && isSpeedContest) penalty += 0.25;
+  if(HIGHROLLER_TURN_ONE.openers.includes(candidate.id)) penalty += 0.45;
+  else if(HIGHROLLER_TURN_ONE.follow.includes(candidate.id)) penalty += 0.25;
+  return Math.min(2.4, penalty);
 }
 
 function turnOneArchetypeBonus(candidate, myPicks, oppPicks, stage){
@@ -1071,19 +1121,20 @@ function turnOneArchetypeBonus(candidate, myPicks, oppPicks, stage){
 
 function turnOneReplicabilityPenalty(candidate, myPicks, oppPicks, stage){
   if(!candidate || !stage || stage.type!=='pick' || stage.side!=='me') return 0;
-  if(!HIGHROLLER_TURN_ONE.core.includes(candidate.id)) return 0;
+  if(!isHarsetiRiskHero(candidate, myPicks, oppPicks, stage)) return 0;
   const totalPicked = myPicks.length + oppPicks.length;
-  let score = 0;
   const alliedTempo = myPicks.filter(id => HIGHROLLER_TURN_ONE.core.includes(id)).length;
   const alliedOpeners = myPicks.filter(id => HIGHROLLER_TURN_ONE.openers.includes(id)).length;
   const blockers = oppPicks.filter(id => HIGHROLLER_TURN_ONE.blockers.includes(id)).length;
-  if(state.side!=='first') score += 1.8;
-  if(totalPicked <= 2 && HIGHROLLER_TURN_ONE.follow.includes(candidate.id) && alliedOpeners===0) score += 1.6;
-  if(totalPicked >= 2 && alliedTempo===0 && !HIGHROLLER_TURN_ONE.openers.includes(candidate.id)) score += 1.2;
-  if(blockers) score += Math.min(3.6, blockers * 1.2);
-  if(candidate.ban >= 30 && alliedTempo < 2) score += 0.8;
-  score += harsetiOpenFirstTurnPenalty(candidate);
-  return Math.min(14.5, score);
+  const oppHasHarseti = hasOpponentHarsetiPick(oppPicks);
+  let score = harsetiOpenFirstTurnPenalty(candidate, myPicks, oppPicks, stage) + harsetiPickedFirstTurnPenalty(candidate, oppPicks, myPicks, stage);
+  if(!HIGHROLLER_TURN_ONE.core.includes(candidate.id)) return Math.min(oppHasHarseti ? 4.0 : 2.4, score);
+  if(state.side!=='first') score += 0.45;
+  if(totalPicked <= 2 && HIGHROLLER_TURN_ONE.follow.includes(candidate.id) && alliedOpeners===0) score += 0.35;
+  if(totalPicked >= 2 && alliedTempo===0 && !HIGHROLLER_TURN_ONE.openers.includes(candidate.id)) score += 0.25;
+  if(blockers) score += Math.min(0.9, blockers * 0.3);
+  if(candidate.ban >= 30 && alliedTempo < 2) score += 0.2;
+  return Math.min(oppHasHarseti ? 4.0 : 3.0, score);
 }
 
 function heroReliabilityMultiplier(hero){
@@ -1110,6 +1161,15 @@ function metaTierAmplifier(metaRaw){
   const normalized = Math.min(1, Math.max(0, (metaRaw - 6.2) / 7.3));
   return 1 + 0.16 * Math.pow(normalized, 1.08);
 }
+// 초반 1~2픽은 연계보다 범용성을 우선하고, 중반 이후 연계 가치를 높임
+function synergyStageMultiplier(stage, side, myPicks){
+  if(!stage || stage.type!=='pick' || stage.side!=='me') return {synergy:1, pack:1, completion:1};
+  const pickCount = myPicks.length;
+  if(side==='first' && pickCount===0) return {synergy:0.72, pack:0.74, completion:0.70};
+  if(side==='second' && pickCount<=1) return {synergy:0.72, pack:0.74, completion:0.70};
+  return {synergy:1.16, pack:1.14, completion:1.08};
+}
+
 
 function scoreHero(candidateId, myPicks, oppPicks, stage){
   candidateId = normalizeHeroId(candidateId);
@@ -1135,10 +1195,11 @@ function scoreHero(candidateId, myPicks, oppPicks, stage){
 
   const synergyDiminish = 1 / (1 + Math.max(0, synergyLinks - 1) * 0.4);
   const packDiminish = 1 / (1 + Math.max(0, packageLinks - 1) * 0.35 + Math.max(0, openedPackageCount - 1) * 0.25);
+  const synergyStageWeights = synergyStageMultiplier(stage, state.side, myPicks);
   const meta = metaRaw * 0.605 * reliability * metaGate * metaTier;
-  const synergy = synergyRaw * 0.18 * synergyDiminish;
-  const pack = packRaw * 0.21 * packDiminish;
-  const completion = Math.min(5.2, completionRaw * 0.52) * (1 / (1 + Math.max(0, packageLinks - 1) * 0.3));
+  const synergy = synergyRaw * 0.18 * synergyDiminish * synergyStageWeights.synergy;
+  const pack = packRaw * 0.21 * packDiminish * synergyStageWeights.pack;
+  const completion = Math.min(5.2, completionRaw * 0.52 * synergyStageWeights.completion) * (1 / (1 + Math.max(0, packageLinks - 1) * 0.3));
 
   const counters = counterBonus(c, oppPicks) * 0.85;
   const early = earlyPickValue(c, myPicks, oppPicks) * 0.78 * reliability;
@@ -1261,13 +1322,7 @@ function computeSynergyPanels(){
   const pickedNames = new Set([...picks.me, ...picks.opp].map(id => canonicalHeroNameById(id)).filter(Boolean));
   const vanguardId = normalizeHeroId(getVanguard('me'));
   const recentId = myPicks[myPicks.length - 1];
-  const orderedBaseIds = [];
-  if(vanguardId && myPicks.includes(vanguardId)) orderedBaseIds.push(vanguardId);
-  if(recentId && !orderedBaseIds.includes(recentId)) orderedBaseIds.push(recentId);
-  for(let i=myPicks.length-1;i>=0;i--){
-    const id = myPicks[i];
-    if(!orderedBaseIds.includes(id)) orderedBaseIds.push(id);
-  }
+  const orderedBaseIds = [...myPicks];
   const shouldHideHero = hero => {
     if(!hero) return true;
     const heroId = normalizeHeroId(hero.id);
@@ -1644,6 +1699,13 @@ render();
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 
