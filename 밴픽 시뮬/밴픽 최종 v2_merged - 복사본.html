@@ -7494,7 +7494,7 @@ function getBaselineMetaScore(hero, reliability=1){
   return {
     ...snapshot,
     metaNormalized: normalized,
-    score: compressed * gateWeight * reliabilityWeight * 2.3
+    score: compressed * gateWeight * reliabilityWeight * 2
   };
 }
 const SHARED_SIGNAL_BUCKET_FACTORS = [1, 0.74, 0.56, 0.40, 0.28, 0.18];
@@ -8866,7 +8866,6 @@ connectWebSocket();
 </script>
 </body>
 </html>
-
 
 
 

@@ -1,5 +1,6 @@
-# Compiled Diff Report
+﻿# Compiled Diff Report
 
+- unresolved alias/raw hero string count: 123
 - legend 전체 영웅 수: 167
 - HTML 반영 영웅 수: 167
 - MD 프로필 영웅 수: 167
@@ -276,3 +277,45 @@
 - games=1403, hint=0.000, matchup=리나크 -> 보검의 군주 이세리아
 - games=1374, hint=0.061, matchup=모르트 -> 보검의 군주 이세리아
 - games=1374, hint=0.000, matchup=보검의 군주 이세리아 -> 모르트
+
+## Runtime Guard
+- baseline external string runtime creation disabled: yes
+
+## Total Score Canonical Buckets
+- meta
+- synergy
+- counters
+- pack
+- completion
+- early
+- urgency
+- exposure
+- relief
+- vanguard
+- archetype
+- reproducibility
+- openCounter
+
+## Pattern To Bucket Attribution
+- contextualReliability -> reproducibility
+- speedContest -> archetype
+- firstTurnPenalty -> reproducibility
+- logTurnBonus -> early or vanguard
+- repeatAxisPenalty -> pack/completion damping
+- pair lift -> synergy
+- package lift -> pack
+
+
+## UI Exposure Update
+- heroGrid 기본 노출 방식을 전체 baseline hero pool 노출로 변경했다. 검색은 필터 전용이다.
+
+## MD Header Sync
+- 문서 머리말 source priority를 md rules -> legend baseline -> compiled pattern 순서로 정리했다.
+- HTML이 raw source를 직접 읽지 않고 compiled data를 사용한다는 설명을 추가했다.
+- 과거 스크린샷 우선 설명은 archive 문맥으로 격하했다.
+
+## Remaining Risks
+- heroGrid 전체 노출은 저사양 브라우저에서 스크롤 비용이 늘 수 있다.
+- helper/info 문구는 현재 구조 기준으로 정리됐지만, 향후 빌드 스크립트 재생성 시 다시 동기화 확인이 필요하다.
+- diff report 본문 일부는 이전 단계 형식과 새 형식이 혼재한다.
+

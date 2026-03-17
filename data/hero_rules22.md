@@ -1,15 +1,15 @@
-# Epic Seven Hero Rules / Draft Rules
+﻿# Epic Seven Hero Rules / Draft Rules
 기준일: 2026-03-17
 출처 우선순위:
-1. `hero_rules22.md`의 규칙/별칭/특수 태그/사용자 메모
-2. `hero_full_legend.json`의 baseline stats / hard / syn / top sets
+1. `hero_rules22.md`의 규칙 / 별칭 / 특수 태그 / 사용자 메모
+2. `hero_full_legend.json`의 baseline stats / hard / syn / sets
 3. `battle_accounts_merged.json`에서 컴파일한 pattern layer (preban / firstpick / vanguard / pair / package / ban pressure / weak hint)
 
 주의:
 - **규칙/별칭/특수 메모의 source of truth는 이 문서**로 유지한다.
 - **픽률/승률/밴률, hard/syn, 장비 세트의 source of truth는 hero_full_legend baseline**으로 본다.
 - **battle 패턴은 meta를 덮어쓰지 않고**, early/urgency/vanguard/pair/package/weak hint 보정층으로만 사용한다.
-
+- HTML 런타임은 raw md/json을 직접 뒤지지 않고, compiled hero/pattern data를 사용한다.
 ## 1) 핵심 시스템 규칙
 ### 드래프트 순서
 - 내가 선픽:
@@ -71,7 +71,7 @@
 - 카운터는 “무조건 승리”가 아니라 **조합보다 약한 중간 강도 보정**으로 처리
 - 평균 지표(픽률/승률/밴률)는 **순수 체급 신호**로 보고, 로그 기반 보정과 분리해서 생각한다.
 
-## 4) 2026-03-11 메타 스냅샷 테이블 (픽률/승률/밴률 source of truth)
+## 4) 2026-03-11 메타 스냅샷 기록 (과거 캡처 아카이브)
 | 영웅 | 픽률 | 승률 | 밴률 |
 |---|---:|---:|---:|
 | 기원의 라스 | 30.73% | 61.67% | 9.86% |
@@ -134,7 +134,7 @@
 | 영겁의 표류자 루트비히 | 1.07% | 56.82% | 28.71% |
 | 화란의 라비 | 1.07% | 54.61% | 21.77% |
 
-## 5) 스크린샷 미포함 / 기존 HTML·로그 기반 보조 메타 데이터
+## 5) 과거 보조 메타 기록 (기존 HTML·로그 기반 아카이브)
 | 영웅 | 픽률 | 승률 | 밴률 | 비고 |
 |---|---:|---:|---:|---|
 | 낙월 | 0.95% | 57.00% | 22.00% | 로그 등장 영웅 · 참조용 |
@@ -158,8 +158,8 @@
 | 후미르 | 0.95% | 57.00% | 22.00% | 로그 등장 영웅 · 참조용 |
 
 
-- 이 섹션은 스크린샷에 없는 영웅의 보조 메타 수치를 보관하는 참조 영역이다.
-- 최종 수치 충돌 시 4번 메타 스냅샷이 우선이며, 6번 섹션은 그 우선순위를 반영한 통합 프로필이다.
+- 이 섹션은 과거 보조 메타 기록을 보관하는 참조 영역이다.
+- 현재 baseline 수치 충돌 시 hero_full_legend baseline과 6번 섹션 통합 프로필이 우선이다.
 ## 6) 통합 영웅 프로필
 - 아래 프로필은 **hero_rules22의 규칙/메모 + hero_full_legend baseline 수치/관계/세트**를 합쳐 다시 정리했다.
 - 픽률/승률/밴률, hard/syn, 세트는 legend 최신값으로 통일했다.
@@ -3726,12 +3726,12 @@
 
 영웅별 데이터를 합칠 때는 아래 순서로 해석한다.
 
-1. **최신 메타 스냅샷 수치**
+1. **hero_full_legend baseline 수치/관계/세트**
   - 픽률
   - 승률
   - 밴률
-  - 체급 산정의 source of truth
-
+  - hard / syn / sets
+  - baseline source of truth
 2. **사용자가 직접 적어준 텍스트 규칙**
   - 상대하기 어려운 영웅
   - 함께 사용된 영웅
@@ -3746,10 +3746,10 @@
   - 보조 해석용 설명
   - 단, `카운터=상대하기 어려운 영웅`, `시너지=함께 사용된 영웅`으로 통합 해석
 
-4. **기존 HTML/로그 기반 보조 수치**
-  - 스크린샷에 없는 영웅의 임시 수치
-  - 참조용/보조용
-  - 데이터 신뢰도 보정 대상
+4. **battle compiled pattern layer**
+  - preban / firstpick / vanguard / pair / package / ban pressure / weak hint
+  - meta overwrite 금지
+  - 국소 보정층 전용
 
 ---
 끝.

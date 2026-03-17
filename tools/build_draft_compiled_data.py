@@ -381,6 +381,7 @@ def build_patterns(battles, legend_names, md_aliases, html_alias_map, id_to_name
 
     compiled = {
         'version': 2,
+        'contract': {'layer': 'pattern only', 'allowed': ['preban_rate', 'firstpick_rate', 'vanguard_rate', 'pair/package lift', 'ban pressure', 'weak matchup hint'], 'forbidden': ['meta overwrite', 'hard/syn overwrite', 'ban_code => hard counter']},
         'source': {'battle_accounts_merged': str(BATTLE_PATH.relative_to(ROOT)).replace('\\', '/'), 'totalBattles': total_battles, 'totalTeams': total_teams},
         'normalization': {'metaSource': 'legend only', 'patternSource': 'battle_accounts_merged only', 'prebanUsage': 'ui/ranking + urgency layer only', 'firstpickUsage': 'early layer only', 'vanguardUsage': 'third-pick layer only', 'banCodeUsage': 'ban pressure + weak hint only'},
         'heroPresenceStats': hero_presence_stats,
@@ -540,19 +541,31 @@ def patch_md(md_text, legend_entries, baseline_heroes, md_profiles):
 
 
 def build_diff_report(summary, deferred):
-    lines = ['# Compiled Diff Report', '', f"- legend 전체 영웅 수: {summary['legend_count']}", f"- HTML 반영 영웅 수: {summary['html_baseline_count']}", f"- MD 프로필 영웅 수: {summary['md_profile_count']}", '', '## 신규 추가 영웅 목록']
+    lines = [
+        '# Compiled Diff Report',
+        '',
+        f"- legend hero count: {summary['legend_count']}",
+        f"- HTML baseline hero count: {summary['html_baseline_count']}",
+        f"- MD profile count: {summary['md_profile_count']}",
+        f"- unresolved alias/raw hero string count: {len(summary['battle_only_raw'])}",
+        '- runtime unknown hero creation disabled: yes',
+        '',
+        '## Newly Added Heroes'
+    ]
     lines.extend([f'- {name}' for name in summary['legend_not_html']])
-    lines += ['', '## legend에는 있는데 md 프로필이 없던 영웅']
+    lines += ['', '## Legend Heroes Missing In MD Profiles']
     lines.extend([f'- {name}' for name in summary['legend_not_md']])
-    lines += ['', '## battle-only raw hero 문자열']
+    lines += ['', '## Unresolved Alias Or Raw Hero Strings']
     lines.extend([f'- {name}' for name in summary['battle_only_raw']])
-    lines += ['', '## alias 정규화 후 legend에 매핑된 battle 문자열']
+    lines += ['', '## Battle Strings Normalized To Legend']
     lines.extend([f"- {raw} -> {canon}" for raw, canon in summary['battle_alias_mapped']])
-    lines += ['', '## 표본 부족으로 반영 보류된 pair']
+    lines += ['', '## Total Score Canonical Buckets', '- meta', '- synergy', '- counters', '- pack', '- completion', '- early', '- urgency', '- exposure', '- relief', '- vanguard', '- archetype', '- reproducibility', '- openCounter']
+    lines += ['', '## Pattern To Bucket Attribution', '- contextualReliability -> reproducibility', '- speedContest -> archetype', '- firstTurnPenalty -> reproducibility', '- logTurnBonus -> early or vanguard', '- repeatAxisPenalty -> pack/completion damping', '- pair lift -> synergy', '- package lift -> pack']
+    lines += ['', '## Deferred Pair Patterns']
     lines.extend([f"- games={g}, lift={lift:.3f}, pair={a} | {b}" for g, lift, a, b in deferred['pairs'][:20]])
-    lines += ['', '## 표본 부족으로 반영 보류된 package']
+    lines += ['', '## Deferred Package Patterns']
     lines.extend([f"- games={g}, lift={lift:.3f}, package={' | '.join(members)}" for g, lift, members in deferred['packages'][:20]])
-    lines += ['', '## 표본 부족으로 반영 보류된 weak hint']
+    lines += ['', '## Deferred Weak Hints']
     lines.extend([f"- games={g}, hint={hint:.3f}, matchup={hero} -> {opp}" for g, hint, hero, opp in deferred['weak'][:20]])
     return '\n'.join(lines) + '\n'
 
@@ -585,5 +598,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
