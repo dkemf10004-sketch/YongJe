@@ -1,14 +1,14 @@
-﻿# Epic Seven Hero Rules / Draft Rules
-기준일: 2026-03-11
+# Epic Seven Hero Rules / Draft Rules
+기준일: 2026-03-17
 출처 우선순위:
-1. 사용자가 직접 제공한 텍스트 데이터
-2. 사용자가 업로드한 메타 스크린샷(체급.PNG / 체급2.PNG / 체급3.PNG)
-3. 기존 hero_rules.md의 로그/개인 데이터 메모
+1. `hero_rules22.md`의 규칙/별칭/특수 태그/사용자 메모
+2. `hero_full_legend.json`의 baseline stats / hard / syn / top sets
+3. `battle_accounts_merged.json`에서 컴파일한 pattern layer (preban / firstpick / vanguard / pair / package / ban pressure / weak hint)
 
 주의:
-- **픽률/승률/밴률 수치의 source of truth는 아래 4장 메타 스냅샷 테이블**로 본다.
-- 스크린샷 우측 초상화 열(상성/연계 후보 얼굴 아이콘)은 얼굴 매칭의 신뢰성 문제 때문에 이번 전면 수정에서는 **숫자 source로만 반영**했고, 텍스트 기반 상성/시너지 규칙은 기존 사용자 제공 텍스트를 유지했다.
-- 즉, **체급 수치(픽률/승률/밴률)는 스크린샷 우선**, 상성/시너지/특수 규칙은 **사용자 직접 제공 텍스트 우선**이다.
+- **규칙/별칭/특수 메모의 source of truth는 이 문서**로 유지한다.
+- **픽률/승률/밴률, hard/syn, 장비 세트의 source of truth는 hero_full_legend baseline**으로 본다.
+- **battle 패턴은 meta를 덮어쓰지 않고**, early/urgency/vanguard/pair/package/weak hint 보정층으로만 사용한다.
 
 ## 1) 핵심 시스템 규칙
 ### 드래프트 순서
@@ -161,1921 +161,3377 @@
 - 이 섹션은 스크린샷에 없는 영웅의 보조 메타 수치를 보관하는 참조 영역이다.
 - 최종 수치 충돌 시 4번 메타 스냅샷이 우선이며, 6번 섹션은 그 우선순위를 반영한 통합 프로필이다.
 ## 6) 통합 영웅 프로필
-- 아래 프로필은 **4장 메타 스냅샷 수치 + 기존 hero_rules 텍스트 규칙**을 합쳐서 다시 정리했다.
-- 동일 영웅의 픽률/승률/밴률이 4장 메타 스냅샷에 있으면 그 값을 우선 사용한다.
-- 스크린샷에는 있지만 텍스트 상성/시너지 메모가 없는 영웅은 수치만 기록한다.
-- 5번 섹션은 보조/참조용이고, 최종 프로필 해석은 이 6번 섹션을 기준으로 한다.
+- 아래 프로필은 **hero_rules22의 규칙/메모 + hero_full_legend baseline 수치/관계/세트**를 합쳐 다시 정리했다.
+- 픽률/승률/밴률, hard/syn, 세트는 legend 최신값으로 통일했다.
+- 기존 사용자 텍스트 규칙/특수 메모/하르세티/선턴/속도 관련 메모는 별도 보존했다.
 
 ### 기원의 라스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 30.73%
   - 승률: 61.67%
   - 밴률: 9.86%
-- 개인 데이터:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 어둠의 목자 디에네
+  - syn: 보건교사 율하, 쾌속의 기수 세크레트, 조장 아룬카
+  - sets: set_cri_dmg, set_max_hp
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 160승 77패
   - 카운터: 메이드 클로에, 프리렌, 방관자 화영
   - 시너지: 조장 아룬카, 창공의 일리나브, 설화
 
 ### 조장 아룬카
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 30.05%
   - 승률: 58.19%
   - 밴률: 14.27%
-- 별도 텍스트 규칙: 현재 없음
+- legend baseline 관계:
+  - hard: 보건교사 율하, 기원의 라스, 어둠의 목자 디에네
+  - syn: 기원의 라스, 창공의 일리나브, 빛의 루엘
+  - sets: set_counter, set_immune
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모: 없음
 
 ### 보건교사 율하
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 29.20%
   - 승률: 62.40%
   - 밴률: 16.20%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 기원의 라스, 프리렌
+  - syn: 벨리안, 기원의 라스, 창공의 일리나브
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 기원의 라스
   - 프리렌
-- 함께 사용된 영웅:
   - 벨리안
-  - 기원의 라스
   - 창공의 일리나브
 
 ### 빛의 루엘
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 24.04%
   - 승률: 62.67%
   - 밴률: 18.66%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 조장 아룬카, 보건교사 율하
+  - syn: 보건교사 율하, 조장 아룬카, 프리렌
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 조장 아룬카
   - 보건교사 율하
-- 함께 사용된 영웅:
-  - 보건교사 율하
-  - 조장 아룬카
-  - 기원의 라스
-- 개인 데이터:
   - 68승 34패
   - 카운터: 메이드 클로에, 프리렌, 리나크
   - 시너지: 프리렌, 조장 아룬카, 벨리안
 
 ### 프리렌
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 22.69%
   - 승률: 62.80%
   - 밴률: 16.21%
-- 개인 데이터:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 기원의 라스, 리나크
+  - syn: 빛의 루엘, 잿빛 숲의 이세리아, 조장 아룬카
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 237승 119패
   - 카운터: 리나크, 메이드 클로에, 조장 아룬카
   - 시너지: 아미드, 메이드 클로에, 벨리안
 
 ### 어둠의 목자 디에네
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 22.16%
   - 승률: 63.12%
   - 밴률: 16.85%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 조장 아룬카, 리나크
+  - syn: 기원의 라스, 빛의 루엘, 조장 아룬카
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 조장 아룬카
   - 리나크
-- 함께 사용된 영웅:
-  - 기원의 라스
   - 빛의 루엘
   - 바다의 유령 폴리티스
 
 ### 리나크
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 21.13%
   - 승률: 59.07%
   - 밴률: 15.24%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 조장 아룬카, 보건교사 율하
+  - syn: 보건교사 율하, 조장 아룬카, 기원의 라스
+  - sets: set_chase, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 조장 아룬카
   - 보건교사 율하
-- 함께 사용된 영웅:
-  - 기원의 라스
-  - 조장 아룬카
-  - 보건교사 율하
-- 추가 규칙:
+  - 추가 규칙:
   - 선턴잡이
 
 ### 창공의 일리나브
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 19.44%
   - 승률: 59.03%
   - 밴률: 11.81%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 기원의 라스, 보건교사 율하
+  - syn: 보건교사 율하, 조장 아룬카, 기원의 라스
+  - sets: set_immune, set_shield
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 조장 아룬카
   - 리나크
-- 함께 사용된 영웅:
   - 보건교사 율하
-  - 조장 아룬카
-  - 기원의 라스
 
 ### 벨리안
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 18.52%
   - 승률: 60.59%
   - 밴률: 11.69%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 조장 아룬카, 리나크
+  - syn: 보건교사 율하, 조장 아룬카, 기원의 라스
+  - sets: set_counter, set_immune
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 조장 아룬카
   - 리나크
-- 함께 사용된 영웅:
   - 보건교사 율하
-  - 조장 아룬카
-  - 기원의 라스
-- 추가 규칙:
+  - 추가 규칙:
   - 프리렌 카운터
   - 어둠의 목자 디에네 카운터
   - 프리렌/어둠의 목자 디에네와 함께도 자주 사용되는 보호/보완 카드
 
 ### 쾌속의 기수 세크레트
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 17.65%
   - 승률: 60.91%
   - 밴률: 14.82%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - syn: 기원의 라스, 보건교사 율하, 지오
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 기원의 라스
   - 보건교사 율하
-- 함께 사용된 영웅:
-  - 기원의 라스
-  - 보건교사 율하
   - 지오
-- 추가 규칙:
+  - 추가 규칙:
   - 선턴잡이
 
 ### 천칭의 주인
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 15.62%
   - 승률: 67.26%
   - 밴률: 21.03%
-- 개인 데이터:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 어둠의 목자 디에네, 보건교사 율하
+  - syn: 프리렌, 잿빛 숲의 이세리아, 리나크
+  - sets: set_chase, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 67.55%로 기록되던 이전 메모가 있었으나, 최신 스냅샷 수치는 67.26%로 갱신
-- 추가 규칙:
+  - 추가 규칙:
   - 상위권 체급 최상단 축으로 취급
   - 보통 프리밴으로 거의 제거됨
   - 프리밴이 안 되면 가져간 쪽이 매우 유리함
 
 ### 보검의 군주 이세리아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 15.51%
   - 승률: 59.09%
   - 밴률: 17.35%
-- 기존 표기:
+- legend baseline 관계:
+  - hard: 모르트, 조장 아룬카, 보건교사 율하
+  - syn: 빛의 루엘, 보건교사 율하, 기원의 라스
+  - sets: set_chase, set_counter
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 기존 표기:
   - 보세리아
   - 보검 군주 이세리아
-- 상대하기 어려운 영웅:
   - 모르트
   - 보건교사 율하
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 빛의 루엘
   - 기원의 라스
-  - 보건교사 율하
-- 개인 데이터:
   - 82승 40패
   - 카운터: 방관자 화영, 천칭의 주인, 모르트
   - 시너지: 메이드 클로에, 잿빛 숲의 이세리아, 용왕 샤룬
 
 ### 바다의 유령 폴리티스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 11.54%
   - 승률: 61.95%
   - 밴률: 9.59%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 리나크, 보건교사 율하
+  - syn: 기원의 라스, 어둠의 목자 디에네, 보건교사 율하
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 기원의 라스
   - 리나크
-- 함께 사용된 영웅:
-  - 기원의 라스
   - 프리렌
-  - 조장 아룬카
-- 추가규칙:
+  - 추가규칙:
   - 선턴잡이
 
 ### 지오
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 11.49%
   - 승률: 54.18%
   - 밴률: 13.90%
-- 로그 기반 참조용
-- 추가 규칙:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 빛의 루엘, 어둠의 목자 디에네
+  - syn: 쾌속의 기수 세크레트, 기원의 라스, 영안의 셀린
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가 규칙:
   - 선턴잡이
   - 하르세티 상대로도 선턴잡이 역할이 유효함
   - 상대가 조장 아룬카를 픽했을 때는 리스크를 받음
 
 ### 메이드 클로에
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 10.51%
   - 승률: 63.79%
   - 밴률: 17.08%
-- 개인 데이터:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 리나크, 조장 아룬카
+  - syn: 조장 아룬카, 보건교사 율하, 창공의 일리나브
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 61승 28패
   - 카운터: 방관자 화영, 천칭의 주인, 프리렌
   - 시너지: 설화, 리디카, 프리렌
 
 ### 잿빛 숲의 이세리아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 9.92%
   - 승률: 62.69%
   - 밴률: 9.04%
-- 기존 표기:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 조장 아룬카, 어둠의 목자 디에네
+  - syn: 프리렌, 천칭의 주인, 조장 아룬카
+  - sets: set_cri, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 기존 표기:
   - 잿빛숲의 이세리아
-- 개인 데이터:
   - 41승 14패
   - 카운터: 조장 아룬카, 리나크, 메이드 클로에
   - 시너지: 보검의 군주 이세리아, 빛의 루엘, 용왕 샤룬
-- 추가 규칙:
+  - 추가 규칙:
   - 연계 추천 축으로 자주 활용
   - 밴가드에 놓일 때만 선턴잡이 성격으로 본다
 
 ### 영안의 셀린
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 9.65%
   - 승률: 59.36%
   - 밴률: 16.28%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 기원의 라스, 보건교사 율하, 어둠의 목자 디에네
+  - syn: 조장 아룬카, 지오, 쾌속의 기수 세크레트
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 설화
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 9.12%
   - 승률: 62.67%
   - 밴률: 32.80%
-- 개인 데이터:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 리나크, 기원의 라스
+  - syn: 보건교사 율하, 기원의 라스, 빛의 루엘
+  - sets: set_immune, set_riposte
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 66승 32패
   - 카운터: 메이드 클로에, 리나크, 빛의 루엘
   - 시너지: 프리렌, 메이드 클로에, 벨리안
 
 ### 신월의 루나
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 8.85%
   - 승률: 60.88%
   - 밴률: 37.92%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 조장 아룬카, 창공의 일리나브, 어둠의 목자 디에네
+  - syn: 기원의 라스, 보건교사 율하, 벨리안
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 호반의 마녀 테네브리아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 7.94%
   - 승률: 60.39%
   - 밴률: 30.02%
-- 개인 데이터:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - syn: 리나크, 기원의 라스, 보건교사 율하
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 로그 기반 참조용
   - 추가규칙:
   - 선턴잡이
 
 ### 방관자 화영
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 7.36%
   - 승률: 53.88%
   - 밴률: 36.07%
-- 기존 표기:
+- legend baseline 관계:
+  - hard: 기원의 라스, 어둠의 목자 디에네, 보검의 군주 이세리아
+  - syn: 조장 아룬카, 보건교사 율하, 빛의 루엘
+  - sets: set_counter, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 기존 표기:
   - 방화영
-- 개인 데이터:
   - 149승 87패
   - 카운터: 메이드 클로에, 기원의 라스, 빛의 루엘
   - 시너지: 창공의 일리나브, 설화, 조장 아룬카
-- 추가 규칙:
+  - 추가 규칙:
   - 특정 단단한 조합 상대로는 변동성이 큼
 
 ### 베로니카
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 6.97%
   - 승률: 59.34%
   - 밴률: 28.32%
-- 로그 기반 참조용
-- 추가규칙:
+- legend baseline 관계:
+  - hard: 어둠의 목자 디에네, 지오, 기원의 라스
+  - syn: 기원의 라스, 리나크, 프리렌
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가규칙:
   - 속기각
 
 ### 한낮의 유영 플랑
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 6.92%
   - 승률: 60.75%
   - 밴률: 29.72%
-- 기존 표기:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 기원의 라스, 리나크
+  - syn: 조장 아룬카, 기원의 라스, 잿빛 숲의 이세리아
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 기존 표기:
   - 한낮의 유영 플랑
-- 로그 기반 참조용
+  - 로그 기반 참조용
 
 ### 하르세티
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 6.43%
   - 승률: 58.88%
   - 밴률: 24.34%
-- 추가 규칙:
+- legend baseline 관계:
+  - hard: 기원의 라스, 쾌속의 기수 세크레트, 보건교사 율하
+  - syn: 창공의 일리나브, 기원의 라스, 조장 아룬카
+  - sets: set_max_hp, set_scar
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 추가 규칙:
   - 오픈 상태면 선턴잡이 영웅의 가치/재현성을 크게 낮추는 기준축
   - 실제 프리밴 여부를 별도 조건으로 관리
 
 ### 모르트
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 5.68%
   - 승률: 67.73%
   - 밴률: 49.11%
-- 개인 데이터:
+- legend baseline 관계:
+  - hard: 보검의 군주 이세리아, 기원의 라스, 빛의 루엘
+  - syn: 보건교사 율하, 조장 아룬카, 기원의 라스
+  - sets: set_cri_dmg, set_max_hp
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 로그 기반 참조용
-- 추가 규칙:
+  - 추가 규칙:
   - 메타 수치상 초고효율 축으로 분류되지만, 조합/턴 구조 의존성도 있음
 
 ### 헤카테
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 5.53%
   - 승률: 54.07%
   - 밴률: 25.72%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 빛의 루엘, 기원의 라스, 천칭의 주인
+  - syn: 리나크, 보건교사 율하, 기원의 라스
+  - sets: set_immune, set_opener
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 축제의 에다
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 4.76%
   - 승률: 59.93%
   - 밴률: 26.44%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 조장 아룬카, 리나크, 프리렌
+  - syn: 어둠의 목자 디에네, 기원의 라스, 보건교사 율하
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 풍기위원 아리아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 4.59%
   - 승률: 58.18%
   - 밴률: 23.44%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 어둠의 목자 디에네, 리나크
+  - syn: 조장 아룬카, 보건교사 율하, 창공의 일리나브
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 어둠의 목자 디에네
   - 리나크
-- 함께 사용된 영웅:
   - 조장 아룬카
   - 보건교사 율하
   - 창공의 일리나브
 
 ### 라스트 라이더 크라우
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 4.32%
   - 승률: 62.19%
   - 밴률: 18.05%
-- 기존 표기:
+- legend baseline 관계:
+  - hard: 벨리안, 프리렌, 보건교사 율하
+  - syn: 창공의 일리나브, 조장 아룬카, 보건교사 율하
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 기존 표기:
   - 라스트라이더크라우
-- 로그 기반 참조용
+  - 로그 기반 참조용
 
 ### 후계자 태유
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 3.35%
   - 승률: 59.11%
   - 밴률: 46.31%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 보건교사 율하, 빛의 루엘, 창공의 일리나브
+  - syn: 지오, 쾌속의 기수 세크레트, 기원의 라스
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 도시의 그림자 슈
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 3.34%
   - 승률: 58.71%
   - 밴률: 22.90%
-- 로그 기반 참조용
-- 추가 규칙 :
-- 선턴잡이
+- legend baseline 관계:
+  - hard: 기원의 라스, 창공의 일리나브, 조장 아룬카
+  - syn: 조장 아룬카, 보건교사 율하, 벨리안
+  - sets: set_chase, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가 규칙 :
+  - 선턴잡이
 
 ### 고독한 늑대 페이라
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 3.28%
   - 승률: 56.86%
   - 밴률: 5.45%
-- 로그 기반 참조용
-- 추가규칙:
-- 선턴잡이
+- legend baseline 관계:
+  - hard: 기원의 라스, 보건교사 율하, 조장 아룬카
+  - syn: 조장 아룬카, 프리렌, 보건교사 율하
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가규칙:
+  - 선턴잡이
 
 ### 죽음의 탐구자 레이
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 3.12%
   - 승률: 57.92%
   - 밴률: 28.54%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 창공의 일리나브, 조장 아룬카, 보건교사 율하
+  - syn: 기원의 라스, 보건교사 율하, 창공의 일리나브
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 나락의 세실리아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 3.02%
   - 승률: 61.26%
   - 밴률: 15.84%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 리나크, 조장 아룬카, 창공의 일리나브
+  - syn: 기원의 라스, 보건교사 율하, 조장 아룬카
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 랑디
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.95%
   - 승률: 58.46%
   - 밴률: 27.58%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 메이드 클로에, 창공의 일리나브
+  - syn: 보건교사 율하, 창공의 일리나브, 기원의 라스
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 메이드 클로에
   - 창공의 일리나브
-- 함께 사용된 영웅:
   - 보건교사 율하
-  - 창공의 일리나브
   - 기원의 라스
 
-### 해군 대령 랑디
-- 최신 메타 수치:
-  - 픽률: 0.48%
-  - 승률: 50.42%
-  - 밴률: 23.31%
-- 기존 표기:
-  - 해군대령 랑디
-- 상대하기 어려운 영웅:
-  - 기원의 라스
-  - 호반의 마녀 테네브리아
-  - 쾌속의 기수 세크레트
-- 함께 사용된 영웅:
-  - 조장 아룬카
-  - 창공의 일리나브
-  - 보건교사 율하
 ### 사자왕 체르미아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.88%
   - 승률: 57.73%
   - 밴률: 40.38%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 설화, 보건교사 율하, 기원의 라스
+  - syn: 조장 아룬카, 창공의 일리나브, 보건교사 율하
+  - sets: set_cri_dmg, set_immune
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 란
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.85%
   - 승률: 60.02%
   - 밴률: 3.59%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 천칭의 주인, 리나크, 기원의 라스
+  - syn: 어둠의 목자 디에네, 빛의 루엘, 프리렌
+  - sets: set_cri, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 천칭의 주인
   - 기원의 라스
   - 리나크
-- 함께 사용된 영웅:
   - 어둠의 목자 디에네
   - 빛의 루엘
   - 프리렌
-- 추가 규칙:
+  - 추가 규칙:
   - 선턴잡이
 
 ### 아미드
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.82%
   - 승률: 59.67%
   - 밴률: 14.67%
-- 로그 기반 참조용
-- 추가규칙:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 조장 아룬카, 기원의 라스
+  - syn: 프리렌, 조장 아룬카, 보건교사 율하
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가규칙:
   - 선턴잡이
 
 ### 스트라제스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.75%
   - 승률: 64.45%
   - 밴률: 44.98%
-- 로그 기반 참조용
-- 추가 규칙:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - syn: 프리렌, 천칭의 주인, 잿빛 숲의 이세리아
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가 규칙:
   - 고위험 고효율 마무리 축으로 분류
 
 ### 리디카
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.71%
   - 승률: 62.79%
   - 밴률: 18.03%
-- 개인 데이터:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 기원의 라스, 어둠의 목자 디에네
+  - syn: 영안의 셀린, 지오, 조장 아룬카
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 39승 25패
   - 카운터: 설화, 프리렌, 메이드 클로에
   - 시너지: 메이드 클로에, 설화, 제뉴아
   - 추가 규칙:
-    - 선턴잡이
+  - 선턴잡이
 
 ### 용왕 샤룬
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.52%
   - 승률: 58.07%
   - 밴률: 31.42%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 쾌속의 기수 세크레트, 보건교사 율하, 조장 아룬카
+  - syn: 리나크, 조장 아룬카, 기원의 라스
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 어둠의 목자 디에네
   - 빛의 루엘
-- 함께 사용된 영웅:
   - 리나크
   - 쾌속의 기수 세크레트
-- 개인 데이터:
   - 21승 10패
   - 카운터: 방관자 화영, 프리렌, 어둠의 목자 디에네
   - 시너지: 보검의 군주 이세리아, 잿빛 숲의 이세리아, 리나크
 
 ### 아람
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.40%
   - 승률: 61.12%
   - 밴률: 15.98%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 기원의 라스, 하르세티, 보건교사 율하
+  - syn: 영안의 셀린, 기원의 라스, 프리렌
+  - sets: set_max_hp, set_shield
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 홍염의 아밍
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.39%
   - 승률: 60.76%
   - 밴률: 5.24%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 창공의 일리나브, 기원의 라스, 조장 아룬카
+  - syn: 보건교사 율하, 조장 아룬카, 메이드 클로에
+  - sets: set_immune, set_shield
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 미지의 가능성 아카테스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.38%
   - 승률: 57.94%
   - 밴률: 25.25%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 지오, 기원의 라스, 보건교사 율하
+  - syn: 조장 아룬카, 기원의 라스, 보건교사 율하
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 빌트레드
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.35%
   - 승률: 61.47%
   - 밴률: 37.15%
-- 기존 표기:
+- legend baseline 관계:
+  - hard: 리나크, 조장 아룬카, 어둠의 목자 디에네
+  - syn: 프리렌, 천칭의 주인, 잿빛 숲의 이세리아
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 기존 표기:
   - 집행관 빌트레드
-- 로그 기반 참조용
-- 추가 규칙:
+  - 로그 기반 참조용
+  - 추가 규칙:
   - 선턴 확장 축으로 쓰일 수 있으나 범용 1픽 체급으로 과대평가하지 않음
   - 속기각
 
 ### 사령관 파벨
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.25%
   - 승률: 64.61%
   - 밴률: 32.95%
-- 기존 표기:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 어둠의 목자 디에네
+  - syn: 프리렌, 잿빛 숲의 이세리아, 조장 아룬카
+  - sets: set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 기존 표기:
   - 사령관 파벨
-- 로그 기반 참조용
-- 추가 규칙:
+  - 로그 기반 참조용
+  - 추가 규칙:
   - 실행력 확장 카드로 분류
   - 특정 오픈 판에서 선턴잡이 후속 가치가 높음
 
 ### 소악마 루아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.24%
   - 승률: 63.91%
   - 밴률: 20.83%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 조장 아룬카, 쾌속의 기수 세크레트, 기원의 라스
+  - syn: 기원의 라스, 어둠의 목자 디에네, 벨리안
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 은결의 크리스티
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.07%
   - 승률: 55.48%
   - 밴률: 31.10%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 보건교사 율하, 쾌속의 기수 세크레트, 기원의 라스
+  - syn: 조장 아룬카, 영안의 셀린, 보검의 군주 이세리아
+  - sets: set_res
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 엘레나
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 2.04%
   - 승률: 57.49%
   - 밴률: 24.22%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 잿빛 숲의 이세리아, 프리렌, 천칭의 주인
+  - syn: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 백은칼날의 아라민타
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 1.85%
   - 승률: 62.72%
   - 밴률: 40.61%
-- 기존 표기:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 프리렌, 보건교사 율하
+  - syn: 어둠의 목자 디에네, 란, 프리렌
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 기존 표기:
   - 월광 아라민타
-- 로그 기반 참조용
+  - 로그 기반 참조용
 
 ### 설국의 솔리타리아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 1.78%
   - 승률: 61.56%
   - 밴률: 53.34%
-- 로그 기반 참조용
-- 추가 규칙:
+- legend baseline 관계:
+  - hard: 한낮의 유영 플랑, 조장 아룬카, 잿빛 숲의 이세리아
+  - syn: 보건교사 율하, 기원의 라스, 빛의 루엘
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가 규칙:
   - 표본은 작지만 밴 압력이 매우 큰 특수축으로 분류
 
 ### 심연의 유피네
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 1.74%
   - 승률: 61.20%
   - 밴률: 24.84%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 지오, 프리렌, 조장 아룬카
+  - syn: 보건교사 율하, 기원의 라스, 어둠의 목자 디에네
+  - sets: set_cri_dmg, set_immune
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 달토끼 도미니엘
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 1.58%
   - 승률: 60.28%
   - 밴률: 29.20%
-- 기존 표기:
+- legend baseline 관계:
+  - hard: 리나크, 조장 아룬카, 기원의 라스
+  - syn: 어둠의 목자 디에네, 보건교사 율하, 기원의 라스
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 기존 표기:
   - 달토끼도미니엘
-- 로그 기반 참조용
-- 추가 규칙:
+  - 로그 기반 참조용
+  - 추가 규칙:
   - 선턴잡이
 
 ### 어린 셰나
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 1.44%
   - 승률: 57.75%
   - 밴률: 40.92%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 잿빛 숲의 이세리아, 프리렌, 조장 아룬카
+  - syn: 리나크, 보건교사 율하, 프리렌
+  - sets: set_chase, set_immune
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 셀린
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 1.26%
   - 승률: 55.47%
   - 밴률: 41.37%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 기원의 라스, 리나크, 바다의 유령 폴리티스
+  - syn: 조장 아룬카, 기원의 라스, 보건교사 율하
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 제뉴아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 1.13%
   - 승률: 61.91%
   - 밴률: 25.48%
-- 개인 데이터:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - syn: 바다의 유령 폴리티스, 기원의 라스, 천칭의 주인
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 27승 18패
   - 카운터: 리디카, 설화, 메이드 클로에
   - 시너지: 리디카, 메이드 클로에, 보검의 군주 이세리아
 
 ### 사르미아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 1.10%
   - 승률: 59.12%
   - 밴률: 48.42%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 보건교사 율하, 조장 아룬카, 기원의 라스
+  - syn: 리나크, 기원의 라스, 호반의 마녀 테네브리아
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 영겁의 표류자 루트비히
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 1.07%
   - 승률: 56.82%
   - 밴률: 28.71%
-- 로그 기반 참조용
+- legend baseline 관계:
+  - hard: 보건교사 율하, 기원의 라스, 리나크
+  - syn: 지오, 어둠의 목자 디에네, 프리렌
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 화란의 라비
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 1.07%
   - 승률: 54.61%
   - 밴률: 21.77%
-- 로그 기반 참조용
-
-### 비르기타
-- 최신 메타 수치:
-  - 픽률: 7.23%
-  - 승률: 58.96%
-  - 밴률: 28.15%
-- 로그 기반 참조용
-- 기존 HTML/개인 메모 기반 수치
-
-### 슈리
-- 최신 메타 수치:
-  - 픽률: 0.83%
-  - 승률: 62.48%
-  - 밴률: 42.68%
-- 로그 기반 참조용
-- 기존 HTML/개인 메모 기반 수치
-- 추가 규칙:
-  - 속기각
-
-### 아키
-- 최신 메타 수치:
-  - 픽률: 1.01%
-  - 승률: 60.00%
-  - 밴률: 39.63%
-- 로그 기반 참조용
-- 기존 HTML/개인 메모 기반 수치
-
-### 어린 여왕 샬롯
-- 최신 메타 수치:
-  - 픽률: 0.71%
-  - 승률: 60.72%
-  - 밴률: 20.65%
-- 로그 기반 참조용
-
-### 조율자 카웨릭
-- 최신 메타 수치:
-  - 픽률: 0.73%
-  - 승률: 54.01%
-  - 밴률: 24.18%
-- 로그 기반 참조용
-
-### 진혼의 로앤나
-- 최신 메타 수치:
-  - 픽률: 0.84%
-  - 승률: 54.07%
-  - 밴률: 40.35%
-- 로그 기반 참조용
-
-### 크라우
-- 최신 메타 수치:
-  - 픽률: 0.95%
-  - 승률: 57.00%
-  - 밴률: 22.00%
-- 로그 기반 참조용
-
-### 키세
-- 최신 메타 수치:
-  - 픽률: 0.00%
-  - 승률: 0.00%
-  - 밴률: 0.00%
-- 로그 기반 참조용
-- 추가 규칙:
-  - 수치 신뢰도 매우 낮음
-
-### 페른
-- 최신 메타 수치:
-  - 픽률: 0.95%
-  - 승률: 57.00%
-  - 밴률: 22.00%
-- 로그 기반 참조용
-
-### 현자 바알&세잔
-- 최신 메타 수치:
-  - 픽률: 2.00%
-  - 승률: 54.60%
-  - 밴률: 1.10%
-- 로그 기반 참조용
-
-### 혈검 카린
-- 최신 메타 수치:
-  - 픽률: 1.90%
-  - 승률: 54.20%
-  - 밴률: 0.90%
-- 로그 기반 참조용
-
-### 화원의 리디카
-- 최신 메타 수치:
-  - 픽률: 0.70%
-  - 승률: 52.79%
-  - 밴률: 35.56%
-- 로그 기반 참조용
-
-### 후미르
-- 최신 메타 수치:
-  - 픽률: 0.95%
-  - 승률: 57.00%
-  - 밴률: 22.00%
-- 로그 기반 참조용
-
-### 낙월
-- 최신 메타 수치:
-  - 픽률: 0.95%
-  - 승률: 57.00%
-  - 밴률: 22.00%
-- 로그 기반 참조용
-- 추가규칙:
-  - 선턴잡이
-
-### 뒤틀린 망령 카일론
-- 최신 메타 수치:
-  - 픽률: 0.87%
-  - 승률: 60.44%
-  - 밴률: 32.39%
-- 로그 기반 참조용
-
-### 밀림
-- 최신 메타 수치:
-  - 픽률: 0.95%
-  - 승률: 57.00%
-  - 밴률: 22.00%
-- 로그 기반 참조용
-
-### 방랑자 실크
-- 최신 메타 수치:
-  - 픽률: 0.95%
-  - 승률: 57.00%
-  - 밴률: 22.00%
-- 로그 기반 참조용
-- 추가 규칙:
-  - 속기각
-
-### 베니마루
-- 최신 메타 수치:
-  - 픽률: 0.95%
-  - 승률: 57.00%
-  - 밴률: 22.00%
-- 로그 기반 참조용
-
-### 별의 신탁 엘레나
-- 최신 메타 수치:
-  - 픽률: 0.95%
-  - 승률: 57.00%
-  - 밴률: 22.00%
-- 기존 표기:
-  - 별의 엘레나
-- 로그 기반 참조용
-
-### 시더
-- 로그 기반 참조용
-- 추가 규칙:
-  - 속기각
-
-### 수린
-- 로그 기반 참조용
-- 추가 규칙:
-  - 속기각
-- 메모:
-  - 추후 데이터 보강 필요
-
-### 주시자 슈리
-- 로그 기반 참조용
-- 추가 규칙:
-  - 속기각
-- 메모:
-  - 추후 데이터 보강 필요
-
-### 사막의 보석 바사르
-- 개인 데이터:
-  - 124승 64패
-  - 카운터: 신월의 루나, 기원의 라스, 조장 아룬카
-  - 시너지: 창공의 일리나브, 조장 아룬카, 기원의 라스
-- 추가 규칙:
-  - 선턴잡이
-
-### 서풍의 처형자 슈리
-- 최신 메타 수치:
-  - 픽률: 0.84%
-  - 승률: 56.95%
-  - 밴률: 31.70%
-- 상대하기 어려운 영웅:
-  - 보건교사 율하
-- 함께 사용된 영웅:
-  - 아람
-  - 빌트레드
-- 로그 기반 참조용
-- 추가 규칙:
-  - 속기각
-
-### 야심가 타이윈
-- 최신 메타 수치:
-  - 픽률: 0.00%
-  - 승률: 0.00%
-  - 밴률: 0.00%
-- 함께 사용된 영웅:
-  - 벨리안
-  - 보검의 군주 이세리아
-- 로그 기반 참조용
-
-### 전승의 아미키
-- 최신 메타 수치:
-  - 픽률: 0.00%
-  - 승률: 0.00%
-  - 밴률: 0.00%
-- 함께 사용된 영웅:
-  - 기원의 라스
-  - 보건교사 율하
-- 로그 기반 참조용
-
-### 보조형 랏츠
-- 로그 기반 참조용
-- 메모:
-  - 로그 등장 위치: 상대 밴가드
-  - 랭커 전적에서 확인된 영웅 · 세부 메타 수치는 미확인
-- 추가규칙:
-  - 선턴잡이
-
-### 해적 선장 플랑
-- 로그 기반 참조용
-- 메모:
-  - 로그 등장 위치: 상대 후반 픽
-  - 랭커 전적에서 반복 확인된 영웅 · 세부 메타 수치는 미확인
-
-### 잭 오
-- 로그 기반 참조용
-- 메모:
-  - 로그 등장 위치: 내 팀 후반 연계 픽
-  - 랭커 전적에서 확인된 영웅 · 세부 메타 수치는 미확인
-
-### 엘비라
-- 로그 기반 참조용
-- 메모:
-  - 로그 등장 위치: 상대 후반 픽
-  - 랭커 전적에서 확인된 영웅 · 세부 메타 수치는 미확인
-
-### 토라미
-- 로그 기반 참조용
-- 메모:
-  - 로그 등장 위치: 상대 후반 픽
-  - 랭커 전적에서 확인된 영웅 · 세부 메타 수치는 미확인
-
-### 바캉스 유피네
-- 로그 기반 참조용
-- 메모:
-  - 로그 등장 위치: 프리밴 로그
-  - 랭커 전적에서 확인된 영웅 · 세부 메타 수치는 미확인
-
-### 디자이너 릴리벳
-- 로그 기반 참조용
-- 메모:
-  - 로그 등장 위치: 상대 중반 픽
-  - 랭커 전적에서 확인된 영웅
-
-### 여름의 방학 샬롯
-- 로그 기반 참조용
-- 메모:
-  - 로그 등장 위치: 상대 후반 픽
-  - 랭커 전적에서 확인된 영웅
-- 아래 프로필은 hero_full_legend 보강 입력 기준으로 추가 정리했다.
-- 최신 메타 수치는 legend json 기준 보강값이며, 이후 사용자 텍스트 규칙이 생기면 그 규칙을 우선한다.
+- legend baseline 관계:
+  - hard: 기원의 라스, 보건교사 율하, 창공의 일리나브
+  - syn: 조장 아룬카, 보건교사 율하, 창공의 일리나브
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 폴리티스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 1.06%
   - 승률: 61.82%
   - 밴률: 32.65%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 지오, 어둠의 목자 디에네, 프리렌
+  - syn: 기원의 라스, 어둠의 목자 디에네, 베로니카
+  - sets: set_cri, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 지오
   - 어둠의 목자 디에네
   - 프리렌
-- 함께 사용된 영웅:
   - 기원의 라스
-  - 어둠의 목자 디에네
   - 베로니카
 
+### 아키
+- 최신 baseline 수치:
+  - 픽률: 1.01%
+  - 승률: 60.00%
+  - 밴률: 39.63%
+- legend baseline 관계:
+  - hard: 보건교사 율하, 조장 아룬카, 벨리안
+  - syn: 기원의 라스, 천칭의 주인, 바다의 유령 폴리티스
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 기존 HTML/개인 메모 기반 수치
+
+### 디자이너 릴리벳
+- 최신 baseline 수치:
+  - 픽률: 0.92%
+  - 승률: 56.16%
+  - 밴률: 38.37%
+- legend baseline 관계:
+  - hard: 프리렌, 잿빛 숲의 이세리아, 어둠의 목자 디에네
+  - syn: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 메모:
+  - 로그 등장 위치: 상대 중반 픽
+  - 랭커 전적에서 확인된 영웅
+
+### 뒤틀린 망령 카일론
+- 최신 baseline 수치:
+  - 픽률: 0.87%
+  - 승률: 60.44%
+  - 밴률: 32.39%
+- legend baseline 관계:
+  - hard: 벨리안, 조장 아룬카, 프리렌
+  - syn: 기원의 라스, 창공의 일리나브, 조장 아룬카
+  - sets: set_immune, set_vampire
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+
+### 서풍의 처형자 슈리
+- 최신 baseline 수치:
+  - 픽률: 0.84%
+  - 승률: 56.95%
+  - 밴률: 31.70%
+- legend baseline 관계:
+  - hard: 프리렌, 리나크, 조장 아룬카
+  - syn: 잿빛 숲의 이세리아, 기원의 라스, 어둠의 목자 디에네
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 보건교사 율하
+  - 아람
+  - 빌트레드
+  - 로그 기반 참조용
+  - 추가 규칙:
+  - 속기각
+
+### 진혼의 로앤나
+- 최신 baseline 수치:
+  - 픽률: 0.84%
+  - 승률: 54.07%
+  - 밴률: 40.35%
+- legend baseline 관계:
+  - hard: 조장 아룬카, 어둠의 목자 디에네, 리나크
+  - syn: 지오, 기원의 라스, 어둠의 목자 디에네
+  - sets: set_acc
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+
+### 슈리
+- 최신 baseline 수치:
+  - 픽률: 0.83%
+  - 승률: 62.48%
+  - 밴률: 42.68%
+- legend baseline 관계:
+  - hard: 리나크, 빌트레드, 어둠의 목자 디에네
+  - syn: 빌트레드, 프리렌, 잿빛 숲의 이세리아
+  - sets: set_cri, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 기존 HTML/개인 메모 기반 수치
+  - 추가 규칙:
+  - 속기각
+
+### 조율자 카웨릭
+- 최신 baseline 수치:
+  - 픽률: 0.73%
+  - 승률: 54.01%
+  - 밴률: 24.18%
+- legend baseline 관계:
+  - hard: 어둠의 목자 디에네, 벨리안, 기원의 라스
+  - syn: 창공의 일리나브, 조장 아룬카, 기원의 라스
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+
+### 여름 방학 샬롯
+- 최신 baseline 수치:
+  - 픽률: 0.71%
+  - 승률: 60.72%
+  - 밴률: 20.65%
+- legend baseline 관계:
+  - hard: 보건교사 율하, 어둠의 목자 디에네, 기원의 라스
+  - syn: 지오, 영안의 셀린, 쾌속의 기수 세크레트
+  - sets: set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: false
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모: 없음
+
+### 화원의 리디카
+- 최신 baseline 수치:
+  - 픽률: 0.70%
+  - 승률: 52.79%
+  - 밴률: 35.56%
+- legend baseline 관계:
+  - hard: 어둠의 목자 디에네, 바다의 유령 폴리티스, 프리렌
+  - syn: 지오, 기원의 라스, 후계자 태유
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+
 ### 디에네
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.68%
   - 승률: 52.26%
   - 밴률: 26.01%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 바다의 유령 폴리티스, 창공의 일리나브
+  - syn: 조장 아룬카, 보건교사 율하, 벨리안
+  - sets: set_res, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 바다의 유령 폴리티스
   - 창공의 일리나브
-- 함께 사용된 영웅:
   - 조장 아룬카
   - 보건교사 율하
   - 벨리안
 
+### 전승의 아미키
+- 최신 baseline 수치:
+  - 픽률: 0.64%
+  - 승률: 59.24%
+  - 밴률: 45.67%
+- legend baseline 관계:
+  - hard: 프리렌, 잿빛 숲의 이세리아, 어둠의 목자 디에네
+  - syn: 기원의 라스, 보건교사 율하, 조장 아룬카
+  - sets: set_counter, set_res
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 기원의 라스
+  - 보건교사 율하
+  - 로그 기반 참조용
+
+### 방랑자 실크
+- 최신 baseline 수치:
+  - 픽률: 0.63%
+  - 승률: 59.26%
+  - 밴률: 46.32%
+- legend baseline 관계:
+  - hard: 프리렌, 빌트레드, 리나크
+  - syn: 리나크, 빌트레드, 어둠의 목자 디에네
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가 규칙:
+  - 속기각
+
 ### 어둠의 코르부스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.63%
   - 승률: 53.56%
   - 밴률: 38.45%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 조장 아룬카, 빛의 루엘
+  - syn: 창공의 일리나브, 보건교사 율하, 하르세티
+  - sets: set_immune, set_opener
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 조장 아룬카
   - 빛의 루엘
-- 함께 사용된 영웅:
   - 창공의 일리나브
   - 보건교사 율하
   - 하르세티
 
+### 현자 바알&세잔
+- 최신 baseline 수치:
+  - 픽률: 0.62%
+  - 승률: 60.43%
+  - 밴률: 38.34%
+- legend baseline 관계:
+  - hard: 프리렌, 잿빛 숲의 이세리아, 리나크
+  - syn: 보건교사 율하, 조장 아룬카, 기원의 라스
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+
+### 혈검 카린
+- 최신 baseline 수치:
+  - 픽률: 0.58%
+  - 승률: 59.53%
+  - 밴률: 28.54%
+- legend baseline 관계:
+  - hard: 조장 아룬카, 기원의 라스, 리나크
+  - syn: 천칭의 주인, 기원의 라스, 프리렌
+  - sets: set_cri_dmg, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+
 ### 용의 반려 셰나
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.55%
   - 승률: 52.88%
   - 밴률: 19.82%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 프리렌, 조장 아룬카
+  - syn: 보건교사 율하, 기원의 라스, 빛의 루엘
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 프리렌
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 보건교사 율하
-  - 기원의 라스
   - 빛의 루엘
 
 ### 세즈
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.54%
   - 승률: 51.84%
   - 밴률: 33.03%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 기원의 라스, 빛의 루엘
+  - syn: 지오, 쾌속의 기수 세크레트, 영안의 셀린
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보건교사 율하
   - 기원의 라스
   - 빛의 루엘
-- 함께 사용된 영웅:
   - 지오
   - 쾌속의 기수 세크레트
   - 영안의 셀린
 
 ### 율하
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.53%
   - 승률: 55.74%
   - 밴률: 22.65%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 프리렌, 잿빛 숲의 이세리아, 조장 아룬카
+  - syn: 어린 셰나, 보건교사 율하, 창공의 일리나브
+  - sets: set_immune, set_max_hp
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 프리렌
   - 잿빛 숲의 이세리아
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 어린 셰나
   - 보건교사 율하
   - 창공의 일리나브
 
 ### 은빛 해일 화영
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.49%
   - 승률: 63.61%
   - 밴률: 40.03%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - syn: 기원의 라스, 리나크, 프리렌
+  - sets: set_cri_dmg, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 보건교사 율하
-  - 기원의 라스
-- 함께 사용된 영웅:
   - 기원의 라스
   - 리나크
   - 프리렌
 
+### 해군 대령 랑디
+- 최신 baseline 수치:
+  - 픽률: 0.48%
+  - 승률: 50.42%
+  - 밴률: 23.31%
+- legend baseline 관계:
+  - hard: 기원의 라스, 호반의 마녀 테네브리아, 쾌속의 기수 세크레트
+  - syn: 조장 아룬카, 창공의 일리나브, 보건교사 율하
+  - sets: set_counter, set_immune
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 기존 표기:
+  - 해군대령 랑디
+  - 기원의 라스
+  - 호반의 마녀 테네브리아
+  - 쾌속의 기수 세크레트
+  - 조장 아룬카
+  - 창공의 일리나브
+  - 보건교사 율하
+
 ### 전학생 아딘
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.47%
   - 승률: 55.94%
   - 밴률: 23.76%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 하르세티, 기원의 라스, 창공의 일리나브
+  - syn: 기원의 라스, 조장 아룬카, 쾌속의 기수 세크레트
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 하르세티
   - 기원의 라스
   - 창공의 일리나브
-- 함께 사용된 영웅:
-  - 기원의 라스
   - 조장 아룬카
   - 쾌속의 기수 세크레트
 
+### 페른
+- 최신 baseline 수치:
+  - 픽률: 0.46%
+  - 승률: 62.82%
+  - 밴률: 21.30%
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 창공의 일리나브
+  - syn: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - sets: set_opener, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+
+### 별의 신탁 엘레나
+- 최신 baseline 수치:
+  - 픽률: 0.44%
+  - 승률: 52.37%
+  - 밴률: 28.53%
+- legend baseline 관계:
+  - hard: 보검의 군주 이세리아, 보건교사 율하, 기원의 라스
+  - syn: 잿빛 숲의 이세리아, 프리렌, 모르트
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 기존 표기:
+  - 별의 엘레나
+  - 로그 기반 참조용
+
+### 시더
+- 최신 baseline 수치:
+  - 픽률: 0.42%
+  - 승률: 66.48%
+  - 밴률: 21.75%
+- legend baseline 관계:
+  - hard: 리나크, 보건교사 율하, 어둠의 목자 디에네
+  - syn: 잿빛 숲의 이세리아, 프리렌, 조장 아룬카
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가 규칙:
+  - 속기각
+
 ### 죄악의 안젤리카
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.42%
   - 승률: 52.73%
   - 밴률: 15.60%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 빛의 루엘, 보건교사 율하, 리나크
+  - syn: 천칭의 주인, 영안의 셀린, 리나크
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 빛의 루엘
   - 보건교사 율하
   - 리나크
-- 함께 사용된 영웅:
   - 천칭의 주인
   - 영안의 셀린
-  - 리나크
 
 ### 오퍼레이터 세크레트
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.37%
   - 승률: 62.77%
   - 밴률: 31.32%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 보건교사 율하, 나락의 세실리아
+  - syn: 리나크, 보건교사 율하, 천칭의 주인
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 보건교사 율하
   - 나락의 세실리아
-- 함께 사용된 영웅:
   - 리나크
-  - 보건교사 율하
   - 천칭의 주인
 
 ### 최강 모델 루루카
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.37%
   - 승률: 52.38%
   - 밴률: 26.64%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 빛의 루엘, 기원의 라스
+  - syn: 리나크, 바다의 유령 폴리티스, 천칭의 주인
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보건교사 율하
   - 빛의 루엘
   - 기원의 라스
-- 함께 사용된 영웅:
   - 리나크
   - 바다의 유령 폴리티스
   - 천칭의 주인
 
+### 야심가 타이윈
+- 최신 baseline 수치:
+  - 픽률: 0.36%
+  - 승률: 58.55%
+  - 밴률: 14.20%
+- legend baseline 관계:
+  - hard: 잿빛 숲의 이세리아, 프리렌, 천칭의 주인
+  - syn: 보건교사 율하, 조장 아룬카, 기원의 라스
+  - sets: set_max_hp, set_shield
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 벨리안
+  - 보검의 군주 이세리아
+  - 로그 기반 참조용
+
+### 해적 선장 플랑
+- 최신 baseline 수치:
+  - 픽률: 0.34%
+  - 승률: 58.56%
+  - 밴률: 35.82%
+- legend baseline 관계:
+  - hard: 어둠의 목자 디에네, 보건교사 율하, 바다의 유령 폴리티스
+  - syn: 지오, 기원의 라스, 쾌속의 기수 세크레트
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 메모:
+  - 로그 등장 위치: 상대 후반 픽
+  - 랭커 전적에서 반복 확인된 영웅 · 세부 메타 수치는 미확인
+
+### 엘비라
+- 최신 baseline 수치:
+  - 픽률: 0.33%
+  - 승률: 62.42%
+  - 밴률: 52.01%
+- legend baseline 관계:
+  - hard: 후계자 태유, 지오, 프리렌
+  - syn: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - sets: set_counter, set_res
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 메모:
+  - 로그 등장 위치: 상대 후반 픽
+  - 랭커 전적에서 확인된 영웅 · 세부 메타 수치는 미확인
+
+### 밀림
+- 최신 baseline 수치:
+  - 픽률: 0.31%
+  - 승률: 61.05%
+  - 밴률: 60.73%
+- legend baseline 관계:
+  - hard: 랑디, 빛의 루엘, 기원의 라스
+  - syn: 조장 아룬카, 메이드 클로에, 창공의 일리나브
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+
 ### 남국의 이세리아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.31%
   - 승률: 57.41%
   - 밴률: 32.14%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 프리렌, 리나크
+  - syn: 영안의 셀린, 프리렌, 잿빛 숲의 이세리아
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보건교사 율하
   - 프리렌
   - 리나크
-- 함께 사용된 영웅:
   - 영안의 셀린
-  - 프리렌
   - 잿빛 숲의 이세리아
 
 ### 밤의 연회 릴리아스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.30%
   - 승률: 61.46%
   - 밴률: 29.11%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 조장 아룬카, 기원의 라스
+  - syn: 천칭의 주인, 보건교사 율하, 기원의 라스
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보건교사 율하
   - 조장 아룬카
   - 기원의 라스
-- 함께 사용된 영웅:
   - 천칭의 주인
-  - 보건교사 율하
-  - 기원의 라스
+
+### 후미르
+- 최신 baseline 수치:
+  - 픽률: 0.29%
+  - 승률: 60.44%
+  - 밴률: 39.12%
+- legend baseline 관계:
+  - hard: 창공의 일리나브, 벨리안, 조장 아룬카
+  - syn: 프리렌, 보건교사 율하, 메이드 클로에
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
 
 ### 루이자
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.28%
   - 승률: 55.64%
   - 밴률: 9.93%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - syn: 어둠의 목자 디에네, 기원의 라스, 보건교사 율하
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 보건교사 율하
   - 기원의 라스
-- 함께 사용된 영웅:
   - 어둠의 목자 디에네
-  - 기원의 라스
-  - 보건교사 율하
 
 ### 슈니엘
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.25%
   - 승률: 66.97%
   - 밴률: 57.42%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 죽음의 탐구자 레이, 기원의 라스, 조장 아룬카
+  - syn: 창공의 일리나브, 조장 아룬카, 기원의 라스
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 죽음의 탐구자 레이
   - 기원의 라스
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 창공의 일리나브
-  - 조장 아룬카
-  - 기원의 라스
 
 ### 설계자 라이카
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.25%
   - 승률: 52.86%
   - 밴률: 38.98%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 설화, 빛의 루엘
+  - syn: 천칭의 주인, 리나크, 기원의 라스
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보건교사 율하
   - 설화
   - 빛의 루엘
-- 함께 사용된 영웅:
   - 천칭의 주인
   - 리나크
   - 기원의 라스
 
+### 낙월
+- 최신 baseline 수치:
+  - 픽률: 0.24%
+  - 승률: 51.87%
+  - 밴률: 37.57%
+- legend baseline 관계:
+  - hard: 보검의 군주 이세리아, 창공의 일리나브, 조장 아룬카
+  - syn: 보건교사 율하, 기원의 라스, 조장 아룬카
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가규칙:
+  - 선턴잡이
+
 ### 지배자 릴리아스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.21%
   - 승률: 61.89%
   - 밴률: 11.92%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 벨리안, 조장 아룬카
+  - syn: 프리렌, 은빛 해일 화영, 천칭의 주인
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보건교사 율하
   - 벨리안
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 프리렌
   - 은빛 해일 화영
   - 천칭의 주인
 
 ### 데스티나
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.21%
   - 승률: 49.21%
   - 밴률: 21.67%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 쾌속의 기수 세크레트, 보건교사 율하, 기원의 라스
+  - syn: 조장 아룬카, 창공의 일리나브, 보검의 군주 이세리아
+  - sets: set_res, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 쾌속의 기수 세크레트
   - 보건교사 율하
   - 기원의 라스
-- 함께 사용된 영웅:
   - 조장 아룬카
   - 창공의 일리나브
   - 보검의 군주 이세리아
 
+### 토라미
+- 최신 baseline 수치:
+  - 픽률: 0.20%
+  - 승률: 51.64%
+  - 밴률: 18.51%
+- legend baseline 관계:
+  - hard: 기원의 라스, 창공의 일리나브, 쾌속의 기수 세크레트
+  - syn: 조장 아룬카, 모험가 라스, 창공의 일리나브
+  - sets: set_immune, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 메모:
+  - 로그 등장 위치: 상대 후반 픽
+  - 랭커 전적에서 확인된 영웅 · 세부 메타 수치는 미확인
+
 ### 라이아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.20%
   - 승률: 51.40%
   - 밴률: 24.82%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 보건교사 율하, 조장 아룬카
+  - syn: 조장 아룬카, 창공의 일리나브, 보건교사 율하
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 보건교사 율하
   - 조장 아룬카
-- 함께 사용된 영웅:
-  - 조장 아룬카
   - 창공의 일리나브
-  - 보건교사 율하
 
 ### 숲의 현자 비비안
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.20%
   - 승률: 44.79%
   - 밴률: 20.49%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 호반의 마녀 테네브리아, 조장 아룬카
+  - syn: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - sets: set_cri_dmg, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 호반의 마녀 테네브리아
   - 조장 아룬카
-- 함께 사용된 영웅:
-  - 조장 아룬카
   - 보건교사 율하
-  - 기원의 라스
 
 ### 페네
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.17%
   - 승률: 52.60%
   - 밴률: 9.96%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보검의 군주 이세리아, 기원의 라스, 빛의 루엘
+  - syn: 보건교사 율하, 조장 아룬카, 모르트
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보검의 군주 이세리아
   - 기원의 라스
   - 빛의 루엘
-- 함께 사용된 영웅:
   - 보건교사 율하
   - 조장 아룬카
   - 모르트
 
+### 잭 오
+- 최신 baseline 수치:
+  - 픽률: 0.15%
+  - 승률: 56.78%
+  - 밴률: 18.55%
+- legend baseline 관계:
+  - hard: 보건교사 율하, 하르세티, 창공의 일리나브
+  - syn: 지오, 프리렌, 후계자 태유
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 메모:
+  - 로그 등장 위치: 내 팀 후반 연계 픽
+  - 랭커 전적에서 확인된 영웅 · 세부 메타 수치는 미확인
+
 ### 프리다
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.14%
   - 승률: 58.60%
   - 밴률: 22.22%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 벨리안, 보건교사 율하, 조장 아룬카
+  - syn: 어둠의 목자 디에네, 기원의 라스, 리나크
+  - sets: set_res, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 벨리안
   - 보건교사 율하
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 어둠의 목자 디에네
   - 기원의 라스
   - 리나크
 
+### 바캉스 유피네
+- 최신 baseline 수치:
+  - 픽률: 0.14%
+  - 승률: 58.24%
+  - 밴률: 40.20%
+- legend baseline 관계:
+  - hard: 지오, 후계자 태유, 어둠의 목자 디에네
+  - syn: 기원의 라스, 보건교사 율하, 어둠의 목자 디에네
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 메모:
+  - 로그 등장 위치: 프리밴 로그
+  - 랭커 전적에서 확인된 영웅 · 세부 메타 수치는 미확인
+
 ### 비후
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.14%
   - 승률: 55.00%
   - 밴률: 27.18%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 프리렌, 보건교사 율하, 조장 아룬카
+  - syn: 보건교사 율하, 조장 아룬카, 창공의 일리나브
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 프리렌
-  - 보건교사 율하
-  - 조장 아룬카
-- 함께 사용된 영웅:
   - 보건교사 율하
   - 조장 아룬카
   - 창공의 일리나브
 
 ### 무투가 켄
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.14%
   - 승률: 54.31%
   - 밴률: 25.74%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 베로니카, 기원의 라스, 조장 아룬카
+  - syn: 어둠의 목자 디에네, 조장 아룬카, 리나크
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 베로니카
   - 기원의 라스
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 어둠의 목자 디에네
-  - 조장 아룬카
   - 리나크
 
 ### 유피네
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.14%
   - 승률: 46.34%
   - 밴률: 9.80%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 하르세티, 보건교사 율하, 창공의 일리나브
+  - syn: 지오, 후계자 태유, 영안의 셀린
+  - sets: set_cri_dmg, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 하르세티
   - 보건교사 율하
   - 창공의 일리나브
-- 함께 사용된 영웅:
   - 지오
   - 후계자 태유
   - 영안의 셀린
 
+### 집행관 빌트레드
+- 최신 baseline 수치:
+  - 픽률: 0.14%
+  - 승률: 60.00%
+  - 밴률: 29.90%
+- legend baseline 관계:
+  - hard: 리나크, 조장 아룬카, 보건교사 율하
+  - syn: 어둠의 목자 디에네, 기원의 라스, 바다의 유령 폴리티스
+  - sets: set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: false
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모: 없음
+
 ### 로앤나
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.13%
   - 승률: 61.36%
   - 밴률: 42.22%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 프리렌, 천칭의 주인, 보건교사 율하
+  - syn: 조장 아룬카, 보건교사 율하, 창공의 일리나브
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 프리렌
   - 천칭의 주인
   - 보건교사 율하
-- 함께 사용된 영웅:
   - 조장 아룬카
-  - 보건교사 율하
   - 창공의 일리나브
 
 ### 호위대장 크라우
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.12%
   - 승률: 60.68%
   - 밴률: 18.13%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 기원의 라스, 빛의 루엘
+  - syn: 창공의 일리나브, 기원의 라스, 보건교사 율하
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 기원의 라스
   - 빛의 루엘
-- 함께 사용된 영웅:
   - 창공의 일리나브
-  - 기원의 라스
   - 보건교사 율하
 
 ### 비탄의 로제
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.10%
   - 승률: 45.92%
   - 밴률: 16.22%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 빛의 루엘, 쾌속의 기수 세크레트
+  - syn: 보건교사 율하, 조장 아룬카, 벨리안
+  - sets: set_immune, set_shield
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 빛의 루엘
   - 쾌속의 기수 세크레트
-- 함께 사용된 영웅:
   - 보건교사 율하
   - 조장 아룬카
   - 벨리안
 
 ### 적월의 귀족 헤이스트
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.09%
   - 승률: 54.02%
   - 밴률: 13.93%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 지오, 천칭의 주인
+  - syn: 보건교사 율하, 빛의 루엘, 창공의 일리나브
+  - sets: set_counter, set_immune
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 지오
   - 천칭의 주인
-- 함께 사용된 영웅:
   - 보건교사 율하
   - 빛의 루엘
   - 창공의 일리나브
 
 ### 아리아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.08%
   - 승률: 67.12%
   - 밴률: 25.89%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 창공의 일리나브, 도시의 그림자 슈
+  - syn: 보건교사 율하, 창공의 일리나브, 기원의 라스
+  - sets: set_immune, set_vampire
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 창공의 일리나브
   - 도시의 그림자 슈
-- 함께 사용된 영웅:
   - 보건교사 율하
-  - 창공의 일리나브
   - 기원의 라스
 
 ### 모험가 라스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.08%
   - 승률: 52.81%
   - 밴률: 2.59%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 창공의 일리나브, 보건교사 율하
+  - syn: 조장 아룬카, 토라미, 해군 대령 랑디
+  - sets: set_immune, set_shield
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 창공의 일리나브
   - 보건교사 율하
-- 함께 사용된 영웅:
   - 조장 아룬카
   - 토라미
   - 해군 대령 랑디
 
 ### 일편고월 벨로나
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.07%
   - 승률: 59.02%
   - 밴률: 20.00%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 벨리안, 보건교사 율하, 조장 아룬카
+  - syn: 조장 아룬카, 창공의 일리나브, 메이드 클로에
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 벨리안
   - 보건교사 율하
-  - 조장 아룬카
-- 함께 사용된 영웅:
   - 조장 아룬카
   - 창공의 일리나브
   - 메이드 클로에
 
 ### 심판자 키세
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.07%
   - 승률: 58.75%
   - 밴률: 24.76%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 조장 아룬카, 리나크
+  - syn: 아미드, 프리렌, 빛의 루엘
+  - sets: set_cri_dmg, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보건교사 율하
   - 조장 아룬카
   - 리나크
-- 함께 사용된 영웅:
   - 아미드
   - 프리렌
   - 빛의 루엘
 
 ### 종결자 찰스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.07%
   - 승률: 33.82%
   - 밴률: 7.77%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - syn: 지오, 세즈, 기원의 라스
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 보건교사 율하
   - 기원의 라스
-- 함께 사용된 영웅:
   - 지오
   - 세즈
-  - 기원의 라스
+
+### 수린
+- 최신 baseline 수치:
+  - 픽률: 0.07%
+  - 승률: 59.09%
+  - 밴률: 30.69%
+- legend baseline 관계:
+  - hard: 슈리, 빌트레드, 방랑자 실크
+  - syn: 리디카, 빌트레드, 방랑자 실크
+  - sets: set_cri, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가 규칙:
+  - 속기각
+  - 메모:
+  - 추후 데이터 보강 필요
 
 ### 실험체 세즈
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.07%
   - 승률: 48.72%
   - 밴률: 7.37%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 어둠의 목자 디에네, 빛의 루엘
+  - syn: 쾌속의 기수 세크레트, 지오, 기원의 라스
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보건교사 율하
   - 어둠의 목자 디에네
   - 빛의 루엘
-- 함께 사용된 영웅:
   - 쾌속의 기수 세크레트
   - 지오
   - 기원의 라스
 
 ### 에드워드 엘릭
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.07%
   - 승률: 44.90%
   - 밴률: 35.29%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 잿빛 숲의 이세리아, 프리렌, 어둠의 목자 디에네
+  - syn: 기원의 라스, 리나크, 보건교사 율하
+  - sets: set_cri_dmg, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 잿빛 숲의 이세리아
   - 프리렌
   - 어둠의 목자 디에네
-- 함께 사용된 영웅:
   - 기원의 라스
   - 리나크
   - 보건교사 율하
 
 ### 바다 향기 루루카
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.06%
   - 승률: 67.92%
   - 밴률: 35.00%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 아미드, 프리렌, 조장 아룬카
+  - syn: 보건교사 율하, 벨리안, 창공의 일리나브
+  - sets: set_res, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 아미드
   - 프리렌
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 보건교사 율하
   - 벨리안
   - 창공의 일리나브
 
 ### 엘리고스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.05%
   - 승률: 51.52%
   - 밴률: 16.18%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 조장 아룬카, 어둠의 목자 디에네
+  - syn: 리나크, 조장 아룬카, 프리렌
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보건교사 율하
   - 조장 아룬카
   - 어둠의 목자 디에네
-- 함께 사용된 영웅:
   - 리나크
-  - 조장 아룬카
   - 프리렌
 
+### 주시자 슈리
+- 최신 baseline 수치:
+  - 픽률: 0.05%
+  - 승률: 51.02%
+  - 밴률: 18.46%
+- legend baseline 관계:
+  - hard: 리나크, 기원의 라스, 보건교사 율하
+  - syn: 빌트레드, 프리렌, 아미드
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가 규칙:
+  - 속기각
+  - 메모:
+  - 추후 데이터 보강 필요
+
 ### 빛의 천사 안젤리카
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.05%
   - 승률: 38.46%
   - 밴률: 37.84%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 프리렌, 란, 백은칼날의 아라민타
+  - syn: 보건교사 율하, 조장 아룬카, 보검의 군주 이세리아
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 프리렌
   - 란
   - 백은칼날의 아라민타
-- 함께 사용된 영웅:
   - 보건교사 율하
   - 조장 아룬카
   - 보검의 군주 이세리아
 
 ### 도전자 도미니엘
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.05%
   - 승률: 31.58%
   - 밴률: 13.24%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 보건교사 율하, 조장 아룬카
+  - syn: 란, 프리렌, 리나크
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 보건교사 율하
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 란
   - 프리렌
   - 리나크
 
 ### 잔영의 비올레토
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.04%
   - 승률: 47.62%
   - 밴률: 10.94%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 창공의 일리나브, 벨리안, 조장 아룬카
+  - syn: 고독한 늑대 페이라, 조장 아룬카, 쾌속의 기수 세크레트
+  - sets: set_penetrate, set_vampire
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 창공의 일리나브
   - 벨리안
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 고독한 늑대 페이라
-  - 조장 아룬카
   - 쾌속의 기수 세크레트
 
 ### 구원자 아딘
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.04%
   - 승률: 41.18%
   - 밴률: 9.84%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 보건교사 율하, 조장 아룬카
+  - syn: 천칭의 주인, 리나크, 고독한 늑대 페이라
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 보건교사 율하
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 천칭의 주인
   - 리나크
   - 고독한 늑대 페이라
 
 ### 멜리사
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.04%
   - 승률: 55.56%
   - 밴률: 25.93%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 창공의 일리나브, 벨리안
+  - syn: 어둠의 목자 디에네, 바다의 유령 폴리티스, 프리렌
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보건교사 율하
   - 창공의 일리나브
   - 벨리안
-- 함께 사용된 영웅:
   - 어둠의 목자 디에네
   - 바다의 유령 폴리티스
   - 프리렌
 
 ### 알렌시아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.04%
   - 승률: 52.94%
   - 밴률: 10.34%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 보건교사 율하, 조장 아룬카
+  - syn: 조장 아룬카, 보건교사 율하, 빛의 루엘
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 보건교사 율하
   - 조장 아룬카
-- 함께 사용된 영웅:
-  - 조장 아룬카
-  - 보건교사 율하
   - 빛의 루엘
 
 ### 아비게일
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.04%
   - 승률: 52.78%
   - 밴률: 35.59%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 방관자 화영, 보건교사 율하, 조장 아룬카
+  - syn: 보검의 군주 이세리아, 보건교사 율하, 기원의 라스
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 방관자 화영
   - 보건교사 율하
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 보검의 군주 이세리아
-  - 보건교사 율하
   - 기원의 라스
 
 ### 릴리아스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.04%
   - 승률: 46.67%
   - 밴률: 11.54%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 쾌속의 기수 세크레트, 기원의 라스, 벨리안
+  - syn: 창공의 일리나브, 조장 아룬카, 메이드 클로에
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 쾌속의 기수 세크레트
   - 기원의 라스
   - 벨리안
-- 함께 사용된 영웅:
   - 창공의 일리나브
   - 조장 아룬카
   - 메이드 클로에
 
 ### 크리스티
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.04%
   - 승률: 41.67%
   - 밴률: 29.41%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 리나크, 호반의 마녀 테네브리아
+  - syn: 프리렌, 벨리안, 조장 아룬카
+  - sets: set_res
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: false
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 리나크
   - 호반의 마녀 테네브리아
-- 함께 사용된 영웅:
   - 프리렌
   - 벨리안
-  - 조장 아룬카
 
 ### 자하크
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.03%
   - 승률: 60.00%
   - 밴률: 31.58%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 쾌속의 기수 세크레트, 창공의 일리나브
+  - syn: 조장 아룬카, 고독한 늑대 페이라, 리나크
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 쾌속의 기수 세크레트
   - 창공의 일리나브
-- 함께 사용된 영웅:
   - 조장 아룬카
   - 고독한 늑대 페이라
   - 리나크
 
 ### 마신의 그림자
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.03%
   - 승률: 58.00%
   - 밴률: 19.57%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 창공의 일리나브, 보건교사 율하, 기원의 라스
+  - syn: 기원의 라스, 조장 아룬카, 보건교사 율하
+  - sets: set_counter, set_immune
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 창공의 일리나브
   - 보건교사 율하
   - 기원의 라스
-- 함께 사용된 영웅:
-  - 기원의 라스
   - 조장 아룬카
-  - 보건교사 율하
 
 ### 릴리벳
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.03%
   - 승률: 45.24%
   - 밴률: 33.33%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 보건교사 율하, 벨리안
+  - syn: 바다의 유령 폴리티스, 천칭의 주인, 리나크
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 보건교사 율하
   - 벨리안
-- 함께 사용된 영웅:
   - 바다의 유령 폴리티스
   - 천칭의 주인
   - 리나크
 
 ### 수호천사 몽모랑시
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.03%
   - 승률: 42.39%
   - 밴률: 13.89%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 쾌속의 기수 세크레트, 보건교사 율하, 기원의 라스
+  - syn: 조장 아룬카, 보검의 군주 이세리아, 창공의 일리나브
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 쾌속의 기수 세크레트
   - 보건교사 율하
   - 기원의 라스
-- 함께 사용된 영웅:
   - 조장 아룬카
   - 보검의 군주 이세리아
   - 창공의 일리나브
 
+### 사막의 보석 바사르
+- 최신 baseline 수치:
+  - 픽률: 0.02%
+  - 승률: 44.44%
+  - 밴률: 17.14%
+- legend baseline 관계:
+  - hard: 조장 아룬카, 영안의 셀린, 메이드 클로에
+  - syn: 기원의 라스, 창공의 일리나브, 보건교사 율하
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 124승 64패
+  - 카운터: 신월의 루나, 기원의 라스, 조장 아룬카
+  - 시너지: 창공의 일리나브, 조장 아룬카, 기원의 라스
+  - 추가 규칙:
+  - 선턴잡이
+
+### 비르기타
+- 최신 baseline 수치:
+  - 픽률: 0.02%
+  - 승률: 78.57%
+  - 밴률: 34.38%
+- legend baseline 관계:
+  - hard: 창공의 일리나브, 보건교사 율하, 보검의 군주 이세리아
+  - syn: 쾌속의 기수 세크레트, 조장 아룬카, 천칭의 주인
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 기존 HTML/개인 메모 기반 수치
+
 ### 레테
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.02%
   - 승률: 60.61%
   - 밴률: 27.27%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 벨리안, 조장 아룬카, 보건교사 율하
+  - syn: 보건교사 율하, 창공의 일리나브, 조장 아룬카
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 벨리안
   - 조장 아룬카
   - 보건교사 율하
-- 함께 사용된 영웅:
-  - 보건교사 율하
   - 창공의 일리나브
-  - 조장 아룬카
 
 ### 로빈
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.02%
   - 승률: 60.61%
   - 밴률: 36.36%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 어둠의 목자 디에네, 프리렌
+  - syn: 리나크, 보건교사 율하, 천칭의 주인
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 어둠의 목자 디에네
   - 프리렌
-- 함께 사용된 영웅:
   - 리나크
   - 보건교사 율하
   - 천칭의 주인
 
 ### 떠돌이 왕자 시더
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.02%
   - 승률: 58.97%
   - 밴률: 34.62%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 프리렌
+  - syn: 란, 어둠의 목자 디에네, 지오
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 보건교사 율하
   - 프리렌
-- 함께 사용된 영웅:
   - 란
   - 어둠의 목자 디에네
   - 지오
 
 ### 알베도
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.02%
   - 승률: 54.55%
   - 밴률: 6.67%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 잿빛 숲의 이세리아, 천칭의 주인, 프리렌
+  - syn: 어린 셰나, 보건교사 율하, 기원의 라스
+  - sets: set_immune, set_shield
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 잿빛 숲의 이세리아
   - 천칭의 주인
   - 프리렌
-- 함께 사용된 영웅:
   - 어린 셰나
   - 보건교사 율하
   - 기원의 라스
 
 ### 자유기사 아로웰
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.02%
   - 승률: 50.00%
   - 밴률: 8.00%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 창공의 일리나브, 쾌속의 기수 세크레트, 한낮의 유영 플랑
+  - syn: 기원의 라스, 조장 아룬카, 보검의 군주 이세리아
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 창공의 일리나브
   - 쾌속의 기수 세크레트
   - 한낮의 유영 플랑
-- 함께 사용된 영웅:
   - 기원의 라스
   - 조장 아룬카
   - 보검의 군주 이세리아
 
 ### 메르헨 테네브리아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.02%
   - 승률: 43.48%
   - 밴률: 28.00%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 창공의 일리나브, 메이드 클로에
+  - syn: 리나크, 기원의 라스, 보건교사 율하
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 창공의 일리나브
   - 메이드 클로에
-- 함께 사용된 영웅:
   - 리나크
   - 기원의 라스
   - 보건교사 율하
 
+### 베니마루
+- 최신 baseline 수치:
+  - 픽률: 0.02%
+  - 승률: 42.86%
+  - 밴률: 38.46%
+- legend baseline 관계:
+  - hard: 리나크, 어린 셰나, 고독한 늑대 페이라
+  - syn: 조장 아룬카, 잿빛 숲의 이세리아, 어둠의 목자 디에네
+  - sets: set_cri, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+
 ### 연구자 캐롯
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.02%
   - 승률: 40.00%
   - 밴률: 30.00%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 프리렌, 리나크, 랑디
+  - syn: 보건교사 율하, 천칭의 주인, 조장 아룬카
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 프리렌
   - 리나크
   - 랑디
-- 함께 사용된 영웅:
   - 보건교사 율하
   - 천칭의 주인
   - 조장 아룬카
 
 ### 펜리스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.02%
   - 승률: 39.47%
   - 밴률: 28.00%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보검의 군주 이세리아, 보건교사 율하, 어둠의 목자 디에네
+  - syn: 천칭의 주인, 잿빛 숲의 이세리아, 지오
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보검의 군주 이세리아
   - 보건교사 율하
   - 어둠의 목자 디에네
-- 함께 사용된 영웅:
   - 천칭의 주인
   - 잿빛 숲의 이세리아
   - 지오
 
 ### 해변의 벨로나
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.02%
   - 승률: 63.64%
   - 밴률: 30.43%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 한낮의 유영 플랑, 벨리안, 창공의 일리나브
+  - syn: 창공의 일리나브, 조장 아룬카, 보건교사 율하
+  - sets: set_immune, set_vampire
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 한낮의 유영 플랑
   - 벨리안
-  - 창공의 일리나브
-- 함께 사용된 영웅:
   - 창공의 일리나브
   - 조장 아룬카
   - 보건교사 율하
 
+### 어린 여왕 샬롯
+- 최신 baseline 수치:
+  - 픽률: 0.02%
+  - 승률: 56.52%
+  - 밴률: 25.00%
+- legend baseline 관계:
+  - hard: 벨리안, 기원의 라스, 보건교사 율하
+  - syn: 조장 아룬카, 기원의 라스, 보건교사 율하
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+
 ### 라스트 피스 카린
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.02%
   - 승률: 50.00%
   - 밴률: 12.50%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 쾌속의 기수 세크레트, 빛의 루엘, 어둠의 목자 디에네
+  - syn: 고독한 늑대 페이라, 조장 아룬카, 죽음의 탐구자 레이
+  - sets: set_penetrate, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 쾌속의 기수 세크레트
   - 빛의 루엘
   - 어둠의 목자 디에네
-- 함께 사용된 영웅:
   - 고독한 늑대 페이라
   - 조장 아룬카
   - 죽음의 탐구자 레이
 
 ### 비브리스
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.02%
   - 승률: 46.67%
   - 밴률: 31.82%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보검의 군주 이세리아, 보건교사 율하, 설화
+  - syn: 기원의 라스, 조장 아룬카, 빛의 루엘
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보검의 군주 이세리아
   - 보건교사 율하
   - 설화
-- 함께 사용된 영웅:
   - 기원의 라스
   - 조장 아룬카
   - 빛의 루엘
 
+### 키세
+- 최신 baseline 수치:
+  - 픽률: 0.02%
+  - 승률: 46.43%
+  - 밴률: 52.17%
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 기원의 라스
+  - syn: 아미드, 프리렌, 리나크
+  - sets: set_cri_dmg, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+  - 추가 규칙:
+  - 수치 신뢰도 매우 낮음
+
 ### 하솔
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.02%
   - 승률: 42.86%
   - 밴률: 29.17%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 설화, 조장 아룬카, 보건교사 율하
+  - syn: 리나크, 빛의 루엘, 프리렌
+  - sets: set_max_hp, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 설화
   - 조장 아룬카
   - 보건교사 율하
-- 함께 사용된 영웅:
   - 리나크
   - 빛의 루엘
   - 프리렌
 
 ### 에다
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.01%
   - 승률: 57.14%
   - 밴률: 19.05%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 기원의 라스, 조장 아룬카, 보건교사 율하
+  - syn: 란, 리나크, 프리렌
+  - sets: set_speed, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 기원의 라스
   - 조장 아룬카
   - 보건교사 율하
-- 함께 사용된 영웅:
   - 란
   - 리나크
   - 프리렌
 
 ### 봉안의 수린
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.01%
   - 승률: 54.24%
   - 밴률: 28.57%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 보건교사 율하, 리나크, 조장 아룬카
+  - syn: 프리렌, 지배자 릴리아스, 소악마 루아
+  - sets: set_cri_dmg, set_torrent
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 보건교사 율하
   - 리나크
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 프리렌
   - 지배자 릴리아스
   - 소악마 루아
 
 ### 환영의 테네브리아
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.01%
   - 승률: 48.15%
   - 밴률: 9.52%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 보건교사 율하, 풍기위원 아리아
+  - syn: 기원의 라스, 프리렌, 보건교사 율하
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 보건교사 율하
   - 풍기위원 아리아
-- 함께 사용된 영웅:
   - 기원의 라스
   - 프리렌
-  - 보건교사 율하
 
 ### 자애의 로만
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.01%
   - 승률: 38.89%
   - 밴률: 14.29%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 지오, 리나크, 보건교사 율하
+  - syn: 기원의 라스, 미지의 가능성 아카테스, 쾌속의 기수 세크레트
+  - sets: set_acc, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 지오
   - 리나크
   - 보건교사 율하
-- 함께 사용된 영웅:
   - 기원의 라스
   - 미지의 가능성 아카테스
   - 쾌속의 기수 세크레트
 
 ### 지휘관 로리나
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.01%
   - 승률: 60.00%
   - 밴률: 20.00%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 모르트, 풍기위원 아리아, 창공의 일리나브
+  - syn: 기원의 라스, 쾌속의 기수 세크레트, 잿빛 숲의 이세리아
+  - sets: set_counter, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 모르트
   - 풍기위원 아리아
   - 창공의 일리나브
-- 함께 사용된 영웅:
   - 기원의 라스
   - 쾌속의 기수 세크레트
   - 잿빛 숲의 이세리아
 
 ### 지휘형 라이카
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.01%
   - 승률: 59.09%
   - 밴률: 10.00%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 어둠의 목자 디에네, 기원의 라스, 바다의 유령 폴리티스
+  - syn: 보건교사 율하, 조장 아룬카, 벨리안
+  - sets: set_cri, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 어둠의 목자 디에네
   - 기원의 라스
   - 바다의 유령 폴리티스
-- 함께 사용된 영웅:
   - 보건교사 율하
   - 조장 아룬카
   - 벨리안
 
+### 크라우
+- 최신 baseline 수치:
+  - 픽률: 0.01%
+  - 승률: 47.62%
+  - 밴률: 0.00%
+- legend baseline 관계:
+  - hard: 기원의 라스, 천칭의 주인, 조장 아룬카
+  - syn: 보건교사 율하, 어둠의 목자 디에네, 빛의 루엘
+  - sets: set_immune, set_shield
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: true
+  - pattern: true
+- 기존 사용자 규칙/메모:
+  - 로그 기반 참조용
+
 ### 타마린느
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.01%
   - 승률: 44.12%
   - 밴률: 0.00%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 조장 아룬카, 리나크, 어둠의 목자 디에네
+  - syn: 보건교사 율하, 기원의 라스, 창공의 일리나브
+  - sets: set_acc, set_opener
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 조장 아룬카
   - 리나크
   - 어둠의 목자 디에네
-- 함께 사용된 영웅:
   - 보건교사 율하
   - 기원의 라스
   - 창공의 일리나브
 
 ### 불사형 오공
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.01%
   - 승률: 33.33%
   - 밴률: 44.44%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 창공의 일리나브, 하르세티, 조장 아룬카
+  - syn: 보건교사 율하, 어둠의 목자 디에네, 어린 셰나
+  - sets: set_cri_dmg, set_penetrate
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 창공의 일리나브
   - 하르세티
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 보건교사 율하
   - 어둠의 목자 디에네
   - 어린 셰나
 
 ### 암살자 카르투하
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.01%
   - 승률: 20.00%
   - 밴률: 50.00%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 프리렌, 기원의 라스, 조장 아룬카
+  - syn: 설화, 리나크, 어둠의 목자 디에네
+  - sets: set_immune, set_riposte
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 프리렌
   - 기원의 라스
   - 조장 아룬카
-- 함께 사용된 영웅:
   - 설화
   - 리나크
   - 어둠의 목자 디에네
 
 ### ae-윈터
-- 최신 메타 수치:
+- 최신 baseline 수치:
   - 픽률: 0.01%
   - 승률: 14.29%
   - 밴률: 10.00%
-- 상대하기 어려운 영웅:
+- legend baseline 관계:
+  - hard: 리나크, 바다의 유령 폴리티스, 빛의 루엘
+  - syn: 보건교사 율하, 리나크, 베로니카
+  - sets: set_immune, set_speed
+- source flags:
+  - legend: true
+  - mdProfile: true
+  - htmlLegacy: false
+  - pattern: true
+- 기존 사용자 규칙/메모:
   - 리나크
   - 바다의 유령 폴리티스
   - 빛의 루엘
-- 함께 사용된 영웅:
   - 보건교사 율하
-  - 리나크
   - 베로니카
 
-## 7) 특수 규칙 / 추천 엔진용 해석 가이드
+7) 특수 규칙 / 추천 엔진용 해석 가이드
 
 ### 평균 지표(meta) 해석
 - 평균 지표는 **픽률 / 승률 / 밴률 기반의 순수 체급 신호**로 본다.
