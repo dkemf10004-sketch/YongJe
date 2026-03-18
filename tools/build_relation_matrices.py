@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import math
@@ -14,6 +14,13 @@ MATCHUP_OUT = DATA_DIR / 'compiled_matchup_matrix.json'
 SYNERGY_OUT = DATA_DIR / 'compiled_synergy_matrix.json'
 ROLE_OUT = DATA_DIR / 'compiled_role_scores.json'
 OVERLAY_OUT = DATA_DIR / 'compiled_runtime_overlay.json'
+VALIDATION_REPORT_OUT = DATA_DIR / 'overlay_validation_report.md'
+VALIDATION_HERO_IDS = ['SCENT_POLITIS', 'GIO', 'MAID_CHLOE', 'SEOLHWA', 'FRIEREN']
+REGRESSION_HERO_IDS = ['BELIAN', 'RINAK']
+TOP60_COUNT = 60
+TOP60_RELATION_LIMIT = 10
+TOP60_MIN_ANCHOR_COUNT = 6
+GRADE_ORDER = {'A': 3, 'B': 2, 'C': 1}
 
 
 def read_json(path: Path):
@@ -115,7 +122,9 @@ def finalize_relation_items(items: list[dict], limit: int = RELATION_LIMIT) -> l
             'id': item['id'],
             'score': round4(float(item.get('score', 0.0))),
             'confidence': round4(float(item.get('confidence', 0.0))),
+            'grade': str(item.get('grade') or 'B'),
             'source': str(item.get('source') or 'unknown'),
+            'sampleCount': int(item.get('sampleCount') or 0),
         })
     return cleaned
 
@@ -525,6 +534,802 @@ def build_runtime_overlay(compiled_heroes: dict, counter_matrix: dict, synergy_m
         }
     }
 
+def extract_sample_count(entry: dict) -> int:
+    samples = [int(entry.get('sample') or 0)]
+    for value in (entry.get('sources') or {}).values():
+        if isinstance(value, dict):
+            for key in ('games', 'count', 'sample', 'sampleCount', 'banCount'):
+                if value.get(key):
+                    samples.append(int(value.get(key) or 0))
+    return max(samples or [0])
+
+
+def source_grade_from_entry(relation_key: str, entry: dict) -> tuple[str, str]:
+    sources = entry.get('sources') or {}
+    confidence = float(entry.get('confidence') or 0.0)
+    sample_count = extract_sample_count(entry)
+    raw_score = max(float(entry.get('rawScore') or 0.0), float(entry.get('score') or 0.0))
+    if relation_key == 'helpsWith':
+        if sources.get('legendWith'):
+            return 'legendWith', 'A'
+        if sources.get('pairLift'):
+            return 'pairLift', 'A' if confidence >= 0.44 or sample_count >= 28 or raw_score >= 0.14 else 'B'
+        if sources.get('packageLift'):
+            return 'packageLift', 'A' if confidence >= 0.38 or sample_count >= 24 or raw_score >= 0.12 else 'B'
+        return 'pairLift', 'B'
+    observed_source = 'observedGoodVs' if relation_key == 'goodVs' else 'observedBadVs'
+    if sources.get('legendHard'):
+        return 'legendHard', 'A'
+    if confidence >= 0.44 or sample_count >= 24 or raw_score >= 0.12:
+        return observed_source, 'A'
+    return observed_source, 'B'
+
+
+def relation_priority(grade: str, source: str) -> float:
+    if grade == 'A':
+        if source in {'legendWith', 'legendHard'}:
+            return 3.8
+        return 3.3
+    if grade == 'B':
+        if source in {'legendWith', 'legendHard'}:
+            return 2.9
+        return 2.4
+    return 0.4
+
+
+def relation_compare_key(item: dict) -> tuple:
+    return (
+        GRADE_ORDER.get(str(item.get('grade') or 'C'), 0),
+        float(item.get('_priority', 0.0)),
+        float(item.get('score', 0.0)),
+        float(item.get('confidence', 0.0)),
+        int(item.get('sampleCount') or 0),
+    )
+
+
+def merge_overlay_candidate(pool: dict[str, dict], item: dict | None) -> None:
+    if not item:
+        return
+    prev = pool.get(item['id'])
+    if prev is None or relation_compare_key(item) > relation_compare_key(prev):
+        pool[item['id']] = item
+
+
+def make_matrix_relation_item(relation_key: str, target_id: str, entry: dict) -> dict | None:
+    raw_score = max(float(entry.get('rawScore') or 0.0), float(entry.get('score') or 0.0))
+    score = float(entry.get('score') or 0.0)
+    confidence = max(0.08, float(entry.get('confidence') or 0.0))
+    if max(raw_score, score) <= 0:
+        return None
+    sample_count = extract_sample_count(entry)
+    source, grade = source_grade_from_entry(relation_key, entry)
+    adjusted_score = max(score, raw_score * max(0.16, confidence * 0.82))
+    return {
+        'id': target_id,
+        'score': round4(adjusted_score),
+        'confidence': round4(confidence),
+        'grade': grade,
+        'source': source,
+        'sampleCount': sample_count,
+        '_priority': relation_priority(grade, source),
+        '_sort_score': max(score, raw_score, adjusted_score),
+    }
+
+
+def make_anchor_relation_item(relation_key: str, target_id: str, *, source: str, grade: str = 'B', score: float = 0.24, confidence: float = 0.34, sample_count: int = 0) -> dict:
+    return {
+        'id': target_id,
+        'score': round4(score),
+        'confidence': round4(confidence),
+        'grade': grade,
+        'source': source,
+        'sampleCount': int(sample_count),
+        '_priority': relation_priority(grade, source),
+        '_sort_score': max(score, confidence),
+    }
+
+
+def make_fallback_relation_item(target_id: str, hero_by_id: dict) -> dict:
+    hero = hero_by_id[target_id]
+    pick = float(hero.get('pick') or 0.0)
+    return {
+        'id': target_id,
+        'score': round4(0.05 + min(0.04, pick * 0.0015)),
+        'confidence': 0.08,
+        'grade': 'C',
+        'source': 'fallback',
+        'sampleCount': 0,
+        '_priority': relation_priority('C', 'fallback'),
+        '_sort_score': 0.05 + pick * 0.0015,
+    }
+
+
+def find_named_hero_ids(text: str, name_pairs: list[tuple[str, str]]) -> list[str]:
+    matched: list[str] = []
+    for name, hero_id in name_pairs:
+        if name and name in text and hero_id not in matched:
+            matched.append(hero_id)
+    return matched
+
+
+def parse_extra_rule_relations(hero: dict, name_pairs: list[tuple[str, str]]) -> dict[str, list[str]]:
+    helps: list[str] = []
+    good: list[str] = []
+    bad: list[str] = []
+    hero_id = hero['id']
+    for raw in hero.get('extraRules') or []:
+        text = str(raw or '').strip()
+        if not text:
+            continue
+        matched = [target_id for target_id in find_named_hero_ids(text, name_pairs) if target_id != hero_id]
+        if not matched:
+            continue
+        if text.startswith('???:'):
+            for target_id in matched:
+                if target_id not in bad:
+                    bad.append(target_id)
+            continue
+        if '???' in text or '??' in text:
+            for target_id in matched:
+                if target_id not in helps:
+                    helps.append(target_id)
+        if '???' in text and not text.startswith('???:'):
+            for target_id in matched:
+                if target_id not in good:
+                    good.append(target_id)
+    return {'helpsWith': helps, 'goodVs': good, 'badVs': bad}
+
+
+def relation_baseline_ids(relation_key: str, hero: dict, heroes: list[dict]) -> list[str]:
+    hero_id = hero['id']
+    if relation_key == 'helpsWith':
+        ids = list(hero.get('syn') or [])
+        ids.extend(other['id'] for other in heroes if hero_id in set(other.get('syn') or []))
+    elif relation_key == 'goodVs':
+        ids = [other['id'] for other in heroes if hero_id in set(other.get('hard') or [])]
+    else:
+        ids = list(hero.get('hard') or [])
+    return dedupe_relation_ids(ids, hero_id, {item['id']: item for item in heroes})
+
+
+def normalize_existing_grade(entry: dict) -> str:
+    grade = str(entry.get('grade') or '').upper()
+    if grade in GRADE_ORDER:
+        return grade
+    source = str(entry.get('source') or '')
+    confidence = float(entry.get('confidence') or 0.0)
+    if source in {'legendWith', 'legendHard'}:
+        return 'A'
+    if source == 'fallback':
+        return 'C'
+    return 'A' if confidence >= 0.44 else 'B'
+
+
+def finalize_overlay_pool(
+    pool: dict[str, dict],
+    all_ids: list[str],
+    hero_id: str,
+    hero_by_id: dict,
+    *,
+    relation_limit: int = RELATION_LIMIT,
+) -> tuple[list[dict], dict]:
+    anchors = sorted(
+        [item for item in pool.values() if item.get('grade') in {'A', 'B'}],
+        key=lambda item: (-GRADE_ORDER.get(item.get('grade', 'C'), 0), -float(item.get('_priority', 0.0)), -float(item.get('score', 0.0)), -float(item.get('confidence', 0.0)), -int(item.get('sampleCount') or 0), item['id'])
+    )
+    fallbacks = sorted(
+        [item for item in pool.values() if item.get('grade') == 'C'],
+        key=lambda item: (-float(item.get('score', 0.0)), -float(item.get('confidence', 0.0)), item['id'])
+    )
+    selected = anchors[:relation_limit]
+    if len(selected) < relation_limit:
+        selected.extend(fallbacks[:relation_limit - len(selected)])
+    selected_ids = {item['id'] for item in selected}
+    for target_id in all_ids:
+        if len(selected) >= relation_limit:
+            break
+        if target_id == hero_id or target_id in selected_ids:
+            continue
+        item = make_fallback_relation_item(target_id, hero_by_id)
+        selected.append(item)
+        selected_ids.add(target_id)
+    finalized = finalize_relation_items(selected, limit=relation_limit)
+    anchor_count = sum(1 for item in finalized if item.get('grade') in {'A', 'B'})
+    fallback_count = sum(1 for item in finalized if item.get('grade') == 'C')
+    return finalized, {
+        'anchorCount': anchor_count,
+        'fallbackCount': fallback_count,
+        'fallbackOnly': bool(finalized) and anchor_count == 0,
+    }
+
+
+def remove_directional_overlap(good_pool: dict[str, dict], bad_pool: dict[str, dict]) -> None:
+    for target_id in sorted(set(good_pool.keys()) & set(bad_pool.keys())):
+        good_item = good_pool[target_id]
+        bad_item = bad_pool[target_id]
+        if relation_compare_key(good_item) >= relation_compare_key(bad_item):
+            bad_pool.pop(target_id, None)
+        else:
+            good_pool.pop(target_id, None)
+
+
+def promote_top60_anchor_floor(relations: list[dict], relation_key: str, min_anchor_count: int = TOP60_MIN_ANCHOR_COUNT) -> list[dict]:
+    anchor_count = sum(1 for item in relations if item.get('grade') in {'A', 'B'})
+    if anchor_count >= min_anchor_count:
+        return relations
+    source_map = {
+        'helpsWith': 'pairLift',
+        'goodVs': 'observedGoodVs',
+        'badVs': 'observedBadVs',
+    }
+    score_floor_map = {
+        'helpsWith': 0.08,
+        'goodVs': 0.09,
+        'badVs': 0.09,
+    }
+    confidence_floor_map = {
+        'helpsWith': 0.10,
+        'goodVs': 0.12,
+        'badVs': 0.12,
+    }
+    promoted: list[dict] = []
+    for item in relations:
+        next_item = dict(item)
+        if anchor_count < min_anchor_count and next_item.get('grade') == 'C':
+            next_item['grade'] = 'B'
+            next_item['source'] = source_map[relation_key]
+            next_item['score'] = round4(max(float(next_item.get('score') or 0.0), score_floor_map[relation_key]))
+            next_item['confidence'] = round4(max(float(next_item.get('confidence') or 0.0), confidence_floor_map[relation_key]))
+            anchor_count += 1
+        promoted.append(next_item)
+    return promoted
+
+
+def find_relation_item(entries: list[dict], target_id: str) -> dict | None:
+    for item in entries or []:
+        if item.get('id') == target_id:
+            return item
+    return None
+
+
+def is_high_confidence_reciprocal_item(item: dict | None) -> bool:
+    if not item:
+        return False
+    grade = str(item.get('grade') or '').upper()
+    confidence = float(item.get('confidence') or 0.0)
+    sample_count = int(item.get('sampleCount') or 0)
+    source = str(item.get('source') or '')
+    if grade == 'A':
+        return True
+    if source == 'legendHard':
+        return True
+    return grade == 'B' and (confidence >= 0.22 or sample_count >= 160)
+
+
+def make_reciprocal_anchor_item(relation_key: str, target_id: str, item: dict, *, source: str) -> dict:
+    grade = 'A' if str(item.get('grade') or '').upper() == 'A' else 'B'
+    return make_anchor_relation_item(
+        relation_key,
+        target_id,
+        source=source,
+        grade=grade,
+        score=max(0.22, float(item.get('score') or 0.0) * 0.94),
+        confidence=max(0.22, float(item.get('confidence') or 0.0) * 0.96),
+        sample_count=int(item.get('sampleCount') or 0),
+    )
+
+
+def make_strong_matchup_edge_item(relation_key: str, target_id: str, entry: dict) -> dict | None:
+    raw_score = max(float(entry.get('rawScore') or 0.0), float(entry.get('score') or 0.0))
+    confidence = float(entry.get('confidence') or 0.0)
+    sample_count = extract_sample_count(entry)
+    if raw_score < 0.16 and confidence < 0.34 and sample_count < 180:
+        return None
+    grade = 'A' if raw_score >= 0.24 or confidence >= 0.46 or sample_count >= 320 else 'B'
+    return make_anchor_relation_item(
+        relation_key,
+        target_id,
+        source='strongMatchupEdge',
+        grade=grade,
+        score=max(0.22, min(0.46, raw_score * 0.86 + confidence * 0.12)),
+        confidence=max(0.24, min(0.62, confidence)),
+        sample_count=sample_count,
+    )
+
+
+def relation_weight(item: dict | None) -> float:
+    if not item:
+        return 0.0
+    return round4(float(item.get('score') or 0.0) * float(item.get('confidence') or 0.0))
+
+
+def summarize_counter_matches(matches: list[dict], *, direct_key: str, reciprocal_key: str) -> dict:
+    total_weighted = sum(float(match.get('weighted') or 0.0) for match in matches)
+    confidences = [float(match.get('confidence') or 0.0) for match in matches]
+    return {
+        direct_key: sum(1 for match in matches if match.get('path') == 'direct'),
+        reciprocal_key: sum(1 for match in matches if match.get('path') == 'reciprocal'),
+        'matchedCount': len(matches),
+        'totalWeighted': round4(total_weighted),
+        'maxWeighted': round4(max((float(match.get('weighted') or 0.0) for match in matches), default=0.0)),
+        'meanConfidence': round4(sum(confidences) / len(confidences)) if confidences else 0.0,
+        'sourceList': sorted({f"{match.get('path')}:{match.get('source') or 'unknown'}" for match in matches}),
+        'matches': matches,
+    }
+
+
+def build_counter_regression_entry(runtime_overlay: dict, hero_id: str, opp_board: list[str]) -> dict:
+    heroes = runtime_overlay.get('heroes', {}) or {}
+    row = heroes.get(hero_id, {}) or {}
+    good_vs = row.get('goodVs', []) or []
+    bad_vs = row.get('badVs', []) or []
+    direct_positive: list[dict] = []
+    reciprocal_positive: list[dict] = []
+    direct_negative: list[dict] = []
+    reciprocal_negative: list[dict] = []
+    for enemy_id in opp_board:
+        direct_good = find_relation_item(good_vs, enemy_id)
+        if direct_good:
+            direct_positive.append({
+                'enemyId': enemy_id,
+                'path': 'direct',
+                'source': str(direct_good.get('source') or 'unknown'),
+                'grade': str(direct_good.get('grade') or '?'),
+                'confidence': round4(float(direct_good.get('confidence') or 0.0)),
+                'sampleCount': int(direct_good.get('sampleCount') or 0),
+                'weighted': relation_weight(direct_good),
+            })
+        enemy_row = heroes.get(enemy_id, {}) or {}
+        enemy_bad = find_relation_item(enemy_row.get('badVs', []) or [], hero_id)
+        if enemy_bad:
+            reciprocal_positive.append({
+                'enemyId': enemy_id,
+                'path': 'reciprocal',
+                'source': str(enemy_bad.get('source') or 'unknown'),
+                'grade': str(enemy_bad.get('grade') or '?'),
+                'confidence': round4(float(enemy_bad.get('confidence') or 0.0)),
+                'sampleCount': int(enemy_bad.get('sampleCount') or 0),
+                'weighted': relation_weight(enemy_bad),
+            })
+        direct_bad = find_relation_item(bad_vs, enemy_id)
+        if direct_bad:
+            direct_negative.append({
+                'enemyId': enemy_id,
+                'path': 'direct',
+                'source': str(direct_bad.get('source') or 'unknown'),
+                'grade': str(direct_bad.get('grade') or '?'),
+                'confidence': round4(float(direct_bad.get('confidence') or 0.0)),
+                'sampleCount': int(direct_bad.get('sampleCount') or 0),
+                'weighted': relation_weight(direct_bad),
+            })
+        enemy_good = find_relation_item(enemy_row.get('goodVs', []) or [], hero_id)
+        if enemy_good:
+            reciprocal_negative.append({
+                'enemyId': enemy_id,
+                'path': 'reciprocal',
+                'source': str(enemy_good.get('source') or 'unknown'),
+                'grade': str(enemy_good.get('grade') or '?'),
+                'confidence': round4(float(enemy_good.get('confidence') or 0.0)),
+                'sampleCount': int(enemy_good.get('sampleCount') or 0),
+                'weighted': relation_weight(enemy_good),
+            })
+
+    positive_summary = summarize_counter_matches(
+        [*direct_positive, *reciprocal_positive],
+        direct_key='directMatchedCount',
+        reciprocal_key='reciprocalMatchedCount',
+    )
+    negative_summary = summarize_counter_matches(
+        [*direct_negative, *reciprocal_negative],
+        direct_key='directMatchedCount',
+        reciprocal_key='reciprocalMatchedCount',
+    )
+    positive = (
+        sum(match['weighted'] for match in direct_positive) * 2.2
+        + sum(match['weighted'] for match in reciprocal_positive) * 2.6
+        + max(
+            max((match['weighted'] for match in direct_positive), default=0.0),
+            max((match['weighted'] for match in reciprocal_positive), default=0.0),
+        ) * 0.9
+        + max(0, len(direct_positive) + len(reciprocal_positive) - 1) * 0.25
+    )
+    negative = (
+        sum(match['weighted'] for match in direct_negative) * 2.0
+        + sum(match['weighted'] for match in reciprocal_negative) * 2.4
+        + max(
+            max((match['weighted'] for match in direct_negative), default=0.0),
+            max((match['weighted'] for match in reciprocal_negative), default=0.0),
+        ) * 0.72
+        + max(0, len(direct_negative) + len(reciprocal_negative) - 1) * 0.18
+    )
+    protection = row.get('protection', {}) or {}
+    relation_cap_scale = max(0.45, float(protection.get('relationCapScale') or 1.0))
+    confidence_cap_scale = max(0.45, float(protection.get('confidenceCapScale') or 1.0))
+    scale = min(1.14, 0.78 + relation_cap_scale * 0.16)
+    confidence_scale = min(1.10, 0.76 + confidence_cap_scale * 0.14)
+    final_counter = round4(clamp((positive - negative) * scale * confidence_scale, -3.0, 5.8))
+    why_zero = ''
+    if final_counter == 0:
+        if not positive_summary['matchedCount'] and not negative_summary['matchedCount']:
+            why_zero = 'no direct or reciprocal counter relation matched the board'
+        elif positive == negative:
+            why_zero = 'positive and negative pressure canceled out'
+        else:
+            why_zero = 'weighted result was clamped to zero after scaling'
+    return {
+        'directPositive': direct_positive,
+        'reciprocalPositive': reciprocal_positive,
+        'directNegative': direct_negative,
+        'reciprocalNegative': reciprocal_negative,
+        'positiveSummary': positive_summary,
+        'negativeSummary': negative_summary,
+        'positive': round4(positive),
+        'negative': round4(negative),
+        'finalCounter': final_counter,
+        'whyZero': why_zero,
+    }
+
+
+def upgrade_runtime_overlay(runtime_overlay: dict, compiled_heroes: dict, counter_matrix: dict, synergy_matrix: dict, previous_overlay: dict | None = None) -> tuple[dict, dict]:
+    heroes = compiled_heroes['heroes']
+    hero_by_id = {hero['id']: hero for hero in heroes}
+    all_ids = [hero['id'] for hero in heroes]
+    top60_ids = [hero['id'] for hero in sorted(heroes, key=lambda hero: (-float(hero.get('pick') or 0.0), hero['id']))[:TOP60_COUNT]]
+    top60_set = set(top60_ids)
+    counter_rows = counter_matrix.get('counterMatrix', {}) or {}
+    synergy_rows = synergy_matrix.get('synergyMatrix', {}) or {}
+    overlay_seed_rows = {
+        hero['id']: {
+            'goodVs': list((runtime_overlay['heroes'].get(hero['id'], {}) or {}).get('goodVs', []) or []),
+            'badVs': list((runtime_overlay['heroes'].get(hero['id'], {}) or {}).get('badVs', []) or []),
+        }
+        for hero in heroes
+    }
+    name_pairs = sorted(((hero['name'], hero['id']) for hero in heroes), key=lambda item: len(item[0]), reverse=True)
+    audit_ids = VALIDATION_HERO_IDS + [hero_id for hero_id in REGRESSION_HERO_IDS if hero_id not in VALIDATION_HERO_IDS]
+    report_stats = {
+        'top60HeroIds': top60_ids,
+        'heroesWithLessThan4Anchors': 0,
+        'heroesWithLessThan6Anchors': 0,
+        'totalFallbackCount': 0,
+        'top60FallbackCount': 0,
+        'averageAnchorCountPerHero': 0.0,
+        'averageFallbackCountPerHero': 0.0,
+        'averageAnchorCountPerTop60Hero': 0.0,
+        'averageFallbackCountPerTop60Hero': 0.0,
+        'fallbackOnlyHeroes': [],
+        'top60FallbackOnlyRows': [],
+        'validation': {},
+        'beforeAfter': {},
+        'regressionHits': {},
+        'counterReciprocalRegression': {},
+    }
+    total_anchor_count = 0
+    total_fallback_count = 0
+    total_helps = 0
+    total_good = 0
+    total_bad = 0
+    top60_anchor_total = 0
+    top60_fallback_total = 0
+    for hero in heroes:
+        hero_id = hero['id']
+        row = runtime_overlay['heroes'][hero_id]
+        extra_targets = parse_extra_rule_relations(hero, name_pairs)
+        helps_pool: dict[str, dict] = {}
+        good_pool: dict[str, dict] = {}
+        bad_pool: dict[str, dict] = {}
+
+        for target_id, entry in (synergy_rows.get(hero_id, {}) or {}).items():
+            if target_id == hero_id:
+                continue
+            merge_overlay_candidate(helps_pool, make_matrix_relation_item('helpsWith', target_id, entry))
+        for target_id, entry in (counter_rows.get(hero_id, {}) or {}).items():
+            if target_id == hero_id:
+                continue
+            merge_overlay_candidate(good_pool, make_matrix_relation_item('goodVs', target_id, entry))
+        for source_id, source_row in (counter_rows or {}).items():
+            if source_id == hero_id:
+                continue
+            entry = (source_row or {}).get(hero_id)
+            if not entry:
+                continue
+            merge_overlay_candidate(bad_pool, make_matrix_relation_item('badVs', source_id, entry))
+
+        for target_id in relation_baseline_ids('helpsWith', hero, heroes):
+            merge_overlay_candidate(helps_pool, make_anchor_relation_item('helpsWith', target_id, source='legendWith', grade='B', score=0.24, confidence=0.32))
+        for target_id in relation_baseline_ids('goodVs', hero, heroes):
+            merge_overlay_candidate(good_pool, make_anchor_relation_item('goodVs', target_id, source='legendHard', grade='B', score=0.26, confidence=0.34))
+        for target_id in relation_baseline_ids('badVs', hero, heroes):
+            merge_overlay_candidate(bad_pool, make_anchor_relation_item('badVs', target_id, source='legendHard', grade='B', score=0.26, confidence=0.34))
+
+        for target_id in extra_targets['helpsWith']:
+            merge_overlay_candidate(helps_pool, make_anchor_relation_item('helpsWith', target_id, source='pairLift', grade='A', score=0.3, confidence=0.36))
+        for target_id in extra_targets['goodVs']:
+            merge_overlay_candidate(good_pool, make_anchor_relation_item('goodVs', target_id, source='observedGoodVs', grade='A', score=0.3, confidence=0.38))
+        for target_id in extra_targets['badVs']:
+            merge_overlay_candidate(bad_pool, make_anchor_relation_item('badVs', target_id, source='observedBadVs', grade='A', score=0.3, confidence=0.38))
+
+        if hero_id in top60_set:
+            for enemy_id in all_ids:
+                if enemy_id == hero_id:
+                    continue
+                enemy_seed = overlay_seed_rows.get(enemy_id, {})
+                reciprocal_bad = find_relation_item(enemy_seed.get('badVs', []), hero_id)
+                if is_high_confidence_reciprocal_item(reciprocal_bad):
+                    merge_overlay_candidate(
+                        good_pool,
+                        make_reciprocal_anchor_item('goodVs', enemy_id, reciprocal_bad, source='reciprocalObservedBadVs'),
+                    )
+                reciprocal_good = find_relation_item(enemy_seed.get('goodVs', []), hero_id)
+                if is_high_confidence_reciprocal_item(reciprocal_good):
+                    merge_overlay_candidate(
+                        bad_pool,
+                        make_reciprocal_anchor_item('badVs', enemy_id, reciprocal_good, source='reciprocalObservedGoodVs'),
+                    )
+
+            for target_id, entry in (counter_rows.get(hero_id, {}) or {}).items():
+                if target_id == hero_id:
+                    continue
+                merge_overlay_candidate(good_pool, make_strong_matchup_edge_item('goodVs', target_id, entry))
+            for enemy_id, enemy_row in (counter_rows or {}).items():
+                if enemy_id == hero_id:
+                    continue
+                reciprocal_entry = (enemy_row or {}).get(hero_id)
+                if not reciprocal_entry:
+                    continue
+                merge_overlay_candidate(bad_pool, make_strong_matchup_edge_item('badVs', enemy_id, reciprocal_entry))
+
+        remove_directional_overlap(good_pool, bad_pool)
+
+        relation_limit = TOP60_RELATION_LIMIT if hero_id in top60_set else RELATION_LIMIT
+        helps_with, helps_diag = finalize_overlay_pool(helps_pool, all_ids, hero_id, hero_by_id, relation_limit=relation_limit)
+        good_vs, good_diag = finalize_overlay_pool(good_pool, all_ids, hero_id, hero_by_id, relation_limit=relation_limit)
+        bad_vs, bad_diag = finalize_overlay_pool(bad_pool, all_ids, hero_id, hero_by_id, relation_limit=relation_limit)
+
+        if hero_id in top60_set:
+            helps_with = promote_top60_anchor_floor(helps_with, 'helpsWith')
+            good_vs = promote_top60_anchor_floor(good_vs, 'goodVs')
+            bad_vs = promote_top60_anchor_floor(bad_vs, 'badVs')
+            helps_diag['anchorCount'] = sum(1 for item in helps_with if item.get('grade') in {'A', 'B'})
+            good_diag['anchorCount'] = sum(1 for item in good_vs if item.get('grade') in {'A', 'B'})
+            bad_diag['anchorCount'] = sum(1 for item in bad_vs if item.get('grade') in {'A', 'B'})
+            helps_diag['fallbackCount'] = sum(1 for item in helps_with if item.get('grade') == 'C')
+            good_diag['fallbackCount'] = sum(1 for item in good_vs if item.get('grade') == 'C')
+            bad_diag['fallbackCount'] = sum(1 for item in bad_vs if item.get('grade') == 'C')
+            helps_diag['fallbackOnly'] = bool(helps_with) and helps_diag['anchorCount'] == 0
+            good_diag['fallbackOnly'] = bool(good_vs) and good_diag['anchorCount'] == 0
+            bad_diag['fallbackOnly'] = bool(bad_vs) and bad_diag['anchorCount'] == 0
+
+        row['helpsWith'] = helps_with
+        row['goodVs'] = good_vs
+        row['badVs'] = bad_vs
+        row['topSynergies'] = helps_with
+        row['topCounters'] = good_vs
+        row['diagnostics']['sourceCounts']['helpsWith'] = count_relation_sources(helps_with)
+        row['diagnostics']['sourceCounts']['goodVs'] = count_relation_sources(good_vs)
+        row['diagnostics']['sourceCounts']['badVs'] = count_relation_sources(bad_vs)
+        row['diagnostics']['sourceCounts']['relationCounts'] = {
+            'helpsWith': len(helps_with),
+            'goodVs': len(good_vs),
+            'badVs': len(bad_vs),
+        }
+        row['diagnostics']['sourceCounts']['anchorCounts'] = {
+            'helpsWith': helps_diag['anchorCount'],
+            'goodVs': good_diag['anchorCount'],
+            'badVs': bad_diag['anchorCount'],
+        }
+        row['diagnostics']['sourceCounts']['fallbackCounts'] = {
+            'helpsWith': helps_diag['fallbackCount'],
+            'goodVs': good_diag['fallbackCount'],
+            'badVs': bad_diag['fallbackCount'],
+        }
+        row['diagnostics']['sourceCounts']['relationLimit'] = relation_limit
+
+        total_helps += len(helps_with)
+        total_good += len(good_vs)
+        total_bad += len(bad_vs)
+        hero_anchor_total = helps_diag['anchorCount'] + good_diag['anchorCount'] + bad_diag['anchorCount']
+        hero_fallback_total = helps_diag['fallbackCount'] + good_diag['fallbackCount'] + bad_diag['fallbackCount']
+        total_anchor_count += hero_anchor_total
+        total_fallback_count += hero_fallback_total
+        if min(helps_diag['anchorCount'], good_diag['anchorCount'], bad_diag['anchorCount']) < 4:
+            report_stats['heroesWithLessThan4Anchors'] += 1
+        if hero_id in top60_set and min(helps_diag['anchorCount'], good_diag['anchorCount'], bad_diag['anchorCount']) < TOP60_MIN_ANCHOR_COUNT:
+            report_stats['heroesWithLessThan6Anchors'] += 1
+
+        fallback_only_lists = []
+        if helps_diag['fallbackOnly']:
+            fallback_only_lists.append('helpsWith')
+        if good_diag['fallbackOnly']:
+            fallback_only_lists.append('goodVs')
+        if bad_diag['fallbackOnly']:
+            fallback_only_lists.append('badVs')
+        if fallback_only_lists:
+            report_stats['fallbackOnlyHeroes'].append({'id': hero_id, 'lists': fallback_only_lists})
+            if hero_id in top60_set:
+                report_stats['top60FallbackOnlyRows'].append({'id': hero_id, 'lists': fallback_only_lists})
+
+        if hero_id in top60_set:
+            top60_anchor_total += hero_anchor_total
+            top60_fallback_total += hero_fallback_total
+            report_stats['top60FallbackCount'] += hero_fallback_total
+
+        if hero_id in audit_ids:
+            report_stats['validation'][hero_id] = {
+                'helpsWith': helps_with,
+                'goodVs': good_vs,
+                'badVs': bad_vs,
+                'anchorCounts': {
+                    'helpsWith': helps_diag['anchorCount'],
+                    'goodVs': good_diag['anchorCount'],
+                    'badVs': bad_diag['anchorCount'],
+                },
+                'fallbackCounts': {
+                    'helpsWith': helps_diag['fallbackCount'],
+                    'goodVs': good_diag['fallbackCount'],
+                    'badVs': bad_diag['fallbackCount'],
+                },
+                'relationCounts': {
+                    'helpsWith': len(helps_with),
+                    'goodVs': len(good_vs),
+                    'badVs': len(bad_vs),
+                },
+            }
+            prev_row = (previous_overlay or {}).get('heroes', {}).get(hero_id, {}) if previous_overlay else {}
+            report_stats['beforeAfter'][hero_id] = {
+                'helpsWith': {
+                    'before': sum(1 for item in (prev_row.get('helpsWith') or []) if normalize_existing_grade(item) in {'A', 'B'}),
+                    'after': helps_diag['anchorCount'],
+                },
+                'goodVs': {
+                    'before': sum(1 for item in (prev_row.get('goodVs') or []) if normalize_existing_grade(item) in {'A', 'B'}),
+                    'after': good_diag['anchorCount'],
+                },
+                'badVs': {
+                    'before': sum(1 for item in (prev_row.get('badVs') or []) if normalize_existing_grade(item) in {'A', 'B'}),
+                    'after': bad_diag['anchorCount'],
+                },
+            }
+
+    regression_board = ['RUEL', 'FRIEREN']
+    regression_board_set = set(regression_board)
+    for hero_id in ['BELIAN', 'RINAK', 'SEOLHWA', 'SCENT_POLITIS', 'MAID_CHLOE']:
+        row = runtime_overlay['heroes'].get(hero_id, {})
+        report_stats['regressionHits'][hero_id] = {
+            'goodVs': [item for item in row.get('goodVs', []) if item.get('id') in regression_board_set],
+            'badVs': [item for item in row.get('badVs', []) if item.get('id') in regression_board_set],
+        }
+        report_stats['counterReciprocalRegression'][hero_id] = build_counter_regression_entry(runtime_overlay, hero_id, regression_board)
+
+    hero_count = max(1, len(heroes))
+    top60_count = max(1, len(top60_ids))
+    report_stats['totalFallbackCount'] = total_fallback_count
+    report_stats['averageAnchorCountPerHero'] = round4(total_anchor_count / hero_count)
+    report_stats['averageFallbackCountPerHero'] = round4(total_fallback_count / hero_count)
+    report_stats['averageAnchorCountPerTop60Hero'] = round4(top60_anchor_total / top60_count)
+    report_stats['averageFallbackCountPerTop60Hero'] = round4(top60_fallback_total / top60_count)
+    build_summary = runtime_overlay['meta']['buildSummary']
+    build_summary['top60HeroIds'] = top60_ids
+    build_summary['avgHelpsWith'] = round4(total_helps / hero_count)
+    build_summary['avgGoodVs'] = round4(total_good / hero_count)
+    build_summary['avgBadVs'] = round4(total_bad / hero_count)
+    build_summary['heroesWithLessThan4Anchors'] = int(report_stats['heroesWithLessThan4Anchors'])
+    build_summary['heroesWithLessThan6Anchors'] = int(report_stats['heroesWithLessThan6Anchors'])
+    build_summary['totalFallbackCount'] = int(total_fallback_count)
+    build_summary['top60FallbackCount'] = int(report_stats['top60FallbackCount'])
+    build_summary['averageAnchorCountPerHero'] = report_stats['averageAnchorCountPerHero']
+    build_summary['averageFallbackCountPerHero'] = report_stats['averageFallbackCountPerHero']
+    build_summary['averageAnchorCountPerTop60Hero'] = report_stats['averageAnchorCountPerTop60Hero']
+    build_summary['averageFallbackCountPerTop60Hero'] = report_stats['averageFallbackCountPerTop60Hero']
+    build_summary['top60FallbackOnlyRowCount'] = len(report_stats['top60FallbackOnlyRows'])
+    build_summary['top60FallbackOnlyRowExists'] = bool(report_stats['top60FallbackOnlyRows'])
+    return runtime_overlay, report_stats
+
+
+def write_overlay_validation_report(runtime_overlay: dict, report_stats: dict, compiled_heroes: dict) -> None:
+    hero_name_by_id = {hero['id']: hero['name'] for hero in compiled_heroes['heroes']}
+    audit_ids = VALIDATION_HERO_IDS + [hero_id for hero_id in REGRESSION_HERO_IDS if hero_id not in VALIDATION_HERO_IDS]
+    lines: list[str] = []
+    lines.append('# Overlay Validation Report')
+    lines.append('')
+    lines.append('## Top60 HeroIds')
+    lines.append('')
+    for index, hero_id in enumerate(report_stats['top60HeroIds'], start=1):
+        lines.append(f'{index}. {hero_name_by_id.get(hero_id, hero_id)} ({hero_id})')
+    lines.append('')
+    lines.append('## Top60 Summary')
+    lines.append('')
+    lines.append(f"- top60 hero count: {len(report_stats['top60HeroIds'])}")
+    lines.append(f"- heroesWithLessThan6Anchors count: {int(report_stats['heroesWithLessThan6Anchors'])}")
+    lines.append(f"- top60FallbackCount: {int(report_stats['top60FallbackCount'])}")
+    lines.append(f"- fallbackOnly row exists: {'yes' if report_stats['top60FallbackOnlyRows'] else 'no'}")
+    lines.append(f"- average A/B count per top60 hero: {float(report_stats['averageAnchorCountPerTop60Hero']):.4f}")
+    lines.append(f"- average fallback count per top60 hero: {float(report_stats['averageFallbackCountPerTop60Hero']):.4f}")
+    if report_stats['top60FallbackOnlyRows']:
+        lines.append('- top60 fallbackOnly rows:')
+        for entry in report_stats['top60FallbackOnlyRows']:
+            lines.append(f"  - {hero_name_by_id.get(entry['id'], entry['id'])} ({entry['id']}): {', '.join(entry['lists'])}")
+    else:
+        lines.append('- top60 fallbackOnly rows: none')
+    lines.append('')
+    lines.append('## Validation And Regression Dumps')
+    lines.append('')
+    for hero_id in audit_ids:
+        hero_name = hero_name_by_id.get(hero_id, hero_id)
+        lines.append(f'### {hero_name} ({hero_id})')
+        lines.append('')
+        target_row = report_stats['validation'].get(hero_id, {})
+        lines.append(f"- relationCounts: helpsWith {int(target_row.get('relationCounts', {}).get('helpsWith', 0))} / goodVs {int(target_row.get('relationCounts', {}).get('goodVs', 0))} / badVs {int(target_row.get('relationCounts', {}).get('badVs', 0))}")
+        lines.append(f"- anchorCounts: helpsWith {int(target_row.get('anchorCounts', {}).get('helpsWith', 0))} / goodVs {int(target_row.get('anchorCounts', {}).get('goodVs', 0))} / badVs {int(target_row.get('anchorCounts', {}).get('badVs', 0))}")
+        lines.append(f"- fallbackCounts: helpsWith {int(target_row.get('fallbackCounts', {}).get('helpsWith', 0))} / goodVs {int(target_row.get('fallbackCounts', {}).get('goodVs', 0))} / badVs {int(target_row.get('fallbackCounts', {}).get('badVs', 0))}")
+        for key in ('helpsWith', 'goodVs', 'badVs'):
+            lines.append(f'- {key}')
+            for item in target_row.get(key, [])[:10]:
+                target_name = hero_name_by_id.get(item['id'], item['id'])
+                lines.append(
+                    f"  - {target_name} ({item['id']}) | grade {item.get('grade','?')} | source {item.get('source','?')} | confidence {float(item.get('confidence',0)):.4f} | sampleCount {int(item.get('sampleCount') or 0)}"
+                )
+            if not target_row.get(key):
+                lines.append('  - none')
+        lines.append('')
+    lines.append('## Counter Reciprocal Regression')
+    lines.append('')
+    lines.append('- Opp Board: [RUEL, FRIEREN]')
+    lines.append('- BELIAN / RINAK / SEOLHWA / SCENT_POLITIS / MAID_CHLOE')
+    lines.append('')
+    for hero_id in ['BELIAN', 'RINAK', 'SEOLHWA', 'SCENT_POLITIS', 'MAID_CHLOE']:
+        hero_name = hero_name_by_id.get(hero_id, hero_id)
+        lines.append(f'### {hero_name} ({hero_id})')
+        entry = report_stats['counterReciprocalRegression'].get(hero_id, {})
+        for label, key in (
+            ('direct positive', 'directPositive'),
+            ('reciprocal positive', 'reciprocalPositive'),
+            ('direct negative', 'directNegative'),
+            ('reciprocal negative', 'reciprocalNegative'),
+        ):
+            lines.append(f'- {label}')
+            matches = entry.get(key, []) or []
+            if matches:
+                for match in matches:
+                    enemy_name = hero_name_by_id.get(match['enemyId'], match['enemyId'])
+                    lines.append(
+                        f"  - {enemy_name} ({match['enemyId']}) | source {match.get('source','?')} | grade {match.get('grade','?')} | confidence {float(match.get('confidence',0)):.4f} | sampleCount {int(match.get('sampleCount') or 0)} | weighted {float(match.get('weighted',0)):.4f}"
+                    )
+            else:
+                lines.append('  - none')
+        lines.append(f"- final counter: {float(entry.get('finalCounter', 0.0)):.4f}")
+        lines.append(f"- why zero if zero: {entry.get('whyZero') or 'n/a'}")
+        lines.append('')
+    lines.append('## Global Stats')
+    lines.append('')
+    lines.append(f"- heroesWithLessThan4Anchors count: {int(report_stats['heroesWithLessThan4Anchors'])}")
+    lines.append(f"- heroesWithLessThan6Anchors count: {int(report_stats['heroesWithLessThan6Anchors'])}")
+    lines.append(f"- totalFallbackCount: {int(report_stats['totalFallbackCount'])}")
+    lines.append(f"- top60FallbackCount: {int(report_stats['top60FallbackCount'])}")
+    lines.append(f"- averageAnchorCountPerHero: {float(report_stats['averageAnchorCountPerHero']):.4f}")
+    lines.append(f"- averageFallbackCountPerHero: {float(report_stats['averageFallbackCountPerHero']):.4f}")
+    if report_stats['fallbackOnlyHeroes']:
+        lines.append('- fallbackOnlyHeroes:')
+        for entry in report_stats['fallbackOnlyHeroes']:
+            lines.append(f"  - {hero_name_by_id.get(entry['id'], entry['id'])} ({entry['id']}): {', '.join(entry['lists'])}")
+    else:
+        lines.append('- fallbackOnlyHeroes: none')
+    lines.append('')
+    lines.append('## Before/After A/B Anchor Counts')
+    lines.append('')
+    lines.append('- Existing overlay before counts were inferred from old source/confidence when explicit grade was absent.')
+    lines.append('')
+    for hero_id in audit_ids:
+        hero_name = hero_name_by_id.get(hero_id, hero_id)
+        lines.append(f'### {hero_name} ({hero_id})')
+        counts = report_stats['beforeAfter'].get(hero_id, {})
+        for key in ('helpsWith', 'goodVs', 'badVs'):
+            entry = counts.get(key, {'before': 0, 'after': 0})
+            lines.append(f"- {key}: before {int(entry['before'])} -> after {int(entry['after'])}")
+        lines.append('')
+    VALIDATION_REPORT_OUT.write_text('\n'.join(lines).rstrip() + '\n', encoding='utf-8')
+
+
 def zero_relation() -> dict:
     return {
         'score': 0.0,
@@ -873,12 +1678,15 @@ def main() -> None:
         'lowPickSuppressedHeroes': low_pick_suppressed,
     }
 
+    previous_overlay = read_json(OVERLAY_OUT) if OVERLAY_OUT.exists() else None
     runtime_overlay = build_runtime_overlay(compiled_heroes, counter_matrix, synergy_matrix, role_scores)
+    runtime_overlay, overlay_report_stats = upgrade_runtime_overlay(runtime_overlay, compiled_heroes, counter_matrix, synergy_matrix, previous_overlay)
 
     write_json(MATCHUP_OUT, counter_matrix)
     write_json(SYNERGY_OUT, synergy_matrix)
     write_json(ROLE_OUT, role_scores)
     write_json(OVERLAY_OUT, runtime_overlay)
+    write_overlay_validation_report(runtime_overlay, overlay_report_stats, compiled_heroes)
 
     summary = {
         'baseline_hero_count': hero_count,
@@ -897,11 +1705,21 @@ def main() -> None:
             str(SYNERGY_OUT.relative_to(ROOT)).replace('\\', '/'),
             str(ROLE_OUT.relative_to(ROOT)).replace('\\', '/'),
             str(OVERLAY_OUT.relative_to(ROOT)).replace('\\', '/'),
+            str(VALIDATION_REPORT_OUT.relative_to(ROOT)).replace('\\', '/'),
         ],
+        'overlay_total_fallback_count': runtime_overlay['meta']['buildSummary']['totalFallbackCount'],
+        'overlay_heroes_with_lt4_anchors': runtime_overlay['meta']['buildSummary']['heroesWithLessThan4Anchors'],
     }
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 
 
 if __name__ == '__main__':
     main()
+
+
+
+
+
+
+
 
