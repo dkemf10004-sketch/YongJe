@@ -8,7 +8,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1071
+          "sampleCount": 1071,
+          "_priority": 3.8
         },
         {
           "id": "ARUNKA",
@@ -16,7 +17,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 189
+          "sampleCount": 189,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -24,7 +26,8 @@
           "confidence": 0.8109,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 41
+          "sampleCount": 41,
+          "_priority": 3.8
         },
         {
           "id": "HARSETI",
@@ -32,55 +35,80 @@
           "confidence": 0.5145,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 792
+          "sampleCount": 792,
+          "_priority": 3.3
         },
         {
           "id": "DEATH_RAY",
           "score": 0.122,
           "confidence": 0.2103,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 181
+          "sampleCount": 181,
+          "_priority": 2.4
         },
         {
           "id": "RANDI",
           "score": 0.1065,
           "confidence": 0.1836,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 113
+          "sampleCount": 113,
+          "_priority": 2.4
         },
         {
           "id": "NAKWOL",
           "score": 0.0928,
           "confidence": 0.1143,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 51
+          "sampleCount": 51,
+          "_priority": 2.4
         },
         {
           "id": "EXT_적월의_귀족_헤이스트",
           "score": 0.0928,
           "confidence": 0.08,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 17
+          "sampleCount": 17,
+          "_priority": 2.4
         },
         {
           "id": "TWISTED_KAYRON",
           "score": 0.0825,
           "confidence": 0.1236,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 94
+          "sampleCount": 94,
+          "_priority": 2.4
+        },
+        {
+          "id": "BIRGITTA",
+          "score": 0.081,
+          "confidence": 0.0836,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 25,
+          "_priority": 2.4
+        },
+        {
+          "id": "EXT_라스트_피스_카린",
+          "score": 0.0751,
+          "confidence": 0.08,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 11,
+          "_priority": 2.4
         },
         {
           "id": "MOON_LUNA",
           "score": 0.1471,
           "confidence": 0.3998,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 517
+          "sampleCount": 517,
+          "_priority": 2.4
         }
       ],
       "goodVs": [
@@ -90,7 +118,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 691
+          "sampleCount": 691,
+          "_priority": 3.8
         },
         {
           "id": "RUEL",
@@ -98,7 +127,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 803
+          "sampleCount": 803,
+          "_priority": 3.8
         },
         {
           "id": "DARK_DIEANE",
@@ -106,7 +136,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 798
+          "sampleCount": 798,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -114,7 +145,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 865
+          "sampleCount": 865,
+          "_priority": 3.8
         },
         {
           "id": "SECRET",
@@ -122,7 +154,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 566
+          "sampleCount": 566,
+          "_priority": 3.8
         },
         {
           "id": "FRIEREN",
@@ -130,7 +163,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 703
+          "sampleCount": 703,
+          "_priority": 3.8
         },
         {
           "id": "RINAK",
@@ -138,7 +172,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 866
+          "sampleCount": 866,
+          "_priority": 3.8
         },
         {
           "id": "ARUNKA",
@@ -146,7 +181,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 864
+          "sampleCount": 864,
+          "_priority": 3.8
         },
         {
           "id": "SKY_ILLYNAV",
@@ -154,7 +190,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 377
+          "sampleCount": 377,
+          "_priority": 3.8
         },
         {
           "id": "BELIAN",
@@ -162,7 +199,26 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 437
+          "sampleCount": 437,
+          "_priority": 3.8
+        },
+        {
+          "id": "TENEBRIA",
+          "score": 0.7023,
+          "confidence": 0.724,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 584,
+          "_priority": 3.8
+        },
+        {
+          "id": "HWAYOUNG",
+          "score": 0.6942,
+          "confidence": 0.7181,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 537,
+          "_priority": 3.8
         }
       ],
       "badVs": [
@@ -172,7 +228,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 697
+          "sampleCount": 697,
+          "_priority": 3.3
         },
         {
           "id": "SILVER_ARAMINTA",
@@ -180,7 +237,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 701
+          "sampleCount": 701,
+          "_priority": 3.3
         },
         {
           "id": "REQUIEM_ROANA",
@@ -188,7 +246,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 694
+          "sampleCount": 694,
+          "_priority": 3.3
         },
         {
           "id": "TWISTED_KAYRON",
@@ -196,7 +255,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 678
+          "sampleCount": 678,
+          "_priority": 3.3
         },
         {
           "id": "PIRATE_CAPTAIN_FLAN",
@@ -204,7 +264,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 663
+          "sampleCount": 663,
+          "_priority": 3.3
         },
         {
           "id": "EXT_비브리스",
@@ -212,7 +273,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 653
+          "sampleCount": 653,
+          "_priority": 3.3
         },
         {
           "id": "EXT_실험체_세즈",
@@ -220,7 +282,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 653
+          "sampleCount": 653,
+          "_priority": 3.3
         },
         {
           "id": "EXT_레테",
@@ -228,7 +291,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 652
+          "sampleCount": 652,
+          "_priority": 3.3
         },
         {
           "id": "AMBITIOUS_TYWIN",
@@ -236,7 +300,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 650
+          "sampleCount": 650,
+          "_priority": 3.3
         },
         {
           "id": "EXT_유피네",
@@ -244,7 +309,26 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 656
+          "sampleCount": 656,
+          "_priority": 3.3
+        },
+        {
+          "id": "NAKWOL",
+          "score": 0.2966,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 666,
+          "_priority": 3.3
+        },
+        {
+          "id": "SNOW_SOLITARIA",
+          "score": 0.2545,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 678,
+          "_priority": 3.3
         }
       ],
       "firstpick": {
@@ -274,18 +358,18 @@
         "sourceCounts": {
           "helpsWith": {
             "legendWith": 3,
-            "pairLift": 7
+            "pairLift": 9
           },
           "goodVs": {
-            "legendHard": 10
+            "legendHard": 12
           },
           "badVs": {
-            "strongMatchupEdge": 10
+            "strongMatchupEdge": 12
           },
           "relationCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 12,
+            "badVs": 12
           },
           "shortages": {
             "helpsWith": false,
@@ -298,16 +382,16 @@
             "badVs": 24
           },
           "anchorCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 12,
+            "badVs": 12
           },
           "fallbackCounts": {
             "helpsWith": 0,
             "goodVs": 0,
             "badVs": 0
           },
-          "relationLimit": 10
+          "relationLimit": 12
         },
         "fallbackUsed": false
       },
@@ -318,7 +402,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1071
+          "sampleCount": 1071,
+          "_priority": 3.8
         },
         {
           "id": "ARUNKA",
@@ -326,7 +411,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 189
+          "sampleCount": 189,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -334,7 +420,8 @@
           "confidence": 0.8109,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 41
+          "sampleCount": 41,
+          "_priority": 3.8
         },
         {
           "id": "HARSETI",
@@ -342,55 +429,80 @@
           "confidence": 0.5145,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 792
+          "sampleCount": 792,
+          "_priority": 3.3
         },
         {
           "id": "DEATH_RAY",
           "score": 0.122,
           "confidence": 0.2103,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 181
+          "sampleCount": 181,
+          "_priority": 2.4
         },
         {
           "id": "RANDI",
           "score": 0.1065,
           "confidence": 0.1836,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 113
+          "sampleCount": 113,
+          "_priority": 2.4
         },
         {
           "id": "NAKWOL",
           "score": 0.0928,
           "confidence": 0.1143,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 51
+          "sampleCount": 51,
+          "_priority": 2.4
         },
         {
           "id": "EXT_적월의_귀족_헤이스트",
           "score": 0.0928,
           "confidence": 0.08,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 17
+          "sampleCount": 17,
+          "_priority": 2.4
         },
         {
           "id": "TWISTED_KAYRON",
           "score": 0.0825,
           "confidence": 0.1236,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 94
+          "sampleCount": 94,
+          "_priority": 2.4
+        },
+        {
+          "id": "BIRGITTA",
+          "score": 0.081,
+          "confidence": 0.0836,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 25,
+          "_priority": 2.4
+        },
+        {
+          "id": "EXT_라스트_피스_카린",
+          "score": 0.0751,
+          "confidence": 0.08,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 11,
+          "_priority": 2.4
         },
         {
           "id": "MOON_LUNA",
           "score": 0.1471,
           "confidence": 0.3998,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 517
+          "sampleCount": 517,
+          "_priority": 2.4
         }
       ],
       "topCounters": [
@@ -400,7 +512,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 691
+          "sampleCount": 691,
+          "_priority": 3.8
         },
         {
           "id": "RUEL",
@@ -408,7 +521,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 803
+          "sampleCount": 803,
+          "_priority": 3.8
         },
         {
           "id": "DARK_DIEANE",
@@ -416,7 +530,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 798
+          "sampleCount": 798,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -424,7 +539,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 865
+          "sampleCount": 865,
+          "_priority": 3.8
         },
         {
           "id": "SECRET",
@@ -432,7 +548,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 566
+          "sampleCount": 566,
+          "_priority": 3.8
         },
         {
           "id": "FRIEREN",
@@ -440,7 +557,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 703
+          "sampleCount": 703,
+          "_priority": 3.8
         },
         {
           "id": "RINAK",
@@ -448,7 +566,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 866
+          "sampleCount": 866,
+          "_priority": 3.8
         },
         {
           "id": "ARUNKA",
@@ -456,7 +575,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 864
+          "sampleCount": 864,
+          "_priority": 3.8
         },
         {
           "id": "SKY_ILLYNAV",
@@ -464,7 +584,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 377
+          "sampleCount": 377,
+          "_priority": 3.8
         },
         {
           "id": "BELIAN",
@@ -472,7 +593,26 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 437
+          "sampleCount": 437,
+          "_priority": 3.8
+        },
+        {
+          "id": "TENEBRIA",
+          "score": 0.7023,
+          "confidence": 0.724,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 584,
+          "_priority": 3.8
+        },
+        {
+          "id": "HWAYOUNG",
+          "score": 0.6942,
+          "confidence": 0.7181,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 537,
+          "_priority": 3.8
         }
       ]
     },
@@ -484,7 +624,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1085
+          "sampleCount": 1085,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -492,7 +633,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 189
+          "sampleCount": 189,
+          "_priority": 3.8
         },
         {
           "id": "RUEL",
@@ -500,7 +642,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 157
+          "sampleCount": 157,
+          "_priority": 3.8
         },
         {
           "id": "SELINE",
@@ -508,31 +651,44 @@
           "confidence": 0.5916,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 596
+          "sampleCount": 596,
+          "_priority": 3.3
         },
         {
           "id": "SHADOW_SHU",
           "score": 0.1315,
           "confidence": 0.2267,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 209
+          "sampleCount": 209,
+          "_priority": 2.4
+        },
+        {
+          "id": "SILVER_CHRISTY",
+          "score": 0.1058,
+          "confidence": 0.1825,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 260,
+          "_priority": 2.4
         },
         {
           "id": "EXT_일편고월_벨로나",
           "score": 0.1217,
           "confidence": 0.2266,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 305
+          "sampleCount": 305,
+          "_priority": 2.4
         },
         {
           "id": "CELINE",
           "score": 0.107,
           "confidence": 0.2041,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 236
+          "sampleCount": 236,
+          "_priority": 2.4
         },
         {
           "id": "HARSETI",
@@ -540,7 +696,8 @@
           "confidence": 0.4605,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 766
+          "sampleCount": 766,
+          "_priority": 3.3
         },
         {
           "id": "HWAYOUNG",
@@ -548,7 +705,17 @@
           "confidence": 0.6435,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 917
+          "sampleCount": 917,
+          "_priority": 3.3
+        },
+        {
+          "id": "LRK",
+          "score": 0.099,
+          "confidence": 0.2256,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 233,
+          "_priority": 2.4
         },
         {
           "id": "MAID_CHLOE",
@@ -556,7 +723,8 @@
           "confidence": 0.5106,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 715
+          "sampleCount": 715,
+          "_priority": 3.3
         }
       ],
       "goodVs": [
@@ -566,7 +734,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 691
+          "sampleCount": 691,
+          "_priority": 3.8
         },
         {
           "id": "LIBRA_MASTER",
@@ -574,7 +743,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 784
+          "sampleCount": 784,
+          "_priority": 3.8
         },
         {
           "id": "ISEPUNISH_ARIA",
@@ -582,7 +752,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 934
+          "sampleCount": 934,
+          "_priority": 3.8
         },
         {
           "id": "RUEL",
@@ -590,7 +761,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 803
+          "sampleCount": 803,
+          "_priority": 3.8
         },
         {
           "id": "DARK_DIEANE",
@@ -598,7 +770,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 798
+          "sampleCount": 798,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -606,7 +779,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 865
+          "sampleCount": 865,
+          "_priority": 3.8
         },
         {
           "id": "SECRET",
@@ -614,7 +788,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 566
+          "sampleCount": 566,
+          "_priority": 3.8
         },
         {
           "id": "FRIEREN",
@@ -622,7 +797,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 703
+          "sampleCount": 703,
+          "_priority": 3.8
         },
         {
           "id": "RINAK",
@@ -630,7 +806,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 866
+          "sampleCount": 866,
+          "_priority": 3.8
         },
         {
           "id": "SKY_ILLYNAV",
@@ -638,7 +815,26 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 377
+          "sampleCount": 377,
+          "_priority": 3.8
+        },
+        {
+          "id": "BELIAN",
+          "score": 0.7263,
+          "confidence": 0.78,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 437,
+          "_priority": 3.8
+        },
+        {
+          "id": "TENEBRIA",
+          "score": 0.7023,
+          "confidence": 0.724,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 584,
+          "_priority": 3.8
         }
       ],
       "badVs": [
@@ -648,7 +844,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 864
+          "sampleCount": 864,
+          "_priority": 3.8
         },
         {
           "id": "GIO",
@@ -656,7 +853,8 @@
           "confidence": 0.5764,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 1409
+          "sampleCount": 1409,
+          "_priority": 3.3
         },
         {
           "id": "SELINE",
@@ -664,7 +862,8 @@
           "confidence": 0.4482,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 1031
+          "sampleCount": 1031,
+          "_priority": 3.3
         },
         {
           "id": "FLAN",
@@ -672,7 +871,8 @@
           "confidence": 0.429,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 1179
+          "sampleCount": 1179,
+          "_priority": 3.3
         },
         {
           "id": "HARSETI",
@@ -680,7 +880,8 @@
           "confidence": 0.3983,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 1128
+          "sampleCount": 1128,
+          "_priority": 3.3
         },
         {
           "id": "TORAMI",
@@ -688,7 +889,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 875
+          "sampleCount": 875,
+          "_priority": 3.3
         },
         {
           "id": "HWARAN_RAVI",
@@ -696,7 +898,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 855
+          "sampleCount": 855,
+          "_priority": 3.3
         },
         {
           "id": "BIRGITTA",
@@ -704,7 +907,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 853
+          "sampleCount": 853,
+          "_priority": 3.3
         },
         {
           "id": "EXT_멜리사",
@@ -712,7 +916,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 853
+          "sampleCount": 853,
+          "_priority": 3.3
         },
         {
           "id": "SIDER",
@@ -720,7 +925,26 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 848
+          "sampleCount": 848,
+          "_priority": 3.3
+        },
+        {
+          "id": "NAVY_LANDY",
+          "score": 0.3081,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 845,
+          "_priority": 3.3
+        },
+        {
+          "id": "AMBITIOUS_TYWIN",
+          "score": 0.2533,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 846,
+          "_priority": 3.3
         }
       ],
       "firstpick": {
@@ -750,19 +974,19 @@
         "sourceCounts": {
           "helpsWith": {
             "legendWith": 3,
-            "pairLift": 7
+            "pairLift": 9
           },
           "goodVs": {
-            "legendHard": 10
+            "legendHard": 12
           },
           "badVs": {
             "legendHard": 1,
-            "strongMatchupEdge": 9
+            "strongMatchupEdge": 11
           },
           "relationCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 12,
+            "badVs": 12
           },
           "shortages": {
             "helpsWith": false,
@@ -775,16 +999,16 @@
             "badVs": 22
           },
           "anchorCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 12,
+            "badVs": 12
           },
           "fallbackCounts": {
             "helpsWith": 0,
             "goodVs": 0,
             "badVs": 0
           },
-          "relationLimit": 10
+          "relationLimit": 12
         },
         "fallbackUsed": false
       },
@@ -795,7 +1019,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1085
+          "sampleCount": 1085,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -803,7 +1028,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 189
+          "sampleCount": 189,
+          "_priority": 3.8
         },
         {
           "id": "RUEL",
@@ -811,7 +1037,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 157
+          "sampleCount": 157,
+          "_priority": 3.8
         },
         {
           "id": "SELINE",
@@ -819,31 +1046,44 @@
           "confidence": 0.5916,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 596
+          "sampleCount": 596,
+          "_priority": 3.3
         },
         {
           "id": "SHADOW_SHU",
           "score": 0.1315,
           "confidence": 0.2267,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 209
+          "sampleCount": 209,
+          "_priority": 2.4
+        },
+        {
+          "id": "SILVER_CHRISTY",
+          "score": 0.1058,
+          "confidence": 0.1825,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 260,
+          "_priority": 2.4
         },
         {
           "id": "EXT_일편고월_벨로나",
           "score": 0.1217,
           "confidence": 0.2266,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 305
+          "sampleCount": 305,
+          "_priority": 2.4
         },
         {
           "id": "CELINE",
           "score": 0.107,
           "confidence": 0.2041,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 236
+          "sampleCount": 236,
+          "_priority": 2.4
         },
         {
           "id": "HARSETI",
@@ -851,7 +1091,8 @@
           "confidence": 0.4605,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 766
+          "sampleCount": 766,
+          "_priority": 3.3
         },
         {
           "id": "HWAYOUNG",
@@ -859,7 +1100,17 @@
           "confidence": 0.6435,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 917
+          "sampleCount": 917,
+          "_priority": 3.3
+        },
+        {
+          "id": "LRK",
+          "score": 0.099,
+          "confidence": 0.2256,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 233,
+          "_priority": 2.4
         },
         {
           "id": "MAID_CHLOE",
@@ -867,7 +1118,8 @@
           "confidence": 0.5106,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 715
+          "sampleCount": 715,
+          "_priority": 3.3
         }
       ],
       "topCounters": [
@@ -877,7 +1129,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 691
+          "sampleCount": 691,
+          "_priority": 3.8
         },
         {
           "id": "LIBRA_MASTER",
@@ -885,7 +1138,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 784
+          "sampleCount": 784,
+          "_priority": 3.8
         },
         {
           "id": "ISEPUNISH_ARIA",
@@ -893,7 +1147,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 934
+          "sampleCount": 934,
+          "_priority": 3.8
         },
         {
           "id": "RUEL",
@@ -901,7 +1156,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 803
+          "sampleCount": 803,
+          "_priority": 3.8
         },
         {
           "id": "DARK_DIEANE",
@@ -909,7 +1165,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 798
+          "sampleCount": 798,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -917,7 +1174,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 865
+          "sampleCount": 865,
+          "_priority": 3.8
         },
         {
           "id": "SECRET",
@@ -925,7 +1183,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 566
+          "sampleCount": 566,
+          "_priority": 3.8
         },
         {
           "id": "FRIEREN",
@@ -933,7 +1192,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 703
+          "sampleCount": 703,
+          "_priority": 3.8
         },
         {
           "id": "RINAK",
@@ -941,7 +1201,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 866
+          "sampleCount": 866,
+          "_priority": 3.8
         },
         {
           "id": "SKY_ILLYNAV",
@@ -949,7 +1210,26 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 377
+          "sampleCount": 377,
+          "_priority": 3.8
+        },
+        {
+          "id": "BELIAN",
+          "score": 0.7263,
+          "confidence": 0.78,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 437,
+          "_priority": 3.8
+        },
+        {
+          "id": "TENEBRIA",
+          "score": 0.7023,
+          "confidence": 0.724,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 584,
+          "_priority": 3.8
         }
       ]
     },
@@ -961,7 +1241,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1219
+          "sampleCount": 1219,
+          "_priority": 3.8
         },
         {
           "id": "SKY_ILLYNAV",
@@ -969,7 +1250,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 217
+          "sampleCount": 217,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -977,7 +1259,8 @@
           "confidence": 0.8109,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 41
+          "sampleCount": 41,
+          "_priority": 3.8
         },
         {
           "id": "PUNISH_PUNISH_ARIA",
@@ -985,23 +1268,44 @@
           "confidence": 0.4423,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 842
+          "sampleCount": 842,
+          "_priority": 3.3
         },
         {
           "id": "SHADOW_SHU",
           "score": 0.1277,
           "confidence": 0.2202,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 182
+          "sampleCount": 182,
+          "_priority": 2.4
+        },
+        {
+          "id": "EXT_율하",
+          "score": 0.0928,
+          "confidence": 0.14,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 112,
+          "_priority": 2.4
+        },
+        {
+          "id": "EXT_레테",
+          "score": 0.0928,
+          "confidence": 0.1095,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 43,
+          "_priority": 2.4
         },
         {
           "id": "WOLF_PEIRA",
           "score": 0.1342,
           "confidence": 0.2606,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 361
+          "sampleCount": 361,
+          "_priority": 2.4
         },
         {
           "id": "SEOLHWA",
@@ -1009,7 +1313,8 @@
           "confidence": 0.787,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 955
+          "sampleCount": 955,
+          "_priority": 3.3
         },
         {
           "id": "MORT",
@@ -1017,15 +1322,17 @@
           "confidence": 0.5298,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 601
+          "sampleCount": 601,
+          "_priority": 3.3
         },
         {
           "id": "MOON_LUNA",
           "score": 0.1515,
           "confidence": 0.3951,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 469
+          "sampleCount": 469,
+          "_priority": 2.4
         },
         {
           "id": "MAID_CHLOE",
@@ -1033,25 +1340,19 @@
           "confidence": 0.4942,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 607
+          "sampleCount": 607,
+          "_priority": 3.3
         }
       ],
       "goodVs": [
-        {
-          "id": "TENEBRIA",
-          "score": 0.7023,
-          "confidence": 0.724,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 584
-        },
         {
           "id": "LIBRA_MASTER",
           "score": 0.7509,
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 784
+          "sampleCount": 784,
+          "_priority": 3.8
         },
         {
           "id": "ISEPUNISH_ARIA",
@@ -1059,7 +1360,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 934
+          "sampleCount": 934,
+          "_priority": 3.8
         },
         {
           "id": "RUEL",
@@ -1067,15 +1369,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 803
-        },
-        {
-          "id": "MAID_CHLOE",
-          "score": 0.6406,
-          "confidence": 0.6796,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 302
+          "sampleCount": 803,
+          "_priority": 3.8
         },
         {
           "id": "SECRET",
@@ -1083,7 +1378,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 566
+          "sampleCount": 566,
+          "_priority": 3.8
         },
         {
           "id": "RINAK",
@@ -1091,7 +1387,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 866
+          "sampleCount": 866,
+          "_priority": 3.8
         },
         {
           "id": "SKY_ILLYNAV",
@@ -1099,7 +1396,17 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 377
+          "sampleCount": 377,
+          "_priority": 3.8
+        },
+        {
+          "id": "TENEBRIA",
+          "score": 0.7023,
+          "confidence": 0.724,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 584,
+          "_priority": 3.8
         },
         {
           "id": "GIO",
@@ -1107,7 +1414,8 @@
           "confidence": 0.746,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 294
+          "sampleCount": 294,
+          "_priority": 3.8
         },
         {
           "id": "SCENT_POLITIS",
@@ -1115,7 +1423,35 @@
           "confidence": 0.7473,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 245
+          "sampleCount": 245,
+          "_priority": 3.8
+        },
+        {
+          "id": "MAID_CHLOE",
+          "score": 0.6406,
+          "confidence": 0.6796,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 302,
+          "_priority": 3.8
+        },
+        {
+          "id": "FLAN",
+          "score": 0.6168,
+          "confidence": 0.6358,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 462,
+          "_priority": 3.8
+        },
+        {
+          "id": "SELINE",
+          "score": 0.6121,
+          "confidence": 0.6507,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 193,
+          "_priority": 3.8
         }
       ],
       "badVs": [
@@ -1125,7 +1461,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 865
+          "sampleCount": 865,
+          "_priority": 3.8
         },
         {
           "id": "FRIEREN",
@@ -1133,7 +1470,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 865
+          "sampleCount": 865,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -1141,7 +1479,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 865
+          "sampleCount": 865,
+          "_priority": 3.8
         },
         {
           "id": "SHADOW_SHU",
@@ -1149,7 +1488,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 937
+          "sampleCount": 937,
+          "_priority": 3.3
         },
         {
           "id": "RANDI",
@@ -1157,7 +1497,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 918
+          "sampleCount": 918,
+          "_priority": 3.3
         },
         {
           "id": "DEVIL_RUA",
@@ -1165,7 +1506,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 878
+          "sampleCount": 878,
+          "_priority": 3.3
         },
         {
           "id": "VACATION_YUFINE",
@@ -1173,7 +1515,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 845
+          "sampleCount": 845,
+          "_priority": 3.3
         },
         {
           "id": "BASE_POLITIS",
@@ -1181,7 +1524,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 859
+          "sampleCount": 859,
+          "_priority": 3.3
         },
         {
           "id": "EXT_호위대장_크라우",
@@ -1189,7 +1533,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 842
+          "sampleCount": 842,
+          "_priority": 3.3
         },
         {
           "id": "NAKWOL",
@@ -1197,7 +1542,35 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 855
+          "sampleCount": 855,
+          "_priority": 3.3
+        },
+        {
+          "id": "EXT_잔영의_비올레토",
+          "score": 0.2292,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 851,
+          "_priority": 3.3
+        },
+        {
+          "id": "BELIAN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 341,
+          "_priority": 2.4
+        },
+        {
+          "id": "DARK_DIEANE",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 529,
+          "_priority": 2.4
         }
       ],
       "firstpick": {
@@ -1227,19 +1600,20 @@
         "sourceCounts": {
           "helpsWith": {
             "legendWith": 3,
-            "pairLift": 7
+            "pairLift": 9
           },
           "goodVs": {
-            "legendHard": 10
+            "legendHard": 12
           },
           "badVs": {
             "legendHard": 3,
-            "strongMatchupEdge": 7
+            "strongMatchupEdge": 8,
+            "top10WeakCounterHint": 2
           },
           "relationCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 12,
+            "badVs": 13
           },
           "shortages": {
             "helpsWith": false,
@@ -1252,16 +1626,16 @@
             "badVs": 22
           },
           "anchorCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 12,
+            "badVs": 13
           },
           "fallbackCounts": {
             "helpsWith": 0,
             "goodVs": 0,
             "badVs": 0
           },
-          "relationLimit": 10
+          "relationLimit": 12
         },
         "fallbackUsed": false
       },
@@ -1272,7 +1646,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1219
+          "sampleCount": 1219,
+          "_priority": 3.8
         },
         {
           "id": "SKY_ILLYNAV",
@@ -1280,7 +1655,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 217
+          "sampleCount": 217,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -1288,7 +1664,8 @@
           "confidence": 0.8109,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 41
+          "sampleCount": 41,
+          "_priority": 3.8
         },
         {
           "id": "PUNISH_PUNISH_ARIA",
@@ -1296,23 +1673,44 @@
           "confidence": 0.4423,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 842
+          "sampleCount": 842,
+          "_priority": 3.3
         },
         {
           "id": "SHADOW_SHU",
           "score": 0.1277,
           "confidence": 0.2202,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 182
+          "sampleCount": 182,
+          "_priority": 2.4
+        },
+        {
+          "id": "EXT_율하",
+          "score": 0.0928,
+          "confidence": 0.14,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 112,
+          "_priority": 2.4
+        },
+        {
+          "id": "EXT_레테",
+          "score": 0.0928,
+          "confidence": 0.1095,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 43,
+          "_priority": 2.4
         },
         {
           "id": "WOLF_PEIRA",
           "score": 0.1342,
           "confidence": 0.2606,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 361
+          "sampleCount": 361,
+          "_priority": 2.4
         },
         {
           "id": "SEOLHWA",
@@ -1320,7 +1718,8 @@
           "confidence": 0.787,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 955
+          "sampleCount": 955,
+          "_priority": 3.3
         },
         {
           "id": "MORT",
@@ -1328,15 +1727,17 @@
           "confidence": 0.5298,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 601
+          "sampleCount": 601,
+          "_priority": 3.3
         },
         {
           "id": "MOON_LUNA",
           "score": 0.1515,
           "confidence": 0.3951,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 469
+          "sampleCount": 469,
+          "_priority": 2.4
         },
         {
           "id": "MAID_CHLOE",
@@ -1344,25 +1745,19 @@
           "confidence": 0.4942,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 607
+          "sampleCount": 607,
+          "_priority": 3.3
         }
       ],
       "topCounters": [
-        {
-          "id": "TENEBRIA",
-          "score": 0.7023,
-          "confidence": 0.724,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 584
-        },
         {
           "id": "LIBRA_MASTER",
           "score": 0.7509,
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 784
+          "sampleCount": 784,
+          "_priority": 3.8
         },
         {
           "id": "ISEPUNISH_ARIA",
@@ -1370,7 +1765,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 934
+          "sampleCount": 934,
+          "_priority": 3.8
         },
         {
           "id": "RUEL",
@@ -1378,15 +1774,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 803
-        },
-        {
-          "id": "MAID_CHLOE",
-          "score": 0.6406,
-          "confidence": 0.6796,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 302
+          "sampleCount": 803,
+          "_priority": 3.8
         },
         {
           "id": "SECRET",
@@ -1394,7 +1783,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 566
+          "sampleCount": 566,
+          "_priority": 3.8
         },
         {
           "id": "RINAK",
@@ -1402,7 +1792,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 866
+          "sampleCount": 866,
+          "_priority": 3.8
         },
         {
           "id": "SKY_ILLYNAV",
@@ -1410,7 +1801,17 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 377
+          "sampleCount": 377,
+          "_priority": 3.8
+        },
+        {
+          "id": "TENEBRIA",
+          "score": 0.7023,
+          "confidence": 0.724,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 584,
+          "_priority": 3.8
         },
         {
           "id": "GIO",
@@ -1418,7 +1819,8 @@
           "confidence": 0.746,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 294
+          "sampleCount": 294,
+          "_priority": 3.8
         },
         {
           "id": "SCENT_POLITIS",
@@ -1426,7 +1828,35 @@
           "confidence": 0.7473,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 245
+          "sampleCount": 245,
+          "_priority": 3.8
+        },
+        {
+          "id": "MAID_CHLOE",
+          "score": 0.6406,
+          "confidence": 0.6796,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 302,
+          "_priority": 3.8
+        },
+        {
+          "id": "FLAN",
+          "score": 0.6168,
+          "confidence": 0.6358,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 462,
+          "_priority": 3.8
+        },
+        {
+          "id": "SELINE",
+          "score": 0.6121,
+          "confidence": 0.6507,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 193,
+          "_priority": 3.8
         }
       ]
     },
@@ -1438,7 +1868,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1359
+          "sampleCount": 1359,
+          "_priority": 3.8
         },
         {
           "id": "ARUNKA",
@@ -1446,7 +1877,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 157
+          "sampleCount": 157,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -1454,31 +1886,35 @@
           "confidence": 0.8546,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 64
+          "sampleCount": 64,
+          "_priority": 3.8
         },
         {
           "id": "RAN",
           "score": 0.1676,
           "confidence": 0.289,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 507
+          "sampleCount": 507,
+          "_priority": 2.4
         },
         {
           "id": "RANDI",
           "score": 0.1017,
           "confidence": 0.1753,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 94
+          "sampleCount": 94,
+          "_priority": 2.4
         },
         {
           "id": "EXT_오퍼레이터_세크레트",
           "score": 0.0863,
           "confidence": 0.08,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 8
+          "sampleCount": 8,
+          "_priority": 2.4
         },
         {
           "id": "SELINE",
@@ -1486,7 +1922,8 @@
           "confidence": 0.5486,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 431
+          "sampleCount": 431,
+          "_priority": 3.3
         },
         {
           "id": "ISEPUNISH_ARIA",
@@ -1494,15 +1931,35 @@
           "confidence": 0.7848,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 1251
+          "sampleCount": 1251,
+          "_priority": 3.3
         },
         {
           "id": "SNOW_SOLITARIA",
           "score": 0.0792,
           "confidence": 0.1169,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 77
+          "sampleCount": 77,
+          "_priority": 2.4
+        },
+        {
+          "id": "ELENA",
+          "score": 0.0774,
+          "confidence": 0.1641,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 164,
+          "_priority": 2.4
+        },
+        {
+          "id": "SHADOW_SHU",
+          "score": 0.0744,
+          "confidence": 0.1715,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 145,
+          "_priority": 2.4
         },
         {
           "id": "SEOLHWA",
@@ -1510,17 +1967,19 @@
           "confidence": 0.6743,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 671
+          "sampleCount": 671,
+          "_priority": 3.3
         }
       ],
       "goodVs": [
         {
-          "id": "EXT_호위대장_크라우",
-          "score": 0.4244,
-          "confidence": 0.4161,
+          "id": "GIO",
+          "score": 0.6961,
+          "confidence": 0.746,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 38
+          "sampleCount": 294,
+          "_priority": 3.8
         },
         {
           "id": "MORT",
@@ -1528,23 +1987,8 @@
           "confidence": 0.6857,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 808
-        },
-        {
-          "id": "EXT_어둠의_코르부스",
-          "score": 0.3888,
-          "confidence": 0.4008,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 54
-        },
-        {
-          "id": "EXT_라스트_피스_카린",
-          "score": 0.3754,
-          "confidence": 0.387,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 36
+          "sampleCount": 808,
+          "_priority": 3.8
         },
         {
           "id": "HECKATE",
@@ -1552,31 +1996,8 @@
           "confidence": 0.5902,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 330
-        },
-        {
-          "id": "MILIM",
-          "score": 0.372,
-          "confidence": 0.3884,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 37
-        },
-        {
-          "id": "EXT_세즈",
-          "score": 0.3909,
-          "confidence": 0.4092,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 81
-        },
-        {
-          "id": "GIO",
-          "score": 0.6961,
-          "confidence": 0.746,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 294
+          "sampleCount": 330,
+          "_priority": 3.8
         },
         {
           "id": "SUCCESSOR_TAEYU",
@@ -1584,7 +2005,26 @@
           "confidence": 0.4558,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 214
+          "sampleCount": 214,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_호위대장_크라우",
+          "score": 0.4244,
+          "confidence": 0.4161,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 38,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_세즈",
+          "score": 0.3909,
+          "confidence": 0.4092,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 81,
+          "_priority": 3.8
         },
         {
           "id": "EXT_최강_모델_루루카",
@@ -1592,7 +2032,53 @@
           "confidence": 0.422,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 64
+          "sampleCount": 64,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_어둠의_코르부스",
+          "score": 0.3888,
+          "confidence": 0.4008,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 54,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_라스트_피스_카린",
+          "score": 0.3754,
+          "confidence": 0.387,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 36,
+          "_priority": 3.8
+        },
+        {
+          "id": "MILIM",
+          "score": 0.372,
+          "confidence": 0.3884,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 37,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_죄악의_안젤리카",
+          "score": 0.3602,
+          "confidence": 0.387,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 36,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_설계자_라이카",
+          "score": 0.3596,
+          "confidence": 0.3839,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 34,
+          "_priority": 3.8
         }
       ],
       "badVs": [
@@ -1602,7 +2088,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 803
+          "sampleCount": 803,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -1610,7 +2097,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 803
+          "sampleCount": 803,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -1618,7 +2106,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 803
+          "sampleCount": 803,
+          "_priority": 3.8
         },
         {
           "id": "SARMIA",
@@ -1626,7 +2115,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 874
+          "sampleCount": 874,
+          "_priority": 3.3
         },
         {
           "id": "EXT_은빛_해일_화영",
@@ -1634,7 +2124,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 820
+          "sampleCount": 820,
+          "_priority": 3.3
         },
         {
           "id": "EXT_멜리사",
@@ -1642,7 +2133,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 803
+          "sampleCount": 803,
+          "_priority": 3.3
         },
         {
           "id": "EXT_용의_반려_셰나",
@@ -1650,7 +2142,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 800
+          "sampleCount": 800,
+          "_priority": 3.3
         },
         {
           "id": "EXT_종결자_찰스",
@@ -1658,7 +2151,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 798
+          "sampleCount": 798,
+          "_priority": 3.3
         },
         {
           "id": "EXT_에다",
@@ -1666,7 +2160,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 786
+          "sampleCount": 786,
+          "_priority": 3.3
         },
         {
           "id": "BIRGITTA",
@@ -1674,7 +2169,80 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 785
+          "sampleCount": 785,
+          "_priority": 3.3
+        },
+        {
+          "id": "EXT_잔영의_비올레토",
+          "score": 0.3182,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 785,
+          "_priority": 3.3
+        },
+        {
+          "id": "EXT_엘리고스",
+          "score": 0.3154,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 785,
+          "_priority": 3.3
+        },
+        {
+          "id": "BELIAN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 336,
+          "_priority": 2.4
+        },
+        {
+          "id": "DARK_DIEANE",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 458,
+          "_priority": 2.4
+        },
+        {
+          "id": "FRIEREN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 423,
+          "_priority": 2.4
+        },
+        {
+          "id": "RINAK",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 629,
+          "_priority": 2.4
+        },
+        {
+          "id": "SECRET",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 326,
+          "_priority": 2.4
+        },
+        {
+          "id": "SKY_ILLYNAV",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 276,
+          "_priority": 2.4
         }
       ],
       "firstpick": {
@@ -1704,19 +2272,20 @@
         "sourceCounts": {
           "helpsWith": {
             "legendWith": 3,
-            "pairLift": 7
+            "pairLift": 9
           },
           "goodVs": {
-            "legendHard": 10
+            "legendHard": 12
           },
           "badVs": {
             "legendHard": 3,
-            "strongMatchupEdge": 7
+            "strongMatchupEdge": 9,
+            "top10WeakCounterHint": 6
           },
           "relationCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 12,
+            "badVs": 18
           },
           "shortages": {
             "helpsWith": false,
@@ -1729,16 +2298,16 @@
             "badVs": 22
           },
           "anchorCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 12,
+            "badVs": 18
           },
           "fallbackCounts": {
             "helpsWith": 0,
             "goodVs": 0,
             "badVs": 0
           },
-          "relationLimit": 10
+          "relationLimit": 12
         },
         "fallbackUsed": false
       },
@@ -1749,7 +2318,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1359
+          "sampleCount": 1359,
+          "_priority": 3.8
         },
         {
           "id": "ARUNKA",
@@ -1757,7 +2327,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 157
+          "sampleCount": 157,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -1765,31 +2336,35 @@
           "confidence": 0.8546,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 64
+          "sampleCount": 64,
+          "_priority": 3.8
         },
         {
           "id": "RAN",
           "score": 0.1676,
           "confidence": 0.289,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 507
+          "sampleCount": 507,
+          "_priority": 2.4
         },
         {
           "id": "RANDI",
           "score": 0.1017,
           "confidence": 0.1753,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 94
+          "sampleCount": 94,
+          "_priority": 2.4
         },
         {
           "id": "EXT_오퍼레이터_세크레트",
           "score": 0.0863,
           "confidence": 0.08,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 8
+          "sampleCount": 8,
+          "_priority": 2.4
         },
         {
           "id": "SELINE",
@@ -1797,7 +2372,8 @@
           "confidence": 0.5486,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 431
+          "sampleCount": 431,
+          "_priority": 3.3
         },
         {
           "id": "ISEPUNISH_ARIA",
@@ -1805,15 +2381,35 @@
           "confidence": 0.7848,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 1251
+          "sampleCount": 1251,
+          "_priority": 3.3
         },
         {
           "id": "SNOW_SOLITARIA",
           "score": 0.0792,
           "confidence": 0.1169,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 77
+          "sampleCount": 77,
+          "_priority": 2.4
+        },
+        {
+          "id": "ELENA",
+          "score": 0.0774,
+          "confidence": 0.1641,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 164,
+          "_priority": 2.4
+        },
+        {
+          "id": "SHADOW_SHU",
+          "score": 0.0744,
+          "confidence": 0.1715,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 145,
+          "_priority": 2.4
         },
         {
           "id": "SEOLHWA",
@@ -1821,17 +2417,19 @@
           "confidence": 0.6743,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 671
+          "sampleCount": 671,
+          "_priority": 3.3
         }
       ],
       "topCounters": [
         {
-          "id": "EXT_호위대장_크라우",
-          "score": 0.4244,
-          "confidence": 0.4161,
+          "id": "GIO",
+          "score": 0.6961,
+          "confidence": 0.746,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 38
+          "sampleCount": 294,
+          "_priority": 3.8
         },
         {
           "id": "MORT",
@@ -1839,23 +2437,8 @@
           "confidence": 0.6857,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 808
-        },
-        {
-          "id": "EXT_어둠의_코르부스",
-          "score": 0.3888,
-          "confidence": 0.4008,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 54
-        },
-        {
-          "id": "EXT_라스트_피스_카린",
-          "score": 0.3754,
-          "confidence": 0.387,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 36
+          "sampleCount": 808,
+          "_priority": 3.8
         },
         {
           "id": "HECKATE",
@@ -1863,31 +2446,8 @@
           "confidence": 0.5902,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 330
-        },
-        {
-          "id": "MILIM",
-          "score": 0.372,
-          "confidence": 0.3884,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 37
-        },
-        {
-          "id": "EXT_세즈",
-          "score": 0.3909,
-          "confidence": 0.4092,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 81
-        },
-        {
-          "id": "GIO",
-          "score": 0.6961,
-          "confidence": 0.746,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 294
+          "sampleCount": 330,
+          "_priority": 3.8
         },
         {
           "id": "SUCCESSOR_TAEYU",
@@ -1895,7 +2455,26 @@
           "confidence": 0.4558,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 214
+          "sampleCount": 214,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_호위대장_크라우",
+          "score": 0.4244,
+          "confidence": 0.4161,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 38,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_세즈",
+          "score": 0.3909,
+          "confidence": 0.4092,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 81,
+          "_priority": 3.8
         },
         {
           "id": "EXT_최강_모델_루루카",
@@ -1903,7 +2482,53 @@
           "confidence": 0.422,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 64
+          "sampleCount": 64,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_어둠의_코르부스",
+          "score": 0.3888,
+          "confidence": 0.4008,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 54,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_라스트_피스_카린",
+          "score": 0.3754,
+          "confidence": 0.387,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 36,
+          "_priority": 3.8
+        },
+        {
+          "id": "MILIM",
+          "score": 0.372,
+          "confidence": 0.3884,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 37,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_죄악의_안젤리카",
+          "score": 0.3602,
+          "confidence": 0.387,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 36,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_설계자_라이카",
+          "score": 0.3596,
+          "confidence": 0.3839,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 34,
+          "_priority": 3.8
         }
       ]
     },
@@ -1915,7 +2540,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1078
+          "sampleCount": 1078,
+          "_priority": 3.8
         },
         {
           "id": "RUEL",
@@ -1923,7 +2549,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1359
+          "sampleCount": 1359,
+          "_priority": 3.8
         },
         {
           "id": "ARUNKA",
@@ -1931,31 +2558,35 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 292
+          "sampleCount": 292,
+          "_priority": 3.8
         },
         {
           "id": "RAN",
           "score": 0.1676,
           "confidence": 0.289,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 481
+          "sampleCount": 481,
+          "_priority": 2.4
         },
         {
           "id": "AMID",
           "score": 0.1343,
           "confidence": 0.2316,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 330
+          "sampleCount": 330,
+          "_priority": 2.4
         },
         {
           "id": "BABY_SHENNA",
           "score": 0.1321,
           "confidence": 0.2277,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 276
+          "sampleCount": 276,
+          "_priority": 2.4
         },
         {
           "id": "COMMANDER_PAVEL",
@@ -1963,15 +2594,35 @@
           "confidence": 0.2066,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 558
+          "sampleCount": 558,
+          "_priority": 3.3
+        },
+        {
+          "id": "STRAZE",
+          "score": 0.1186,
+          "confidence": 0.2044,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 224,
+          "_priority": 2.4
+        },
+        {
+          "id": "JACK_O",
+          "score": 0.0928,
+          "confidence": 0.141,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 127,
+          "_priority": 2.4
         },
         {
           "id": "VILDRED",
           "score": 0.1208,
           "confidence": 0.2194,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 250
+          "sampleCount": 250,
+          "_priority": 2.4
         },
         {
           "id": "LIBRA_MASTER",
@@ -1979,7 +2630,8 @@
           "confidence": 0.7979,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 1122
+          "sampleCount": 1122,
+          "_priority": 3.3
         },
         {
           "id": "FESTIVAL_EDA",
@@ -1987,65 +2639,19 @@
           "confidence": 0.4707,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 665
+          "sampleCount": 665,
+          "_priority": 3.3
         }
       ],
       "goodVs": [
         {
-          "id": "AMIKI",
-          "score": 0.5176,
-          "confidence": 0.5075,
+          "id": "YULHA",
+          "score": 0.7355,
+          "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 271
-        },
-        {
-          "id": "BABY_SHENNA",
-          "score": 0.4353,
-          "confidence": 0.4488,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 181
-        },
-        {
-          "id": "SILVER_ARAMINTA",
-          "score": 0.4145,
-          "confidence": 0.4273,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 152
-        },
-        {
-          "id": "WANDERER_SILK",
-          "score": 0.3969,
-          "confidence": 0.4092,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 135
-        },
-        {
-          "id": "WESTWIND_SHURI",
-          "score": 0.3969,
-          "confidence": 0.4092,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 84
-        },
-        {
-          "id": "ELVIRA",
-          "score": 0.3952,
-          "confidence": 0.4074,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 73
-        },
-        {
-          "id": "ELENA",
-          "score": 0.4229,
-          "confidence": 0.4366,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 149
+          "sampleCount": 865,
+          "_priority": 3.8
         },
         {
           "id": "FESTIVAL_EDA",
@@ -2053,7 +2659,17 @@
           "confidence": 0.6459,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 383
+          "sampleCount": 383,
+          "_priority": 3.8
+        },
+        {
+          "id": "AMIKI",
+          "score": 0.5176,
+          "confidence": 0.5075,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 271,
+          "_priority": 3.8
         },
         {
           "id": "LRK",
@@ -2061,15 +2677,89 @@
           "confidence": 0.484,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 112
+          "sampleCount": 112,
+          "_priority": 3.8
         },
         {
-          "id": "YULHA",
-          "score": 0.7355,
-          "confidence": 0.78,
+          "id": "BABY_SHENNA",
+          "score": 0.4353,
+          "confidence": 0.4488,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 865
+          "sampleCount": 181,
+          "_priority": 3.8
+        },
+        {
+          "id": "ELENA",
+          "score": 0.4229,
+          "confidence": 0.4366,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 149,
+          "_priority": 3.8
+        },
+        {
+          "id": "SILVER_ARAMINTA",
+          "score": 0.4145,
+          "confidence": 0.4273,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 152,
+          "_priority": 3.8
+        },
+        {
+          "id": "WANDERER_SILK",
+          "score": 0.3969,
+          "confidence": 0.4092,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 135,
+          "_priority": 3.8
+        },
+        {
+          "id": "WESTWIND_SHURI",
+          "score": 0.3969,
+          "confidence": 0.4092,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 84,
+          "_priority": 3.8
+        },
+        {
+          "id": "ELVIRA",
+          "score": 0.3952,
+          "confidence": 0.4074,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 73,
+          "_priority": 3.8
+        },
+        {
+          "id": "BASE_POLITIS",
+          "score": 0.3944,
+          "confidence": 0.4066,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 70,
+          "_priority": 3.8
+        },
+        {
+          "id": "SAGE_BAAL",
+          "score": 0.3922,
+          "confidence": 0.4044,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 63,
+          "_priority": 3.8
+        },
+        {
+          "id": "RUEL",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 423,
+          "_priority": 2.4
         }
       ],
       "badVs": [
@@ -2079,7 +2769,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 703
+          "sampleCount": 703,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -2087,7 +2778,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 703
+          "sampleCount": 703,
+          "_priority": 3.8
         },
         {
           "id": "RINAK",
@@ -2095,7 +2787,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 703
+          "sampleCount": 703,
+          "_priority": 3.8
         },
         {
           "id": "HWAYOUNG",
@@ -2103,7 +2796,8 @@
           "confidence": 0.5381,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 1045
+          "sampleCount": 1045,
+          "_priority": 3.3
         },
         {
           "id": "CELINE",
@@ -2111,7 +2805,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 770
+          "sampleCount": 770,
+          "_priority": 3.3
         },
         {
           "id": "EXT_일편고월_벨로나",
@@ -2119,7 +2814,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 765
+          "sampleCount": 765,
+          "_priority": 3.3
         },
         {
           "id": "RANDI",
@@ -2127,7 +2823,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 697
+          "sampleCount": 697,
+          "_priority": 3.3
         },
         {
           "id": "EXT_자유기사_아로웰",
@@ -2135,7 +2832,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 719
+          "sampleCount": 719,
+          "_priority": 3.3
         },
         {
           "id": "EXT_은빛_해일_화영",
@@ -2143,7 +2841,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 716
+          "sampleCount": 716,
+          "_priority": 3.3
         },
         {
           "id": "PERN",
@@ -2151,7 +2850,62 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 702
+          "sampleCount": 702,
+          "_priority": 3.3
+        },
+        {
+          "id": "STAR_ELENA",
+          "score": 0.323,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 702,
+          "_priority": 3.3
+        },
+        {
+          "id": "HWARAN_RAVI",
+          "score": 0.3214,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 690,
+          "_priority": 3.3
+        },
+        {
+          "id": "BELIAN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 459,
+          "_priority": 2.4
+        },
+        {
+          "id": "DARK_DIEANE",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 447,
+          "_priority": 2.4
+        },
+        {
+          "id": "SECRET",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 335,
+          "_priority": 2.4
+        },
+        {
+          "id": "SKY_ILLYNAV",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 351,
+          "_priority": 2.4
         }
       ],
       "firstpick": {
@@ -2181,19 +2935,21 @@
         "sourceCounts": {
           "helpsWith": {
             "legendWith": 3,
-            "pairLift": 7
+            "pairLift": 9
           },
           "goodVs": {
-            "legendHard": 10
+            "legendHard": 12,
+            "top10WeakCounterHint": 1
           },
           "badVs": {
             "legendHard": 3,
-            "strongMatchupEdge": 7
+            "strongMatchupEdge": 9,
+            "top10WeakCounterHint": 4
           },
           "relationCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 13,
+            "badVs": 16
           },
           "shortages": {
             "helpsWith": false,
@@ -2206,16 +2962,16 @@
             "badVs": 28
           },
           "anchorCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 13,
+            "badVs": 16
           },
           "fallbackCounts": {
             "helpsWith": 0,
             "goodVs": 0,
             "badVs": 0
           },
-          "relationLimit": 10
+          "relationLimit": 12
         },
         "fallbackUsed": false
       },
@@ -2226,7 +2982,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1078
+          "sampleCount": 1078,
+          "_priority": 3.8
         },
         {
           "id": "RUEL",
@@ -2234,7 +2991,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1359
+          "sampleCount": 1359,
+          "_priority": 3.8
         },
         {
           "id": "ARUNKA",
@@ -2242,31 +3000,35 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 292
+          "sampleCount": 292,
+          "_priority": 3.8
         },
         {
           "id": "RAN",
           "score": 0.1676,
           "confidence": 0.289,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 481
+          "sampleCount": 481,
+          "_priority": 2.4
         },
         {
           "id": "AMID",
           "score": 0.1343,
           "confidence": 0.2316,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 330
+          "sampleCount": 330,
+          "_priority": 2.4
         },
         {
           "id": "BABY_SHENNA",
           "score": 0.1321,
           "confidence": 0.2277,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 276
+          "sampleCount": 276,
+          "_priority": 2.4
         },
         {
           "id": "COMMANDER_PAVEL",
@@ -2274,15 +3036,35 @@
           "confidence": 0.2066,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 558
+          "sampleCount": 558,
+          "_priority": 3.3
+        },
+        {
+          "id": "STRAZE",
+          "score": 0.1186,
+          "confidence": 0.2044,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 224,
+          "_priority": 2.4
+        },
+        {
+          "id": "JACK_O",
+          "score": 0.0928,
+          "confidence": 0.141,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 127,
+          "_priority": 2.4
         },
         {
           "id": "VILDRED",
           "score": 0.1208,
           "confidence": 0.2194,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 250
+          "sampleCount": 250,
+          "_priority": 2.4
         },
         {
           "id": "LIBRA_MASTER",
@@ -2290,7 +3072,8 @@
           "confidence": 0.7979,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 1122
+          "sampleCount": 1122,
+          "_priority": 3.3
         },
         {
           "id": "FESTIVAL_EDA",
@@ -2298,65 +3081,19 @@
           "confidence": 0.4707,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 665
+          "sampleCount": 665,
+          "_priority": 3.3
         }
       ],
       "topCounters": [
         {
-          "id": "AMIKI",
-          "score": 0.5176,
-          "confidence": 0.5075,
+          "id": "YULHA",
+          "score": 0.7355,
+          "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 271
-        },
-        {
-          "id": "BABY_SHENNA",
-          "score": 0.4353,
-          "confidence": 0.4488,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 181
-        },
-        {
-          "id": "SILVER_ARAMINTA",
-          "score": 0.4145,
-          "confidence": 0.4273,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 152
-        },
-        {
-          "id": "WANDERER_SILK",
-          "score": 0.3969,
-          "confidence": 0.4092,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 135
-        },
-        {
-          "id": "WESTWIND_SHURI",
-          "score": 0.3969,
-          "confidence": 0.4092,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 84
-        },
-        {
-          "id": "ELVIRA",
-          "score": 0.3952,
-          "confidence": 0.4074,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 73
-        },
-        {
-          "id": "ELENA",
-          "score": 0.4229,
-          "confidence": 0.4366,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 149
+          "sampleCount": 865,
+          "_priority": 3.8
         },
         {
           "id": "FESTIVAL_EDA",
@@ -2364,7 +3101,17 @@
           "confidence": 0.6459,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 383
+          "sampleCount": 383,
+          "_priority": 3.8
+        },
+        {
+          "id": "AMIKI",
+          "score": 0.5176,
+          "confidence": 0.5075,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 271,
+          "_priority": 3.8
         },
         {
           "id": "LRK",
@@ -2372,15 +3119,89 @@
           "confidence": 0.484,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 112
+          "sampleCount": 112,
+          "_priority": 3.8
         },
         {
-          "id": "YULHA",
-          "score": 0.7355,
-          "confidence": 0.78,
+          "id": "BABY_SHENNA",
+          "score": 0.4353,
+          "confidence": 0.4488,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 865
+          "sampleCount": 181,
+          "_priority": 3.8
+        },
+        {
+          "id": "ELENA",
+          "score": 0.4229,
+          "confidence": 0.4366,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 149,
+          "_priority": 3.8
+        },
+        {
+          "id": "SILVER_ARAMINTA",
+          "score": 0.4145,
+          "confidence": 0.4273,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 152,
+          "_priority": 3.8
+        },
+        {
+          "id": "WANDERER_SILK",
+          "score": 0.3969,
+          "confidence": 0.4092,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 135,
+          "_priority": 3.8
+        },
+        {
+          "id": "WESTWIND_SHURI",
+          "score": 0.3969,
+          "confidence": 0.4092,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 84,
+          "_priority": 3.8
+        },
+        {
+          "id": "ELVIRA",
+          "score": 0.3952,
+          "confidence": 0.4074,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 73,
+          "_priority": 3.8
+        },
+        {
+          "id": "BASE_POLITIS",
+          "score": 0.3944,
+          "confidence": 0.4066,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 70,
+          "_priority": 3.8
+        },
+        {
+          "id": "SAGE_BAAL",
+          "score": 0.3922,
+          "confidence": 0.4044,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 63,
+          "_priority": 3.8
+        },
+        {
+          "id": "RUEL",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 423,
+          "_priority": 2.4
         }
       ]
     },
@@ -2392,7 +3213,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 193
+          "sampleCount": 193,
+          "_priority": 3.8
         },
         {
           "id": "ARUNKA",
@@ -2400,7 +3222,8 @@
           "confidence": 0.8301,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 49
+          "sampleCount": 49,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -2408,7 +3231,8 @@
           "confidence": 0.8189,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 44
+          "sampleCount": 44,
+          "_priority": 3.8
         },
         {
           "id": "GIO",
@@ -2416,7 +3240,8 @@
           "confidence": 0.7923,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 772
+          "sampleCount": 772,
+          "_priority": 3.3
         },
         {
           "id": "RAN",
@@ -2424,39 +3249,62 @@
           "confidence": 0.289,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 530
+          "sampleCount": 530,
+          "_priority": 3.3
         },
         {
           "id": "SUCCESSOR_TAEYU",
           "score": 0.14,
           "confidence": 0.2414,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 353
+          "sampleCount": 353,
+          "_priority": 2.4
         },
         {
           "id": "COMMANDER_PAVEL",
           "score": 0.1154,
           "confidence": 0.1989,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 271
+          "sampleCount": 271,
+          "_priority": 2.4
+        },
+        {
+          "id": "LIDICA",
+          "score": 0.1003,
+          "confidence": 0.173,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 111,
+          "_priority": 2.4
+        },
+        {
+          "id": "VILDRED",
+          "score": 0.1146,
+          "confidence": 0.2064,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 182,
+          "_priority": 2.4
         },
         {
           "id": "SELINE",
           "score": 0.2124,
           "confidence": 0.4753,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 308
+          "sampleCount": 308,
+          "_priority": 2.4
         },
         {
           "id": "FESTIVAL_EDA",
           "score": 0.1663,
           "confidence": 0.4418,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 488
+          "sampleCount": 488,
+          "_priority": 2.4
         },
         {
           "id": "ISEPUNISH_ARIA",
@@ -2464,73 +3312,19 @@
           "confidence": 0.608,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 1087
+          "sampleCount": 1087,
+          "_priority": 3.3
         }
       ],
       "goodVs": [
-        {
-          "id": "LIDICA",
-          "score": 0.5273,
-          "confidence": 0.5169,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 105
-        },
-        {
-          "id": "MOON_LUNA",
-          "score": 0.6292,
-          "confidence": 0.6487,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 552
-        },
-        {
-          "id": "VILDRED",
-          "score": 0.437,
-          "confidence": 0.4506,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 210
-        },
-        {
-          "id": "HWAYOUNG",
-          "score": 0.6942,
-          "confidence": 0.7181,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 537
-        },
         {
           "id": "LIBRA_MASTER",
           "score": 0.7509,
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 784
-        },
-        {
-          "id": "VERONICA",
-          "score": 0.5693,
-          "confidence": 0.5933,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 335
-        },
-        {
-          "id": "PUNISH_PUNISH_ARIA",
-          "score": 0.5408,
-          "confidence": 0.5736,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 230
-        },
-        {
-          "id": "SELINE",
-          "score": 0.6121,
-          "confidence": 0.6507,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 193
+          "sampleCount": 784,
+          "_priority": 3.8
         },
         {
           "id": "GIO",
@@ -2538,7 +3332,35 @@
           "confidence": 0.746,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 294
+          "sampleCount": 294,
+          "_priority": 3.8
+        },
+        {
+          "id": "HWAYOUNG",
+          "score": 0.6942,
+          "confidence": 0.7181,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 537,
+          "_priority": 3.8
+        },
+        {
+          "id": "MOON_LUNA",
+          "score": 0.6292,
+          "confidence": 0.6487,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 552,
+          "_priority": 3.8
+        },
+        {
+          "id": "SELINE",
+          "score": 0.6121,
+          "confidence": 0.6507,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 193,
+          "_priority": 3.8
         },
         {
           "id": "ASHEN_ISERIA",
@@ -2546,7 +3368,98 @@
           "confidence": 0.6596,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 166
+          "sampleCount": 166,
+          "_priority": 3.8
+        },
+        {
+          "id": "VERONICA",
+          "score": 0.5693,
+          "confidence": 0.5933,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 335,
+          "_priority": 3.8
+        },
+        {
+          "id": "PUNISH_PUNISH_ARIA",
+          "score": 0.5408,
+          "confidence": 0.5736,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 230,
+          "_priority": 3.8
+        },
+        {
+          "id": "LIDICA",
+          "score": 0.5273,
+          "confidence": 0.5169,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 105,
+          "_priority": 3.8
+        },
+        {
+          "id": "VILDRED",
+          "score": 0.437,
+          "confidence": 0.4506,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 210,
+          "_priority": 3.8
+        },
+        {
+          "id": "VACATION_YUFINE",
+          "score": 0.4293,
+          "confidence": 0.4208,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 40,
+          "_priority": 3.8
+        },
+        {
+          "id": "COMMANDER_PAVEL",
+          "score": 0.4198,
+          "confidence": 0.4328,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 161,
+          "_priority": 3.8
+        },
+        {
+          "id": "BELIAN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 488,
+          "_priority": 2.4
+        },
+        {
+          "id": "FRIEREN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 447,
+          "_priority": 2.4
+        },
+        {
+          "id": "RUEL",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 458,
+          "_priority": 2.4
+        },
+        {
+          "id": "YULHA",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 529,
+          "_priority": 2.4
         }
       ],
       "badVs": [
@@ -2556,7 +3469,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 798
+          "sampleCount": 798,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -2564,7 +3478,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 798
+          "sampleCount": 798,
+          "_priority": 3.8
         },
         {
           "id": "RINAK",
@@ -2572,7 +3487,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 798
+          "sampleCount": 798,
+          "_priority": 3.8
         },
         {
           "id": "SEOLHWA",
@@ -2580,7 +3496,8 @@
           "confidence": 0.62,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 1050
+          "sampleCount": 1050,
+          "_priority": 3.3
         },
         {
           "id": "FESTIVAL_EDA",
@@ -2588,7 +3505,8 @@
           "confidence": 0.442,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 939
+          "sampleCount": 939,
+          "_priority": 3.3
         },
         {
           "id": "MOON_RABBIT_DOMINIEL",
@@ -2596,7 +3514,8 @@
           "confidence": 0.259,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 873
+          "sampleCount": 873,
+          "_priority": 3.3
         },
         {
           "id": "EXT_일편고월_벨로나",
@@ -2604,7 +3523,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 820
+          "sampleCount": 820,
+          "_priority": 3.3
         },
         {
           "id": "DEVIL_RUA",
@@ -2612,7 +3532,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 819
+          "sampleCount": 819,
+          "_priority": 3.3
         },
         {
           "id": "RANDI",
@@ -2620,7 +3541,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 791
+          "sampleCount": 791,
+          "_priority": 3.3
         },
         {
           "id": "EXT_세즈",
@@ -2628,7 +3550,44 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 821
+          "sampleCount": 821,
+          "_priority": 3.3
+        },
+        {
+          "id": "PERN",
+          "score": 0.3336,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 801,
+          "_priority": 3.3
+        },
+        {
+          "id": "EXT_루이자",
+          "score": 0.3333,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 798,
+          "_priority": 3.3
+        },
+        {
+          "id": "SECRET",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 291,
+          "_priority": 2.4
+        },
+        {
+          "id": "SKY_ILLYNAV",
+          "score": 0.294,
+          "confidence": 0.6092,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 136,
+          "_priority": 2.4
         }
       ],
       "firstpick": {
@@ -2658,19 +3617,21 @@
         "sourceCounts": {
           "helpsWith": {
             "legendWith": 3,
-            "pairLift": 7
+            "pairLift": 9
           },
           "goodVs": {
-            "legendHard": 10
+            "legendHard": 12,
+            "top10WeakCounterHint": 4
           },
           "badVs": {
             "legendHard": 3,
-            "strongMatchupEdge": 7
+            "strongMatchupEdge": 9,
+            "top10WeakCounterHint": 2
           },
           "relationCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 16,
+            "badVs": 14
           },
           "shortages": {
             "helpsWith": false,
@@ -2683,16 +3644,16 @@
             "badVs": 31
           },
           "anchorCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 16,
+            "badVs": 14
           },
           "fallbackCounts": {
             "helpsWith": 0,
             "goodVs": 0,
             "badVs": 0
           },
-          "relationLimit": 10
+          "relationLimit": 12
         },
         "fallbackUsed": false
       },
@@ -2703,7 +3664,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 193
+          "sampleCount": 193,
+          "_priority": 3.8
         },
         {
           "id": "ARUNKA",
@@ -2711,7 +3673,8 @@
           "confidence": 0.8301,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 49
+          "sampleCount": 49,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -2719,7 +3682,8 @@
           "confidence": 0.8189,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 44
+          "sampleCount": 44,
+          "_priority": 3.8
         },
         {
           "id": "GIO",
@@ -2727,7 +3691,8 @@
           "confidence": 0.7923,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 772
+          "sampleCount": 772,
+          "_priority": 3.3
         },
         {
           "id": "RAN",
@@ -2735,39 +3700,62 @@
           "confidence": 0.289,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 530
+          "sampleCount": 530,
+          "_priority": 3.3
         },
         {
           "id": "SUCCESSOR_TAEYU",
           "score": 0.14,
           "confidence": 0.2414,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 353
+          "sampleCount": 353,
+          "_priority": 2.4
         },
         {
           "id": "COMMANDER_PAVEL",
           "score": 0.1154,
           "confidence": 0.1989,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 271
+          "sampleCount": 271,
+          "_priority": 2.4
+        },
+        {
+          "id": "LIDICA",
+          "score": 0.1003,
+          "confidence": 0.173,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 111,
+          "_priority": 2.4
+        },
+        {
+          "id": "VILDRED",
+          "score": 0.1146,
+          "confidence": 0.2064,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 182,
+          "_priority": 2.4
         },
         {
           "id": "SELINE",
           "score": 0.2124,
           "confidence": 0.4753,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 308
+          "sampleCount": 308,
+          "_priority": 2.4
         },
         {
           "id": "FESTIVAL_EDA",
           "score": 0.1663,
           "confidence": 0.4418,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 488
+          "sampleCount": 488,
+          "_priority": 2.4
         },
         {
           "id": "ISEPUNISH_ARIA",
@@ -2775,73 +3763,19 @@
           "confidence": 0.608,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 1087
+          "sampleCount": 1087,
+          "_priority": 3.3
         }
       ],
       "topCounters": [
-        {
-          "id": "LIDICA",
-          "score": 0.5273,
-          "confidence": 0.5169,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 105
-        },
-        {
-          "id": "MOON_LUNA",
-          "score": 0.6292,
-          "confidence": 0.6487,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 552
-        },
-        {
-          "id": "VILDRED",
-          "score": 0.437,
-          "confidence": 0.4506,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 210
-        },
-        {
-          "id": "HWAYOUNG",
-          "score": 0.6942,
-          "confidence": 0.7181,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 537
-        },
         {
           "id": "LIBRA_MASTER",
           "score": 0.7509,
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 784
-        },
-        {
-          "id": "VERONICA",
-          "score": 0.5693,
-          "confidence": 0.5933,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 335
-        },
-        {
-          "id": "PUNISH_PUNISH_ARIA",
-          "score": 0.5408,
-          "confidence": 0.5736,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 230
-        },
-        {
-          "id": "SELINE",
-          "score": 0.6121,
-          "confidence": 0.6507,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 193
+          "sampleCount": 784,
+          "_priority": 3.8
         },
         {
           "id": "GIO",
@@ -2849,7 +3783,35 @@
           "confidence": 0.746,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 294
+          "sampleCount": 294,
+          "_priority": 3.8
+        },
+        {
+          "id": "HWAYOUNG",
+          "score": 0.6942,
+          "confidence": 0.7181,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 537,
+          "_priority": 3.8
+        },
+        {
+          "id": "MOON_LUNA",
+          "score": 0.6292,
+          "confidence": 0.6487,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 552,
+          "_priority": 3.8
+        },
+        {
+          "id": "SELINE",
+          "score": 0.6121,
+          "confidence": 0.6507,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 193,
+          "_priority": 3.8
         },
         {
           "id": "ASHEN_ISERIA",
@@ -2857,7 +3819,98 @@
           "confidence": 0.6596,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 166
+          "sampleCount": 166,
+          "_priority": 3.8
+        },
+        {
+          "id": "VERONICA",
+          "score": 0.5693,
+          "confidence": 0.5933,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 335,
+          "_priority": 3.8
+        },
+        {
+          "id": "PUNISH_PUNISH_ARIA",
+          "score": 0.5408,
+          "confidence": 0.5736,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 230,
+          "_priority": 3.8
+        },
+        {
+          "id": "LIDICA",
+          "score": 0.5273,
+          "confidence": 0.5169,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 105,
+          "_priority": 3.8
+        },
+        {
+          "id": "VILDRED",
+          "score": 0.437,
+          "confidence": 0.4506,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 210,
+          "_priority": 3.8
+        },
+        {
+          "id": "VACATION_YUFINE",
+          "score": 0.4293,
+          "confidence": 0.4208,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 40,
+          "_priority": 3.8
+        },
+        {
+          "id": "COMMANDER_PAVEL",
+          "score": 0.4198,
+          "confidence": 0.4328,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 161,
+          "_priority": 3.8
+        },
+        {
+          "id": "BELIAN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 488,
+          "_priority": 2.4
+        },
+        {
+          "id": "FRIEREN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 447,
+          "_priority": 2.4
+        },
+        {
+          "id": "RUEL",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 458,
+          "_priority": 2.4
+        },
+        {
+          "id": "YULHA",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 529,
+          "_priority": 2.4
         }
       ]
     },
@@ -2869,7 +3922,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 218
+          "sampleCount": 218,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -2877,7 +3931,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 254
+          "sampleCount": 254,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -2885,7 +3940,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 215
+          "sampleCount": 215,
+          "_priority": 3.8
         },
         {
           "id": "TENEBRIA",
@@ -2893,7 +3949,8 @@
           "confidence": 0.7446,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 1002
+          "sampleCount": 1002,
+          "_priority": 3.3
         },
         {
           "id": "HECKATE",
@@ -2901,7 +3958,8 @@
           "confidence": 0.4534,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 584
+          "sampleCount": 584,
+          "_priority": 3.3
         },
         {
           "id": "YONG_SHARUN",
@@ -2909,7 +3967,8 @@
           "confidence": 0.2997,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 784
+          "sampleCount": 784,
+          "_priority": 3.3
         },
         {
           "id": "SARMIA",
@@ -2917,15 +3976,35 @@
           "confidence": 0.2371,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 525
+          "sampleCount": 525,
+          "_priority": 3.3
         },
         {
           "id": "BABY_SHENNA",
           "score": 0.1338,
           "confidence": 0.2306,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 372
+          "sampleCount": 372,
+          "_priority": 2.4
+        },
+        {
+          "id": "HUMIR",
+          "score": 0.0928,
+          "confidence": 0.1523,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 168,
+          "_priority": 2.4
+        },
+        {
+          "id": "WESTWIND_SHURI",
+          "score": 0.0928,
+          "confidence": 0.1404,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 109,
+          "_priority": 2.4
         },
         {
           "id": "MORT",
@@ -2933,7 +4012,8 @@
           "confidence": 0.6261,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 890
+          "sampleCount": 890,
+          "_priority": 3.3
         },
         {
           "id": "VERONICA",
@@ -2941,41 +4021,19 @@
           "confidence": 0.429,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 627
+          "sampleCount": 627,
+          "_priority": 3.3
         }
       ],
       "goodVs": [
-        {
-          "id": "SAGE_BAAL",
-          "score": 0.4878,
-          "confidence": 0.4782,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 114
-        },
-        {
-          "id": "FLAN",
-          "score": 0.6168,
-          "confidence": 0.6358,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 462
-        },
         {
           "id": "SEOLHWA",
           "score": 0.7533,
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 691
-        },
-        {
-          "id": "FESTIVAL_EDA",
-          "score": 0.6182,
-          "confidence": 0.6459,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 383
+          "sampleCount": 691,
+          "_priority": 3.8
         },
         {
           "id": "DARK_DIEANE",
@@ -2983,23 +4041,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 798
-        },
-        {
-          "id": "PUNISH_PUNISH_ARIA",
-          "score": 0.5408,
-          "confidence": 0.5736,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 230
-        },
-        {
-          "id": "MAID_CHLOE",
-          "score": 0.6406,
-          "confidence": 0.6796,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 302
+          "sampleCount": 798,
+          "_priority": 3.8
         },
         {
           "id": "FRIEREN",
@@ -3007,7 +4050,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 703
+          "sampleCount": 703,
+          "_priority": 3.8
         },
         {
           "id": "BELIAN",
@@ -3015,7 +4059,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 437
+          "sampleCount": 437,
+          "_priority": 3.8
         },
         {
           "id": "SCENT_POLITIS",
@@ -3023,7 +4068,80 @@
           "confidence": 0.7473,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 245
+          "sampleCount": 245,
+          "_priority": 3.8
+        },
+        {
+          "id": "MAID_CHLOE",
+          "score": 0.6406,
+          "confidence": 0.6796,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 302,
+          "_priority": 3.8
+        },
+        {
+          "id": "FESTIVAL_EDA",
+          "score": 0.6182,
+          "confidence": 0.6459,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 383,
+          "_priority": 3.8
+        },
+        {
+          "id": "FLAN",
+          "score": 0.6168,
+          "confidence": 0.6358,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 462,
+          "_priority": 3.8
+        },
+        {
+          "id": "PUNISH_PUNISH_ARIA",
+          "score": 0.5408,
+          "confidence": 0.5736,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 230,
+          "_priority": 3.8
+        },
+        {
+          "id": "SAGE_BAAL",
+          "score": 0.4878,
+          "confidence": 0.4782,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 114,
+          "_priority": 3.8
+        },
+        {
+          "id": "MOON_RABBIT_DOMINIEL",
+          "score": 0.4801,
+          "confidence": 0.5076,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 181,
+          "_priority": 3.8
+        },
+        {
+          "id": "CELINE",
+          "score": 0.4446,
+          "confidence": 0.4583,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 217,
+          "_priority": 3.8
+        },
+        {
+          "id": "RUEL",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 629,
+          "_priority": 2.4
         }
       ],
       "badVs": [
@@ -3033,7 +4151,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 866
+          "sampleCount": 866,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -3041,7 +4160,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 866
+          "sampleCount": 866,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -3049,7 +4169,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 866
+          "sampleCount": 866,
+          "_priority": 3.8
         },
         {
           "id": "STRAZE",
@@ -3057,7 +4178,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 918
+          "sampleCount": 918,
+          "_priority": 3.3
         },
         {
           "id": "ELENA",
@@ -3065,7 +4187,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 914
+          "sampleCount": 914,
+          "_priority": 3.3
         },
         {
           "id": "MYTH_ACHATES",
@@ -3073,7 +4196,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 914
+          "sampleCount": 914,
+          "_priority": 3.3
         },
         {
           "id": "AKI",
@@ -3081,7 +4205,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 870
+          "sampleCount": 870,
+          "_priority": 3.3
         },
         {
           "id": "EXT_디에네",
@@ -3089,7 +4214,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 866
+          "sampleCount": 866,
+          "_priority": 3.3
         },
         {
           "id": "NAKWOL",
@@ -3097,7 +4223,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 861
+          "sampleCount": 861,
+          "_priority": 3.3
         },
         {
           "id": "EXT_숲의_현자_비비안",
@@ -3105,7 +4232,44 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 854
+          "sampleCount": 854,
+          "_priority": 3.3
+        },
+        {
+          "id": "HUMIR",
+          "score": 0.3207,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 853,
+          "_priority": 3.3
+        },
+        {
+          "id": "AMID",
+          "score": 0.3206,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 984,
+          "_priority": 3.3
+        },
+        {
+          "id": "SECRET",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 525,
+          "_priority": 2.4
+        },
+        {
+          "id": "SKY_ILLYNAV",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 393,
+          "_priority": 2.4
         }
       ],
       "firstpick": {
@@ -3135,19 +4299,21 @@
         "sourceCounts": {
           "helpsWith": {
             "legendWith": 3,
-            "pairLift": 7
+            "pairLift": 9
           },
           "goodVs": {
-            "legendHard": 10
+            "legendHard": 12,
+            "top10WeakCounterHint": 1
           },
           "badVs": {
             "legendHard": 3,
-            "strongMatchupEdge": 7
+            "strongMatchupEdge": 9,
+            "top10WeakCounterHint": 2
           },
           "relationCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 13,
+            "badVs": 14
           },
           "shortages": {
             "helpsWith": false,
@@ -3160,16 +4326,16 @@
             "badVs": 28
           },
           "anchorCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 13,
+            "badVs": 14
           },
           "fallbackCounts": {
             "helpsWith": 0,
             "goodVs": 0,
             "badVs": 0
           },
-          "relationLimit": 10
+          "relationLimit": 12
         },
         "fallbackUsed": false
       },
@@ -3180,7 +4346,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 218
+          "sampleCount": 218,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -3188,7 +4355,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 254
+          "sampleCount": 254,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -3196,7 +4364,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 215
+          "sampleCount": 215,
+          "_priority": 3.8
         },
         {
           "id": "TENEBRIA",
@@ -3204,7 +4373,8 @@
           "confidence": 0.7446,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 1002
+          "sampleCount": 1002,
+          "_priority": 3.3
         },
         {
           "id": "HECKATE",
@@ -3212,7 +4382,8 @@
           "confidence": 0.4534,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 584
+          "sampleCount": 584,
+          "_priority": 3.3
         },
         {
           "id": "YONG_SHARUN",
@@ -3220,7 +4391,8 @@
           "confidence": 0.2997,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 784
+          "sampleCount": 784,
+          "_priority": 3.3
         },
         {
           "id": "SARMIA",
@@ -3228,15 +4400,35 @@
           "confidence": 0.2371,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 525
+          "sampleCount": 525,
+          "_priority": 3.3
         },
         {
           "id": "BABY_SHENNA",
           "score": 0.1338,
           "confidence": 0.2306,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 372
+          "sampleCount": 372,
+          "_priority": 2.4
+        },
+        {
+          "id": "HUMIR",
+          "score": 0.0928,
+          "confidence": 0.1523,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 168,
+          "_priority": 2.4
+        },
+        {
+          "id": "WESTWIND_SHURI",
+          "score": 0.0928,
+          "confidence": 0.1404,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 109,
+          "_priority": 2.4
         },
         {
           "id": "MORT",
@@ -3244,7 +4436,8 @@
           "confidence": 0.6261,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 890
+          "sampleCount": 890,
+          "_priority": 3.3
         },
         {
           "id": "VERONICA",
@@ -3252,41 +4445,19 @@
           "confidence": 0.429,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 627
+          "sampleCount": 627,
+          "_priority": 3.3
         }
       ],
       "topCounters": [
-        {
-          "id": "SAGE_BAAL",
-          "score": 0.4878,
-          "confidence": 0.4782,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 114
-        },
-        {
-          "id": "FLAN",
-          "score": 0.6168,
-          "confidence": 0.6358,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 462
-        },
         {
           "id": "SEOLHWA",
           "score": 0.7533,
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 691
-        },
-        {
-          "id": "FESTIVAL_EDA",
-          "score": 0.6182,
-          "confidence": 0.6459,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 383
+          "sampleCount": 691,
+          "_priority": 3.8
         },
         {
           "id": "DARK_DIEANE",
@@ -3294,23 +4465,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 798
-        },
-        {
-          "id": "PUNISH_PUNISH_ARIA",
-          "score": 0.5408,
-          "confidence": 0.5736,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 230
-        },
-        {
-          "id": "MAID_CHLOE",
-          "score": 0.6406,
-          "confidence": 0.6796,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 302
+          "sampleCount": 798,
+          "_priority": 3.8
         },
         {
           "id": "FRIEREN",
@@ -3318,7 +4474,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 703
+          "sampleCount": 703,
+          "_priority": 3.8
         },
         {
           "id": "BELIAN",
@@ -3326,7 +4483,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 437
+          "sampleCount": 437,
+          "_priority": 3.8
         },
         {
           "id": "SCENT_POLITIS",
@@ -3334,7 +4492,80 @@
           "confidence": 0.7473,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 245
+          "sampleCount": 245,
+          "_priority": 3.8
+        },
+        {
+          "id": "MAID_CHLOE",
+          "score": 0.6406,
+          "confidence": 0.6796,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 302,
+          "_priority": 3.8
+        },
+        {
+          "id": "FESTIVAL_EDA",
+          "score": 0.6182,
+          "confidence": 0.6459,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 383,
+          "_priority": 3.8
+        },
+        {
+          "id": "FLAN",
+          "score": 0.6168,
+          "confidence": 0.6358,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 462,
+          "_priority": 3.8
+        },
+        {
+          "id": "PUNISH_PUNISH_ARIA",
+          "score": 0.5408,
+          "confidence": 0.5736,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 230,
+          "_priority": 3.8
+        },
+        {
+          "id": "SAGE_BAAL",
+          "score": 0.4878,
+          "confidence": 0.4782,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 114,
+          "_priority": 3.8
+        },
+        {
+          "id": "MOON_RABBIT_DOMINIEL",
+          "score": 0.4801,
+          "confidence": 0.5076,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 181,
+          "_priority": 3.8
+        },
+        {
+          "id": "CELINE",
+          "score": 0.4446,
+          "confidence": 0.4583,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 217,
+          "_priority": 3.8
+        },
+        {
+          "id": "RUEL",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 629,
+          "_priority": 2.4
         }
       ]
     },
@@ -3346,7 +4577,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1085
+          "sampleCount": 1085,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -3354,7 +4586,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 207
+          "sampleCount": 207,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -3362,7 +4595,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 217
+          "sampleCount": 217,
+          "_priority": 3.8
         },
         {
           "id": "MAID_CHLOE",
@@ -3370,7 +4604,8 @@
           "confidence": 0.6507,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 496
+          "sampleCount": 496,
+          "_priority": 3.3
         },
         {
           "id": "HARSETI",
@@ -3378,23 +4613,35 @@
           "confidence": 0.5145,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 471
+          "sampleCount": 471,
+          "_priority": 3.3
         },
         {
           "id": "PUNISH_PUNISH_ARIA",
           "score": 0.2565,
           "confidence": 0.4423,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 470
+          "sampleCount": 470,
+          "_priority": 2.4
+        },
+        {
+          "id": "LRK",
+          "score": 0.1515,
+          "confidence": 0.2611,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 183,
+          "_priority": 2.4
         },
         {
           "id": "LIONHEART_CERMIA",
           "score": 0.1537,
           "confidence": 0.265,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 197
+          "sampleCount": 197,
+          "_priority": 2.4
         },
         {
           "id": "SEOLHWA",
@@ -3402,15 +4649,17 @@
           "confidence": 0.7097,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 490
+          "sampleCount": 490,
+          "_priority": 3.3
         },
         {
           "id": "HWAYOUNG",
           "score": 0.2052,
           "confidence": 0.5521,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 448
+          "sampleCount": 448,
+          "_priority": 2.4
         },
         {
           "id": "ISEPUNISH_ARIA",
@@ -3418,17 +4667,37 @@
           "confidence": 0.6191,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 815
+          "sampleCount": 815,
+          "_priority": 3.3
+        },
+        {
+          "id": "MORT",
+          "score": 0.1344,
+          "confidence": 0.4072,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 280,
+          "_priority": 2.4
         }
       ],
       "goodVs": [
+        {
+          "id": "MOON_LUNA",
+          "score": 0.6292,
+          "confidence": 0.6487,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 552,
+          "_priority": 3.8
+        },
         {
           "id": "SUCCESSOR_TAEYU",
           "score": 0.572,
           "confidence": 0.5608,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 274
+          "sampleCount": 274,
+          "_priority": 3.8
         },
         {
           "id": "DEATH_RAY",
@@ -3436,7 +4705,8 @@
           "confidence": 0.5487,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 157
+          "sampleCount": 157,
+          "_priority": 3.8
         },
         {
           "id": "HUMIR",
@@ -3444,7 +4714,8 @@
           "confidence": 0.4751,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 113
+          "sampleCount": 113,
+          "_priority": 3.8
         },
         {
           "id": "TORAMI",
@@ -3452,39 +4723,8 @@
           "confidence": 0.4744,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 104
-        },
-        {
-          "id": "MOON_LUNA",
-          "score": 0.6292,
-          "confidence": 0.6487,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 552
-        },
-        {
-          "id": "NAKWOL",
-          "score": 0.3892,
-          "confidence": 0.4012,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 55
-        },
-        {
-          "id": "RANDI",
-          "score": 0.4227,
-          "confidence": 0.4427,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 74
-        },
-        {
-          "id": "EXT_전학생_아딘",
-          "score": 0.3867,
-          "confidence": 0.4072,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 72
+          "sampleCount": 104,
+          "_priority": 3.8
         },
         {
           "id": "NCECILIA",
@@ -3492,7 +4732,8 @@
           "confidence": 0.4572,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 127
+          "sampleCount": 127,
+          "_priority": 3.8
         },
         {
           "id": "SHADOW_SHU",
@@ -3500,7 +4741,107 @@
           "confidence": 0.4555,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 87
+          "sampleCount": 87,
+          "_priority": 3.8
+        },
+        {
+          "id": "RANDI",
+          "score": 0.4227,
+          "confidence": 0.4427,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 74,
+          "_priority": 3.8
+        },
+        {
+          "id": "NAKWOL",
+          "score": 0.3892,
+          "confidence": 0.4012,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 55,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_전학생_아딘",
+          "score": 0.3867,
+          "confidence": 0.4072,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 72,
+          "_priority": 3.8
+        },
+        {
+          "id": "AMING",
+          "score": 0.3848,
+          "confidence": 0.412,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 42,
+          "_priority": 3.8
+        },
+        {
+          "id": "PERN",
+          "score": 0.3781,
+          "confidence": 0.4021,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 57,
+          "_priority": 3.8
+        },
+        {
+          "id": "BELIAN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 213,
+          "_priority": 2.4
+        },
+        {
+          "id": "FRIEREN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 351,
+          "_priority": 2.4
+        },
+        {
+          "id": "RINAK",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 393,
+          "_priority": 2.4
+        },
+        {
+          "id": "RUEL",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 276,
+          "_priority": 2.4
+        },
+        {
+          "id": "SECRET",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 348,
+          "_priority": 2.4
+        },
+        {
+          "id": "DARK_DIEANE",
+          "score": 0.294,
+          "confidence": 0.6092,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 136,
+          "_priority": 2.4
         }
       ],
       "badVs": [
@@ -3510,7 +4851,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 377
+          "sampleCount": 377,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -3518,7 +4860,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 377
+          "sampleCount": 377,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -3526,7 +4869,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 377
+          "sampleCount": 377,
+          "_priority": 3.8
         },
         {
           "id": "HECKATE",
@@ -3534,7 +4878,8 @@
           "confidence": 0.3715,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 526
+          "sampleCount": 526,
+          "_priority": 3.3
         },
         {
           "id": "EXT_최강_모델_루루카",
@@ -3542,7 +4887,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 434
+          "sampleCount": 434,
+          "_priority": 3.3
         },
         {
           "id": "STRAZE",
@@ -3550,7 +4896,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 407
+          "sampleCount": 407,
+          "_priority": 3.3
         },
         {
           "id": "VILDRED",
@@ -3558,7 +4905,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 370
+          "sampleCount": 370,
+          "_priority": 3.3
         },
         {
           "id": "EXT_세즈",
@@ -3566,7 +4914,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 386
+          "sampleCount": 386,
+          "_priority": 3.3
         },
         {
           "id": "BLOOD_KARIN",
@@ -3574,7 +4923,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 382
+          "sampleCount": 382,
+          "_priority": 3.3
         },
         {
           "id": "EXT_용의_반려_셰나",
@@ -3582,7 +4932,26 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 373
+          "sampleCount": 373,
+          "_priority": 3.3
+        },
+        {
+          "id": "SENUA",
+          "score": 0.3187,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 368,
+          "_priority": 3.3
+        },
+        {
+          "id": "EXT_종결자_찰스",
+          "score": 0.3179,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 363,
+          "_priority": 3.3
         }
       ],
       "firstpick": {
@@ -3612,19 +4981,20 @@
         "sourceCounts": {
           "helpsWith": {
             "legendWith": 3,
-            "pairLift": 7
+            "pairLift": 9
           },
           "goodVs": {
-            "legendHard": 10
+            "legendHard": 12,
+            "top10WeakCounterHint": 6
           },
           "badVs": {
             "legendHard": 3,
-            "strongMatchupEdge": 7
+            "strongMatchupEdge": 9
           },
           "relationCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 18,
+            "badVs": 12
           },
           "shortages": {
             "helpsWith": false,
@@ -3637,16 +5007,16 @@
             "badVs": 28
           },
           "anchorCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 18,
+            "badVs": 12
           },
           "fallbackCounts": {
             "helpsWith": 0,
             "goodVs": 0,
             "badVs": 0
           },
-          "relationLimit": 10
+          "relationLimit": 12
         },
         "fallbackUsed": false
       },
@@ -3657,7 +5027,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1085
+          "sampleCount": 1085,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -3665,7 +5036,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 207
+          "sampleCount": 207,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -3673,7 +5045,8 @@
           "confidence": 0.9136,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 217
+          "sampleCount": 217,
+          "_priority": 3.8
         },
         {
           "id": "MAID_CHLOE",
@@ -3681,7 +5054,8 @@
           "confidence": 0.6507,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 496
+          "sampleCount": 496,
+          "_priority": 3.3
         },
         {
           "id": "HARSETI",
@@ -3689,23 +5063,35 @@
           "confidence": 0.5145,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 471
+          "sampleCount": 471,
+          "_priority": 3.3
         },
         {
           "id": "PUNISH_PUNISH_ARIA",
           "score": 0.2565,
           "confidence": 0.4423,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 470
+          "sampleCount": 470,
+          "_priority": 2.4
+        },
+        {
+          "id": "LRK",
+          "score": 0.1515,
+          "confidence": 0.2611,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 183,
+          "_priority": 2.4
         },
         {
           "id": "LIONHEART_CERMIA",
           "score": 0.1537,
           "confidence": 0.265,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 197
+          "sampleCount": 197,
+          "_priority": 2.4
         },
         {
           "id": "SEOLHWA",
@@ -3713,15 +5099,17 @@
           "confidence": 0.7097,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 490
+          "sampleCount": 490,
+          "_priority": 3.3
         },
         {
           "id": "HWAYOUNG",
           "score": 0.2052,
           "confidence": 0.5521,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 448
+          "sampleCount": 448,
+          "_priority": 2.4
         },
         {
           "id": "ISEPUNISH_ARIA",
@@ -3729,17 +5117,37 @@
           "confidence": 0.6191,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 815
+          "sampleCount": 815,
+          "_priority": 3.3
+        },
+        {
+          "id": "MORT",
+          "score": 0.1344,
+          "confidence": 0.4072,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 280,
+          "_priority": 2.4
         }
       ],
       "topCounters": [
+        {
+          "id": "MOON_LUNA",
+          "score": 0.6292,
+          "confidence": 0.6487,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 552,
+          "_priority": 3.8
+        },
         {
           "id": "SUCCESSOR_TAEYU",
           "score": 0.572,
           "confidence": 0.5608,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 274
+          "sampleCount": 274,
+          "_priority": 3.8
         },
         {
           "id": "DEATH_RAY",
@@ -3747,7 +5155,8 @@
           "confidence": 0.5487,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 157
+          "sampleCount": 157,
+          "_priority": 3.8
         },
         {
           "id": "HUMIR",
@@ -3755,7 +5164,8 @@
           "confidence": 0.4751,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 113
+          "sampleCount": 113,
+          "_priority": 3.8
         },
         {
           "id": "TORAMI",
@@ -3763,39 +5173,8 @@
           "confidence": 0.4744,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 104
-        },
-        {
-          "id": "MOON_LUNA",
-          "score": 0.6292,
-          "confidence": 0.6487,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 552
-        },
-        {
-          "id": "NAKWOL",
-          "score": 0.3892,
-          "confidence": 0.4012,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 55
-        },
-        {
-          "id": "RANDI",
-          "score": 0.4227,
-          "confidence": 0.4427,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 74
-        },
-        {
-          "id": "EXT_전학생_아딘",
-          "score": 0.3867,
-          "confidence": 0.4072,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 72
+          "sampleCount": 104,
+          "_priority": 3.8
         },
         {
           "id": "NCECILIA",
@@ -3803,7 +5182,8 @@
           "confidence": 0.4572,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 127
+          "sampleCount": 127,
+          "_priority": 3.8
         },
         {
           "id": "SHADOW_SHU",
@@ -3811,7 +5191,107 @@
           "confidence": 0.4555,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 87
+          "sampleCount": 87,
+          "_priority": 3.8
+        },
+        {
+          "id": "RANDI",
+          "score": 0.4227,
+          "confidence": 0.4427,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 74,
+          "_priority": 3.8
+        },
+        {
+          "id": "NAKWOL",
+          "score": 0.3892,
+          "confidence": 0.4012,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 55,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_전학생_아딘",
+          "score": 0.3867,
+          "confidence": 0.4072,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 72,
+          "_priority": 3.8
+        },
+        {
+          "id": "AMING",
+          "score": 0.3848,
+          "confidence": 0.412,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 42,
+          "_priority": 3.8
+        },
+        {
+          "id": "PERN",
+          "score": 0.3781,
+          "confidence": 0.4021,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 57,
+          "_priority": 3.8
+        },
+        {
+          "id": "BELIAN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 213,
+          "_priority": 2.4
+        },
+        {
+          "id": "FRIEREN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 351,
+          "_priority": 2.4
+        },
+        {
+          "id": "RINAK",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 393,
+          "_priority": 2.4
+        },
+        {
+          "id": "RUEL",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 276,
+          "_priority": 2.4
+        },
+        {
+          "id": "SECRET",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 348,
+          "_priority": 2.4
+        },
+        {
+          "id": "DARK_DIEANE",
+          "score": 0.294,
+          "confidence": 0.6092,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 136,
+          "_priority": 2.4
         }
       ]
     },
@@ -3823,7 +5303,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1219
+          "sampleCount": 1219,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -3831,7 +5312,8 @@
           "confidence": 0.808,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 40
+          "sampleCount": 40,
+          "_priority": 3.8
         },
         {
           "id": "ARUNKA",
@@ -3839,63 +5321,89 @@
           "confidence": 0.8546,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 64
+          "sampleCount": 64,
+          "_priority": 3.8
         },
         {
           "id": "EXT_에다",
           "score": 0.0928,
           "confidence": 0.1499,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 145
+          "sampleCount": 145,
+          "_priority": 2.4
         },
         {
           "id": "SHURI",
           "score": 0.0928,
           "confidence": 0.1246,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 72
+          "sampleCount": 72,
+          "_priority": 2.4
         },
         {
           "id": "EXT_남국의_이세리아",
           "score": 0.0928,
           "confidence": 0.1171,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 54
+          "sampleCount": 54,
+          "_priority": 2.4
         },
         {
           "id": "SAGE_BAAL",
           "score": 0.0928,
           "confidence": 0.1071,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 40
+          "sampleCount": 40,
+          "_priority": 2.4
         },
         {
           "id": "AMING",
           "score": 0.09,
           "confidence": 0.1186,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 39
+          "sampleCount": 39,
+          "_priority": 2.4
         },
         {
           "id": "RAN",
           "score": 0.1281,
           "confidence": 0.2547,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 247
+          "sampleCount": 247,
+          "_priority": 2.4
         },
         {
           "id": "DRIFTER_LUDWIG",
           "score": 0.0786,
           "confidence": 0.0953,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 42
+          "sampleCount": 42,
+          "_priority": 2.4
+        },
+        {
+          "id": "ELENA",
+          "score": 0.0765,
+          "confidence": 0.1615,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 151,
+          "_priority": 2.4
+        },
+        {
+          "id": "DESIGNER_LILIBET",
+          "score": 0.0685,
+          "confidence": 0.0962,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 44,
+          "_priority": 2.4
         }
       ],
       "goodVs": [
@@ -3905,31 +5413,8 @@
           "confidence": 0.4823,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 142
-        },
-        {
-          "id": "HUMIR",
-          "score": 0.3969,
-          "confidence": 0.4092,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 80
-        },
-        {
-          "id": "TWISTED_KAYRON",
-          "score": 0.3881,
-          "confidence": 0.4074,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 73
-        },
-        {
-          "id": "EXT_프리다",
-          "score": 0.3706,
-          "confidence": 0.3896,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 38
+          "sampleCount": 142,
+          "_priority": 3.8
         },
         {
           "id": "LRK",
@@ -3937,39 +5422,8 @@
           "confidence": 0.484,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 112
-        },
-        {
-          "id": "DARKWALL_CHARLOTTE",
-          "score": 0.3531,
-          "confidence": 0.3769,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 31
-        },
-        {
-          "id": "MEDIATOR_KAWERIK",
-          "score": 0.3595,
-          "confidence": 0.3856,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 35
-        },
-        {
-          "id": "EXT_릴리아스",
-          "score": 0.3512,
-          "confidence": 0.3769,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 31
-        },
-        {
-          "id": "EXT_레테",
-          "score": 0.3597,
-          "confidence": 0.387,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 36
+          "sampleCount": 112,
+          "_priority": 3.8
         },
         {
           "id": "EXT_일편고월_벨로나",
@@ -3977,7 +5431,125 @@
           "confidence": 0.4569,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 90
+          "sampleCount": 90,
+          "_priority": 3.8
+        },
+        {
+          "id": "HUMIR",
+          "score": 0.3969,
+          "confidence": 0.4092,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 80,
+          "_priority": 3.8
+        },
+        {
+          "id": "TWISTED_KAYRON",
+          "score": 0.3881,
+          "confidence": 0.4074,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 73,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_프리다",
+          "score": 0.3706,
+          "confidence": 0.3896,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 38,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_레테",
+          "score": 0.3597,
+          "confidence": 0.387,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 36,
+          "_priority": 3.8
+        },
+        {
+          "id": "MEDIATOR_KAWERIK",
+          "score": 0.3595,
+          "confidence": 0.3856,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 35,
+          "_priority": 3.8
+        },
+        {
+          "id": "DARKWALL_CHARLOTTE",
+          "score": 0.3531,
+          "confidence": 0.3769,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 31,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_릴리아스",
+          "score": 0.3512,
+          "confidence": 0.3769,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 31,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_릴리벳",
+          "score": 0.3308,
+          "confidence": 0.3596,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 28,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_멜리사",
+          "score": 0.3308,
+          "confidence": 0.3596,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 28,
+          "_priority": 3.8
+        },
+        {
+          "id": "FRIEREN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 459,
+          "_priority": 2.4
+        },
+        {
+          "id": "RUEL",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 336,
+          "_priority": 2.4
+        },
+        {
+          "id": "SECRET",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 328,
+          "_priority": 2.4
+        },
+        {
+          "id": "YULHA",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 341,
+          "_priority": 2.4
         }
       ],
       "badVs": [
@@ -3987,7 +5559,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 437
+          "sampleCount": 437,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -3995,7 +5568,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 437
+          "sampleCount": 437,
+          "_priority": 3.8
         },
         {
           "id": "RINAK",
@@ -4003,15 +5577,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 437
-        },
-        {
-          "id": "GIO",
-          "score": 0.3177,
-          "confidence": 0.5764,
-          "grade": "A",
-          "source": "strongMatchupEdge",
-          "sampleCount": 729
+          "sampleCount": 437,
+          "_priority": 3.8
         },
         {
           "id": "MOON_LUNA",
@@ -4019,7 +5586,8 @@
           "confidence": 0.4456,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 593
+          "sampleCount": 593,
+          "_priority": 3.3
         },
         {
           "id": "RAN",
@@ -4027,7 +5595,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 480
+          "sampleCount": 480,
+          "_priority": 3.3
         },
         {
           "id": "SILVER_ARAMINTA",
@@ -4035,7 +5604,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 467
+          "sampleCount": 467,
+          "_priority": 3.3
         },
         {
           "id": "REQUIEM_ROANA",
@@ -4043,7 +5613,17 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 452
+          "sampleCount": 452,
+          "_priority": 3.3
+        },
+        {
+          "id": "GIO",
+          "score": 0.3177,
+          "confidence": 0.5764,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 729,
+          "_priority": 3.3
         },
         {
           "id": "HWARAN_RAVI",
@@ -4051,7 +5631,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 426
+          "sampleCount": 426,
+          "_priority": 3.3
         },
         {
           "id": "FLOWER_LIDICA",
@@ -4059,7 +5640,44 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 425
+          "sampleCount": 425,
+          "_priority": 3.3
+        },
+        {
+          "id": "DRIFTER_LUDWIG",
+          "score": 0.3151,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 420,
+          "_priority": 3.3
+        },
+        {
+          "id": "MILIM",
+          "score": 0.3131,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 414,
+          "_priority": 3.3
+        },
+        {
+          "id": "DARK_DIEANE",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 488,
+          "_priority": 2.4
+        },
+        {
+          "id": "SKY_ILLYNAV",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 213,
+          "_priority": 2.4
         }
       ],
       "firstpick": {
@@ -4089,19 +5707,21 @@
         "sourceCounts": {
           "helpsWith": {
             "legendWith": 3,
-            "pairLift": 7
+            "pairLift": 9
           },
           "goodVs": {
-            "legendHard": 10
+            "legendHard": 12,
+            "top10WeakCounterHint": 4
           },
           "badVs": {
             "legendHard": 3,
-            "strongMatchupEdge": 7
+            "strongMatchupEdge": 9,
+            "top10WeakCounterHint": 2
           },
           "relationCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 16,
+            "badVs": 14
           },
           "shortages": {
             "helpsWith": false,
@@ -4114,16 +5734,16 @@
             "badVs": 17
           },
           "anchorCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 16,
+            "badVs": 14
           },
           "fallbackCounts": {
             "helpsWith": 0,
             "goodVs": 0,
             "badVs": 0
           },
-          "relationLimit": 10
+          "relationLimit": 12
         },
         "fallbackUsed": false
       },
@@ -4134,7 +5754,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1219
+          "sampleCount": 1219,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -4142,7 +5763,8 @@
           "confidence": 0.808,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 40
+          "sampleCount": 40,
+          "_priority": 3.8
         },
         {
           "id": "ARUNKA",
@@ -4150,63 +5772,89 @@
           "confidence": 0.8546,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 64
+          "sampleCount": 64,
+          "_priority": 3.8
         },
         {
           "id": "EXT_에다",
           "score": 0.0928,
           "confidence": 0.1499,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 145
+          "sampleCount": 145,
+          "_priority": 2.4
         },
         {
           "id": "SHURI",
           "score": 0.0928,
           "confidence": 0.1246,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 72
+          "sampleCount": 72,
+          "_priority": 2.4
         },
         {
           "id": "EXT_남국의_이세리아",
           "score": 0.0928,
           "confidence": 0.1171,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 54
+          "sampleCount": 54,
+          "_priority": 2.4
         },
         {
           "id": "SAGE_BAAL",
           "score": 0.0928,
           "confidence": 0.1071,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 40
+          "sampleCount": 40,
+          "_priority": 2.4
         },
         {
           "id": "AMING",
           "score": 0.09,
           "confidence": 0.1186,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 39
+          "sampleCount": 39,
+          "_priority": 2.4
         },
         {
           "id": "RAN",
           "score": 0.1281,
           "confidence": 0.2547,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 247
+          "sampleCount": 247,
+          "_priority": 2.4
         },
         {
           "id": "DRIFTER_LUDWIG",
           "score": 0.0786,
           "confidence": 0.0953,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 42
+          "sampleCount": 42,
+          "_priority": 2.4
+        },
+        {
+          "id": "ELENA",
+          "score": 0.0765,
+          "confidence": 0.1615,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 151,
+          "_priority": 2.4
+        },
+        {
+          "id": "DESIGNER_LILIBET",
+          "score": 0.0685,
+          "confidence": 0.0962,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 44,
+          "_priority": 2.4
         }
       ],
       "topCounters": [
@@ -4216,31 +5864,8 @@
           "confidence": 0.4823,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 142
-        },
-        {
-          "id": "HUMIR",
-          "score": 0.3969,
-          "confidence": 0.4092,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 80
-        },
-        {
-          "id": "TWISTED_KAYRON",
-          "score": 0.3881,
-          "confidence": 0.4074,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 73
-        },
-        {
-          "id": "EXT_프리다",
-          "score": 0.3706,
-          "confidence": 0.3896,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 38
+          "sampleCount": 142,
+          "_priority": 3.8
         },
         {
           "id": "LRK",
@@ -4248,39 +5873,8 @@
           "confidence": 0.484,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 112
-        },
-        {
-          "id": "DARKWALL_CHARLOTTE",
-          "score": 0.3531,
-          "confidence": 0.3769,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 31
-        },
-        {
-          "id": "MEDIATOR_KAWERIK",
-          "score": 0.3595,
-          "confidence": 0.3856,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 35
-        },
-        {
-          "id": "EXT_릴리아스",
-          "score": 0.3512,
-          "confidence": 0.3769,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 31
-        },
-        {
-          "id": "EXT_레테",
-          "score": 0.3597,
-          "confidence": 0.387,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 36
+          "sampleCount": 112,
+          "_priority": 3.8
         },
         {
           "id": "EXT_일편고월_벨로나",
@@ -4288,7 +5882,125 @@
           "confidence": 0.4569,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 90
+          "sampleCount": 90,
+          "_priority": 3.8
+        },
+        {
+          "id": "HUMIR",
+          "score": 0.3969,
+          "confidence": 0.4092,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 80,
+          "_priority": 3.8
+        },
+        {
+          "id": "TWISTED_KAYRON",
+          "score": 0.3881,
+          "confidence": 0.4074,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 73,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_프리다",
+          "score": 0.3706,
+          "confidence": 0.3896,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 38,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_레테",
+          "score": 0.3597,
+          "confidence": 0.387,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 36,
+          "_priority": 3.8
+        },
+        {
+          "id": "MEDIATOR_KAWERIK",
+          "score": 0.3595,
+          "confidence": 0.3856,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 35,
+          "_priority": 3.8
+        },
+        {
+          "id": "DARKWALL_CHARLOTTE",
+          "score": 0.3531,
+          "confidence": 0.3769,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 31,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_릴리아스",
+          "score": 0.3512,
+          "confidence": 0.3769,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 31,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_릴리벳",
+          "score": 0.3308,
+          "confidence": 0.3596,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 28,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_멜리사",
+          "score": 0.3308,
+          "confidence": 0.3596,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 28,
+          "_priority": 3.8
+        },
+        {
+          "id": "FRIEREN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 459,
+          "_priority": 2.4
+        },
+        {
+          "id": "RUEL",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 336,
+          "_priority": 2.4
+        },
+        {
+          "id": "SECRET",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 328,
+          "_priority": 2.4
+        },
+        {
+          "id": "YULHA",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 341,
+          "_priority": 2.4
         }
       ]
     },
@@ -4300,7 +6012,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1071
+          "sampleCount": 1071,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -4308,7 +6021,8 @@
           "confidence": 0.8998,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 116
+          "sampleCount": 116,
+          "_priority": 3.8
         },
         {
           "id": "GIO",
@@ -4316,7 +6030,8 @@
           "confidence": 0.8409,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 106
+          "sampleCount": 106,
+          "_priority": 3.8
         },
         {
           "id": "SELINE",
@@ -4324,39 +6039,53 @@
           "confidence": 0.5916,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 456
+          "sampleCount": 456,
+          "_priority": 3.3
         },
         {
           "id": "PERN",
           "score": 0.0928,
           "confidence": 0.1422,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 118
+          "sampleCount": 118,
+          "_priority": 2.4
         },
         {
           "id": "EXT_전학생_아딘",
           "score": 0.0928,
           "confidence": 0.1351,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 95
+          "sampleCount": 95,
+          "_priority": 2.4
         },
         {
           "id": "AMING",
           "score": 0.0928,
           "confidence": 0.1247,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 42
+          "sampleCount": 42,
+          "_priority": 2.4
         },
         {
           "id": "AKI",
           "score": 0.0877,
           "confidence": 0.1175,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 65
+          "sampleCount": 65,
+          "_priority": 2.4
+        },
+        {
+          "id": "RANDI",
+          "score": 0.0826,
+          "confidence": 0.155,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 82,
+          "_priority": 2.4
         },
         {
           "id": "SEOLHWA",
@@ -4364,25 +6093,37 @@
           "confidence": 0.7263,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 579
+          "sampleCount": 579,
+          "_priority": 3.3
         },
         {
           "id": "MAID_CHLOE",
           "score": 0.2523,
           "confidence": 0.5546,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 485
+          "sampleCount": 485,
+          "_priority": 2.4
+        },
+        {
+          "id": "ARAM",
+          "score": 0.0802,
+          "confidence": 0.1953,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 165,
+          "_priority": 2.4
         }
       ],
       "goodVs": [
         {
-          "id": "NAVY_LANDY",
-          "score": 0.4462,
-          "confidence": 0.4375,
+          "id": "HARSETI",
+          "score": 0.5808,
+          "confidence": 0.6117,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 50
+          "sampleCount": 301,
+          "_priority": 3.8
         },
         {
           "id": "YONG_SHARUN",
@@ -4390,15 +6131,17 @@
           "confidence": 0.4923,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 245
+          "sampleCount": 245,
+          "_priority": 3.8
         },
         {
-          "id": "EXT_라스트_피스_카린",
-          "score": 0.3754,
-          "confidence": 0.387,
+          "id": "NAVY_LANDY",
+          "score": 0.4462,
+          "confidence": 0.4375,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 36
+          "sampleCount": 50,
+          "_priority": 3.8
         },
         {
           "id": "SILVER_CHRISTY",
@@ -4406,15 +6149,8 @@
           "confidence": 0.4194,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 114
-        },
-        {
-          "id": "HARSETI",
-          "score": 0.5808,
-          "confidence": 0.6117,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 301
+          "sampleCount": 114,
+          "_priority": 3.8
         },
         {
           "id": "DEVIL_RUA",
@@ -4422,15 +6158,17 @@
           "confidence": 0.4221,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 72
+          "sampleCount": 72,
+          "_priority": 3.8
         },
         {
-          "id": "EXT_릴리아스",
-          "score": 0.3512,
-          "confidence": 0.3769,
+          "id": "EXT_라스트_피스_카린",
+          "score": 0.3754,
+          "confidence": 0.387,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 31
+          "sampleCount": 36,
+          "_priority": 3.8
         },
         {
           "id": "TORAMI",
@@ -4438,15 +6176,8 @@
           "confidence": 0.4021,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 57
-        },
-        {
-          "id": "EXT_비탄의_로제",
-          "score": 0.3453,
-          "confidence": 0.3733,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 30
+          "sampleCount": 57,
+          "_priority": 3.8
         },
         {
           "id": "EXT_자유기사_아로웰",
@@ -4454,7 +6185,80 @@
           "confidence": 0.3998,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 52
+          "sampleCount": 52,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_릴리아스",
+          "score": 0.3512,
+          "confidence": 0.3769,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 31,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_비탄의_로제",
+          "score": 0.3453,
+          "confidence": 0.3733,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 30,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_데스티나",
+          "score": 0.3308,
+          "confidence": 0.3596,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 28,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_수호천사_몽모랑시",
+          "score": 0.3308,
+          "confidence": 0.3596,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 28,
+          "_priority": 3.8
+        },
+        {
+          "id": "DARK_DIEANE",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 291,
+          "_priority": 2.4
+        },
+        {
+          "id": "FRIEREN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 335,
+          "_priority": 2.4
+        },
+        {
+          "id": "RINAK",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 525,
+          "_priority": 2.4
+        },
+        {
+          "id": "RUEL",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 326,
+          "_priority": 2.4
         }
       ],
       "badVs": [
@@ -4464,7 +6268,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 566
+          "sampleCount": 566,
+          "_priority": 3.8
         },
         {
           "id": "ORIGIN_RAS",
@@ -4472,7 +6277,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 566
+          "sampleCount": 566,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -4480,7 +6286,8 @@
           "confidence": 0.78,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 566
+          "sampleCount": 566,
+          "_priority": 3.8
         },
         {
           "id": "SEOLHWA",
@@ -4488,7 +6295,8 @@
           "confidence": 0.62,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 911
+          "sampleCount": 911,
+          "_priority": 3.3
         },
         {
           "id": "LRK",
@@ -4496,7 +6304,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 606
+          "sampleCount": 606,
+          "_priority": 3.3
         },
         {
           "id": "EXT_일편고월_벨로나",
@@ -4504,7 +6313,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 642
+          "sampleCount": 642,
+          "_priority": 3.3
         },
         {
           "id": "ELENA",
@@ -4512,7 +6322,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 564
+          "sampleCount": 564,
+          "_priority": 3.3
         },
         {
           "id": "EXT_전학생_아딘",
@@ -4520,7 +6331,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 561
+          "sampleCount": 561,
+          "_priority": 3.3
         },
         {
           "id": "ABYSSAL_YUFINE",
@@ -4528,7 +6340,8 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 559
+          "sampleCount": 559,
+          "_priority": 3.3
         },
         {
           "id": "SNOW_SOLITARIA",
@@ -4536,7 +6349,44 @@
           "confidence": 0.24,
           "grade": "A",
           "source": "strongMatchupEdge",
-          "sampleCount": 557
+          "sampleCount": 557,
+          "_priority": 3.3
+        },
+        {
+          "id": "EXT_율하",
+          "score": 0.3233,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 549,
+          "_priority": 3.3
+        },
+        {
+          "id": "EXT_잔영의_비올레토",
+          "score": 0.3233,
+          "confidence": 0.24,
+          "grade": "A",
+          "source": "strongMatchupEdge",
+          "sampleCount": 549,
+          "_priority": 3.3
+        },
+        {
+          "id": "BELIAN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 328,
+          "_priority": 2.4
+        },
+        {
+          "id": "SKY_ILLYNAV",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 348,
+          "_priority": 2.4
         }
       ],
       "firstpick": {
@@ -4566,19 +6416,21 @@
         "sourceCounts": {
           "helpsWith": {
             "legendWith": 3,
-            "pairLift": 7
+            "pairLift": 9
           },
           "goodVs": {
-            "legendHard": 10
+            "legendHard": 12,
+            "top10WeakCounterHint": 4
           },
           "badVs": {
             "legendHard": 3,
-            "strongMatchupEdge": 7
+            "strongMatchupEdge": 9,
+            "top10WeakCounterHint": 2
           },
           "relationCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 16,
+            "badVs": 14
           },
           "shortages": {
             "helpsWith": false,
@@ -4591,16 +6443,16 @@
             "badVs": 22
           },
           "anchorCounts": {
-            "helpsWith": 10,
-            "goodVs": 10,
-            "badVs": 10
+            "helpsWith": 12,
+            "goodVs": 16,
+            "badVs": 14
           },
           "fallbackCounts": {
             "helpsWith": 0,
             "goodVs": 0,
             "badVs": 0
           },
-          "relationLimit": 10
+          "relationLimit": 12
         },
         "fallbackUsed": false
       },
@@ -4611,7 +6463,8 @@
           "confidence": 0.94,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 1071
+          "sampleCount": 1071,
+          "_priority": 3.8
         },
         {
           "id": "YULHA",
@@ -4619,7 +6472,8 @@
           "confidence": 0.8998,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 116
+          "sampleCount": 116,
+          "_priority": 3.8
         },
         {
           "id": "GIO",
@@ -4627,7 +6481,8 @@
           "confidence": 0.8409,
           "grade": "A",
           "source": "legendWith",
-          "sampleCount": 106
+          "sampleCount": 106,
+          "_priority": 3.8
         },
         {
           "id": "SELINE",
@@ -4635,39 +6490,53 @@
           "confidence": 0.5916,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 456
+          "sampleCount": 456,
+          "_priority": 3.3
         },
         {
           "id": "PERN",
           "score": 0.0928,
           "confidence": 0.1422,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 118
+          "sampleCount": 118,
+          "_priority": 2.4
         },
         {
           "id": "EXT_전학생_아딘",
           "score": 0.0928,
           "confidence": 0.1351,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 95
+          "sampleCount": 95,
+          "_priority": 2.4
         },
         {
           "id": "AMING",
           "score": 0.0928,
           "confidence": 0.1247,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 42
+          "sampleCount": 42,
+          "_priority": 2.4
         },
         {
           "id": "AKI",
           "score": 0.0877,
           "confidence": 0.1175,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 65
+          "sampleCount": 65,
+          "_priority": 2.4
+        },
+        {
+          "id": "RANDI",
+          "score": 0.0826,
+          "confidence": 0.155,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 82,
+          "_priority": 2.4
         },
         {
           "id": "SEOLHWA",
@@ -4675,25 +6544,37 @@
           "confidence": 0.7263,
           "grade": "A",
           "source": "pairLift",
-          "sampleCount": 579
+          "sampleCount": 579,
+          "_priority": 3.3
         },
         {
           "id": "MAID_CHLOE",
           "score": 0.2523,
           "confidence": 0.5546,
-          "grade": "A",
+          "grade": "B",
           "source": "pairLift",
-          "sampleCount": 485
+          "sampleCount": 485,
+          "_priority": 2.4
+        },
+        {
+          "id": "ARAM",
+          "score": 0.0802,
+          "confidence": 0.1953,
+          "grade": "B",
+          "source": "pairLift",
+          "sampleCount": 165,
+          "_priority": 2.4
         }
       ],
       "topCounters": [
         {
-          "id": "NAVY_LANDY",
-          "score": 0.4462,
-          "confidence": 0.4375,
+          "id": "HARSETI",
+          "score": 0.5808,
+          "confidence": 0.6117,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 50
+          "sampleCount": 301,
+          "_priority": 3.8
         },
         {
           "id": "YONG_SHARUN",
@@ -4701,15 +6582,17 @@
           "confidence": 0.4923,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 245
+          "sampleCount": 245,
+          "_priority": 3.8
         },
         {
-          "id": "EXT_라스트_피스_카린",
-          "score": 0.3754,
-          "confidence": 0.387,
+          "id": "NAVY_LANDY",
+          "score": 0.4462,
+          "confidence": 0.4375,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 36
+          "sampleCount": 50,
+          "_priority": 3.8
         },
         {
           "id": "SILVER_CHRISTY",
@@ -4717,15 +6600,8 @@
           "confidence": 0.4194,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 114
-        },
-        {
-          "id": "HARSETI",
-          "score": 0.5808,
-          "confidence": 0.6117,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 301
+          "sampleCount": 114,
+          "_priority": 3.8
         },
         {
           "id": "DEVIL_RUA",
@@ -4733,15 +6609,17 @@
           "confidence": 0.4221,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 72
+          "sampleCount": 72,
+          "_priority": 3.8
         },
         {
-          "id": "EXT_릴리아스",
-          "score": 0.3512,
-          "confidence": 0.3769,
+          "id": "EXT_라스트_피스_카린",
+          "score": 0.3754,
+          "confidence": 0.387,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 31
+          "sampleCount": 36,
+          "_priority": 3.8
         },
         {
           "id": "TORAMI",
@@ -4749,15 +6627,8 @@
           "confidence": 0.4021,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 57
-        },
-        {
-          "id": "EXT_비탄의_로제",
-          "score": 0.3453,
-          "confidence": 0.3733,
-          "grade": "A",
-          "source": "legendHard",
-          "sampleCount": 30
+          "sampleCount": 57,
+          "_priority": 3.8
         },
         {
           "id": "EXT_자유기사_아로웰",
@@ -4765,7 +6636,80 @@
           "confidence": 0.3998,
           "grade": "A",
           "source": "legendHard",
-          "sampleCount": 52
+          "sampleCount": 52,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_릴리아스",
+          "score": 0.3512,
+          "confidence": 0.3769,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 31,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_비탄의_로제",
+          "score": 0.3453,
+          "confidence": 0.3733,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 30,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_데스티나",
+          "score": 0.3308,
+          "confidence": 0.3596,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 28,
+          "_priority": 3.8
+        },
+        {
+          "id": "EXT_수호천사_몽모랑시",
+          "score": 0.3308,
+          "confidence": 0.3596,
+          "grade": "A",
+          "source": "legendHard",
+          "sampleCount": 28,
+          "_priority": 3.8
+        },
+        {
+          "id": "DARK_DIEANE",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 291,
+          "_priority": 2.4
+        },
+        {
+          "id": "FRIEREN",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 335,
+          "_priority": 2.4
+        },
+        {
+          "id": "RINAK",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 525,
+          "_priority": 2.4
+        },
+        {
+          "id": "RUEL",
+          "score": 0.294,
+          "confidence": 0.62,
+          "grade": "B",
+          "source": "top10WeakCounterHint",
+          "sampleCount": 326,
+          "_priority": 2.4
         }
       ]
     },
@@ -71289,9 +73233,9 @@
       "minHelpsWithCount": 8,
       "minGoodVsCount": 8,
       "minBadVsCount": 8,
-      "avgHelpsWith": 8.7186,
-      "avgGoodVs": 8.7186,
-      "avgBadVs": 8.7186,
+      "avgHelpsWith": 8.8383,
+      "avgGoodVs": 8.9581,
+      "avgBadVs": 8.9521,
       "heroesBelowThresholdBeforeBackfill": 87,
       "heroesBelowThresholdAfterBackfill": 0,
       "fallbackInsertedCount": 901,
@@ -71364,16 +73308,27 @@
         "HWARAN_RAVI",
         "BASE_POLITIS"
       ],
+      "topFocusHeroIds": [
+        "ORIGIN_RAS",
+        "ARUNKA",
+        "YULHA",
+        "RUEL",
+        "FRIEREN",
+        "DARK_DIEANE",
+        "RINAK",
+        "SKY_ILLYNAV",
+        "BELIAN",
+        "SECRET"
+      ],
       "heroesWithLessThan4Anchors": 58,
       "heroesWithLessThan6Anchors": 0,
       "totalFallbackCount": 974,
       "top60FallbackCount": 25,
-      "averageAnchorCountPerHero": 20.3234,
+      "averageAnchorCountPerHero": 20.9162,
       "averageFallbackCountPerHero": 5.8323,
-      "averageAnchorCountPerTop60Hero": 29.5833,
+      "averageAnchorCountPerTop60Hero": 31.2333,
       "averageFallbackCountPerTop60Hero": 0.4167,
-      "top60FallbackOnlyRowCount": 0,
-      "top60FallbackOnlyRowExists": false
+      "top10UnevaluatedPairCount": 0
     }
   }
 }
