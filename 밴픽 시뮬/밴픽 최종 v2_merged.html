@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -7208,6 +7208,7 @@ function remainingSlotsForStage(stage){
 function myBoardAfterCurrent(){ return allPickArrays().me; }
 function oppBoardAfterCurrent(){ return allPickArrays().opp; }
 
+// archive/debug only: old package helper retained for explanation paths, not scoreHero total
 function packageBonus(candidateId, myPicks, oppPicks = []){
   candidateId = normalizeHeroId(candidateId);
   const row = getOverlayHero(candidateId);
@@ -7225,6 +7226,7 @@ function packageBonus(candidateId, myPicks, oppPicks = []){
 
 // hard 정의를 데이터 의미에 맞게 반대로 해석하지 않도록 수정
 // hard ??? ??? ??? ?? ??? ???? ??? ??
+// archive/debug only: old counter helper retained for explanation paths, not scoreHero total
 function counterBonus(candidate, oppPicks){
   if(!candidate) return {
     score:0,
@@ -7328,6 +7330,7 @@ function openCounterResilience(hero){
   return 1 - Math.pow(normalized, 0.92) * 0.38;
 }
 
+// archive/debug only: legacy open-counter helper retained for debug comparison, not scoreHero total
 function projectedOpenCounterPenalty(candidate, myPicks, oppPicks, stage){
   if(!candidate || !stage || stage.type!=='pick' || stage.side!=='me') return 0;
   const futureOpp = futureOpponentPickCount(stage);
@@ -7365,6 +7368,7 @@ function projectedOpenCounterPenalty(candidate, myPicks, oppPicks, stage){
   return rawPenalty * (0.90 * resilience + 0.10);
 }
 
+// archive/debug only: legacy completion helper retained for debug comparison, not scoreHero total
 function completionPressureBonus(candidate, myPicks){
   if(!candidate || !myPicks?.length) return 0;
   const row = getOverlayHero(candidate.id);
@@ -8185,66 +8189,23 @@ function getOverlayHero(heroId){
     ? runtimeOverlayState.data.heroes[normalizeHeroId(heroId)] || null
     : null;
 }
+function getOverlayHelpsWith(heroId){
+  const row = getOverlayHero(heroId);
+  return row?.helpsWith?.length ? row.helpsWith : (row?.topSynergies || []);
+}
+function getOverlayGoodVs(heroId){
+  const row = getOverlayHero(heroId);
+  return row?.goodVs?.length ? row.goodVs : (row?.topCounters || []);
+}
+function getOverlayBadVs(heroId){
+  const row = getOverlayHero(heroId);
+  return row?.badVs?.length ? row.badVs : [];
+}
 function getOverlayTopSynergies(heroId){
-  return getOverlayHero(heroId)?.topSynergies || [];
+  return getOverlayHelpsWith(heroId);
 }
 function getOverlayTopCounters(heroId){
-  return getOverlayHero(heroId)?.topCounters || [];
-}
-function getOverlayHelpsWith(heroId, myPicks){
-  return getOverlayRelationSummary(getOverlayHero(heroId)?.helpsWith || getOverlayTopSynergies(heroId), myPicks);
-}
-function getOverlayGoodVs(heroId, oppPicks){
-  const hero = HERO_BY_ID[normalizeHeroId(heroId)];
-  const summary = getOverlayRelationSummary(getOverlayHero(heroId)?.goodVs || getOverlayTopCounters(heroId), oppPicks);
-  if(!hero || !oppPicks?.length) return summary;
-  let extraWeighted = 0;
-  let extraMatched = 0;
-  for(const oppId of oppPicks || []){
-    const opp = HERO_BY_ID[normalizeHeroId(oppId)];
-    if(!opp) continue;
-    const rules = Array.isArray(hero.extraRules) ? hero.extraRules : [];
-    if(rules.some(rule => String(rule || '').includes(opp.name) && String(rule || '').includes('카운터'))){
-      extraWeighted += 0.34;
-      extraMatched += 1;
-    }
-  }
-  if(extraMatched <= 0) return summary;
-  return {
-    ...summary,
-    totalWeighted:summary.totalWeighted + extraWeighted,
-    matchedCount:summary.matchedCount + extraMatched,
-    maxWeighted:Math.max(summary.maxWeighted, extraWeighted / extraMatched),
-    meanConfidence:(summary.matchedCount + extraMatched) > 0
-      ? ((summary.meanConfidence * summary.matchedCount) + extraMatched * 0.52) / (summary.matchedCount + extraMatched)
-      : summary.meanConfidence
-  };
-}
-function getOverlayBadVs(heroId, oppPicks){
-  const hero = HERO_BY_ID[normalizeHeroId(heroId)];
-  const baseSummary = getOverlayRelationSummary(getOverlayHero(heroId)?.badVs || [], oppPicks);
-  if(!hero || !oppPicks?.length) return baseSummary;
-  let extraWeighted = 0;
-  let extraMatched = 0;
-  for(const oppId of oppPicks || []){
-    const opp = HERO_BY_ID[normalizeHeroId(oppId)];
-    if(!opp) continue;
-    const oppRules = Array.isArray(opp.extraRules) ? opp.extraRules : [];
-    if(oppRules.some(rule => String(rule || '').includes(hero.name) && String(rule || '').includes('카운터'))){
-      extraWeighted += 0.32;
-      extraMatched += 1;
-    }
-  }
-  if(extraMatched <= 0) return baseSummary;
-  return {
-    ...baseSummary,
-    totalWeighted:baseSummary.totalWeighted + extraWeighted,
-    matchedCount:baseSummary.matchedCount + extraMatched,
-    maxWeighted:Math.max(baseSummary.maxWeighted, extraWeighted / extraMatched),
-    meanConfidence:(baseSummary.matchedCount + extraMatched) > 0
-      ? ((baseSummary.meanConfidence * baseSummary.matchedCount) + extraMatched * 0.5) / (baseSummary.matchedCount + extraMatched)
-      : baseSummary.meanConfidence
-  };
+  return getOverlayGoodVs(heroId);
 }
 function getOverlayRole(heroId){
   return getOverlayHero(heroId)?.roleEntries || {
@@ -8374,44 +8335,32 @@ function getOverlayRelationSummary(entries, pickedIds){
     maxWeighted
   };
 }
+function getOverlayRelationSources(entries, pickedIds){
+  const picked = new Set((pickedIds || []).map(normalizeHeroId));
+  return [...new Set((entries || [])
+    .filter(item => picked.has(item.id))
+    .map(item => String(item.source || 'unknown'))
+    .filter(Boolean))];
+}
 function getOverlaySynergySummary(heroId, myPicks){
-  return getOverlayRelationSummary(getOverlayTopSynergies(heroId), myPicks);
+  return getOverlayRelationSummary(getOverlayHelpsWith(heroId), myPicks);
 }
 function getOverlayCounterSummary(heroId, oppPicks){
-  return getOverlayRelationSummary(getOverlayTopCounters(heroId), oppPicks);
+  return getOverlayRelationSummary(getOverlayGoodVs(heroId), oppPicks);
 }
 function getOverlayIncomingCounterWeight(heroId, enemyId){
-  const enemyRow = getOverlayHero(enemyId);
-  if(!enemyRow?.topCounters?.length) return 0;
-  const hit = enemyRow.topCounters.find(item => item.id === normalizeHeroId(heroId));
+  const normalizedHeroId = normalizeHeroId(heroId);
+  const normalizedEnemyId = normalizeHeroId(enemyId);
+  const directBad = getOverlayBadVs(normalizedHeroId).find(item => item.id === normalizedEnemyId);
+  if(directBad) return Number(directBad.score || 0) * Number(directBad.confidence || 0);
+  const enemyGoodVs = getOverlayGoodVs(normalizedEnemyId);
+  if(!enemyGoodVs?.length) return 0;
+  const hit = enemyGoodVs.find(item => item.id === normalizedHeroId);
   if(!hit) return 0;
   return Number(hit.score || 0) * Number(hit.confidence || 0);
 }
 function getOverlayIncomingCounterSummary(heroId, oppPicks){
-  const picked = [...new Set((oppPicks || []).map(normalizeHeroId))];
-  let totalWeighted = 0;
-  let matchedCount = 0;
-  let maxWeighted = 0;
-  let confidenceSum = 0;
-  for(const enemyId of picked){
-    const enemyRow = getOverlayHero(enemyId);
-    if(!enemyRow?.topCounters?.length) continue;
-    const hit = enemyRow.topCounters.find(item => item.id === normalizeHeroId(heroId));
-    if(!hit) continue;
-    const confidence = Number(hit.confidence || 0);
-    const weighted = Number(hit.score || 0) * confidence;
-    if(weighted <= 0) continue;
-    totalWeighted += weighted;
-    matchedCount += 1;
-    confidenceSum += confidence;
-    if(weighted > maxWeighted) maxWeighted = weighted;
-  }
-  return {
-    totalWeighted,
-    matchedCount,
-    maxWeighted,
-    meanConfidence:matchedCount ? confidenceSum / matchedCount : 0
-  };
+  return getOverlayRelationSummary(getOverlayBadVs(heroId), oppPicks);
 }
 function getOverlayCompletionBonus(heroId, myPicks){
   const row = getOverlayHero(heroId);
@@ -8421,8 +8370,8 @@ function getOverlayCompletionBonus(heroId, myPicks){
   if(!summary.matchedCount) return 0;
   const topSpan = Math.max(1, Math.min(6, row.topSynergies.length));
   const coverage = summary.matchedCount / topSpan;
-  const scale = Math.min(1.14, 0.76 + protection.relationCapScale * 0.16);
-  const confidenceScale = Math.min(1.12, 0.74 + protection.confidenceCapScale * 0.16);
+  const scale = Math.min(1.12, 0.78 + protection.relationCapScale * 0.14);
+  const confidenceScale = Math.min(1.08, 0.78 + protection.confidenceCapScale * 0.12);
   const base = summary.totalWeighted * 1.7 + coverage * 1.2 + Math.max(0, summary.matchedCount - 1) * 0.28;
   return clampRelationValue(base * scale * confidenceScale, 0, 5.2);
 }
@@ -9003,6 +8952,7 @@ function scoreHero(candidateId, myPicks, oppPicks, stage, ctx){
 
   const reliability = heroReliabilityMultiplier(c);
   const metaBase = getBaselineMetaScore(c, reliability);
+  // archive/debug only: legacy compiled-pattern bucket snapshot, excluded from scoreHero total
   const patternParts = {
     total:0,
     preban:0,
@@ -9023,6 +8973,7 @@ function scoreHero(candidateId, myPicks, oppPicks, stage, ctx){
   const auxiliaryGate = lowPickAuxiliaryGate(c);
   const meta = metaBase.score;
   const stageWeights = context.synergyStageWeights || {synergy:1, pack:1, completion:1};
+  // archive/debug only: legacy full-matrix bucket snapshot, excluded from scoreHero total
   const relationBucket = { values:{matrixSynergy:0, matrixPack:0, matrixCompletion:0, matrixVanguard:0}, total:0, positiveTotal:0 };
   const overlaySynergySummary = getOverlaySynergySummary(c.id, context.myPicks);
   const overlayCounterSummary = getOverlayCounterSummary(c.id, context.oppPicks);
@@ -9032,9 +8983,9 @@ function scoreHero(candidateId, myPicks, oppPicks, stage, ctx){
   const overlayRole = getOverlayRoleBonus(c.id, stage);
   const completion = clampRelationValue(getOverlayCompletionBonus(c.id, context.myPicks) * Number(stageWeights.completion || 1), 0, 5.2);
   const openCounterBase = getOverlayOpenCounterPenalty(c.id, context.myPicks, context.oppPicks, stage);
-  const previewHelps = getOverlayHelpsWith(c.id, context.myPicks);
-  const previewGood = getOverlayGoodVs(c.id, context.oppPicks);
-  const previewBad = getOverlayBadVs(c.id, context.oppPicks);
+  const previewHelps = getOverlaySynergySummary(c.id, context.myPicks);
+  const previewGood = getOverlayCounterSummary(c.id, context.oppPicks);
+  const previewBad = getOverlayIncomingCounterSummary(c.id, context.oppPicks);
   const previewRoleData = getOverlayRole(c.id);
   const previewPresence = Number(previewRoleData.presence?.score || getOverlayHero(c.id)?.diagnostics?.presenceRate || 0);
   const previewEarly = stage?.type === 'pick' && Number(stage?.pickIndex || (context.myPicks.length + 1)) <= 2
@@ -9158,6 +9109,15 @@ function scoreHero(candidateId, myPicks, oppPicks, stage, ctx){
         lowPickRelationCap:patternParts.lowPickGuard?.relationCap || 0,
         overlaySynergy:synergy,
         overlayCounter:counters,
+        overlayHelpsWithCount:getOverlayHelpsWith(c.id).length,
+        overlayGoodVsCount:getOverlayGoodVs(c.id).length,
+        overlayBadVsCount:getOverlayBadVs(c.id).length,
+        synergyMatchedCount:overlaySynergySummary.matchedCount || 0,
+        counterMatchedCount:overlayCounterSummary.matchedCount || 0,
+        incomingMatchedCount:overlayIncomingSummary.matchedCount || 0,
+        synergySources:getOverlayRelationSources(getOverlayHelpsWith(c.id), context.myPicks),
+        counterSources:getOverlayRelationSources(getOverlayGoodVs(c.id), context.oppPicks),
+        incomingSources:getOverlayRelationSources(getOverlayBadVs(c.id), context.oppPicks),
         overlaySynergyMatched:overlaySynergySummary.matchedCount || 0,
         overlaySynergyWeighted:overlaySynergySummary.totalWeighted || 0,
         overlayCounterMatched:overlayCounterSummary.matchedCount || 0,
@@ -9573,6 +9533,9 @@ connectWebSocket();
 </script>
 </body>
 </html>
+
+
+
 
 
 

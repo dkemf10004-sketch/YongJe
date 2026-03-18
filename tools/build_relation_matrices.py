@@ -86,68 +86,287 @@ def count_relation_sources(relations: list[dict]) -> dict:
     return counts
 
 
-def build_overlay_relation_list(row: dict, hero_id: str, hero_by_id: dict, alias_map: dict, name_to_id: dict, normalized_name_to_id: dict, top_n: int = 8, min_n: int = 8) -> tuple[list[dict], dict]:
-    selected = []
+RELATION_LIMIT = 8
+MIN_RELATION_COUNT = 8
+
+
+def relation_sort_tuple(item: dict) -> tuple:
+    return (
+        float(item.get('_priority', 0.0)),
+        float(item.get('_sort_score', item.get('score', 0.0))),
+        float(item.get('confidence', 0.0)),
+    )
+
+
+def merge_relation_item(bucket: dict[str, dict], item: dict) -> None:
+    prev = bucket.get(item['id'])
+    if prev is None or relation_sort_tuple(item) > relation_sort_tuple(prev):
+        bucket[item['id']] = item
+
+
+def finalize_relation_items(items: list[dict], limit: int = RELATION_LIMIT) -> list[dict]:
+    ordered = sorted(
+        items,
+        key=lambda item: (-float(item.get('_priority', 0.0)), -float(item.get('_sort_score', item.get('score', 0.0))), -float(item.get('confidence', 0.0)), item['id']),
+    )[:limit]
+    cleaned: list[dict] = []
+    for item in ordered:
+        cleaned.append({
+            'id': item['id'],
+            'score': round4(float(item.get('score', 0.0))),
+            'confidence': round4(float(item.get('confidence', 0.0))),
+            'source': str(item.get('source') or 'unknown'),
+        })
+    return cleaned
+
+
+def resolve_relation_candidate(
+    target_id: str,
+    entry: dict,
+    hero_id: str,
+    hero_by_id: dict,
+    alias_map: dict,
+    name_to_id: dict,
+    normalized_name_to_id: dict,
+    *,
+    include_zero: bool = False,
+    source_override: str | None = None,
+    priority: float = 3.0,
+    damp: float = 1.0,
+    floor_score: float = 0.0,
+    floor_conf: float = 0.08,
+) -> tuple[dict | None, str | None, bool]:
+    resolved_id, used_fallback, unresolved_flag = resolve_overlay_relation_id(
+        target_id,
+        hero_by_id,
+        alias_map,
+        name_to_id,
+        normalized_name_to_id,
+    )
+    if not resolved_id or resolved_id == hero_id:
+        return None, None, used_fallback
+    raw_score = float(entry.get('rawScore') or 0.0)
+    score = float(entry.get('score') or 0.0)
+    confidence = float(entry.get('confidence') or 0.0)
+    if max(raw_score, score) <= 0 and not include_zero:
+        return None, None, used_fallback
+    adjusted_confidence = max(floor_conf, confidence if confidence > 0 else floor_conf)
+    adjusted_score = max(score, raw_score * max(0.12, adjusted_confidence * 0.72), floor_score) * damp
+    if source_override == 'fallback':
+        adjusted_score = max(floor_score, min(0.18, adjusted_score if adjusted_score > 0 else floor_score))
+        adjusted_confidence = max(floor_conf, min(0.24, adjusted_confidence))
+    if adjusted_score <= 0:
+        return None, None, used_fallback
+    item = {
+        'id': resolved_id,
+        'score': round4(adjusted_score),
+        'confidence': round4(adjusted_confidence),
+        'source': source_override or pick_relation_source(entry),
+        '_priority': priority,
+        '_sort_score': max(score, raw_score, adjusted_score),
+    }
+    return item, (resolved_id if unresolved_flag else None), used_fallback
+
+
+def build_relation_candidates_from_row(
+    row: dict,
+    hero_id: str,
+    hero_by_id: dict,
+    alias_map: dict,
+    name_to_id: dict,
+    normalized_name_to_id: dict,
+    *,
+    include_zero: bool = False,
+    source_override: str | None = None,
+    priority: float = 3.0,
+    damp: float = 1.0,
+    floor_score: float = 0.0,
+    floor_conf: float = 0.08,
+) -> tuple[list[dict], dict[str, dict], list[str], bool]:
+    items: list[dict] = []
+    row_lookup: dict[str, dict] = {}
     unresolved_ids: list[str] = []
     fallback_used = False
     for target_id, entry in (row or {}).items():
-        resolved_id, used_fallback, unresolved_flag = resolve_overlay_relation_id(target_id, hero_by_id, alias_map, name_to_id, normalized_name_to_id)
-        if not resolved_id or resolved_id == hero_id:
-            continue
-        raw_score = float(entry.get('rawScore') or 0.0)
-        score = float(entry.get('score') or 0.0)
-        confidence = float(entry.get('confidence') or 0.0)
-        if max(raw_score, score) <= 0:
-            continue
-        adjusted_confidence = max(0.08, confidence)
-        adjusted_score = max(score, raw_score * max(0.12, adjusted_confidence * 0.72))
-        selected.append({
-            'id': resolved_id,
-            'score': round4(adjusted_score),
-            'confidence': round4(adjusted_confidence),
-            'source': pick_relation_source(entry),
-            '_score': score,
-            '_raw': raw_score,
-            '_confidence': confidence,
-            '_unresolved': unresolved_flag,
-        })
+        item, unresolved_id, used_fallback = resolve_relation_candidate(
+            target_id,
+            entry,
+            hero_id,
+            hero_by_id,
+            alias_map,
+            name_to_id,
+            normalized_name_to_id,
+            include_zero=include_zero,
+            source_override=source_override,
+            priority=priority,
+            damp=damp,
+            floor_score=floor_score,
+            floor_conf=floor_conf,
+        )
         fallback_used = fallback_used or used_fallback
-    selected.sort(key=lambda item: (-item['_score'], -item['_raw'], -item['_confidence'], item['id']))
-    trimmed = []
-    seen = set()
-    for item in selected:
-        if item['id'] in seen:
+        if unresolved_id:
+            unresolved_ids.append(unresolved_id)
+        if not item:
             continue
-        seen.add(item['id'])
-        if item.pop('_unresolved', False):
-            unresolved_ids.append(str(item['id']))
-        item.pop('_score', None)
-        item.pop('_raw', None)
-        item.pop('_confidence', None)
-        trimmed.append(item)
-        if len(trimmed) >= top_n:
-            break
-    diagnostics = {
-        'unresolvedIds': unresolved_ids,
-        'fallbackUsed': fallback_used,
-        'shortage': len(trimmed) < min_n,
-        'available': len(trimmed),
-    }
-    return trimmed, diagnostics
+        row_lookup[item['id']] = entry
+        items.append(item)
+    return items, row_lookup, unresolved_ids, fallback_used
 
 
-def build_bad_vs_list(counter_rows: dict, hero_id: str, hero_by_id: dict, alias_map: dict, name_to_id: dict, normalized_name_to_id: dict, top_n: int = 8, min_n: int = 8) -> tuple[list[dict], dict]:
-    reverse_row = {}
+def build_reverse_row(counter_rows: dict, hero_id: str) -> dict:
+    reverse_row: dict[str, dict] = {}
     for other_id, row in (counter_rows or {}).items():
         if other_id == hero_id:
             continue
         entry = (row or {}).get(hero_id)
-        if not entry:
+        if entry:
+            reverse_row[other_id] = entry
+    return reverse_row
+
+
+def dedupe_relation_ids(ids: list[str], hero_id: str, hero_by_id: dict) -> list[str]:
+    result: list[str] = []
+    seen: set[str] = set()
+    for target_id in ids:
+        if not target_id or target_id == hero_id or target_id in seen or target_id not in hero_by_id:
             continue
-        if max(float(entry.get('rawScore') or 0.0), float(entry.get('score') or 0.0)) <= 0:
+        seen.add(target_id)
+        result.append(target_id)
+    return result
+
+
+def build_baseline_relation_ids(relation_key: str, hero: dict, heroes: list[dict]) -> list[str]:
+    hero_id = hero['id']
+    if relation_key == 'helpsWith':
+        ids = list(hero.get('syn') or [])
+        ids.extend(other['id'] for other in heroes if hero_id in set(other.get('syn') or []))
+    elif relation_key == 'goodVs':
+        ids = [other['id'] for other in heroes if hero_id in set(other.get('hard') or [])]
+    else:
+        ids = list(hero.get('hard') or [])
+    return dedupe_relation_ids(ids, hero_id, {item['id']: item for item in heroes})
+
+
+def baseline_source_name(relation_key: str) -> str:
+    if relation_key == 'helpsWith':
+        return 'baselineSyn'
+    if relation_key == 'goodVs':
+        return 'baselineHardReverse'
+    return 'baselineHard'
+
+
+def make_baseline_relation_item(relation_key: str, target_id: str, row_lookup: dict[str, dict]) -> dict:
+    base_values = {
+        'helpsWith': (0.22, 0.28),
+        'goodVs': (0.24, 0.30),
+        'badVs': (0.24, 0.30),
+    }
+    base_score, base_confidence = base_values[relation_key]
+    entry = (row_lookup or {}).get(target_id)
+    if entry and max(float(entry.get('rawScore') or 0.0), float(entry.get('score') or 0.0)) > 0:
+        row_confidence = float(entry.get('confidence') or 0.0)
+        row_score = float(entry.get('score') or 0.0)
+        row_raw = float(entry.get('rawScore') or 0.0)
+        return {
+            'id': target_id,
+            'score': round4(max(base_score, max(row_score, row_raw * max(0.12, max(row_confidence, 0.08) * 0.72)) * 0.84)),
+            'confidence': round4(max(base_confidence, min(0.38, max(row_confidence, 0.08) * 0.86))),
+            'source': baseline_source_name(relation_key),
+            '_priority': 2.2,
+            '_sort_score': max(row_score, row_raw, base_score),
+        }
+    return {
+        'id': target_id,
+        'score': round4(base_score),
+        'confidence': round4(base_confidence),
+        'source': baseline_source_name(relation_key),
+        '_priority': 2.0,
+        '_sort_score': base_score,
+    }
+
+
+def make_generic_fallback_item(target_id: str, hero_by_id: dict) -> dict:
+    hero = hero_by_id[target_id]
+    pick = float(hero.get('pick') or 0.0)
+    return {
+        'id': target_id,
+        'score': round4(0.05 + min(0.04, pick * 0.0015)),
+        'confidence': 0.08,
+        'source': 'fallback',
+        '_priority': 0.4,
+        '_sort_score': 0.05 + pick * 0.0015,
+    }
+
+
+def backfill_relation_list(
+    relation_key: str,
+    hero: dict,
+    heroes: list[dict],
+    hero_by_id: dict,
+    primary_candidates: list[dict],
+    row_lookup: dict[str, dict],
+    all_ids: list[str],
+) -> tuple[list[dict], dict]:
+    chosen: dict[str, dict] = {}
+    for item in primary_candidates:
+        merge_relation_item(chosen, item)
+    before_count = len(chosen)
+
+    for target_id in build_baseline_relation_ids(relation_key, hero, heroes):
+        if len(chosen) >= MIN_RELATION_COUNT:
+            break
+        if target_id in chosen:
             continue
-        reverse_row[other_id] = entry
-    return build_overlay_relation_list(reverse_row, hero_id, hero_by_id, alias_map, name_to_id, normalized_name_to_id, top_n=top_n, min_n=min_n)
+        merge_relation_item(chosen, make_baseline_relation_item(relation_key, target_id, row_lookup))
+
+    if len(chosen) < MIN_RELATION_COUNT:
+        weak_candidates, _, _, _ = build_relation_candidates_from_row(
+            row_lookup,
+            hero['id'],
+            hero_by_id,
+            {},
+            {},
+            {},
+        )
+        del weak_candidates
+
+    remaining_from_row = []
+    for target_id, entry in (row_lookup or {}).items():
+        if target_id in chosen:
+            continue
+        fallback_item = {
+            'id': target_id,
+            'score': round4(max(0.06, min(0.18, max(float(entry.get('score') or 0.0), float(entry.get('rawScore') or 0.0)) * 0.72))),
+            'confidence': round4(max(0.10, min(0.24, max(float(entry.get('confidence') or 0.0), 0.10)))),
+            'source': 'fallback',
+            '_priority': 1.0,
+            '_sort_score': max(float(entry.get('score') or 0.0), float(entry.get('rawScore') or 0.0), 0.06),
+        }
+        remaining_from_row.append(fallback_item)
+    remaining_from_row.sort(key=lambda item: (-item['_sort_score'], -item['confidence'], item['id']))
+    for item in remaining_from_row:
+        if len(chosen) >= MIN_RELATION_COUNT:
+            break
+        if item['id'] in chosen:
+            continue
+        merge_relation_item(chosen, item)
+
+    for target_id in all_ids:
+        if len(chosen) >= MIN_RELATION_COUNT:
+            break
+        if target_id == hero['id'] or target_id in chosen:
+            continue
+        merge_relation_item(chosen, make_generic_fallback_item(target_id, hero_by_id))
+
+    final_items = finalize_relation_items(list(chosen.values()))
+    diagnostics = {
+        'availableBeforeBackfill': before_count,
+        'availableAfterBackfill': len(final_items),
+        'shortageBefore': before_count < MIN_RELATION_COUNT,
+        'shortageAfter': len(final_items) < MIN_RELATION_COUNT,
+        'fallbackInserted': sum(1 for item in final_items if item.get('source') == 'fallback'),
+    }
+    return final_items, diagnostics
 
 
 def build_role_overlay_value(section: dict, hero_id: str) -> dict:
@@ -168,14 +387,20 @@ def build_runtime_overlay(compiled_heroes: dict, counter_matrix: dict, synergy_m
     synergy_rows = synergy_matrix.get('synergyMatrix', {}) or {}
     overlay_heroes = {}
     unresolved_ids: list[str] = []
+    all_ids = [hero['id'] for hero in heroes]
     total_helps = 0
     total_good = 0
     total_bad = 0
-    shortage_heroes = 0
+    min_helps = RELATION_LIMIT
+    min_good = RELATION_LIMIT
+    min_bad = RELATION_LIMIT
+    heroes_below_before = 0
+    heroes_below_after = 0
+    fallback_inserted_count = 0
 
     for hero in heroes:
         hero_id = hero['id']
-        helps_with, helps_diag = build_overlay_relation_list(
+        helps_primary, helps_lookup, helps_unresolved, helps_fallback_used = build_relation_candidates_from_row(
             synergy_rows.get(hero_id, {}),
             hero_id,
             hero_by_id,
@@ -183,7 +408,7 @@ def build_runtime_overlay(compiled_heroes: dict, counter_matrix: dict, synergy_m
             name_to_id,
             normalized_name_to_id,
         )
-        good_vs, good_diag = build_overlay_relation_list(
+        good_primary, good_lookup, good_unresolved, good_fallback_used = build_relation_candidates_from_row(
             counter_rows.get(hero_id, {}),
             hero_id,
             hero_by_id,
@@ -191,25 +416,39 @@ def build_runtime_overlay(compiled_heroes: dict, counter_matrix: dict, synergy_m
             name_to_id,
             normalized_name_to_id,
         )
-        bad_vs, bad_diag = build_bad_vs_list(
-            counter_rows,
+        reverse_counter_row = build_reverse_row(counter_rows, hero_id)
+        bad_primary, bad_lookup, bad_unresolved, bad_fallback_used = build_relation_candidates_from_row(
+            reverse_counter_row,
             hero_id,
             hero_by_id,
             alias_map,
             name_to_id,
             normalized_name_to_id,
         )
+
+        helps_with, helps_diag = backfill_relation_list('helpsWith', hero, heroes, hero_by_id, helps_primary, helps_lookup, all_ids)
+        good_vs, good_diag = backfill_relation_list('goodVs', hero, heroes, hero_by_id, good_primary, good_lookup, all_ids)
+        bad_vs, bad_diag = backfill_relation_list('badVs', hero, heroes, hero_by_id, bad_primary, bad_lookup, all_ids)
+
         hero_unresolved = [
-            *[f'{hero_id}:helpsWith:{raw}' for raw in helps_diag['unresolvedIds']],
-            *[f'{hero_id}:goodVs:{raw}' for raw in good_diag['unresolvedIds']],
-            *[f'{hero_id}:badVs:{raw}' for raw in bad_diag['unresolvedIds']],
+            *[f'{hero_id}:helpsWith:{raw}' for raw in helps_unresolved],
+            *[f'{hero_id}:goodVs:{raw}' for raw in good_unresolved],
+            *[f'{hero_id}:badVs:{raw}' for raw in bad_unresolved],
         ]
         unresolved_ids.extend(hero_unresolved)
+
         total_helps += len(helps_with)
         total_good += len(good_vs)
         total_bad += len(bad_vs)
-        if helps_diag['shortage'] or good_diag['shortage'] or bad_diag['shortage']:
-            shortage_heroes += 1
+        min_helps = min(min_helps, len(helps_with))
+        min_good = min(min_good, len(good_vs))
+        min_bad = min(min_bad, len(bad_vs))
+        fallback_inserted_count += helps_diag['fallbackInserted'] + good_diag['fallbackInserted'] + bad_diag['fallbackInserted']
+        if helps_diag['shortageBefore'] or good_diag['shortageBefore'] or bad_diag['shortageBefore']:
+            heroes_below_before += 1
+        if helps_diag['shortageAfter'] or good_diag['shortageAfter'] or bad_diag['shortageAfter']:
+            heroes_below_after += 1
+
         presence_entry = (role_scores.get('presence', {}) or {}).get(hero_id, {}) or {}
         protection_entry = (role_scores.get('protection', {}) or {}).get(hero_id, {}) or {}
         overlay_heroes[hero_id] = {
@@ -238,12 +477,24 @@ def build_runtime_overlay(compiled_heroes: dict, counter_matrix: dict, synergy_m
                         'badVs': len(bad_vs),
                     },
                     'shortages': {
-                        'helpsWith': bool(helps_diag['shortage']),
-                        'goodVs': bool(good_diag['shortage']),
-                        'badVs': bool(bad_diag['shortage']),
+                        'helpsWith': bool(helps_diag['shortageAfter']),
+                        'goodVs': bool(good_diag['shortageAfter']),
+                        'badVs': bool(bad_diag['shortageAfter']),
+                    },
+                    'beforeBackfill': {
+                        'helpsWith': int(helps_diag['availableBeforeBackfill']),
+                        'goodVs': int(good_diag['availableBeforeBackfill']),
+                        'badVs': int(bad_diag['availableBeforeBackfill']),
                     },
                 },
-                'fallbackUsed': bool(helps_diag['fallbackUsed'] or good_diag['fallbackUsed'] or bad_diag['fallbackUsed']),
+                'fallbackUsed': bool(
+                    helps_fallback_used
+                    or good_fallback_used
+                    or bad_fallback_used
+                    or helps_diag['fallbackInserted']
+                    or good_diag['fallbackInserted']
+                    or bad_diag['fallbackInserted']
+                ),
             },
         }
 
@@ -253,13 +504,19 @@ def build_runtime_overlay(compiled_heroes: dict, counter_matrix: dict, synergy_m
             'heroCount': len(heroes),
             'sourceVersion': f"overlay-v2/matrix-{counter_matrix.get('version', 1)}-{synergy_matrix.get('version', 1)}-role-{role_scores.get('version', 1)}",
             'buildSummary': {
-                'relationLimit': 8,
+                'relationLimit': RELATION_LIMIT,
+                'minHelpsWithCount': int(min_helps if heroes else 0),
+                'minGoodVsCount': int(min_good if heroes else 0),
+                'minBadVsCount': int(min_bad if heroes else 0),
                 'avgHelpsWith': round4(total_helps / max(1, len(heroes))),
                 'avgGoodVs': round4(total_good / max(1, len(heroes))),
                 'avgBadVs': round4(total_bad / max(1, len(heroes))),
+                'heroesBelowThresholdBeforeBackfill': int(heroes_below_before),
+                'heroesBelowThresholdAfterBackfill': int(heroes_below_after),
+                'fallbackInsertedCount': int(fallback_inserted_count),
                 'unresolvedIds': unresolved_ids,
                 'unresolvedCount': len(unresolved_ids),
-                'shortageHeroes': shortage_heroes,
+                'shortageHeroes': heroes_below_after,
                 'sourceHeroCount': len(heroes),
                 'counterNonzero': int(counter_matrix.get('buildSummary', {}).get('nonzeroRelations', 0)),
                 'synergyNonzero': int(synergy_matrix.get('buildSummary', {}).get('nonzeroRelations', 0)),
