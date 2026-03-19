@@ -19,7 +19,7 @@ VALIDATION_REPORT_OUT = DATA_DIR / 'overlay_validation_report.md'
 VALIDATION_HERO_IDS = ['SCENT_POLITIS', 'GIO', 'MAID_CHLOE', 'SEOLHWA', 'FRIEREN']
 REGRESSION_HERO_IDS = ['BELIAN', 'RINAK']
 TOP60_COUNT = 60
-TOP60_RELATION_LIMIT = 10
+TOP60_RELATION_LIMIT = 12
 TOP60_MIN_ANCHOR_COUNT = 6
 TOP_FOCUS_COUNT = 10
 TOP_FOCUS_RELATION_LIMIT = 12
@@ -861,9 +861,10 @@ def make_top_focus_hint_item(relation_key: str, target_id: str, hint_entry: dict
     sample_count = int(hint_entry.get('samples') or hint_entry.get('games') or 0)
     if hint_score < 0.58 and sample_count < 120:
         return None
-    confidence = clamp(0.26 + sample_confidence(sample_count, 720) * 0.34 + min(0.16, hint_score * 0.10), 0.26, 0.62)
-    score = clamp(0.18 + min(0.14, hint_score * 0.12), 0.18, 0.32)
-    grade = 'A' if hint_score >= 0.95 and sample_count >= 700 else 'B'
+    sample_conf = sample_confidence(sample_count, 600)
+    score = clamp(0.18 + min(0.10, hint_score * 0.08) + sample_conf * 0.12, 0.18, 0.36)
+    confidence = clamp(0.24 + sample_conf * 0.40 + min(0.12, hint_score * 0.08), 0.24, 0.78)
+    grade = 'A' if (hint_score >= 0.90 and sample_count >= 500) or sample_count >= 800 else 'B'
     return make_anchor_relation_item(relation_key, target_id, source=source, grade=grade, score=score, confidence=confidence, sample_count=sample_count)
 
 
@@ -1355,6 +1356,19 @@ def upgrade_runtime_overlay(runtime_overlay: dict, compiled_heroes: dict, counte
                 if not reciprocal_entry:
                     continue
                 merge_overlay_candidate(bad_pool, make_strong_matchup_edge_item('badVs', enemy_id, reciprocal_entry))
+
+        if hero_id in top60_set and hero_id not in top_focus_set:
+            for enemy_id in top_focus_ids:
+                if enemy_id == hero_id:
+                    continue
+                audit, selected = evaluate_top_focus_counter_pair(hero, hero_by_id[enemy_id], counter_rows, overlay_seed_rows, extra_targets, legacy_counter_hints or {})
+                if selected:
+                    hero_top10_selected[enemy_id] = selected
+                    relation_key, item = selected
+                    if relation_key == 'goodVs':
+                        merge_overlay_candidate(good_pool, item)
+                    else:
+                        merge_overlay_candidate(bad_pool, item)
 
         if hero_id in top_focus_set:
             for enemy_id in top_focus_ids:
