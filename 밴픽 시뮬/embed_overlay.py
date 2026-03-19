@@ -14,10 +14,10 @@ import json
 import re
 import os
 
-HTML_FILE = '밴픽_최종_v2_merged.html'
+HTML_FILE = 'banpick.html'
 JSON_FILE = 'compiled_runtime_overlay.json'
 
-PLACEHOLDER = r'window\.__COMPILED_RUNTIME_OVERLAY__\s*=\s*null;\s*/\* 여기에 JSON 붙여넣기 \*/'
+PLACEHOLDER = r'window\.__COMPILED_RUNTIME_OVERLAY__\s*=\s*(?:null|{.*?});\s*/\*.*?\*/'
 
 def main():
     if not os.path.exists(HTML_FILE):

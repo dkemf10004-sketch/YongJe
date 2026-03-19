@@ -31,90 +31,59 @@
 
 ### 보건교사 율하 (YULHA)
 - counts: helpsWith 12 / goodVs 12 / badVs 13
-- A/B/C: helpsWith 7/5/0 | goodVs 12/0/0 | badVs 11/2/0
+- A/B/C: helpsWith 7/5/0 | goodVs 12/0/0 | badVs 12/1/0
 - fallback count: total 0 | helpsWith 0 / goodVs 0 / badVs 0
 - added counter anchors
-  - badVs 어둠의 목자 디에네 (DARK_DIEANE) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 529
+  - none
 
 ### 빛의 루엘 (RUEL)
-- counts: helpsWith 12 / goodVs 12 / badVs 18
-- A/B/C: helpsWith 6/6/0 | goodVs 12/0/0 | badVs 12/6/0
+- counts: helpsWith 12 / goodVs 12 / badVs 17
+- A/B/C: helpsWith 6/6/0 | goodVs 12/0/0 | badVs 12/5/0
 - fallback count: total 0 | helpsWith 0 / goodVs 0 / badVs 0
 - added counter anchors
-  - badVs 엘리고스 (EXT_엘리고스) | source strongMatchupEdge | grade A | confidence 0.2400 | sampleCount 785
-  - badVs 벨리안 (BELIAN) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 336
-  - badVs 어둠의 목자 디에네 (DARK_DIEANE) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 458
-  - badVs 프리렌 (FRIEREN) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 423
-  - badVs 리나크 (RINAK) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 629
-  - badVs 쾌속의 기수 세크레트 (SECRET) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 326
+  - none
 
 ### 프리렌 (FRIEREN)
 - counts: helpsWith 12 / goodVs 13 / badVs 16
 - A/B/C: helpsWith 6/6/0 | goodVs 12/1/0 | badVs 12/4/0
 - fallback count: total 0 | helpsWith 0 / goodVs 0 / badVs 0
 - added counter anchors
-  - goodVs 현자 바알&세잔 (SAGE_BAAL) | source legendHard | grade A | confidence 0.4044 | sampleCount 63
-  - badVs 조장 아룬카 (ARUNKA) | source legendHard | grade A | confidence 0.7800 | sampleCount 703
-  - badVs 기원의 라스 (ORIGIN_RAS) | source legendHard | grade A | confidence 0.7800 | sampleCount 703
-  - badVs 리나크 (RINAK) | source legendHard | grade A | confidence 0.7800 | sampleCount 703
-  - badVs 창공의 일리나브 (SKY_ILLYNAV) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 351
+  - none
 
 ### 어둠의 목자 디에네 (DARK_DIEANE)
 - counts: helpsWith 12 / goodVs 16 / badVs 14
-- A/B/C: helpsWith 6/6/0 | goodVs 12/4/0 | badVs 12/2/0
+- A/B/C: helpsWith 6/6/0 | goodVs 13/3/0 | badVs 12/2/0
 - fallback count: total 0 | helpsWith 0 / goodVs 0 / badVs 0
 - added counter anchors
-  - goodVs 바캉스 유피네 (VACATION_YUFINE) | source legendHard | grade A | confidence 0.4208 | sampleCount 40
-  - goodVs 프리렌 (FRIEREN) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 447
-  - goodVs 빛의 루엘 (RUEL) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 458
-  - goodVs 보건교사 율하 (YULHA) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 529
-  - badVs 루이자 (EXT_루이자) | source strongMatchupEdge | grade A | confidence 0.2400 | sampleCount 798
-  - badVs 쾌속의 기수 세크레트 (SECRET) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 291
+  - none
 
 ### 리나크 (RINAK)
-- counts: helpsWith 12 / goodVs 13 / badVs 14
-- A/B/C: helpsWith 9/3/0 | goodVs 12/1/0 | badVs 12/2/0
+- counts: helpsWith 12 / goodVs 13 / badVs 13
+- A/B/C: helpsWith 9/3/0 | goodVs 13/0/0 | badVs 12/1/0
 - fallback count: total 0 | helpsWith 0 / goodVs 0 / badVs 0
 - added counter anchors
-  - goodVs 프리렌 (FRIEREN) | source legendHard | grade A | confidence 0.7800 | sampleCount 703
-  - badVs 조장 아룬카 (ARUNKA) | source legendHard | grade A | confidence 0.7800 | sampleCount 866
-  - badVs 쾌속의 기수 세크레트 (SECRET) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 525
+  - none
 
 ### 창공의 일리나브 (SKY_ILLYNAV)
 - counts: helpsWith 12 / goodVs 18 / badVs 12
 - A/B/C: helpsWith 7/5/0 | goodVs 12/6/0 | badVs 12/0/0
 - fallback count: total 0 | helpsWith 0 / goodVs 0 / badVs 0
 - added counter anchors
-  - goodVs 홍염의 아밍 (AMING) | source legendHard | grade A | confidence 0.4120 | sampleCount 42
-  - goodVs 벨리안 (BELIAN) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 213
-  - goodVs 프리렌 (FRIEREN) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 351
-  - goodVs 리나크 (RINAK) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 393
-  - goodVs 빛의 루엘 (RUEL) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 276
-  - goodVs 쾌속의 기수 세크레트 (SECRET) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 348
+  - none
 
 ### 벨리안 (BELIAN)
 - counts: helpsWith 12 / goodVs 16 / badVs 14
 - A/B/C: helpsWith 3/9/0 | goodVs 12/4/0 | badVs 12/2/0
 - fallback count: total 0 | helpsWith 0 / goodVs 0 / badVs 0
 - added counter anchors
-  - goodVs 릴리벳 (EXT_릴리벳) | source legendHard | grade A | confidence 0.3596 | sampleCount 28
-  - goodVs 프리렌 (FRIEREN) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 459
-  - goodVs 빛의 루엘 (RUEL) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 336
-  - goodVs 보건교사 율하 (YULHA) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 341
-  - badVs 밀림 (MILIM) | source strongMatchupEdge | grade A | confidence 0.2400 | sampleCount 414
-  - badVs 어둠의 목자 디에네 (DARK_DIEANE) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 488
+  - none
 
 ### 쾌속의 기수 세크레트 (SECRET)
 - counts: helpsWith 12 / goodVs 16 / badVs 14
-- A/B/C: helpsWith 5/7/0 | goodVs 12/4/0 | badVs 12/2/0
+- A/B/C: helpsWith 5/7/0 | goodVs 13/3/0 | badVs 12/2/0
 - fallback count: total 0 | helpsWith 0 / goodVs 0 / badVs 0
 - added counter anchors
-  - goodVs 데스티나 (EXT_데스티나) | source legendHard | grade A | confidence 0.3596 | sampleCount 28
-  - goodVs 프리렌 (FRIEREN) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 335
-  - goodVs 리나크 (RINAK) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 525
-  - goodVs 빛의 루엘 (RUEL) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 326
-  - badVs 율하 (EXT_율하) | source strongMatchupEdge | grade A | confidence 0.2400 | sampleCount 549
-  - badVs 창공의 일리나브 (SKY_ILLYNAV) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 348
+  - none
 
 ## Top10 Counter Coverage Audit
 
@@ -191,7 +160,7 @@
 - 프리렌 (FRIEREN) | evaluated: yes | result: badVs | confidence: 0.7800
   source list: badVs:final:legendHard; badVs:direct legendHard:legendHard; badVs:observed matchup edge:strongMatchupEdge; badVs:existing overlay edge:top10ExistingOverlay; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: badVs | confidence: 0.6200
+- 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: badVs | confidence: 0.7081
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 - 리나크 (RINAK) | evaluated: yes | result: goodVs | confidence: 0.7800
@@ -200,7 +169,7 @@
 - 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: goodVs | confidence: 0.7800
   source list: goodVs:final:legendHard; goodVs:inverse legendHard:legendHard; goodVs:observed matchup edge:strongMatchupEdge; goodVs:reciprocal observed relation:reciprocalObservedBadVs; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 벨리안 (BELIAN) | evaluated: yes | result: badVs | confidence: 0.6200
+- 벨리안 (BELIAN) | evaluated: yes | result: badVs | confidence: 0.6808
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 - 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: goodVs | confidence: 0.7800
@@ -217,22 +186,22 @@
 - 보건교사 율하 (YULHA) | evaluated: yes | result: badVs | confidence: 0.7800
   source list: badVs:final:legendHard; badVs:direct legendHard:legendHard; badVs:observed matchup edge:strongMatchupEdge; badVs:existing overlay edge:top10ExistingOverlay; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 프리렌 (FRIEREN) | evaluated: yes | result: badVs | confidence: 0.6200
+- 프리렌 (FRIEREN) | evaluated: yes | result: badVs | confidence: 0.6942
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: badVs | confidence: 0.6200
+- 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: badVs | confidence: 0.6991
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 리나크 (RINAK) | evaluated: yes | result: badVs | confidence: 0.6200
+- 리나크 (RINAK) | evaluated: yes | result: badVs | confidence: 0.7160
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: badVs | confidence: 0.6200
+- 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: badVs | confidence: 0.6676
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 벨리안 (BELIAN) | evaluated: yes | result: badVs | confidence: 0.6200
+- 벨리안 (BELIAN) | evaluated: yes | result: badVs | confidence: 0.6798
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: badVs | confidence: 0.6200
+- 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: badVs | confidence: 0.6780
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 
@@ -246,22 +215,22 @@
 - 보건교사 율하 (YULHA) | evaluated: yes | result: goodVs | confidence: 0.7800
   source list: goodVs:final:legendHard; goodVs:inverse legendHard:legendHard; goodVs:observed matchup edge:strongMatchupEdge; goodVs:reciprocal observed relation:reciprocalObservedBadVs; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 빛의 루엘 (RUEL) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 빛의 루엘 (RUEL) | evaluated: yes | result: goodVs | confidence: 0.6942
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: badVs | confidence: 0.6200
+- 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: badVs | confidence: 0.6976
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 - 리나크 (RINAK) | evaluated: yes | result: badVs | confidence: 0.7800
   source list: badVs:final:legendHard; badVs:direct legendHard:legendHard; badVs:observed matchup edge:strongMatchupEdge; badVs:existing overlay edge:top10ExistingOverlay; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: badVs | confidence: 0.6200
+- 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: badVs | confidence: 0.6826
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 벨리안 (BELIAN) | evaluated: yes | result: badVs | confidence: 0.6200
+- 벨리안 (BELIAN) | evaluated: yes | result: badVs | confidence: 0.6993
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: badVs | confidence: 0.6200
+- 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: badVs | confidence: 0.6796
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 
@@ -272,25 +241,25 @@
 - 조장 아룬카 (ARUNKA) | evaluated: yes | result: badVs | confidence: 0.7800
   source list: badVs:final:legendHard; goodVs:inverse legendHard:legendHard; badVs:direct legendHard:legendHard; goodVs:observed matchup edge:strongMatchupEdge; badVs:observed matchup edge:strongMatchupEdge; goodVs:reciprocal observed relation:reciprocalObservedBadVs; badVs:existing overlay edge:top10ExistingOverlay; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 보건교사 율하 (YULHA) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 보건교사 율하 (YULHA) | evaluated: yes | result: goodVs | confidence: 0.7081
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 빛의 루엘 (RUEL) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 빛의 루엘 (RUEL) | evaluated: yes | result: goodVs | confidence: 0.6991
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 프리렌 (FRIEREN) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 프리렌 (FRIEREN) | evaluated: yes | result: goodVs | confidence: 0.6976
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 - 리나크 (RINAK) | evaluated: yes | result: badVs | confidence: 0.7800
   source list: badVs:final:legendHard; badVs:direct legendHard:legendHard; badVs:observed matchup edge:strongMatchupEdge; badVs:existing overlay edge:top10ExistingOverlay; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: badVs | confidence: 0.6092
+- 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: badVs | confidence: 0.6236
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 벨리안 (BELIAN) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 벨리안 (BELIAN) | evaluated: yes | result: goodVs | confidence: 0.7031
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: badVs | confidence: 0.6200
+- 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: badVs | confidence: 0.6709
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 
@@ -304,7 +273,7 @@
 - 보건교사 율하 (YULHA) | evaluated: yes | result: badVs | confidence: 0.7800
   source list: badVs:final:legendHard; badVs:direct legendHard:legendHard; badVs:observed matchup edge:strongMatchupEdge; badVs:existing overlay edge:top10ExistingOverlay; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 빛의 루엘 (RUEL) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 빛의 루엘 (RUEL) | evaluated: yes | result: goodVs | confidence: 0.7160
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 - 프리렌 (FRIEREN) | evaluated: yes | result: goodVs | confidence: 0.7800
@@ -313,13 +282,13 @@
 - 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: goodVs | confidence: 0.7800
   source list: goodVs:final:legendHard; goodVs:inverse legendHard:legendHard; goodVs:observed matchup edge:strongMatchupEdge; goodVs:reciprocal observed relation:reciprocalObservedBadVs; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: badVs | confidence: 0.6200
+- 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: badVs | confidence: 0.6896
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 - 벨리안 (BELIAN) | evaluated: yes | result: goodVs | confidence: 0.7800
   source list: goodVs:final:legendHard; goodVs:inverse legendHard:legendHard; goodVs:observed matchup edge:strongMatchupEdge; goodVs:reciprocal observed relation:reciprocalObservedBadVs; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: badVs | confidence: 0.6200
+- 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: badVs | confidence: 0.7077
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 
@@ -333,22 +302,22 @@
 - 보건교사 율하 (YULHA) | evaluated: yes | result: badVs | confidence: 0.7800
   source list: badVs:final:legendHard; badVs:direct legendHard:legendHard; badVs:observed matchup edge:strongMatchupEdge; badVs:existing overlay edge:top10ExistingOverlay; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 빛의 루엘 (RUEL) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 빛의 루엘 (RUEL) | evaluated: yes | result: goodVs | confidence: 0.6676
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 프리렌 (FRIEREN) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 프리렌 (FRIEREN) | evaluated: yes | result: goodVs | confidence: 0.6826
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: goodVs | confidence: 0.6092
+- 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: goodVs | confidence: 0.6236
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 리나크 (RINAK) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 리나크 (RINAK) | evaluated: yes | result: goodVs | confidence: 0.6896
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 벨리안 (BELIAN) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 벨리안 (BELIAN) | evaluated: yes | result: goodVs | confidence: 0.6514
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: goodVs | confidence: 0.6820
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 
@@ -359,25 +328,25 @@
 - 조장 아룬카 (ARUNKA) | evaluated: yes | result: badVs | confidence: 0.7800
   source list: badVs:final:legendHard; badVs:direct legendHard:legendHard; badVs:observed matchup edge:strongMatchupEdge; badVs:existing overlay edge:top10ExistingOverlay; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 보건교사 율하 (YULHA) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 보건교사 율하 (YULHA) | evaluated: yes | result: goodVs | confidence: 0.6808
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 빛의 루엘 (RUEL) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 빛의 루엘 (RUEL) | evaluated: yes | result: goodVs | confidence: 0.6798
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 프리렌 (FRIEREN) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 프리렌 (FRIEREN) | evaluated: yes | result: goodVs | confidence: 0.6993
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: badVs | confidence: 0.6200
+- 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: badVs | confidence: 0.7031
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 - 리나크 (RINAK) | evaluated: yes | result: badVs | confidence: 0.7800
   source list: badVs:final:legendHard; badVs:direct legendHard:legendHard; badVs:observed matchup edge:strongMatchupEdge; badVs:existing overlay edge:top10ExistingOverlay; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: badVs | confidence: 0.6200
+- 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: badVs | confidence: 0.6514
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 쾌속의 기수 세크레트 (SECRET) | evaluated: yes | result: goodVs | confidence: 0.6783
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 
@@ -391,22 +360,22 @@
 - 보건교사 율하 (YULHA) | evaluated: yes | result: badVs | confidence: 0.7800
   source list: badVs:final:legendHard; badVs:direct legendHard:legendHard; badVs:observed matchup edge:strongMatchupEdge; badVs:existing overlay edge:top10ExistingOverlay; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 빛의 루엘 (RUEL) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 빛의 루엘 (RUEL) | evaluated: yes | result: goodVs | confidence: 0.6780
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 프리렌 (FRIEREN) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 프리렌 (FRIEREN) | evaluated: yes | result: goodVs | confidence: 0.6796
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 어둠의 목자 디에네 (DARK_DIEANE) | evaluated: yes | result: goodVs | confidence: 0.6709
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 리나크 (RINAK) | evaluated: yes | result: goodVs | confidence: 0.6200
+- 리나크 (RINAK) | evaluated: yes | result: goodVs | confidence: 0.7077
   source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: badVs | confidence: 0.6200
+- 창공의 일리나브 (SKY_ILLYNAV) | evaluated: yes | result: badVs | confidence: 0.6820
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
-- 벨리안 (BELIAN) | evaluated: yes | result: badVs | confidence: 0.6200
+- 벨리안 (BELIAN) | evaluated: yes | result: badVs | confidence: 0.6783
   source list: badVs:final:top10WeakCounterHint; badVs:compiled patterns weak counter hint:top10WeakCounterHint
   why none if none: n/a
 
@@ -414,7 +383,7 @@
 - evaluated: yes
 - result: goodVs
 - source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
-- confidence: 0.6200
+- confidence: 0.6993
 - why none if none: n/a
 
 ### Spotlight: 리나크 (RINAK) vs 프리렌 (FRIEREN)
@@ -428,7 +397,7 @@
 - evaluated: yes
 - result: goodVs
 - source list: goodVs:final:top10WeakCounterHint; goodVs:compiled patterns weak counter hint:top10WeakCounterHint
-- confidence: 0.6200
+- confidence: 0.6798
 - why none if none: n/a
 
 ## Regression
@@ -449,16 +418,16 @@
   - 신월의 루나 (MOON_LUNA) | source strongMatchupEdge | grade A | confidence 0.4456 | sampleCount 593
   - 란 (RAN) | source strongMatchupEdge | grade A | confidence 0.2400 | sampleCount 480
 - goodVs board dump
-  - 빛의 루엘 (RUEL) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 336 | weighted 0.1823
-  - 프리렌 (FRIEREN) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 459 | weighted 0.1823
+  - 빛의 루엘 (RUEL) | source top10WeakCounterHint | grade B | confidence 0.6798 | sampleCount 336 | weighted 0.2447
+  - 프리렌 (FRIEREN) | source top10WeakCounterHint | grade B | confidence 0.6993 | sampleCount 459 | weighted 0.2517
 - badVs board dump
   - none
 - reciprocal positive source dump
-  - 빛의 루엘 (RUEL) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 336 | weighted 0.1823
-  - 프리렌 (FRIEREN) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 459 | weighted 0.1823
+  - 빛의 루엘 (RUEL) | source top10WeakCounterHint | grade B | confidence 0.6798 | sampleCount 336 | weighted 0.2447
+  - 프리렌 (FRIEREN) | source top10WeakCounterHint | grade B | confidence 0.6993 | sampleCount 459 | weighted 0.2517
 - reciprocal negative source dump
   - none
-- final counter: 2.9592
+- final counter: 3.7313
 - why zero if zero: n/a
 
 ### 리나크 (RINAK)
@@ -472,19 +441,19 @@
   - 조장 아룬카 (ARUNKA) | source legendHard | grade A | confidence 0.7800 | sampleCount 866
   - 기원의 라스 (ORIGIN_RAS) | source legendHard | grade A | confidence 0.7800 | sampleCount 866
   - 보건교사 율하 (YULHA) | source legendHard | grade A | confidence 0.7800 | sampleCount 866
+  - 쾌속의 기수 세크레트 (SECRET) | source top10WeakCounterHint | grade A | confidence 0.7077 | sampleCount 525
   - 스트라제스 (STRAZE) | source strongMatchupEdge | grade A | confidence 0.2400 | sampleCount 918
-  - 엘레나 (ELENA) | source strongMatchupEdge | grade A | confidence 0.2400 | sampleCount 914
 - goodVs board dump
-  - 빛의 루엘 (RUEL) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 629 | weighted 0.1823
+  - 빛의 루엘 (RUEL) | source top10WeakCounterHint | grade A | confidence 0.7160 | sampleCount 629 | weighted 0.2578
   - 프리렌 (FRIEREN) | source legendHard | grade A | confidence 0.7800 | sampleCount 703 | weighted 0.5704
 - badVs board dump
   - none
 - reciprocal positive source dump
-  - 빛의 루엘 (RUEL) | source top10WeakCounterHint | grade B | confidence 0.6200 | sampleCount 629 | weighted 0.1823
+  - 빛의 루엘 (RUEL) | source top10WeakCounterHint | grade A | confidence 0.7160 | sampleCount 629 | weighted 0.2578
   - 프리렌 (FRIEREN) | source legendHard | grade A | confidence 0.7800 | sampleCount 703 | weighted 0.5704
 - reciprocal negative source dump
   - none
-- final counter: 5.4163
+- final counter: 5.8000
 - why zero if zero: n/a
 
 ### 프리렌 (FRIEREN)
@@ -500,7 +469,7 @@
   - 리나크 (RINAK) | source legendHard | grade A | confidence 0.7800 | sampleCount 703
   - 방관자 화영 (HWAYOUNG) | source strongMatchupEdge | grade A | confidence 0.5381 | sampleCount 1045
   - 셀린 (CELINE) | source strongMatchupEdge | grade A | confidence 0.2400 | sampleCount 770
-- final counter: 1.4319
+- final counter: 1.8599
 - why zero if zero: n/a
 
 ### 설화 (SEOLHWA)
