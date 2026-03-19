@@ -8255,22 +8255,18 @@ function getOverlayCounterBonus(heroId, oppPicks){
   const row = getOverlayHero(heroId);
   if(!row?.topCounters?.length || !oppPicks?.length) return 0;
   const protection = getOverlayProtectionState(heroId);
-  const directPositive = getOverlayDirectCounterSummary(heroId, oppPicks);
-  const reciprocalPositive = getOverlayReciprocalCounterSummary(heroId, oppPicks);
-  const directNegative = getOverlayDirectIncomingCounterSummary(heroId, oppPicks);
-  const reciprocalNegative = getOverlayReciprocalIncomingCounterSummary(heroId, oppPicks);
+  const offense = getOverlayCounterSummary(heroId, oppPicks);
+  const danger = getOverlayIncomingCounterSummary(heroId, oppPicks);
 
   const positive =
-    directPositive.totalWeighted * 2.2 +
-    reciprocalPositive.totalWeighted * 2.6 +
-    Math.max(directPositive.maxWeighted, reciprocalPositive.maxWeighted) * 0.9 +
-    Math.max(0, directPositive.directMatchedCount + reciprocalPositive.reciprocalMatchedCount - 1) * 0.25;
+    offense.totalWeighted * 2.2 +
+    offense.maxWeighted * 0.9 +
+    Math.max(0, offense.directMatchedCount + offense.reciprocalMatchedCount - 1) * 0.25;
 
   const negative =
-    directNegative.totalWeighted * 2.0 +
-    reciprocalNegative.totalWeighted * 2.4 +
-    Math.max(directNegative.maxWeighted, reciprocalNegative.maxWeighted) * 0.72 +
-    Math.max(0, directNegative.directMatchedCount + reciprocalNegative.reciprocalMatchedCount - 1) * 0.18;
+    danger.totalWeighted * 2.0 +
+    danger.maxWeighted * 0.72 +
+    Math.max(0, danger.directMatchedCount + danger.reciprocalMatchedCount - 1) * 0.18;
 
   const scale = Math.min(1.14, 0.78 + protection.relationCapScale * 0.16);
   const confidenceScale = Math.min(1.10, 0.76 + protection.confidenceCapScale * 0.14);
@@ -8465,9 +8461,11 @@ function getOverlaySynergySummary(heroId, myPicks){
   return getOverlayRelationSummary(getOverlayHelpsWith(heroId), myPicks);
 }
 function getOverlayCounterSummary(heroId, oppPicks){
+  const directPositive = getOverlayDirectCounterMatches(heroId, oppPicks);
+  const reciprocalPositive = getOverlayReciprocalCounterMatches(heroId, oppPicks);
   return summarizeOverlayCounterMatches([
-    ...getOverlayDirectCounterMatches(heroId, oppPicks),
-    ...getOverlayReciprocalCounterMatches(heroId, oppPicks)
+    ...directPositive,
+    ...reciprocalPositive
   ]);
 }
 function getOverlayIncomingCounterWeight(heroId, enemyId){
@@ -8482,9 +8480,11 @@ function getOverlayIncomingCounterWeight(heroId, enemyId){
   return Number(hit.score || 0) * Number(hit.confidence || 0);
 }
 function getOverlayIncomingCounterSummary(heroId, oppPicks){
+  const directNegative = getOverlayDirectIncomingCounterMatches(heroId, oppPicks);
+  const reciprocalNegative = getOverlayReciprocalIncomingCounterMatches(heroId, oppPicks);
   return summarizeOverlayCounterMatches([
-    ...getOverlayDirectIncomingCounterMatches(heroId, oppPicks),
-    ...getOverlayReciprocalIncomingCounterMatches(heroId, oppPicks)
+    ...directNegative,
+    ...reciprocalNegative
   ]);
 }
 function getOverlayLegacyIncomingCounterSummary(heroId, oppPicks){
@@ -9324,6 +9324,10 @@ function scoreHero(candidateId, myPicks, oppPicks, stage, ctx){
         previewGoodWeighted:previewGood.totalWeighted || 0,
         previewBadMatched:previewBad.matchedCount || 0,
         previewBadWeighted:previewBad.totalWeighted || 0,
+        counterDirectPositiveMatched:overlayCounterSummary.directMatchedCount || 0,
+        counterReciprocalPositiveMatched:overlayCounterSummary.reciprocalMatchedCount || 0,
+        counterDirectNegativeMatched:overlayIncomingSummary.directMatchedCount || 0,
+        counterReciprocalNegativeMatched:overlayIncomingSummary.reciprocalMatchedCount || 0,
         overlayEarly:overlayRole.early,
         overlayVanguard:overlayRole.vanguard,
         overlayUrgency:overlayRole.urgency,
