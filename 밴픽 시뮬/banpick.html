@@ -7662,6 +7662,44 @@ function buildReasons(c, myPicks, oppPicks, earlyValue=0, vanguardValue=0, arche
   return [...new Set(out)].slice(0,4);
 }
 // 최종 밴 위협도 방향 수정
+function computeOppBanLikelihood(){
+  const stage = currentStage();
+  if(!stage || stage.type!=='finalBan' || stage.side!=='me') return [];
+  const my = myBoardAfterCurrent().filter(id => id !== getVanguard('me'));
+  const opp = oppBoardAfterCurrent();
+  return my.map(id => {
+    const h = HERO_BY_ID[id];
+    if(!h) return null;
+    let threat = 0;
+    const reasons = [];
+    for(const oppId of opp){
+      const o = HERO_BY_ID[oppId];
+      if(!o) continue;
+      if(getHeroHardIds(h).includes(oppId)){
+        threat += 9.5;
+        reasons.push(`${o.name} 카운터`);
+      }
+      if(getHeroHardIds(o).includes(id)){
+        threat -= 2.5;
+      }
+      for(const rel of MANUAL_ANCHOR_COUNTERS){
+        if(rel.counter === id && rel.target === oppId){
+          threat += rel.weight * 0.95;
+          reasons.push(`${o.name} 상대로 위협`);
+        }
+        if(rel.counter === oppId && rel.target === id){
+          threat -= rel.weight * 0.4;
+        }
+      }
+    }
+    const mySynergy = synergyBonus(h, my) * 0.4;
+    const score = threat + mySynergy + h.ban * 0.08 + h.pick * 0.03;
+    const topReason = [...new Set(reasons)].slice(0,2).join(' · ') || '밴률/픽률 기반';
+    return {hero:h, score, reason: topReason};
+  }).filter(Boolean).sort((a,b)=>b.score-a.score).slice(0,4);
+}
+
+// 최종 밴 위협도 방향 수정
 function computeFinalBanSuggestion(){
   const stage = currentStage();
   if(!stage || stage.type!=='finalBan' || stage.side!=='me') return [];
@@ -7866,7 +7904,10 @@ function renderRecs(){
   if(stage && stage.type==='finalBan' && stage.side==='me'){
     const bans = computeFinalBanSuggestion();
     modePill.textContent = '\ub0b4 \ucd5c\uc885 \ubc34 \ucd94\ucc9c';
-    recBox.innerHTML = bans.map((b, i) => `<div class="recCard"><div class="recHead"><div><strong>#${i+1} ${b.hero.name}</strong><div class="tiny">${b.reason || '\ub0b4 \uc870\ud569 \uae30\uc900 \uc704\ud611 \uc81c\uac70 \ucd94\ucc9c'}</div></div><div class="score">${b.score.toFixed(1)}</div></div>${b.reasonChips?.length ? `<div class="chips">${b.reasonChips.map(reason => `<span class="chip">${reason}</span>`).join('')}</div>` : ''}</div>`).join('') || '<div class="tiny">\ucd94\ucc9c\ud560 \uc0c1\ub300 \ubc34 \ub300\uc0c1\uc774 \uc5c6\uc2b5\ub2c8\ub2e4.</div>';
+    const oppLikely = computeOppBanLikelihood();
+    const oppBanTopId = oppLikely[0]?.hero?.id;
+    const oppBanSection = oppLikely.length ? `<div class="helperBox" style="margin-bottom:10px"><div class="helperLine" style="font-weight:800;margin-bottom:4px;">⚠ 상대가 내 영웅 중 밴할 가능성 순위</div>${oppLikely.map((b,i)=>`<div class="helperLine">#${i+1} <b>${b.hero.name}</b> <span style="color:#94a3b8;">${b.reason}</span></div>`).join('')}<div class="helperLine" style="margin-top:4px;color:#94a3b8;font-size:11px;">※ 아래 밴 추천은 <b>${oppLikely[0]?.hero?.name||'상위 영웅'}</b>이 밴당한다고 가정하고 계산되지 않습니다.</div></div>` : '';
+    recBox.innerHTML = oppBanSection + (bans.map((b, i) => `<div class="recCard"><div class="recHead"><div><strong>#${i+1} ${b.hero.name}</strong><div class="tiny">${b.reason || '내 조합 기준 위협 제거 추천'}</div></div><div class="score">${b.score.toFixed(1)}</div></div>${b.reasonChips?.length ? `<div class="chips">${b.reasonChips.map(reason => `<span class="chip">${reason}</span>`).join('')}</div>` : ''}</div>`).join('') || '<div class="tiny">추천할 상대 밴 대상이 없습니다.</div>');
     pairBox.innerHTML = '<div class="tiny">\ucd5c\uc885 \ubc34 \ub2e8\uacc4\uc5d0\uc11c\ub294 \ud398\uc5b4 \ucd94\ucc9c\uc774 \ube44\ud65c\uc131\ud654\ub429\ub2c8\ub2e4.</div>';
     return;
   }
@@ -9997,6 +10038,9 @@ connectWebSocket();
 </script>
 </body>
 </html>
+
+
+
 
 
 
